@@ -1,29 +1,39 @@
 // ================= Mock API for City Stats =====================
-// Simulates backend API with random seed-based values
+// Simulates backend API with deterministic seed-based values
+// Compatible with /api/stats?city= endpoint format
 
 class StatsAPI {
   constructor() {
     this.cache = {};
-    this.baseValues = {};
   }
 
-  // Generate base value for a city (deterministic based on city name)
-  getBaseValue(city) {
-    if (!this.baseValues[city]) {
-      let hash = 0;
-      for (let i = 0; i < city.length; i++) {
-        hash = ((hash << 5) - hash) + city.charCodeAt(i);
-        hash = hash & hash;
-      }
-      this.baseValues[city] = Math.abs(hash);
+  // Handle fetch requests to /api/stats?city=
+  async handleFetch(url) {
+    try {
+      const urlObj = new URL(url, window.location.origin);
+      const city = urlObj.searchParams.get('city') || 'İstanbul';
+      const data = await this.getStats(city);
+      return new Response(JSON.stringify(data), {
+        status: 200,
+        headers: {
+          'Content-Type': 'application/json',
+          'Cache-Control': 'no-store'
+        }
+      });
+    } catch (error) {
+      return new Response(JSON.stringify({ error: error.message }), {
+        status: 500,
+        headers: { 'Content-Type': 'application/json' }
+      });
     }
-    return this.baseValues[city];
   }
 
-  // Simulate incremental growth (updates every 60 seconds)
-  getTimeBasedIncrement() {
-    // Increment based on minutes since epoch
-    return Math.floor((Date.now() / 60000) % 97);
+  // Generate deterministic seed based on city name and time
+  getSeed(city) {
+    // Deterministic seed: city.length * 317 + (minutes since epoch % 101)
+    const citySeed = city.length * 317;
+    const timeSeed = Math.floor(Date.now() / 60000) % 101;
+    return citySeed + timeSeed;
   }
 
   // Get stats for a city
@@ -31,12 +41,13 @@ class StatsAPI {
     // Simulate network delay
     await new Promise(resolve => setTimeout(resolve, 300));
 
-    const base = this.getBaseValue(city);
-    const increment = this.getTimeBasedIncrement();
+    const seed = this.getSeed(city);
     
-    // Generate deterministic but slightly varying values
-    const activeUsers = 10000 + (base % 50000) + increment;
-    const last24h = 100 + (base % 300) + (increment % 50);
+    // Generate deterministic values based on seed
+    // activeUsers: 9000 + seed (ensures reasonable range)
+    const activeUsers = 9000 + (seed % 50000);
+    // last24h: (seed % 400) + 50 (range: 50-449)
+    const last24h = (seed % 400) + 50;
     
     // Top districts based on city
     const districtsByCity = {
@@ -66,4 +77,19 @@ class StatsAPI {
 
 // Export singleton instance
 window.statsAPI = new StatsAPI();
+
+// Intercept fetch calls to /api/stats
+(function() {
+  const originalFetch = window.fetch;
+  window.fetch = async function(url, options) {
+    // Check if it's a stats API call
+    if (typeof url === 'string' && url.includes('/api/stats')) {
+      if (!options || options.method === 'GET' || !options.method) {
+        return window.statsAPI.handleFetch(url);
+      }
+    }
+    // For all other requests, use original fetch
+    return originalFetch.apply(this, arguments);
+  };
+})();
 

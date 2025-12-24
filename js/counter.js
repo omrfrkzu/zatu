@@ -13,33 +13,40 @@ class Counter {
     return num.toLocaleString('tr-TR');
   }
 
-  animate() {
+  animate(timestamp) {
     if (this.startTime === null) {
-      this.startTime = performance.now();
+      this.startTime = timestamp || performance.now();
     }
 
-    const elapsed = performance.now() - this.startTime;
+    const elapsed = (timestamp || performance.now()) - this.startTime;
     const progress = Math.min(elapsed / this.duration, 1);
     
-    // Easing function (ease-out)
+    // Easing function (ease-out cubic)
     const easeOut = 1 - Math.pow(1 - progress, 3);
     this.currentValue = Math.round(this.value * easeOut);
     
     this.element.textContent = this.formatNumber(this.currentValue);
 
     if (progress < 1) {
-      this.animationId = requestAnimationFrame(() => this.animate());
+      this.animationId = requestAnimationFrame((t) => this.animate(t));
     } else {
+      // Ensure final value is exact
       this.currentValue = this.value;
       this.element.textContent = this.formatNumber(this.value);
+      this.animationId = null;
     }
   }
 
   start() {
+    // Cancel any existing animation
+    if (this.animationId) {
+      cancelAnimationFrame(this.animationId);
+    }
+    
     this.currentValue = 0;
     this.startTime = null;
-    this.element.textContent = '0';
-    this.animationId = requestAnimationFrame(() => this.animate());
+    this.element.textContent = this.formatNumber(0);
+    this.animationId = requestAnimationFrame((t) => this.animate(t));
   }
 
   update(newValue) {

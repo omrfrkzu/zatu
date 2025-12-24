@@ -162,60 +162,83 @@ class ProfileSurvey {
   }
 
   renderQuestion(question) {
-    let html = `<div class="survey-question-card mb-4">`;
-    html += `<h3 class="mb-3">${question.title}</h3>`;
+    let html = `<div class="survey-question-card mb-4" role="region" aria-labelledby="profile-question-title">`;
+    html += `<h3 class="mb-3" id="profile-question-title">${question.title}</h3>`;
     if (question.description) {
       html += `<p class="text-muted mb-4">${question.description}</p>`;
     }
 
+    // Message area with aria-live
+    html += `<div id="profile-message-area" class="mb-3" aria-live="polite" aria-atomic="true"></div>`;
+
     if (question.type === 'date') {
+      const savedValue = this.answers[question.field] || '';
       html += `
         <div class="mb-3">
           <label for="profile-${question.field}" class="form-label">Doğum Tarihi <span class="text-danger">*</span></label>
-          <input type="date" class="form-control" id="profile-${question.field}" required>
+          <input type="date" class="form-control" id="profile-${question.field}" value="${savedValue}" required aria-required="true">
         </div>
-        <button type="button" class="btn btn-primary" onclick="profileSurvey.nextQuestion()">Devam Et</button>
       `;
     } else if (question.type === 'location') {
+      const savedCity = this.answers.city || '';
+      const savedDistrict = this.answers.district || '';
       html += `
         <div class="mb-3">
           <label for="profile-city" class="form-label">İl <span class="text-danger">*</span></label>
-          <select class="form-select" id="profile-city" required>
+          <select class="form-select" id="profile-city" required aria-required="true">
             <option value="">İl seçiniz</option>
-            <option value="Adana">Adana</option>
-            <option value="Ankara">Ankara</option>
-            <option value="Antalya">Antalya</option>
-            <option value="İstanbul">İstanbul</option>
-            <option value="İzmir">İzmir</option>
-            <option value="Bursa">Bursa</option>
-            <option value="Eskişehir">Eskişehir</option>
-            <option value="Sivas">Sivas</option>
-            <option value="Gaziantep">Gaziantep</option>
-            <option value="Trabzon">Trabzon</option>
+            <option value="Adana" ${savedCity === 'Adana' ? 'selected' : ''}>Adana</option>
+            <option value="Ankara" ${savedCity === 'Ankara' ? 'selected' : ''}>Ankara</option>
+            <option value="Antalya" ${savedCity === 'Antalya' ? 'selected' : ''}>Antalya</option>
+            <option value="İstanbul" ${savedCity === 'İstanbul' ? 'selected' : ''}>İstanbul</option>
+            <option value="İzmir" ${savedCity === 'İzmir' ? 'selected' : ''}>İzmir</option>
+            <option value="Bursa" ${savedCity === 'Bursa' ? 'selected' : ''}>Bursa</option>
+            <option value="Eskişehir" ${savedCity === 'Eskişehir' ? 'selected' : ''}>Eskişehir</option>
+            <option value="Sivas" ${savedCity === 'Sivas' ? 'selected' : ''}>Sivas</option>
+            <option value="Gaziantep" ${savedCity === 'Gaziantep' ? 'selected' : ''}>Gaziantep</option>
+            <option value="Trabzon" ${savedCity === 'Trabzon' ? 'selected' : ''}>Trabzon</option>
           </select>
         </div>
         <div class="mb-3">
           <label for="profile-district" class="form-label">İlçe <span class="text-danger">*</span></label>
-          <input type="text" class="form-control" id="profile-district" required placeholder="İlçe adınız">
+          <input type="text" class="form-control" id="profile-district" value="${savedDistrict}" required placeholder="İlçe adınız" aria-required="true">
         </div>
-        <button type="button" class="btn btn-primary" onclick="profileSurvey.nextQuestion()">Devam Et</button>
       `;
     } else if (question.type === 'select') {
-      html += `<div class="mb-3">`;
+      const savedValue = this.answers[question.field] || '';
+      html += `<div class="mb-3" role="radiogroup" aria-labelledby="profile-question-title">`;
       question.options.forEach((option, index) => {
+        const isChecked = savedValue === option;
         html += `
           <div class="form-check mb-2">
-            <input class="form-check-input" type="radio" name="profile-${question.field}" id="profile-${question.field}-${index}" value="${option}" required>
+            <input class="form-check-input" type="radio" name="profile-${question.field}" id="profile-${question.field}-${index}" value="${option}" ${isChecked ? 'checked' : ''} required aria-required="true">
             <label class="form-check-label" for="profile-${question.field}-${index}">${option}</label>
           </div>
         `;
       });
       html += `</div>`;
-      html += `<button type="button" class="btn btn-primary" onclick="profileSurvey.nextQuestion()">Devam Et</button>`;
     }
+
+    // Navigation buttons
+    html += `<div class="d-flex justify-content-between mt-4">`;
+    html += `<button type="button" class="btn btn-outline-secondary" onclick="profileSurvey.prevQuestion()" ${this.currentQuestion === 0 ? 'disabled' : ''} aria-label="Önceki soru">Geri</button>`;
+    
+    if (this.currentQuestion < this.totalQuestions - 1) {
+      html += `<button type="button" class="btn btn-primary" onclick="profileSurvey.nextQuestion()" aria-label="Sonraki soru">İleri</button>`;
+    } else {
+      html += `<button type="button" class="btn btn-success" onclick="profileSurvey.completeSurvey()" aria-label="Anketi tamamla">Tamamla</button>`;
+    }
+    html += `</div>`;
 
     html += `</div>`;
     return html;
+  }
+
+  prevQuestion() {
+    if (this.currentQuestion > 0) {
+      this.currentQuestion--;
+      this.render();
+    }
   }
 
   nextQuestion() {
@@ -226,7 +249,7 @@ class ProfileSurvey {
     if (question.type === 'date') {
       const birthDate = document.getElementById(`profile-${question.field}`).value;
       if (!birthDate) {
-        alert('Lütfen doğum tarihinizi giriniz.');
+        this.showError('Lütfen doğum tarihinizi giriniz.');
         return;
       }
       this.userBirthDate = birthDate;
@@ -234,16 +257,26 @@ class ProfileSurvey {
       this.answers[question.field] = birthDate;
       this.answers.age = age;
       
-      // Get name from previous answer or prompt
+      // Get name from registration data or use default
       if (!this.userName) {
-        this.userName = prompt('Lütfen adınızı giriniz:') || 'Kullanıcı';
+        const regData = localStorage.getItem('registration_step1');
+        if (regData) {
+          try {
+            const data = JSON.parse(regData);
+            this.userName = data.name || 'Kullanıcı';
+          } catch (e) {
+            this.userName = 'Kullanıcı';
+          }
+        } else {
+          this.userName = 'Kullanıcı';
+        }
       }
       message = this.getAgeMessage(age, this.userName);
     } else if (question.type === 'location') {
       const city = document.getElementById('profile-city').value;
       const district = document.getElementById('profile-district').value;
       if (!city || !district) {
-        alert('Lütfen il ve ilçe bilgilerinizi giriniz.');
+        this.showError('Lütfen il ve ilçe bilgilerinizi giriniz.');
         return;
       }
       this.answers.city = city;
@@ -252,7 +285,7 @@ class ProfileSurvey {
     } else if (question.type === 'select') {
       const selected = document.querySelector(`input[name="profile-${question.field}"]:checked`);
       if (!selected) {
-        alert('Lütfen bir seçenek seçiniz.');
+        this.showError('Lütfen bir seçenek seçiniz.');
         return;
       }
       answer = selected.value;
@@ -281,19 +314,49 @@ class ProfileSurvey {
     }, 1500);
   }
 
+  completeSurvey() {
+    const question = this.questions[this.currentQuestion];
+    let answer = null;
+
+    // Validate last question
+    if (question.type === 'select') {
+      const selected = document.querySelector(`input[name="profile-${question.field}"]:checked`);
+      if (!selected) {
+        this.showError('Lütfen bir seçenek seçiniz.');
+        return;
+      }
+      answer = selected.value;
+      this.answers[question.field] = answer;
+    }
+
+    // Save final answer
+    localStorage.setItem('profile_survey_data', JSON.stringify(this.answers));
+    
+    // Show result
+    this.showResult();
+  }
+
+  showError(message) {
+    const messageArea = document.getElementById('profile-message-area');
+    if (messageArea) {
+      messageArea.innerHTML = `<div class="alert alert-danger" role="alert"><i class="bi bi-exclamation-circle me-2"></i>${message}</div>`;
+      setTimeout(() => {
+        messageArea.innerHTML = '';
+      }, 3000);
+    }
+  }
+
   showMessage(message) {
-    const container = document.getElementById('profile-questions');
-    const messageDiv = document.createElement('div');
-    messageDiv.className = 'alert alert-info mt-3';
-    messageDiv.innerHTML = `<i class="bi bi-info-circle me-2"></i>${message}`;
-    container.appendChild(messageDiv);
-    setTimeout(() => {
-      messageDiv.remove();
-    }, 3000);
+    const messageArea = document.getElementById('profile-message-area');
+    if (messageArea) {
+      messageArea.innerHTML = `<div class="alert alert-info" role="status"><i class="bi bi-info-circle me-2"></i>${message}</div>`;
+      // Keep message visible until next question
+    }
   }
 
   updateProgress() {
-    const progress = (this.currentQuestion / this.totalQuestions) * 100;
+    // Calculate progress: (currentQuestion / totalQuestions) * 100
+    const progress = Math.round((this.currentQuestion / this.totalQuestions) * 100);
     const progressBar = document.getElementById('profile-progress-bar');
     const progressText = document.getElementById('profile-progress-text');
     
@@ -302,7 +365,7 @@ class ProfileSurvey {
       progressBar.setAttribute('aria-valuenow', progress);
     }
     if (progressText) {
-      progressText.textContent = `Soru ${this.currentQuestion}/${this.totalQuestions}`;
+      progressText.textContent = `Soru ${this.currentQuestion + 1}/${this.totalQuestions}`;
     }
   }
 
@@ -317,7 +380,16 @@ class ProfileSurvey {
       resultContent.innerHTML = this.getFinalMessage();
     }
 
-    this.updateProgress();
+    // Update progress to 100%
+    const progressBar = document.getElementById('profile-progress-bar');
+    const progressText = document.getElementById('profile-progress-text');
+    if (progressBar) {
+      progressBar.style.width = '100%';
+      progressBar.setAttribute('aria-valuenow', 100);
+    }
+    if (progressText) {
+      progressText.textContent = `Tamamlandı (${this.totalQuestions}/${this.totalQuestions})`;
+    }
     
     // Mark as completed
     localStorage.setItem('profile_completed', 'true');
@@ -325,6 +397,14 @@ class ProfileSurvey {
     // Update user progress
     if (window.userProgress) {
       window.userProgress.setProfileCompleted(true);
+    }
+    
+    // Show toast notification
+    if (typeof toastr !== 'undefined') {
+      toastr.success('Profil anketi tamamlandı! Teşekkürler.', 'Başarılı', {
+        timeOut: 3000,
+        positionClass: 'toast-bottom-right'
+      });
     }
     
     // Send to backend
@@ -345,8 +425,16 @@ class ProfileSurvey {
         },
         body: JSON.stringify(this.answers)
       });
-      // Handle response if needed
+      
+      if (response.ok) {
+        const result = await response.json();
+        console.log('Profile survey submitted successfully:', result);
+      } else {
+        console.error('Failed to submit profile survey:', response.status);
+      }
     } catch (error) {
+      console.error('Error submitting profile survey:', error);
+      // Fallback: log to console (mock behavior)
       console.log('Backend submission simulated:', this.answers);
     }
   }
@@ -495,25 +583,48 @@ class DisasterSurvey {
   }
 
   renderQuestion(question) {
-    let html = `<div class="survey-question-card mb-4">`;
-    html += `<h3 class="mb-3">${question.title}</h3>`;
+    let html = `<div class="survey-question-card mb-4" role="region" aria-labelledby="disaster-question-title">`;
+    html += `<h3 class="mb-3" id="disaster-question-title">${question.title}</h3>`;
     if (question.description) {
       html += `<p class="text-muted mb-4">${question.description}</p>`;
     }
 
-    html += `<div class="mb-3">`;
+    // Message area with aria-live
+    html += `<div id="disaster-message-area" class="mb-3" aria-live="polite" aria-atomic="true"></div>`;
+
+    const savedValue = this.answers[question.field] || '';
+    html += `<div class="mb-3" role="radiogroup" aria-labelledby="disaster-question-title">`;
     question.options.forEach((option, index) => {
+      const isChecked = savedValue === option;
       html += `
         <div class="form-check mb-2">
-          <input class="form-check-input" type="radio" name="disaster-${question.field}" id="disaster-${question.field}-${index}" value="${option}" required>
+          <input class="form-check-input" type="radio" name="disaster-${question.field}" id="disaster-${question.field}-${index}" value="${option}" ${isChecked ? 'checked' : ''} required aria-required="true">
           <label class="form-check-label" for="disaster-${question.field}-${index}">${option}</label>
         </div>
       `;
     });
     html += `</div>`;
-    html += `<button type="button" class="btn btn-danger" onclick="disasterSurvey.nextQuestion()">Devam Et</button>`;
+
+    // Navigation buttons
+    html += `<div class="d-flex justify-content-between mt-4">`;
+    html += `<button type="button" class="btn btn-outline-secondary" onclick="disasterSurvey.prevQuestion()" ${this.currentQuestion === 0 ? 'disabled' : ''} aria-label="Önceki soru">Geri</button>`;
+    
+    if (this.currentQuestion < this.totalQuestions - 1) {
+      html += `<button type="button" class="btn btn-danger" onclick="disasterSurvey.nextQuestion()" aria-label="Sonraki soru">İleri</button>`;
+    } else {
+      html += `<button type="button" class="btn btn-danger" onclick="disasterSurvey.completeSurvey()" aria-label="Anketi tamamla">Tamamla</button>`;
+    }
+    html += `</div>`;
+
     html += `</div>`;
     return html;
+  }
+
+  prevQuestion() {
+    if (this.currentQuestion > 0) {
+      this.currentQuestion--;
+      this.render();
+    }
   }
 
   nextQuestion() {
@@ -521,7 +632,7 @@ class DisasterSurvey {
     const selected = document.querySelector(`input[name="disaster-${question.field}"]:checked`);
     
     if (!selected) {
-      alert('Lütfen bir seçenek seçiniz.');
+      this.showError('Lütfen bir seçenek seçiniz.');
       return;
     }
 
@@ -560,19 +671,46 @@ class DisasterSurvey {
     }, 1500);
   }
 
+  completeSurvey() {
+    const question = this.questions[this.currentQuestion];
+    const selected = document.querySelector(`input[name="disaster-${question.field}"]:checked`);
+    
+    if (!selected) {
+      this.showError('Lütfen bir seçenek seçiniz.');
+      return;
+    }
+
+    const answer = selected.value;
+    this.answers[question.field] = answer;
+
+    // Save final answer
+    localStorage.setItem('disaster_survey_data', JSON.stringify(this.answers));
+    
+    // Show result
+    this.showResult();
+  }
+
+  showError(message) {
+    const messageArea = document.getElementById('disaster-message-area');
+    if (messageArea) {
+      messageArea.innerHTML = `<div class="alert alert-danger" role="alert"><i class="bi bi-exclamation-circle me-2"></i>${message}</div>`;
+      setTimeout(() => {
+        messageArea.innerHTML = '';
+      }, 3000);
+    }
+  }
+
   showMessage(message) {
-    const container = document.getElementById('disaster-questions');
-    const messageDiv = document.createElement('div');
-    messageDiv.className = 'alert alert-info mt-3';
-    messageDiv.innerHTML = `<i class="bi bi-info-circle me-2"></i>${message}`;
-    container.appendChild(messageDiv);
-    setTimeout(() => {
-      messageDiv.remove();
-    }, 3000);
+    const messageArea = document.getElementById('disaster-message-area');
+    if (messageArea) {
+      messageArea.innerHTML = `<div class="alert alert-info" role="status"><i class="bi bi-info-circle me-2"></i>${message}</div>`;
+      // Keep message visible until next question
+    }
   }
 
   updateProgress() {
-    const progress = (this.currentQuestion / this.totalQuestions) * 100;
+    // Calculate progress: (currentQuestion / totalQuestions) * 100
+    const progress = Math.round((this.currentQuestion / this.totalQuestions) * 100);
     const progressBar = document.getElementById('disaster-progress-bar');
     const progressText = document.getElementById('disaster-progress-text');
     
@@ -581,7 +719,7 @@ class DisasterSurvey {
       progressBar.setAttribute('aria-valuenow', progress);
     }
     if (progressText) {
-      progressText.textContent = `Soru ${this.currentQuestion}/${this.totalQuestions}`;
+      progressText.textContent = `Soru ${this.currentQuestion + 1}/${this.totalQuestions}`;
     }
   }
 
@@ -596,10 +734,32 @@ class DisasterSurvey {
       resultContent.innerHTML = this.getFinalMessage();
     }
 
-    this.updateProgress();
+    // Update progress to 100%
+    const progressBar = document.getElementById('disaster-progress-bar');
+    const progressText = document.getElementById('disaster-progress-text');
+    if (progressBar) {
+      progressBar.style.width = '100%';
+      progressBar.setAttribute('aria-valuenow', 100);
+    }
+    if (progressText) {
+      progressText.textContent = `Tamamlandı (${this.totalQuestions}/${this.totalQuestions})`;
+    }
     
     // Mark as completed
     localStorage.setItem('disaster_completed', 'true');
+    
+    // Update user progress
+    if (window.userProgress) {
+      window.userProgress.setDisasterCompleted(true);
+    }
+    
+    // Show toast notification
+    if (typeof toastr !== 'undefined') {
+      toastr.success('Afet görüşleri anketi tamamlandı! Teşekkürler.', 'Başarılı', {
+        timeOut: 3000,
+        positionClass: 'toast-bottom-right'
+      });
+    }
     
     // Send to backend
     this.submitToBackend();
@@ -619,8 +779,16 @@ class DisasterSurvey {
         },
         body: JSON.stringify(this.answers)
       });
-      // Handle response if needed
+      
+      if (response.ok) {
+        const result = await response.json();
+        console.log('Disaster survey submitted successfully:', result);
+      } else {
+        console.error('Failed to submit disaster survey:', response.status);
+      }
     } catch (error) {
+      console.error('Error submitting disaster survey:', error);
+      // Fallback: log to console (mock behavior)
       console.log('Backend submission simulated:', this.answers);
     }
   }

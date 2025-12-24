@@ -2426,6 +2426,13 @@ body.dark-mode .disaster-banner .footnote {
   margin-bottom: 20px;
 }
 
+/* Safe area support for iOS notch */
+@supports (padding: max(0px)) {
+  .header-sticky {
+    padding-top: max(16px, env(safe-area-inset-top));
+  }
+}
+
 .nav-shell {
   margin: 0 auto;
   max-width: var(--nav-max);
@@ -2438,8 +2445,8 @@ body.dark-mode .disaster-banner .footnote {
   grid-template-columns: auto 1fr auto;
   align-items: center;
   gap: 10px;
-  min-height: 64px;
-  max-height: 72px;
+  min-height: 56px;
+  max-height: 64px;
 }
 
 /* Aşırı yüksekliği engellemek için */
@@ -2465,6 +2472,46 @@ body.dark-mode .disaster-banner .footnote {
   justify-content: center;
   position: relative;
   min-width: 0;
+}
+
+/* Desktop nav - visible on md and up */
+.desktop-nav {
+  display: flex;
+}
+
+/* Mobile menu toggle button */
+.mobile-menu-toggle {
+  display: none;
+  background: transparent;
+  border: none;
+  padding: 8px;
+  margin: 0;
+  align-items: center;
+  justify-content: center;
+  cursor: pointer;
+  color: var(--title-2-color);
+  font-size: 24px;
+  line-height: 1;
+  width: 40px;
+  height: 40px;
+  border-radius: 50%;
+  transition: background-color 0.2s ease;
+}
+
+.mobile-menu-toggle:hover,
+.mobile-menu-toggle:focus {
+  background-color: rgba(0, 0, 0, 0.05);
+  outline: none;
+}
+
+.mobile-menu-toggle:focus-visible {
+  outline: 2px solid var(--brand-color);
+  outline-offset: 2px;
+}
+
+body.dark-mode .mobile-menu-toggle:hover,
+body.dark-mode .mobile-menu-toggle:focus {
+  background-color: rgba(255, 255, 255, 0.1);
 }
 
 .nav-center .navbar-collapse {
@@ -2606,82 +2653,50 @@ body.dark-mode .disaster-banner .footnote {
 
 /* Tablet & Mobil */
 @media (max-width: 992px) {
-  .nav-center .menu,
-  .nav-center .navbar-nav {
+  .desktop-nav {
     display: none !important;
   }
   
-  .nav-center .navbar-toggler {
+  .mobile-menu-toggle {
     display: flex;
+  }
+  
+  .desktop-cta {
+    display: none !important;
   }
 }
 
 @media (max-width: 768px) {
   .nav-shell {
-    grid-template-columns: auto auto auto;
+    grid-template-columns: auto 1fr auto;
+    gap: 8px;
+    padding: 8px 12px;
+    min-height: 56px;
+    max-height: 56px;
+  }
+  
+  .nav-left .logo {
+    max-height: 36px;
+    width: auto;
   }
   
   .nav-center {
-    position: relative;
+    display: none;
   }
   
-  .nav-center .navbar-collapse {
-    display: none !important;
+  .nav-right {
+    gap: 6px;
   }
   
-  .nav-center .navbar-collapse.show {
-    display: block !important;
+  .mobile-menu-toggle {
+    width: 36px;
+    height: 36px;
+    font-size: 20px;
   }
   
-  .nav-center .menu,
-  .nav-center .navbar-nav {
-    display: none !important;
-  }
-  
-  .nav-center .navbar-toggler {
-    display: flex;
-    background: transparent;
-    border: none;
-    padding: 4px 8px;
-    margin: 0;
-    align-items: center;
-    justify-content: center;
-  }
-  
-  .nav-center .navbar-toggler:focus {
-    box-shadow: none;
-    outline: none;
-  }
-  
-  .nav-center .navbar-collapse {
-    position: absolute;
-    top: calc(100% + 8px);
-    left: 50%;
-    transform: translateX(-50%);
-    width: calc(100vw - 32px);
-    max-width: 500px;
-    background: var(--nav-bg);
-    border-radius: 16px;
-    padding: 16px;
-    box-shadow: var(--nav-shadow);
-    border: 1px solid var(--nav-border);
-    z-index: 1000;
-  }
-  
-  .nav-center .navbar-collapse.show .menu {
-    display: flex;
-    flex-direction: column;
-    gap: 12px;
-    align-items: flex-start;
-  }
-  
-  .nav-center .navbar-collapse.show .menu .nav-item {
-    width: 100%;
-  }
-  
-  .nav-center .navbar-collapse.show .menu .nav-link {
-    width: 100%;
-    padding: 0.75rem 0;
+  .switch-button {
+    width: 36px;
+    height: 36px;
   }
 }
 
@@ -2695,14 +2710,26 @@ body.dark-mode .disaster-banner .footnote {
     padding-inline: 10px;
   }
   
-  .nav-shell {
-    padding: var(--nav-pad-y) 12px;
-    border-radius: 20px;
+  @supports (padding: max(0px)) {
+    .header-sticky {
+      padding-top: max(10px, env(safe-area-inset-top));
+    }
   }
   
-  .nav-right .btn-cta {
-    padding: 8px 12px;
-    font-size: 0.9rem;
+  .nav-shell {
+    padding: var(--nav-pad-y) 10px;
+    border-radius: 20px;
+    gap: 6px;
+  }
+  
+  .nav-left .logo {
+    max-height: 32px;
+  }
+  
+  .mobile-menu-toggle {
+    width: 32px;
+    height: 32px;
+    font-size: 18px;
   }
   
   .switch-button {
@@ -2740,6 +2767,149 @@ body.dark-mode .nav-center .navbar-collapse {
   background: rgba(30, 30, 30, 0.95);
   border-color: #374151;
 }
+
+/* ================= Mobile Menu Sheet Styles ===================== */
+.mobile-menu-sheet {
+  position: fixed;
+  inset: 0;
+  z-index: 50;
+  background: #fff;
+  overflow-y: auto;
+  padding: max(1rem, env(safe-area-inset-top)) 1rem max(5rem, env(safe-area-inset-bottom));
+  transform: translateX(100%);
+  transition: transform 0.3s ease-in-out;
+  visibility: hidden;
+  opacity: 0;
+}
+
+.mobile-menu-sheet.open {
+  transform: translateX(0);
+  visibility: visible;
+  opacity: 1;
+}
+
+.mobile-menu-header {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  padding: 1rem 0;
+  margin-bottom: 1rem;
+  border-bottom: 1px solid #e5e7eb;
+}
+
+.mobile-menu-title {
+  font-size: 1.25rem;
+  font-weight: 600;
+  color: var(--title-2-color);
+  margin: 0;
+}
+
+.mobile-menu-close {
+  background: transparent;
+  border: none;
+  padding: 8px;
+  margin: 0;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  cursor: pointer;
+  color: var(--title-2-color);
+  font-size: 24px;
+  line-height: 1;
+  width: 40px;
+  height: 40px;
+  border-radius: 50%;
+  transition: background-color 0.2s ease;
+}
+
+.mobile-menu-close:hover,
+.mobile-menu-close:focus {
+  background-color: rgba(0, 0, 0, 0.05);
+  outline: none;
+}
+
+.mobile-menu-close:focus-visible {
+  outline: 2px solid var(--brand-color);
+  outline-offset: 2px;
+}
+
+.mobile-menu-nav {
+  display: grid;
+  gap: 0.5rem;
+  padding: 0;
+}
+
+.mobile-nav-link {
+  display: block;
+  padding: 0.75rem 1rem;
+  border-radius: 12px;
+  background: #f9fafb;
+  color: var(--title-2-color);
+  text-decoration: none;
+  font-size: 1rem;
+  font-weight: 500;
+  transition: all 0.2s ease;
+  border: 1px solid transparent;
+}
+
+.mobile-nav-link:hover {
+  background: #f3f4f6;
+  color: var(--brand-color);
+}
+
+.mobile-nav-link:focus {
+  outline: none;
+  background: #f3f4f6;
+  border-color: var(--brand-color);
+  box-shadow: 0 0 0 3px rgba(31, 168, 79, 0.1);
+}
+
+.mobile-nav-link:active {
+  background: #e5e7eb;
+}
+
+/* Dark mode support for mobile menu */
+body.dark-mode .mobile-menu-sheet {
+  background: var(--bodyColor);
+}
+
+body.dark-mode .mobile-menu-header {
+  border-bottom-color: #374151;
+}
+
+body.dark-mode .mobile-menu-title {
+  color: var(--title-2-color);
+}
+
+body.dark-mode .mobile-menu-close {
+  color: var(--primaryColor);
+}
+
+body.dark-mode .mobile-menu-close:hover,
+body.dark-mode .mobile-menu-close:focus {
+  background-color: rgba(255, 255, 255, 0.1);
+}
+
+body.dark-mode .mobile-nav-link {
+  background: var(--boxColor);
+  color: var(--primaryColor);
+}
+
+body.dark-mode .mobile-nav-link:hover {
+  background: #2a2a2a;
+  color: var(--brand-color);
+}
+
+body.dark-mode .mobile-nav-link:focus {
+  background: #2a2a2a;
+  border-color: var(--brand-color);
+}
+
+body.dark-mode .mobile-nav-link:active {
+  background: #1e1e1e;
+}
+
+/* ================= End Mobile Menu Sheet Styles ===================== */
 
 /* ================= End Oval/Pill Navbar Styles ===================== */
 
@@ -3090,7 +3260,8 @@ body.dark-mode .skeleton-line {
   backdrop-filter: blur(10px);
   border-top: 1px solid #e2e8f0;
   padding: 12px 16px;
-  z-index: 1000;
+  padding-bottom: max(12px, env(safe-area-inset-bottom));
+  z-index: 40;
   box-shadow: 0 -4px 20px rgba(0, 0, 0, 0.1);
   display: none; /* Hidden by default, shown on mobile */
 }
@@ -3179,7 +3350,13 @@ body.dark-mode .skeleton-line {
 /* Add padding to body on mobile to prevent content from being hidden behind bar */
 @media (max-width: 768px) {
   body {
-    padding-bottom: 80px;
+    padding-bottom: max(80px, calc(80px + env(safe-area-inset-bottom)));
+  }
+  
+  /* Add padding to main content sections to prevent overlap */
+  main,
+  section {
+    padding-bottom: 1.25rem;
   }
 }
 

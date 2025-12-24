@@ -76,11 +76,8 @@
       <div class="nav-left">
         <a class="navbar-brand" href="#top"><img src="zatu-logo.png" class="logo" alt="Zatu"></a>
       </div>
-      <nav class="nav-center">
-        <button class="navbar-toggler d-lg-none" type="button" data-bs-toggle="collapse" data-bs-target="#navbarNav" aria-controls="navbarNav" aria-expanded="false" aria-label="Toggle navigation">
-          <i class="bi bi-list" id="menu"></i>
-        </button>
-        <div class="collapse navbar-collapse" id="navbarNav">
+      <nav class="nav-center desktop-nav">
+        <div class="navbar-collapse">
           <ul class="navbar-nav menu" id="navbar">
             <li class="nav-item">
               <a class="nav-link" href="#neden-variz">Neden Varız?</a>
@@ -101,12 +98,35 @@
         </div>
       </nav>
       <div class="nav-right">
-        <a class="btn btn-cta" href="kayit.html" aria-label="Ağın Parçası Ol – 2 Dakikada Kayıt">AĞIN PARÇASI OL</a>
+        <a class="btn btn-cta desktop-cta" href="kayit.html" aria-label="Ağın Parçası Ol – 2 Dakikada Kayıt">AĞIN PARÇASI OL</a>
+        <button id="mobile-menu-toggle" class="mobile-menu-toggle" type="button" aria-controls="mobile-menu" aria-expanded="false" aria-label="Menüyü aç">
+          <i class="bi bi-list" id="menu-icon"></i>
+        </button>
         <button id="mode-toggle" class="btn-light-mode switch-button"><i id="mode-icon" class="bi bi-moon-fill"></i></button>
       </div>
     </div>
   </header>
   <!-- ======= end Header ======= -->
+
+  <!-- ======= Mobile Menu Sheet ======= -->
+  <div id="mobile-menu" class="mobile-menu-sheet" role="dialog" aria-modal="true" aria-labelledby="mobile-menu-title" aria-hidden="true">
+    <div class="mobile-menu-header">
+      <span id="mobile-menu-title" class="mobile-menu-title">Menü</span>
+      <button id="mobile-menu-close" class="mobile-menu-close" aria-label="Kapat" type="button">
+        <i class="bi bi-x-lg"></i>
+      </button>
+    </div>
+    <nav class="mobile-menu-nav">
+      <a href="#nasil-calisir" class="mobile-nav-link" data-first-link>Nasıl Çalışır?</a>
+      <a href="kayit.html" class="mobile-nav-link">Ağa Katıl</a>
+      <a href="#profilini-tamamla" class="mobile-nav-link">Profilini Tamamla</a>
+      <a href="#afet-anketi" class="mobile-nav-link">Afet Görüşleri</a>
+      <a href="hakkimizda.html" class="mobile-nav-link">Hakkımızda</a>
+      <a href="sss.html" class="mobile-nav-link">SSS</a>
+      <a href="iletisim.html" class="mobile-nav-link">İletişim</a>
+    </nav>
+  </div>
+  <!-- ======= end Mobile Menu Sheet ======= -->
 
   <!-- ============== Start Hero section ========== -->
   <section class="hero d-flex flex-column justify-content-center align-items-center" id="hero">
@@ -505,6 +525,9 @@
   <!--  user progress and sticky cta bar  -->
   <script src="js/user-progress.js"></script>
   <script src="js/sticky-cta-bar.js"></script>
+
+  <!--  mobile menu  -->
+  <script src="js/mobile-menu.js"></script>
 
   <!--  main js file  -->
   <script src="js/main.js"></script>

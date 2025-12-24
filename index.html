@@ -89,7 +89,7 @@
               <a class="nav-link" href="#nasil-calisir">Nasıl Çalışır?</a>
             </li>
             <li class="nav-item">
-              <a class="nav-link" href="#kayıt">Ağa Katıl</a>
+              <a class="nav-link" href="kayit.html">Ağa Katıl</a>
             </li>
             <li class="nav-item">
               <a class="nav-link" href="#profilini-tamamla">Profilini Tamamla</a>
@@ -101,7 +101,7 @@
         </div>
       </nav>
       <div class="nav-right">
-        <a class="btn btn-cta" href="#kayıt" aria-label="Ağın Parçası Ol – 2 Dakikada Kayıt">AĞIN PARÇASI OL</a>
+        <a class="btn btn-cta" href="kayit.html" aria-label="Ağın Parçası Ol – 2 Dakikada Kayıt">AĞIN PARÇASI OL</a>
         <button id="mode-toggle" class="btn-light-mode switch-button"><i id="mode-icon" class="bi bi-moon-fill"></i></button>
       </div>
     </div>
@@ -127,7 +127,7 @@
             </div>
             <div class="col-12" data-aos="fade-up" data-aos-delay="250">
               <div class="hero-buttons">
-                <a href="#kayıt" class="btn" aria-label="Ağın Parçası Ol – 2 Dakikada Kayıt">AĞIN PARÇASI OL – 2 DAKİKADA KAYIT</a>
+                <a href="kayit.html" class="btn" aria-label="Ağın Parçası Ol – 2 Dakikada Kayıt">AĞIN PARÇASI OL – 2 DAKİKADA KAYIT</a>
                 <a href="#nasil-calisir" class="btn btn-outline" aria-label="Nasıl Çalışır bölümüne git">NASIL ÇALIŞIR?</a>
               </div>
             </div>
@@ -293,7 +293,7 @@
       <!-- CTA Butonları -->
       <div class="row mt-5">
         <div class="col-12 text-center actions-center" data-aos="fade-up" data-aos-delay="350">
-          <a href="#kayıt" class="btn" aria-label="Hemen Başla">HEMEN BAŞLA</a>
+          <a href="kayit.html" class="btn" aria-label="Hemen Başla">HEMEN BAŞLA</a>
           <a href="#nasil-calisir" class="btn btn-outline">Uygulamayı Tanı</a>
         </div>
       </div>
@@ -302,7 +302,7 @@
   <!-- ============== End About section (Nasıl Çalışır) ========== -->
 
   <!-- ============== Start Profilini Tamamla section ========== -->
-  <section id="profilini-tamamla" class="profile-banner py-5">
+  <section id="profilini-tamamla" class="profile-banner py-5" id="profile-survey-section">
     <div class="container">
       <div class="text-center" style="max-width: 900px; margin: 0 auto;">
         <span class="pretitle" data-aos="fade-up">
@@ -314,28 +314,28 @@
         <p class="col-lg-8 col-12 mx-auto" data-aos="fade-up" data-aos-delay="150" style="color: #475569; margin-bottom: 1.5rem;">
           Sana özel öneriler almak için sadece 2 dakikanı ayır.
         </p>
-        
-        <div data-aos="fade-up" data-aos-delay="200">
-          <a href="#profil-anket" class="btn btn-large" aria-label="2 Dakikada Tamamla">2 DAKİKADA TAMAMLA</a>
-          <p class="progress-mini muted" style="margin-top: 0.75rem; color: #94a3b8; font-size: 0.875rem;">Soru 1/5</p>
-        </div>
 
-        <div class="info-grid mt-5" data-aos="fade-up" data-aos-delay="250">
-          <div class="info-box">
-            <span class="info-icon">🧭</span>
-            <h4 class="info-title">Seni Biraz Tanıyalım</h4>
-            <ul class="info-list">
-              <li>Yaş grubuna göre özel mesajlar alırsın</li>
-              <li>26 yaş altı, 27–35, 35+ varyantları</li>
-            </ul>
+        <!-- Profile Survey Component -->
+        <div id="profile-survey-container" class="survey-container">
+          <!-- Progress Bar -->
+          <div class="survey-progress mb-4">
+            <div class="progress" style="height: 8px; border-radius: 10px;">
+              <div class="progress-bar bg-success" id="profile-progress-bar" role="progressbar" style="width: 0%;" aria-valuenow="0" aria-valuemin="0" aria-valuemax="100"></div>
+            </div>
+            <p class="progress-text mt-2" id="profile-progress-text" style="color: #94a3b8; font-size: 0.875rem;">Soru 0/5</p>
           </div>
-          <div class="info-box">
-            <span class="info-icon">🏠</span>
-            <h4 class="info-title">Yaşam Durumu Analizi</h4>
-            <ul class="info-list">
-              <li>Bina yaşı, duygu durumu, yaşam alanı</li>
-              <li>Risk skoruna göre kişisel öneriler</li>
-            </ul>
+
+          <!-- Question Container -->
+          <div id="profile-questions" class="survey-questions">
+            <!-- Questions will be dynamically inserted here -->
+          </div>
+
+          <!-- Result Message -->
+          <div id="profile-result" class="survey-result d-none">
+            <div class="alert alert-success">
+              <h4>Teşekkürler, yanıtların kaydedildi!</h4>
+              <div id="profile-result-content"></div>
+            </div>
           </div>
         </div>
 
@@ -348,7 +348,7 @@
   <!-- ============== End Profilini Tamamla section ========== -->
 
   <!-- ============== Start Afet Görüşlerini Paylaş section ========== -->
-  <section id="afet-anketi" class="disaster-banner py-5">
+  <section id="afet-anketi" class="disaster-banner py-5" id="disaster-survey-section">
     <div class="container">
       <div class="text-center" style="max-width: 900px; margin: 0 auto;">
         <span class="pretitle alert-tag" data-aos="fade-up">
@@ -360,10 +360,29 @@
         <p class="col-lg-8 col-12 mx-auto" data-aos="fade-up" data-aos-delay="150" style="color: #374151; margin-bottom: 1.5rem; line-height: 1.6;">
           Her yanıt, yaşadığın bölgedeki AFAD analizine dahil edilir.<br>Seni ilgilendiren çözümler için 5 kısa soruyu yanıtla.
         </p>
-        
-        <div data-aos="fade-up" data-aos-delay="200">
-          <a href="#afet-formu" class="btn btn-alert btn-large" aria-label="5 Soruda Katkıda Bulun">5 SORUDA KATKIDA BULUN</a>
-          <p class="progress-mini muted" style="margin-top: 0.75rem; color: #9ca3af; font-size: 0.875rem;">Afet Anketi 1/5</p>
+
+        <!-- Disaster Survey Component -->
+        <div id="disaster-survey-container" class="survey-container">
+          <!-- Progress Bar -->
+          <div class="survey-progress mb-4">
+            <div class="progress" style="height: 8px; border-radius: 10px;">
+              <div class="progress-bar bg-danger" id="disaster-progress-bar" role="progressbar" style="width: 0%;" aria-valuenow="0" aria-valuemin="0" aria-valuemax="100"></div>
+            </div>
+            <p class="progress-text mt-2" id="disaster-progress-text" style="color: #9ca3af; font-size: 0.875rem;">Soru 0/5</p>
+          </div>
+
+          <!-- Question Container -->
+          <div id="disaster-questions" class="survey-questions">
+            <!-- Questions will be dynamically inserted here -->
+          </div>
+
+          <!-- Result Message -->
+          <div id="disaster-result" class="survey-result d-none">
+            <div class="alert alert-success">
+              <h4>Teşekkürler, yanıtların kaydedildi!</h4>
+              <div id="disaster-result-content"></div>
+            </div>
+          </div>
         </div>
 
         <p class="footnote muted mt-4" data-aos="fade-up" data-aos-delay="250" style="color: #9ca3af; font-size: 0.85rem; margin-top: 2rem; line-height: 1.6;">
@@ -381,73 +400,48 @@
   <div class="footer">
     <div class="container">
       <div class="row justify-content-center align-items-center g-4">
-        <div class="col-12 col-lg-3 col-md-6 mx-auto my-4">
+        <div class="col-12 col-lg-4 col-md-6 mx-auto my-4">
           <div class="box d-flex flex-column justify-content-md-start justify-content-lg-start justify-content-center align-items-center align-items-lg-start align-items-md-start">
-            <a href="#" class="logo "><img class="my-2" src="zatu-logo.png" alt=""></a>
-            <p>Lorem ipsum dolor sit amet
-              aspernatur exercitationem fugiat.</p>
+            <a href="#top" class="logo"><img class="my-2" src="zatu-logo.png" alt="Zatu"></a>
+            <p>Zatu, Türkiye'nin ulusal afet hazırlık ağıdır. Komşularınızla önceden bağlantı kurarak afetlere hazırlıklı olun.</p>
             <h4 class="my-2">
-              follow us
+              Bizi Takip Edin
             </h4>
             <div class="social d-flex gap-2">
               <div class="icon"><i class="bi bi-facebook"></i></div>
               <div class="icon"><i class="bi bi-instagram"></i></div>
-              <div class="icon"><i class="bi bi-twitter-x "></i></div>
+              <div class="icon"><i class="bi bi-twitter-x"></i></div>
               <div class="icon"><i class="bi bi-youtube"></i></div>
             </div>
           </div>
         </div>
-        <div class="col-12 col-lg-3 col-md-6 mx-auto d-flex flex-column justify-content-md-start justify-content-lg-start justify-content-center align-items-center align-items-lg-start align-items-md-start my-4 gap-3">
-          <h4>site map</h4>
+        <div class="col-12 col-lg-8 col-md-6 mx-auto d-flex flex-column justify-content-md-start justify-content-lg-start justify-content-center align-items-center align-items-lg-start align-items-md-start my-4 gap-3">
+          <h4>Hızlı Bağlantılar</h4>
           <ul class="d-flex flex-column gap-3">
-            <li class="d-flex align-items-center gap-2"><i class="bi bi-chevron-right"></i><a href="index.html">home</a>
-            </li>
-            <li class="d-flex align-items-center gap-2"><i class="bi bi-chevron-right"></i><a href="about.html">about</a></li>
-            <li class="d-flex align-items-center gap-2"><i class="bi bi-chevron-right"></i><a href="services.html">services</a></li>
-          </ul>
-        </div>
-        <div class="col-12 col-lg-3 col-md-6 mx-auto d-flex flex-column justify-content-md-start justify-content-lg-start justify-content-center align-items-center align-items-lg-start align-items-md-start my-4 gap-3">
-          <h4>follow us</h4>
-          <ul class="d-flex flex-column gap-3">
-            <li class="d-flex align-items-center gap-2"><i class="bi bi-chevron-right"></i><a href="#">facebook</a>
-            </li>
-            <li class="d-flex align-items-center gap-2"><i class="bi bi-chevron-right"></i><a href="#">instagram</a>
-            </li>
-            <li class="d-flex align-items-center gap-2"><i class="bi bi-chevron-right"></i><a href="#">linkedin</a></li>
-            <li class="d-flex align-items-center gap-2"><i class="bi bi-chevron-right"></i><a href="#">x</a></li>
-          </ul>
-        </div>
-        <div class="col-12 col-lg-3 col-md-6 mx-auto d-flex flex-column justify-content-md-start justify-content-lg-start justify-content-center align-items-center align-items-lg-start align-items-md-start my-4 gap-3">
-          <h4>our services</h4>
-          <ul class="d-flex flex-column gap-3">
-            <li class="d-flex align-items-center gap-2"><i class="bi bi-chevron-right"></i><a href="#">digital
-                marketing</a>
-            </li>
-            <li class="d-flex align-items-center gap-2"><i class="bi bi-chevron-right"></i><a href="#">web
-                developement</a>
-            </li>
-            <li class="d-flex align-items-center gap-2"><i class="bi bi-chevron-right"></i><a href="#">cyber
-                security</a></li>
-            <li class="d-flex align-items-center gap-2"><i class="bi bi-chevron-right"></i><a href="#">graphic
-                design</a></li>
+            <li class="d-flex align-items-center gap-2"><i class="bi bi-chevron-right"></i><a href="hakkimizda.html">Hakkımızda</a></li>
+            <li class="d-flex align-items-center gap-2"><i class="bi bi-chevron-right"></i><a href="sss.html">SSS</a></li>
+            <li class="d-flex align-items-center gap-2"><i class="bi bi-chevron-right"></i><a href="iletisim.html">İletişim</a></li>
+            <li class="d-flex align-items-center gap-2"><i class="bi bi-chevron-right"></i><a href="gizlilik-politikasi.html">Gizlilik Politikası</a></li>
+            <li class="d-flex align-items-center gap-2"><i class="bi bi-chevron-right"></i><a href="kvkk-aydinlatma-metni.html">KVKK Aydınlatma Metni</a></li>
+            <li class="d-flex align-items-center gap-2"><i class="bi bi-chevron-right"></i><a href="cerez-politikasi.html">Çerez Politikası</a></li>
+            <li class="d-flex align-items-center gap-2"><i class="bi bi-chevron-right"></i><a href="kullanim-sartlari.html">Kullanım Şartları</a></li>
           </ul>
         </div>
       </div>
     </div>
     <hr>
-    <div class="copyrights ">
+    <div class="copyrights">
       <div class="container">
         <div class="row">
           <div class="col-12 col-md-6 d-flex justify-content-lg-start justify-content-md-start justify-content-center">
             <p class="creadits">
-              © 2024
-              Created by: <a href="#">erramix</a>
+              © 2025 Zatu. Tüm hakları saklıdır.
             </p>
           </div>
           <div class="col-12 col-md-6 d-flex justify-content-lg-end justify-content-md-end justify-content-center pb-md-0 pb-md-0 pb-lg-0 pb-3">
             <div>
-              <a href="terms-of-use.html">Terms of Use </a>
-              | <a href="privacy-policy.html">Privacy Policy</a>
+              <a href="kullanim-sartlari.html">Kullanım Şartları</a>
+              | <a href="gizlilik-politikasi.html">Gizlilik Politikası</a>
             </div>
           </div>
         </div>
@@ -489,6 +483,9 @@
 
   <!--  Tilt.js file     -->
   <script src="https://cdnjs.cloudflare.com/ajax/libs/vanilla-tilt/1.7.0/vanilla-tilt.min.js"></script>
+
+  <!--  surveys js file  -->
+  <script src="js/surveys.js"></script>
 
   <!--  main js file  -->
   <script src="js/main.js"></script>

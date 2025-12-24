@@ -587,6 +587,77 @@ svg {
   font-size: 52px;
 }
 
+/* Hero Title: Center on mobile, left on md+ */
+.hero .hero-title {
+  text-align: center;
+  max-width: 100%;
+  word-wrap: break-word;
+  line-height: 1.2;
+}
+
+/* Hero List: Keep left-aligned, add max-width and spacing */
+.hero .hero-list {
+  text-align: left;
+  max-width: 100%;
+  line-height: 1.8;
+}
+
+/* Hero Buttons: Center on mobile, left on md+ */
+.hero .hero-buttons {
+  display: flex;
+  flex-direction: column;
+  gap: 1rem;
+  align-items: center;
+  justify-content: center;
+  width: 100%;
+}
+
+.hero .hero-buttons .btn {
+  width: 100%;
+  max-width: 100%;
+  text-align: center;
+  margin: 0;
+}
+
+@media (min-width: 768px) {
+  .hero .hero-title {
+    text-align: left;
+  }
+  
+  .hero .hero-buttons {
+    flex-direction: row;
+    justify-content: flex-start;
+    align-items: flex-start;
+  }
+  
+  .hero .hero-buttons .btn {
+    width: auto;
+    max-width: none;
+  }
+}
+
+@media (max-width: 767px) {
+  .hero .hero-title {
+    font-size: 32px;
+    line-height: 1.2;
+    text-align: center;
+  }
+  
+  .hero .hero-list {
+    font-size: 15px;
+    line-height: 1.7;
+  }
+  
+  .hero .hero-buttons {
+    width: 100%;
+  }
+  
+  .hero .hero-buttons .btn {
+    width: 100%;
+    max-width: 100%;
+  }
+}
+
 .hero .hero-icons a {
   width: 36px;
   height: 36px;
@@ -612,8 +683,26 @@ svg {
 
 @media (max-width: 990px) {
   .hero .hero-text .title {
-    line-height: 65px;
+    line-height: 1.3;
     font-size: 44px;
+  }
+  
+  .hero .hero-title {
+    font-size: 36px;
+    line-height: 1.2;
+  }
+}
+
+/* Hero text container max-width to prevent overflow */
+.hero .hero-text {
+  max-width: 100%;
+  padding: 0 1rem;
+}
+
+@media (min-width: 768px) {
+  .hero .hero-text {
+    max-width: 42rem; /* ~672px, similar to max-w-5xl in Tailwind */
+    padding: 0;
   }
 }
 
@@ -1841,6 +1930,8 @@ svg {
   gap: 1rem;
   margin-top: 1rem;
   align-items: center;
+  justify-content: center;
+  width: 100%;
 }
 
 .hero-buttons .btn {
@@ -1883,21 +1974,36 @@ svg {
 }
 
 /* Mobile responsive for hero buttons */
-@media (max-width: 768px) {
+@media (max-width: 767px) {
   .hero-buttons {
     flex-direction: column;
     align-items: stretch;
     gap: 0.75rem;
+    justify-content: center;
   }
   
   .hero-buttons .btn {
     width: 100%;
     text-align: center;
+    max-width: 100%;
   }
   
   .hero-trust {
     font-size: 0.8125rem;
     gap: 0.4rem;
+  }
+}
+
+/* Desktop: Left align buttons */
+@media (min-width: 768px) {
+  .hero-buttons {
+    justify-content: flex-start;
+    align-items: flex-start;
+  }
+  
+  .hero-buttons .btn {
+    width: auto;
+    max-width: none;
   }
 }
 

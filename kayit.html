@@ -210,6 +210,9 @@
               </div>
             </div>
           </div>
+
+          <!-- City Stats Card (shown after registration) -->
+          <div id="registration-city-stats" class="mt-5"></div>
         </div>
       </div>
     </div>
@@ -265,12 +268,21 @@
       };
       localStorage.setItem('registration_step2', JSON.stringify(step2Data));
 
+      // Update user progress
+      if (window.userProgress) {
+        window.userProgress.setRegistered(true);
+      }
+
       // Show success message
       showSuccessMessage('Şehir bilgileriniz kaydedildi!');
       
       // Move to next step
       setTimeout(() => {
         goToStep(3);
+        // Initialize city stats when step 3 is shown
+        setTimeout(() => {
+          initCityStats();
+        }, 500);
       }, 1000);
     });
 
@@ -309,6 +321,20 @@
       setTimeout(() => {
         successEl.classList.add('d-none');
       }, 3000);
+    }
+
+    // Initialize city stats after step 2 completion
+    function initCityStats() {
+      const step2Data = localStorage.getItem('registration_step2');
+      if (step2Data) {
+        const data = JSON.parse(step2Data);
+        if (data.city && document.getElementById('registration-city-stats')) {
+          if (window.registrationCityStats) {
+            window.registrationCityStats.destroy();
+          }
+          window.registrationCityStats = new CityStatsCard('registration-city-stats', data.city);
+        }
+      }
     }
 
     // Load saved data on page load

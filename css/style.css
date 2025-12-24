@@ -2969,3 +2969,245 @@ body.dark-mode .survey-question-card .form-check:hover {
 }
 
 /* ================= End Survey Component Styles ===================== */
+
+/* ================= City Stats Card Styles ===================== */
+.city-stats-card {
+  background: #fff;
+  border-radius: 16px;
+  padding: 32px;
+  box-shadow: 0 4px 20px rgba(0, 0, 0, 0.08);
+  border: 1px solid #e2e8f0;
+  animation: fadeIn 0.5s ease-in;
+}
+
+.city-stats-title {
+  color: var(--title-2-color);
+  font-size: 1.5rem;
+  font-weight: 700;
+  margin-bottom: 24px;
+  text-align: center;
+}
+
+.city-stats-content {
+  text-align: center;
+}
+
+.city-stats-item {
+  font-size: 1.1rem;
+  color: var(--primaryColor);
+  margin-bottom: 16px;
+  line-height: 1.6;
+}
+
+.city-stats-item strong {
+  color: var(--brand-color);
+  font-size: 1.3rem;
+  font-weight: 700;
+}
+
+.city-stats-item .counter {
+  display: inline-block;
+  min-width: 80px;
+  text-align: center;
+}
+
+/* Loading skeleton */
+.skeleton-loader {
+  padding: 20px;
+}
+
+.skeleton-line {
+  background: linear-gradient(90deg, #f0f0f0 25%, #e0e0e0 50%, #f0f0f0 75%);
+  background-size: 200% 100%;
+  animation: loading 1.5s ease-in-out infinite;
+  border-radius: 4px;
+}
+
+@keyframes loading {
+  0% {
+    background-position: 200% 0;
+  }
+  100% {
+    background-position: -200% 0;
+  }
+}
+
+.city-stats-card.loading,
+.city-stats-card.error {
+  padding: 24px;
+}
+
+.city-stats-card.error .alert {
+  border-radius: 12px;
+}
+
+@media (max-width: 768px) {
+  .city-stats-card {
+    padding: 24px;
+  }
+
+  .city-stats-title {
+    font-size: 1.25rem;
+  }
+
+  .city-stats-item {
+    font-size: 1rem;
+  }
+
+  .city-stats-item strong {
+    font-size: 1.15rem;
+  }
+}
+
+body.dark-mode .city-stats-card {
+  background: #1e293b;
+  border-color: #334155;
+  box-shadow: 0 4px 20px rgba(0, 0, 0, 0.3);
+}
+
+body.dark-mode .city-stats-title {
+  color: var(--title-2-color);
+}
+
+body.dark-mode .city-stats-item {
+  color: #f1f5f9;
+}
+
+body.dark-mode .skeleton-line {
+  background: linear-gradient(90deg, #334155 25%, #475569 50%, #334155 75%);
+  background-size: 200% 100%;
+}
+
+/* ================= End City Stats Card Styles ===================== */
+
+/* ================= Sticky CTA Bar Styles ===================== */
+.sticky-cta-bar {
+  position: fixed;
+  bottom: 0;
+  left: 0;
+  right: 0;
+  background: rgba(255, 255, 255, 0.95);
+  backdrop-filter: blur(10px);
+  border-top: 1px solid #e2e8f0;
+  padding: 12px 16px;
+  z-index: 1000;
+  box-shadow: 0 -4px 20px rgba(0, 0, 0, 0.1);
+  display: none; /* Hidden by default, shown on mobile */
+}
+
+.sticky-cta-bar.d-none {
+  display: none !important;
+}
+
+.sticky-cta-bar-content {
+  display: flex;
+  gap: 12px;
+  max-width: 100%;
+  width: 100%;
+}
+
+.sticky-cta-btn {
+  flex: 1;
+  padding: 14px 20px;
+  font-size: 0.9375rem;
+  font-weight: 700;
+  border-radius: 12px;
+  text-align: center;
+  transition: all 0.2s ease;
+  white-space: nowrap;
+  letter-spacing: 0.02em;
+  border: 2px solid transparent;
+}
+
+.sticky-cta-btn-primary {
+  background: #0f172a;
+  color: #fff;
+  border-color: #0f172a;
+}
+
+.sticky-cta-btn-primary:hover,
+.sticky-cta-btn-primary:focus {
+  background: #1e293b;
+  border-color: #1e293b;
+  color: #fff;
+  transform: translateY(-1px);
+  box-shadow: 0 4px 12px rgba(15, 23, 42, 0.3);
+}
+
+.sticky-cta-btn-secondary {
+  background: transparent;
+  color: var(--brand-color);
+  border-color: var(--brand-color);
+}
+
+.sticky-cta-btn-secondary:hover,
+.sticky-cta-btn-secondary:focus {
+  background: var(--brand-color);
+  color: #fff;
+  border-color: var(--brand-color);
+  transform: translateY(-1px);
+  box-shadow: 0 4px 12px rgba(31, 168, 79, 0.3);
+}
+
+.sticky-cta-btn:focus {
+  outline: none;
+  box-shadow: 0 0 0 3px rgba(31, 168, 79, 0.3);
+}
+
+.sticky-cta-btn-primary:focus {
+  box-shadow: 0 0 0 3px rgba(15, 23, 42, 0.3);
+}
+
+.sticky-cta-btn-secondary:focus {
+  box-shadow: 0 0 0 3px rgba(31, 168, 79, 0.3);
+}
+
+/* Show only on mobile */
+@media (max-width: 768px) {
+  .sticky-cta-bar {
+    display: block;
+  }
+}
+
+/* Hide on desktop */
+@media (min-width: 769px) {
+  .sticky-cta-bar {
+    display: none !important;
+  }
+}
+
+/* Add padding to body on mobile to prevent content from being hidden behind bar */
+@media (max-width: 768px) {
+  body {
+    padding-bottom: 80px;
+  }
+}
+
+body.dark-mode .sticky-cta-bar {
+  background: rgba(30, 30, 30, 0.95);
+  border-top-color: #334155;
+}
+
+body.dark-mode .sticky-cta-btn-primary {
+  background: #1fa84f;
+  border-color: #1fa84f;
+}
+
+body.dark-mode .sticky-cta-btn-primary:hover,
+body.dark-mode .sticky-cta-btn-primary:focus {
+  background: #1a8a42;
+  border-color: #1a8a42;
+}
+
+body.dark-mode .sticky-cta-btn-secondary {
+  color: #1fa84f;
+  border-color: #1fa84f;
+}
+
+body.dark-mode .sticky-cta-btn-secondary:hover,
+body.dark-mode .sticky-cta-btn-secondary:focus {
+  background: #1fa84f;
+  color: #fff;
+}
+
+/* ================= End Sticky CTA Bar Styles ===================== */

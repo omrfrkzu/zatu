@@ -301,6 +301,16 @@
   </section>
   <!-- ============== End About section (Nasıl Çalışır) ========== -->
 
+  <!-- ============== Start City Stats Section ========== -->
+  <section class="container py-5" id="city-stats-section">
+    <div class="row justify-content-center">
+      <div class="col-12 col-lg-8">
+        <div id="city-stats-container"></div>
+      </div>
+    </div>
+  </section>
+  <!-- ============== End City Stats Section ========== -->
+
   <!-- ============== Start Profilini Tamamla section ========== -->
   <section id="profilini-tamamla" class="profile-banner py-5" id="profile-survey-section">
     <div class="container">
@@ -487,8 +497,42 @@
   <!--  surveys js file  -->
   <script src="js/surveys.js"></script>
 
+  <!--  city stats js files  -->
+  <script src="js/api-stats.js"></script>
+  <script src="js/counter.js"></script>
+  <script src="js/city-stats.js"></script>
+
+  <!--  user progress and sticky cta bar  -->
+  <script src="js/user-progress.js"></script>
+  <script src="js/sticky-cta-bar.js"></script>
+
   <!--  main js file  -->
   <script src="js/main.js"></script>
+
+  <!-- Initialize City Stats -->
+  <script>
+    document.addEventListener('DOMContentLoaded', function() {
+      // Get city from localStorage (from registration) or default to İstanbul
+      const step2Data = localStorage.getItem('registration_step2');
+      let city = 'İstanbul';
+      
+      if (step2Data) {
+        try {
+          const data = JSON.parse(step2Data);
+          if (data.city) {
+            city = data.city;
+          }
+        } catch (e) {
+          console.error('Error parsing registration data:', e);
+        }
+      }
+
+      // Initialize city stats card
+      if (document.getElementById('city-stats-container')) {
+        window.cityStatsCard = new CityStatsCard('city-stats-container', city);
+      }
+    });
+  </script>
 
 
 

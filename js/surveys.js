@@ -322,6 +322,11 @@ class ProfileSurvey {
     // Mark as completed
     localStorage.setItem('profile_completed', 'true');
     
+    // Update user progress
+    if (window.userProgress) {
+      window.userProgress.setProfileCompleted(true);
+    }
+    
     // Send to backend
     this.submitToBackend();
     

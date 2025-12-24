@@ -327,12 +327,18 @@
     function initCityStats() {
       const step2Data = localStorage.getItem('registration_step2');
       if (step2Data) {
-        const data = JSON.parse(step2Data);
-        if (data.city && document.getElementById('registration-city-stats')) {
-          if (window.registrationCityStats) {
-            window.registrationCityStats.destroy();
+        try {
+          const data = JSON.parse(step2Data);
+          if (data.city && document.getElementById('registration-city-stats')) {
+            // Destroy existing instance if any
+            if (window.registrationCityStats) {
+              window.registrationCityStats.destroy();
+            }
+            // Create new CityStatsCard instance with 60s polling and animated counter
+            window.registrationCityStats = new CityStatsCard('registration-city-stats', data.city);
           }
-          window.registrationCityStats = new CityStatsCard('registration-city-stats', data.city);
+        } catch (e) {
+          console.error('Error initializing city stats:', e);
         }
       }
     }
@@ -354,6 +360,37 @@
         document.getElementById('district').value = data.district || '';
         document.getElementById('buildingAge').value = data.buildingAge || '';
         document.getElementById('floor').value = data.floor || '';
+      }
+    });
+  </script>
+
+  <!-- City Stats Scripts -->
+  <script src="js/api-stats.js"></script>
+  <script src="js/counter.js"></script>
+  <script src="js/city-stats.js"></script>
+
+  <!-- Initialize City Stats after registration -->
+  <script>
+    // Initialize city stats after step 2 completion
+    function initCityStats() {
+      const step2Data = localStorage.getItem('registration_step2');
+      if (step2Data) {
+        const data = JSON.parse(step2Data);
+        if (data.city && document.getElementById('registration-city-stats')) {
+          if (window.registrationCityStats) {
+            window.registrationCityStats.destroy();
+          }
+          window.registrationCityStats = new CityStatsCard('registration-city-stats', data.city);
+        }
+      }
+    }
+
+    // Call initCityStats when step 2 is completed
+    document.addEventListener('DOMContentLoaded', function() {
+      // Check if we're on step 3 (after city selection)
+      const currentStep = parseInt(localStorage.getItem('registration_current_step') || '1');
+      if (currentStep >= 2) {
+        initCityStats();
       }
     });
   </script>

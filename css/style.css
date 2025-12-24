@@ -2147,6 +2147,113 @@ body.dark-mode .how-it-works .card.step {
   background: var(--boxColor);
 }
 
+/* App Download Section Styles */
+.app-download-section {
+  margin-top: 1.5rem;
+  padding-top: 1.5rem;
+  border-top: 1px solid #e5e7eb;
+}
+
+.qr-code-container {
+  margin-bottom: 1.5rem;
+}
+
+.qr-placeholder {
+  display: inline-block;
+  background: #f9fafb;
+  border: 2px dashed #cbd5e1;
+  border-radius: 12px;
+  transition: all 0.2s ease;
+}
+
+.qr-placeholder:hover {
+  border-color: var(--brand-color);
+  background: #f0fdf4;
+}
+
+.app-links {
+  margin-top: 1rem;
+}
+
+.app-store-btn,
+.google-play-btn {
+  min-width: 180px;
+  padding: 12px 24px;
+  font-weight: 600;
+  border-radius: 12px;
+  transition: all 0.2s ease;
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+}
+
+.app-store-btn:hover,
+.google-play-btn:hover {
+  transform: translateY(-2px);
+  box-shadow: 0 4px 12px rgba(0, 0, 0, 0.15);
+}
+
+.app-store-btn i,
+.google-play-btn i {
+  font-size: 1.25rem;
+}
+
+/* Responsive for app download section */
+@media (max-width: 640px) {
+  .app-download-section {
+    margin-top: 1rem;
+    padding-top: 1rem;
+  }
+  
+  .qr-placeholder {
+    width: 150px !important;
+    height: 150px !important;
+  }
+  
+  .qr-placeholder i {
+    font-size: 60px !important;
+  }
+  
+  .app-store-btn,
+  .google-play-btn {
+    width: 100%;
+    min-width: auto;
+  }
+  
+  .app-links .d-flex {
+    flex-direction: column;
+    width: 100%;
+  }
+}
+
+/* Dark mode support for app download */
+body.dark-mode .app-download-section {
+  border-top-color: #374151;
+}
+
+body.dark-mode .qr-placeholder {
+  background: var(--bodyColor);
+  border-color: #4b5563;
+}
+
+body.dark-mode .qr-placeholder:hover {
+  border-color: var(--brand-color);
+  background: rgba(31, 168, 79, 0.1);
+}
+
+body.dark-mode .app-store-btn,
+body.dark-mode .google-play-btn {
+  border-color: #4b5563;
+  color: var(--primaryColor);
+}
+
+body.dark-mode .app-store-btn:hover,
+body.dark-mode .google-play-btn:hover {
+  background: #374151;
+  border-color: var(--brand-color);
+  color: var(--primaryColor);
+}
+
 /* ================= End Nasıl Çalışır Section Styles ===================== */
 
 /* ================= Profilini Tamamla Section Styles ===================== */

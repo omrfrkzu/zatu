@@ -246,6 +246,7 @@ class ProfileSurvey {
     let answer = null;
     let message = '';
 
+    // State-based answer collection
     if (question.type === 'date') {
       const birthDate = document.getElementById(`profile-${question.field}`).value;
       if (!birthDate) {
@@ -271,6 +272,7 @@ class ProfileSurvey {
           this.userName = 'Kullanıcı';
         }
       }
+      // Generate TR message based on answer
       message = this.getAgeMessage(age, this.userName);
     } else if (question.type === 'location') {
       const city = document.getElementById('profile-city').value;
@@ -281,6 +283,7 @@ class ProfileSurvey {
       }
       this.answers.city = city;
       this.answers.district = district;
+      // Generate TR message based on answer
       message = this.getLocationMessage(city, Math.floor(Math.random() * 100) + 1);
     } else if (question.type === 'select') {
       const selected = document.querySelector(`input[name="profile-${question.field}"]:checked`);
@@ -291,6 +294,7 @@ class ProfileSurvey {
       answer = selected.value;
       this.answers[question.field] = answer;
 
+      // Generate TR message based on answer state
       if (question.id === 'buildingAge') {
         message = this.getBuildingAgeMessage(answer);
       } else if (question.id === 'feeling') {
@@ -300,15 +304,21 @@ class ProfileSurvey {
       }
     }
 
-    // Show message
+    // Show TR message immediately after answer
     if (message) {
       this.showMessage(message);
     }
 
-    // Save progress
+    // Save state to localStorage
     localStorage.setItem('profile_survey_data', JSON.stringify(this.answers));
 
+    // Move to next question
     this.currentQuestion++;
+    
+    // Update progress with milestone
+    this.updateProgress();
+    
+    // Render next question after short delay
     setTimeout(() => {
       this.render();
     }, 1500);
@@ -355,8 +365,17 @@ class ProfileSurvey {
   }
 
   updateProgress() {
-    // Calculate progress: (currentQuestion / totalQuestions) * 100
-    const progress = Math.round((this.currentQuestion / this.totalQuestions) * 100);
+    // Calculate progress with milestones: %33/%66/%100
+    // 5 questions: Q1-2 = 33%, Q3-4 = 66%, Q5 = 100%
+    let progress = 0;
+    if (this.currentQuestion <= 1) {
+      progress = 33; // Questions 1-2
+    } else if (this.currentQuestion <= 3) {
+      progress = 66; // Questions 3-4
+    } else {
+      progress = 100; // Question 5
+    }
+    
     const progressBar = document.getElementById('profile-progress-bar');
     const progressText = document.getElementById('profile-progress-text');
     
@@ -380,7 +399,7 @@ class ProfileSurvey {
       resultContent.innerHTML = this.getFinalMessage();
     }
 
-    // Update progress to 100%
+    // Update progress to 100% milestone
     const progressBar = document.getElementById('profile-progress-bar');
     const progressText = document.getElementById('profile-progress-text');
     if (progressBar) {
@@ -391,10 +410,10 @@ class ProfileSurvey {
       progressText.textContent = `Tamamlandı (${this.totalQuestions}/${this.totalQuestions})`;
     }
     
-    // Mark as completed
+    // Mark as completed in state
     localStorage.setItem('profile_completed', 'true');
     
-    // Update user progress
+    // Update user progress state
     if (window.userProgress) {
       window.userProgress.setProfileCompleted(true);
     }
@@ -407,10 +426,10 @@ class ProfileSurvey {
       });
     }
     
-    // Send to backend
+    // POST to /api/survey/profile
     this.submitToBackend();
     
-    // Hide section after delay
+    // Hide banner section after delay
     setTimeout(() => {
       this.hideSection();
     }, 5000);
@@ -636,9 +655,11 @@ class DisasterSurvey {
       return;
     }
 
+    // State-based answer collection
     const answer = selected.value;
     this.answers[question.field] = answer;
 
+    // Generate TR message based on answer state
     let message = '';
     switch (question.id) {
       case 'trustedInstitution':
@@ -658,14 +679,21 @@ class DisasterSurvey {
         break;
     }
 
+    // Show TR message immediately after answer
     if (message) {
       this.showMessage(message);
     }
 
-    // Save progress
+    // Save state to localStorage
     localStorage.setItem('disaster_survey_data', JSON.stringify(this.answers));
 
+    // Move to next question
     this.currentQuestion++;
+    
+    // Update progress with milestone
+    this.updateProgress();
+    
+    // Render next question after short delay
     setTimeout(() => {
       this.render();
     }, 1500);
@@ -709,8 +737,17 @@ class DisasterSurvey {
   }
 
   updateProgress() {
-    // Calculate progress: (currentQuestion / totalQuestions) * 100
-    const progress = Math.round((this.currentQuestion / this.totalQuestions) * 100);
+    // Calculate progress with milestones: %33/%66/%100
+    // 5 questions: Q1-2 = 33%, Q3-4 = 66%, Q5 = 100%
+    let progress = 0;
+    if (this.currentQuestion <= 1) {
+      progress = 33; // Questions 1-2
+    } else if (this.currentQuestion <= 3) {
+      progress = 66; // Questions 3-4
+    } else {
+      progress = 100; // Question 5
+    }
+    
     const progressBar = document.getElementById('disaster-progress-bar');
     const progressText = document.getElementById('disaster-progress-text');
     
@@ -734,7 +771,7 @@ class DisasterSurvey {
       resultContent.innerHTML = this.getFinalMessage();
     }
 
-    // Update progress to 100%
+    // Update progress to 100% milestone
     const progressBar = document.getElementById('disaster-progress-bar');
     const progressText = document.getElementById('disaster-progress-text');
     if (progressBar) {
@@ -745,10 +782,10 @@ class DisasterSurvey {
       progressText.textContent = `Tamamlandı (${this.totalQuestions}/${this.totalQuestions})`;
     }
     
-    // Mark as completed
+    // Mark as completed in state
     localStorage.setItem('disaster_completed', 'true');
     
-    // Update user progress
+    // Update user progress state
     if (window.userProgress) {
       window.userProgress.setDisasterCompleted(true);
     }
@@ -761,10 +798,10 @@ class DisasterSurvey {
       });
     }
     
-    // Send to backend
+    // POST to /api/survey/disaster
     this.submitToBackend();
     
-    // Hide section after delay
+    // Hide banner section after delay
     setTimeout(() => {
       this.hideSection();
     }, 5000);

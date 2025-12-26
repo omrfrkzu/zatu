@@ -3995,6 +3995,7 @@ body.dark-mode .neden-variz-list {
     transform: translateY(-2px) !important;
     background: linear-gradient(135deg, #1a6a4f, #2a9670) !important;
     box-shadow: 0 22px 45px rgba(31, 122, 91, 0.4) !important;
+    color: #000000 !important;
   }
   
   /* 6) Social Proof - Green Theme (Kompakt) */

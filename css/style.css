@@ -37,6 +37,19 @@ Author: ERRAMIX
   --nav-bg: #ffffff;
   --nav-border: #eef2f7;
   --nav-shadow: 0 6px 18px rgba(0, 0, 0, 0.06);
+  
+  /* Zatu Green Color System - Design Tokens */
+  --green-primary: #1F7A5B;      /* ana yeşil (CTA, vurgu) */
+  --green-secondary: #2FA77A;    /* açık yeşil (hover, ikincil vurgu) */
+  --green-soft: #E6F4EF;         /* çok açık yeşil (arka plan, kart glow) */
+  
+  --text-main: #1B2B24;          /* koyu yeşil-siyah */
+  --text-muted: #5F6F68;         /* açıklama metinleri */
+  
+  --bg-main: #F4F9F7;            /* sayfa arka planı */
+  --bg-card: rgba(255,255,255,0.85);
+  
+  --shadow-soft: 0 18px 40px rgba(20, 60, 45, 0.12);
 }
 
 * {
@@ -3743,9 +3756,9 @@ body.dark-mode .neden-variz-list {
 /* ================= Kitup Style - Mobile Only (≤768px) ===================== */
 
 @media (max-width: 768px) {
-  /* 1) Global Background - Kitup Gradient */
+  /* 1) Global Background - Green Theme */
   body {
-    background: linear-gradient(180deg, #F6ECF4 0%, #F2E6F3 40%, #F6ECF4 100%);
+    background: linear-gradient(180deg, #F4F9F7 0%, #EEF6F2 100%);
     position: relative;
   }
   
@@ -3756,7 +3769,7 @@ body.dark-mode .neden-variz-list {
     left: 0;
     right: 0;
     height: 100vh;
-    background: radial-gradient(circle at 50% 0%, rgba(175, 120, 200, 0.18), transparent 55%);
+    background: radial-gradient(circle at 50% 0%, rgba(47, 167, 122, 0.18), transparent 55%);
     pointer-events: none;
     z-index: 0;
   }
@@ -3766,30 +3779,30 @@ body.dark-mode .neden-variz-list {
     z-index: 1;
   }
   
-  /* 2) Typography - Kitup Style */
+  /* 2) Typography - Green Theme */
   body {
     font-family: "Poppins", "Inter", system-ui, sans-serif;
-    color: #1B1422;
+    color: var(--text-main);
     text-align: center;
   }
   
-  /* Hero Title - Kitup Style (Kompakt) */
+  /* Hero Title - Green Theme (Kompakt) */
   .hero .hero-title {
     font-size: 44px !important;
     font-weight: 900 !important;
     line-height: 1.0 !important;
-    color: #1B1422;
+    color: var(--text-main);
     text-align: center !important;
     margin-bottom: 14px !important;
     letter-spacing: -0.02em !important;
   }
   
   .hero-accent-purple {
-    color: #8E4EC6;
+    color: var(--green-secondary);
   }
   
   .hero-accent-pink {
-    color: #F04A9B;
+    color: var(--green-primary);
   }
   
   /* H2 Titles */
@@ -3798,7 +3811,7 @@ body.dark-mode .neden-variz-list {
     font-size: 28px !important;
     font-weight: 800 !important;
     line-height: 1.12 !important;
-    color: #1B1422;
+    color: var(--text-main);
     text-align: center !important;
     margin-bottom: 16px;
   }
@@ -3812,7 +3825,7 @@ body.dark-mode .neden-variz-list {
     font-size: 16px !important;
     font-weight: 400 !important;
     line-height: 1.5 !important;
-    color: #1B1422;
+    color: var(--text-main);
     text-align: center !important;
   }
   
@@ -3826,7 +3839,7 @@ body.dark-mode .neden-variz-list {
   .text-muted,
   .footnote {
     font-size: 13px !important;
-    color: #6E6676 !important;
+    color: var(--text-muted) !important;
   }
   
   /* 3) Header - Kitup Big Pill (Kompakt) */
@@ -3841,8 +3854,8 @@ body.dark-mode .neden-variz-list {
     max-height: 80px !important;
     padding: 16px 20px !important;
     border-radius: 999px !important;
-    background: rgba(255, 255, 255, 0.85) !important;
-    box-shadow: 0 16px 40px rgba(20, 5, 25, 0.12) !important;
+    background: rgba(255, 255, 255, 0.9) !important;
+    box-shadow: var(--shadow-soft) !important;
     display: flex !important;
     align-items: center !important;
     justify-content: space-between !important;
@@ -3864,7 +3877,7 @@ body.dark-mode .neden-variz-list {
     height: 44px !important;
     min-width: 44px !important;
     min-height: 44px !important;
-    color: #1B1422 !important;
+    color: var(--text-main) !important;
     border: none !important;
     background: transparent !important;
     display: flex !important;
@@ -3875,7 +3888,7 @@ body.dark-mode .neden-variz-list {
   .mobile-menu-toggle i,
   .switch-button i {
     font-size: 24px;
-    color: #1B1422;
+    color: var(--text-main);
   }
   
   /* 4) Hero Section - Kitup Style (Kompakt) */
@@ -3915,21 +3928,21 @@ body.dark-mode .neden-variz-list {
     margin-bottom: 10px !important;
     font-size: 15px !important;
     line-height: 1.4 !important;
-    color: #1B1422;
+    color: var(--text-main);
     position: relative;
     padding-left: 0;
   }
   
   .hero-list li::before {
     content: '•';
-    color: #8E4EC6;
+    color: var(--green-secondary);
     font-weight: 800;
     font-size: 8px !important;
     margin-right: 6px;
     vertical-align: middle;
   }
   
-  /* 5) Primary CTA - Kitup Dev Oval Button (Kompakt) */
+  /* 5) Primary CTA - Green Gradient Button (Kompakt) */
   .hero-buttons {
     flex-direction: column !important;
     gap: 0 !important;
@@ -3943,14 +3956,14 @@ body.dark-mode .neden-variz-list {
     height: 68px !important;
     min-height: 68px !important;
     border-radius: 999px !important;
-    background: linear-gradient(135deg, #8E4EC6, #F04A9B) !important;
+    background: linear-gradient(135deg, var(--green-primary), var(--green-secondary)) !important;
     border: none !important;
     color: #FFFFFF !important;
     font-weight: 800 !important;
     font-size: 16px !important;
     letter-spacing: 0.10em !important;
     text-transform: uppercase !important;
-    box-shadow: 0 18px 40px rgba(142, 78, 198, 0.25) !important;
+    box-shadow: 0 20px 40px rgba(31, 122, 91, 0.35) !important;
     display: flex !important;
     align-items: center !important;
     justify-content: center !important;
@@ -3980,15 +3993,16 @@ body.dark-mode .neden-variz-list {
   
   .hero-buttons .btn:hover {
     transform: translateY(-2px) !important;
-    box-shadow: 0 20px 45px rgba(142, 78, 198, 0.35) !important;
+    background: linear-gradient(135deg, #1a6a4f, #2a9670) !important;
+    box-shadow: 0 22px 45px rgba(31, 122, 91, 0.4) !important;
   }
   
-  /* 6) Social Proof - Kitup Style (Kompakt) */
+  /* 6) Social Proof - Green Theme (Kompakt) */
   .hero-trust {
     margin-top: 24px !important;
     text-align: center !important;
     font-size: 13px !important;
-    color: #6E6676 !important;
+    color: var(--text-muted) !important;
     display: flex !important;
     flex-direction: column !important;
     gap: 6px !important;
@@ -3998,14 +4012,14 @@ body.dark-mode .neden-variz-list {
   .hero-trust p {
     margin-bottom: 0 !important;
     font-size: 13px !important;
-    color: #6E6676 !important;
+    color: var(--text-muted) !important;
     display: flex !important;
     align-items: center !important;
     gap: 6px !important;
   }
   
   .hero-trust p i {
-    color: #8E4EC6 !important;
+    color: var(--green-secondary) !important;
     font-size: 14px !important;
   }
   
@@ -4031,7 +4045,7 @@ body.dark-mode .neden-variz-list {
   
   .heading .pretitle {
     font-size: 13px !important;
-    color: #6E6676 !important;
+    color: var(--text-muted) !important;
     text-transform: uppercase !important;
     letter-spacing: 0.1em !important;
     margin-bottom: 12px !important;
@@ -4044,7 +4058,7 @@ body.dark-mode .neden-variz-list {
     background: rgba(255, 255, 255, 0.75) !important;
     border-radius: 32px !important;
     padding: 24px !important;
-    box-shadow: 0 16px 40px rgba(20, 5, 25, 0.10) !important;
+    box-shadow: var(--shadow-soft) !important;
     border: none !important;
     margin-bottom: 20px !important;
     text-align: center !important;
@@ -4056,13 +4070,13 @@ body.dark-mode .neden-variz-list {
   
   .box-icon i {
     font-size: 32px !important;
-    color: #8E4EC6 !important;
+    color: var(--green-secondary) !important;
   }
   
   .title-2 {
     font-size: 24px !important;
     font-weight: 800 !important;
-    color: #1B1422 !important;
+    color: var(--text-main) !important;
     text-align: center !important;
     margin-bottom: 16px !important;
   }
@@ -4079,14 +4093,14 @@ body.dark-mode .neden-variz-list {
     position: relative;
     font-size: 15px !important;
     line-height: 1.6 !important;
-    color: #1B1422;
+    color: var(--text-main);
   }
   
   .neden-variz-list li::before {
     content: '•';
     position: absolute;
     left: 0;
-    color: #8E4EC6;
+    color: var(--green-secondary);
     font-weight: 800;
     font-size: 20px;
   }
@@ -4107,7 +4121,7 @@ body.dark-mode .neden-variz-list {
   }
   
   .step-badge {
-    background: linear-gradient(135deg, #8E4EC6, #F04A9B) !important;
+    background: linear-gradient(135deg, var(--green-primary), var(--green-secondary)) !important;
     color: white !important;
     border-radius: 50% !important;
     width: 40px !important;
@@ -4123,14 +4137,14 @@ body.dark-mode .neden-variz-list {
   .step-title {
     font-size: 22px !important;
     font-weight: 800 !important;
-    color: #1B1422 !important;
+    color: var(--text-main) !important;
     margin-bottom: 12px !important;
   }
   
   .step-lead {
     font-size: 16px !important;
     line-height: 1.6 !important;
-    color: #1B1422 !important;
+    color: var(--text-main) !important;
     margin-bottom: 12px !important;
   }
   
@@ -4144,21 +4158,21 @@ body.dark-mode .neden-variz-list {
     border: 1px solid rgba(80, 60, 90, 0.10) !important;
     padding: 12px 18px !important;
     font-size: 16px !important;
-    color: #1B1422 !important;
+    color: var(--text-main) !important;
     font-family: "Poppins", "Inter", system-ui, sans-serif !important;
   }
   
   .form-control:focus,
   .form-select:focus {
     outline: none !important;
-    box-shadow: 0 0 0 4px rgba(142, 78, 198, 0.18) !important;
-    border-color: #8E4EC6 !important;
+    box-shadow: 0 0 0 4px rgba(31, 122, 91, 0.18) !important;
+    border-color: var(--green-primary) !important;
     background: #FFFFFF !important;
   }
   
   .form-label {
     font-weight: 600 !important;
-    color: #1B1422 !important;
+    color: var(--text-main) !important;
     margin-bottom: 8px !important;
     font-size: 15px !important;
   }
@@ -4173,7 +4187,7 @@ body.dark-mode .neden-variz-list {
   
   .form-check-label {
     font-size: 15px !important;
-    color: #1B1422 !important;
+    color: var(--text-main) !important;
     margin-left: 8px !important;
   }
   
@@ -4185,8 +4199,8 @@ body.dark-mode .neden-variz-list {
   }
   
   .form-check-input:checked {
-    background-color: #8E4EC6 !important;
-    border-color: #8E4EC6 !important;
+    background-color: var(--green-primary) !important;
+    border-color: var(--green-primary) !important;
   }
   
   /* Survey Buttons */
@@ -4197,10 +4211,10 @@ body.dark-mode .neden-variz-list {
     border-radius: 18px !important;
     font-weight: 700 !important;
     font-size: 16px !important;
-    background: #8E4EC6 !important;
+    background: var(--green-primary) !important;
     border: none !important;
     color: white !important;
-    box-shadow: 0 8px 24px rgba(142, 78, 198, 0.25) !important;
+    box-shadow: 0 8px 24px rgba(31, 122, 91, 0.25) !important;
   }
   
   .btn-outline-secondary {
@@ -4210,7 +4224,7 @@ body.dark-mode .neden-variz-list {
     font-size: 16px !important;
     background: rgba(255, 255, 255, 0.9) !important;
     border: 1px solid rgba(80, 60, 90, 0.15) !important;
-    color: #1B1422 !important;
+    color: var(--text-main) !important;
   }
   
   /* 9) Spacing - Kitup Kompakt */
@@ -4240,7 +4254,7 @@ body.dark-mode .neden-variz-list {
     border-radius: 32px 32px 0 0 !important;
     padding: 40px 20px 24px !important;
     margin-top: 40px !important;
-    box-shadow: 0 -8px 32px rgba(20, 5, 25, 0.08) !important;
+    box-shadow: 0 -8px 32px rgba(20, 60, 45, 0.08) !important;
   }
   
   .footer .box {
@@ -4249,7 +4263,7 @@ body.dark-mode .neden-variz-list {
   
   .footer p {
     text-align: center !important;
-    color: #6E6676 !important;
+    color: var(--text-muted) !important;
     font-size: 14px !important;
   }
   
@@ -4278,13 +4292,13 @@ body.dark-mode .neden-variz-list {
     margin: 8px auto !important;
   }
   
-  /* Mobile Menu Sheet - Kitup Style */
+  /* Mobile Menu Sheet - Green Theme */
   .mobile-menu-sheet {
-    background: linear-gradient(180deg, #F6ECF4 0%, #F2E6F3 40%, #F6ECF4 100%) !important;
+    background: linear-gradient(180deg, var(--bg-main) 0%, #EEF6F2 100%) !important;
   }
   
   .mobile-menu-header {
-    border-bottom: 1px solid rgba(80, 60, 90, 0.1) !important;
+    border-bottom: 1px solid rgba(31, 122, 91, 0.1) !important;
     padding: 20px !important;
   }
   
@@ -4292,16 +4306,16 @@ body.dark-mode .neden-variz-list {
     font-family: "Poppins", "Inter", system-ui, sans-serif !important;
     font-weight: 800 !important;
     font-size: 24px !important;
-    color: #1B1422 !important;
+    color: var(--text-main) !important;
   }
   
   .mobile-menu-close {
     width: 44px !important;
     height: 44px !important;
-    color: #1B1422 !important;
+    color: var(--text-main) !important;
     background: rgba(255, 255, 255, 0.8) !important;
     border-radius: 50% !important;
-    border: 1px solid rgba(80, 60, 90, 0.1) !important;
+    border: 1px solid rgba(31, 122, 91, 0.1) !important;
   }
   
   .mobile-menu-nav {
@@ -4313,43 +4327,43 @@ body.dark-mode .neden-variz-list {
     background: rgba(255, 255, 255, 0.75) !important;
     border-radius: 20px !important;
     padding: 16px 20px !important;
-    color: #1B1422 !important;
+    color: var(--text-main) !important;
     font-family: "Poppins", "Inter", system-ui, sans-serif !important;
     font-weight: 600 !important;
     font-size: 16px !important;
-    border: 1px solid rgba(80, 60, 90, 0.08) !important;
-    box-shadow: 0 4px 12px rgba(20, 5, 25, 0.08) !important;
+    border: 1px solid rgba(31, 122, 91, 0.08) !important;
+    box-shadow: 0 4px 12px rgba(20, 60, 45, 0.08) !important;
     text-align: center !important;
   }
   
   .mobile-nav-link:hover,
   .mobile-nav-link:focus {
     background: rgba(255, 255, 255, 0.9) !important;
-    color: #8E4EC6 !important;
-    border-color: rgba(142, 78, 198, 0.2) !important;
-    box-shadow: 0 6px 16px rgba(142, 78, 198, 0.15) !important;
+    color: var(--green-primary) !important;
+    border-color: rgba(31, 122, 91, 0.2) !important;
+    box-shadow: 0 6px 16px rgba(31, 122, 91, 0.15) !important;
     transform: translateY(-2px) !important;
   }
   
-  /* Progress Bar - Kitup Style */
+  /* Progress Bar - Green Theme */
   .progress {
     height: 10px !important;
     border-radius: 999px !important;
     background: rgba(255, 255, 255, 0.6) !important;
     overflow: hidden !important;
-    box-shadow: inset 0 2px 4px rgba(20, 5, 25, 0.08) !important;
+    box-shadow: inset 0 2px 4px rgba(20, 60, 45, 0.08) !important;
   }
   
   .progress-bar {
     border-radius: 999px !important;
-    background: linear-gradient(90deg, #8E4EC6, #F04A9B) !important;
-    box-shadow: 0 2px 8px rgba(142, 78, 198, 0.3) !important;
+    background: linear-gradient(90deg, var(--green-primary), var(--green-secondary)) !important;
+    box-shadow: 0 2px 8px rgba(31, 122, 91, 0.3) !important;
   }
   
   .progress-text {
     font-family: "Poppins", "Inter", system-ui, sans-serif !important;
     font-weight: 600 !important;
-    color: #6E6676 !important;
+    color: var(--text-muted) !important;
     font-size: 13px !important;
   }
   
@@ -4359,18 +4373,18 @@ body.dark-mode .neden-variz-list {
     padding: 20px 24px !important;
     background: rgba(255, 255, 255, 0.85) !important;
     border: 1px solid rgba(80, 60, 90, 0.1) !important;
-    box-shadow: 0 8px 24px rgba(20, 5, 25, 0.1) !important;
+    box-shadow: 0 8px 24px rgba(20, 60, 45, 0.1) !important;
     font-family: "Poppins", "Inter", system-ui, sans-serif !important;
   }
   
   .alert-success {
     background: rgba(255, 255, 255, 0.9) !important;
-    border-color: rgba(142, 78, 198, 0.2) !important;
-    color: #1B1422 !important;
+    border-color: rgba(31, 122, 91, 0.2) !important;
+    color: var(--text-main) !important;
   }
   
   .alert-success h4 {
-    color: #8E4EC6 !important;
+    color: var(--green-primary) !important;
     font-weight: 800 !important;
     font-size: 20px !important;
     margin-bottom: 12px !important;
@@ -4378,14 +4392,14 @@ body.dark-mode .neden-variz-list {
   
   .alert-info {
     background: rgba(255, 255, 255, 0.9) !important;
-    border-color: rgba(142, 78, 198, 0.2) !important;
-    color: #1B1422 !important;
+    border-color: rgba(31, 122, 91, 0.2) !important;
+    color: var(--text-main) !important;
   }
   
   .alert-danger {
     background: rgba(255, 255, 255, 0.9) !important;
-    border-color: rgba(240, 74, 155, 0.3) !important;
-    color: #1B1422 !important;
+    border-color: rgba(47, 167, 122, 0.3) !important;
+    color: var(--text-main) !important;
   }
   
   /* Survey Question Cards - Kitup Style */
@@ -4393,7 +4407,7 @@ body.dark-mode .neden-variz-list {
     background: rgba(255, 255, 255, 0.75) !important;
     border-radius: 28px !important;
     padding: 24px !important;
-    box-shadow: 0 16px 40px rgba(20, 5, 25, 0.10) !important;
+    box-shadow: var(--shadow-soft) !important;
     border: none !important;
     margin-bottom: 20px !important;
   }
@@ -4402,14 +4416,14 @@ body.dark-mode .neden-variz-list {
     font-family: "Poppins", "Inter", system-ui, sans-serif !important;
     font-weight: 800 !important;
     font-size: 24px !important;
-    color: #1B1422 !important;
+    color: var(--text-main) !important;
     text-align: center !important;
     margin-bottom: 12px !important;
   }
   
   .survey-question-card .text-muted {
     font-size: 15px !important;
-    color: #6E6676 !important;
+    color: var(--text-muted) !important;
     text-align: center !important;
     margin-bottom: 20px !important;
   }
@@ -4418,28 +4432,28 @@ body.dark-mode .neden-variz-list {
   .city-stats-card {
     background: rgba(255, 255, 255, 0.75) !important;
     border-radius: 32px !important;
-    box-shadow: 0 16px 40px rgba(20, 5, 25, 0.10) !important;
+    box-shadow: var(--shadow-soft) !important;
     border: none !important;
   }
   
   .city-stats-title {
     font-family: "Poppins", "Inter", system-ui, sans-serif !important;
     font-weight: 800 !important;
-    color: #1B1422 !important;
+    color: var(--text-main) !important;
   }
   
-  /* Profile/Disaster Banner - Kitup Style */
+  /* Profile/Disaster Banner - Green Theme */
   .profile-banner,
   .disaster-banner {
     background: rgba(255, 255, 255, 0.65) !important;
     border-radius: 32px !important;
-    box-shadow: 0 16px 40px rgba(20, 5, 25, 0.10) !important;
+    box-shadow: 0 16px 40px rgba(20, 60, 45, 0.10) !important;
   }
   
   .profile-banner .pretitle,
   .disaster-banner .pretitle {
     font-size: 13px !important;
-    color: #6E6676 !important;
+    color: var(--text-muted) !important;
     text-transform: uppercase !important;
     letter-spacing: 0.1em !important;
   }
@@ -4451,7 +4465,7 @@ body.dark-mode .neden-variz-list {
   
   .hero-img img {
     border-radius: 24px !important;
-    box-shadow: 0 16px 40px rgba(20, 5, 25, 0.12) !important;
+    box-shadow: var(--shadow-soft) !important;
   }
 }
 

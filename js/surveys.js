@@ -67,10 +67,16 @@ class ProfileSurvey {
     const savedData = localStorage.getItem('profile_survey_data');
     if (savedData) {
       this.answers = JSON.parse(savedData);
-      this.currentQuestion = Object.keys(this.answers).length;
+      const answeredCount = Object.keys(this.answers).length;
+      // Ensure we start at the next unanswered question, but never show "Soru 0/5"
+      this.currentQuestion = Math.min(answeredCount, this.totalQuestions - 1);
+    } else {
+      // Start at question 0 (displayed as "Soru 1/5")
+      this.currentQuestion = 0;
     }
 
     this.render();
+    this.updateProgress();
   }
 
   hideSection() {
@@ -367,6 +373,9 @@ class ProfileSurvey {
   updateProgress() {
     // Calculate progress with milestones: %33/%66/%100
     // 5 questions: Q1-2 = 33%, Q3-4 = 66%, Q5 = 100%
+    // Ensure currentQuestion is never negative and progress text always shows at least "Soru 1/5"
+    const displayQuestion = Math.max(1, this.currentQuestion + 1);
+    
     let progress = 0;
     if (this.currentQuestion <= 1) {
       progress = 33; // Questions 1-2
@@ -384,7 +393,7 @@ class ProfileSurvey {
       progressBar.setAttribute('aria-valuenow', progress);
     }
     if (progressText) {
-      progressText.textContent = `Soru ${this.currentQuestion + 1}/${this.totalQuestions}`;
+      progressText.textContent = `Soru ${displayQuestion}/${this.totalQuestions}`;
     }
   }
 
@@ -523,10 +532,16 @@ class DisasterSurvey {
     const savedData = localStorage.getItem('disaster_survey_data');
     if (savedData) {
       this.answers = JSON.parse(savedData);
-      this.currentQuestion = Object.keys(this.answers).length;
+      const answeredCount = Object.keys(this.answers).length;
+      // Ensure we start at the next unanswered question, but never show "Soru 0/5"
+      this.currentQuestion = Math.min(answeredCount, this.totalQuestions - 1);
+    } else {
+      // Start at question 0 (displayed as "Soru 1/5")
+      this.currentQuestion = 0;
     }
 
     this.render();
+    this.updateProgress();
   }
 
   hideSection() {
@@ -739,6 +754,9 @@ class DisasterSurvey {
   updateProgress() {
     // Calculate progress with milestones: %33/%66/%100
     // 5 questions: Q1-2 = 33%, Q3-4 = 66%, Q5 = 100%
+    // Ensure currentQuestion is never negative and progress text always shows at least "Soru 1/5"
+    const displayQuestion = Math.max(1, this.currentQuestion + 1);
+    
     let progress = 0;
     if (this.currentQuestion <= 1) {
       progress = 33; // Questions 1-2
@@ -756,7 +774,7 @@ class DisasterSurvey {
       progressBar.setAttribute('aria-valuenow', progress);
     }
     if (progressText) {
-      progressText.textContent = `Soru ${this.currentQuestion + 1}/${this.totalQuestions}`;
+      progressText.textContent = `Soru ${displayQuestion}/${this.totalQuestions}`;
     }
   }
 

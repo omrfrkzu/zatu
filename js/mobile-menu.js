@@ -141,7 +141,7 @@
   window.addEventListener('resize', () => {
     clearTimeout(resizeTimer);
     resizeTimer = setTimeout(() => {
-      if (window.innerWidth >= 768 && isOpen) {
+      if (window.innerWidth >= 1024 && isOpen) {
         closeMenu();
       }
     }, 250);

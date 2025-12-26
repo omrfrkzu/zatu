@@ -2839,7 +2839,7 @@ body.dark-mode .mobile-menu-toggle:focus {
 
 .nav-right .btn-cta:hover {
   filter: brightness(1.06);
-  color: #fff;
+  color: #000000;
   transform: translateY(-1px);
 }
 

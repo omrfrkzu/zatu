@@ -9,13 +9,13 @@
   <meta property="og:type" content="website">
   <meta property="og:title" content="Zatu | Afet İletişim ve Dayanışma Ağı">
   <meta property="og:description" content="Afet anında yalnız kalma. Zatu, komşularınla güvenli iletişim ve koordinasyon ağı kurmanı sağlar.">
-  <meta property="og:image" content="zatu-logo.png">
+  <meta property="og:image" content="logo-main.png">
   <!-- Twitter -->
   <meta name="twitter:card" content="summary_large_image">
   <meta name="twitter:title" content="Zatu | Afet İletişim ve Dayanışma Ağı">
   <meta name="twitter:description" content="Afet anında yalnız kalma. Zatu, komşularınla güvenli iletişim ve koordinasyon ağı kurmanı sağlar.">
   <!-- fav icon -->
-  <link rel="icon" href="zatu-logo.png" type="image/png">
+  <link rel="icon" href="logo-main.png" type="image/png">
 
   <!-- bootstarp css file -->
   <link rel="stylesheet" href="css/bootstrap.min.css">
@@ -83,9 +83,12 @@
   <!-- ======= start Header ======= -->
   <header id="site-header" class="header-sticky">
     <div class="nav-shell">
+      <!-- Left: Logo -->
       <div class="nav-left">
-        <a class="navbar-brand" href="#top"><img src="zatu-logo.png" class="logo" alt="Zatu"></a>
+        <a class="navbar-brand" href="#top"><img src="logo-main.png" class="logo" alt="Zatu"></a>
       </div>
+      
+      <!-- Center: Nav Links (Absolute Centered on Desktop) -->
       <nav class="nav-center desktop-nav">
         <div class="navbar-collapse">
           <ul class="navbar-nav menu" id="navbar">
@@ -107,12 +110,87 @@
           </ul>
         </div>
       </nav>
+      
+      <!-- Right: Actions (Desktop: Language + CTA + Theme | Mobile: Theme + Hamburger) -->
       <div class="nav-right">
+        <!-- Language Dropdown (Desktop Only) -->
+        <div class="language-dropdown-wrapper desktop-language-dropdown">
+          <button 
+            type="button" 
+            id="language-dropdown-trigger" 
+            class="language-dropdown-trigger" 
+            aria-haspopup="menu" 
+            aria-expanded="false"
+            aria-label="Dil seçimi">
+            <span class="language-flag" id="language-flag">
+              <!-- TR Flag SVG -->
+              <svg width="18" height="18" viewBox="0 0 18 18" fill="none" xmlns="http://www.w3.org/2000/svg" class="flag-icon">
+                <rect width="18" height="6" fill="#E30A17"/>
+                <rect y="6" width="18" height="6" fill="#FFFFFF"/>
+                <rect y="12" width="18" height="6" fill="#E30A17"/>
+                <circle cx="9" cy="9" r="3" fill="#E30A17"/>
+                <circle cx="9" cy="9" r="2" fill="#FFFFFF"/>
+                <circle cx="9" cy="9" r="1.2" fill="#E30A17"/>
+              </svg>
+            </span>
+            <span class="language-code" id="language-code">TR</span>
+            <i class="bi bi-chevron-down language-chevron"></i>
+          </button>
+          <div id="language-dropdown-menu" class="language-dropdown-menu" role="menu" aria-hidden="true">
+            <button 
+              type="button" 
+              class="language-menu-item" 
+              role="menuitem" 
+              data-lang="tr"
+              aria-label="Türkçe">
+              <span class="language-flag">
+                <svg width="18" height="18" viewBox="0 0 18 18" fill="none" xmlns="http://www.w3.org/2000/svg" class="flag-icon">
+                  <rect width="18" height="6" fill="#E30A17"/>
+                  <rect y="6" width="18" height="6" fill="#FFFFFF"/>
+                  <rect y="12" width="18" height="6" fill="#E30A17"/>
+                  <circle cx="9" cy="9" r="3" fill="#E30A17"/>
+                  <circle cx="9" cy="9" r="2" fill="#FFFFFF"/>
+                  <circle cx="9" cy="9" r="1.2" fill="#E30A17"/>
+                </svg>
+              </span>
+              <span class="language-menu-text">
+                <span class="language-name">Türkçe</span>
+                <span class="language-code-small">TR</span>
+              </span>
+            </button>
+            <button 
+              type="button" 
+              class="language-menu-item" 
+              role="menuitem" 
+              data-lang="en"
+              aria-label="English">
+              <span class="language-flag">
+                <svg width="18" height="18" viewBox="0 0 18 18" fill="none" xmlns="http://www.w3.org/2000/svg" class="flag-icon">
+                  <rect width="18" height="18" fill="#012169"/>
+                  <path d="M0 0L18 18M18 0L0 18" stroke="#FFFFFF" stroke-width="2"/>
+                  <path d="M0 0L18 18M18 0L0 18" stroke="#C8102E" stroke-width="1.2"/>
+                  <path d="M9 0V18M0 9H18" stroke="#FFFFFF" stroke-width="2.5"/>
+                  <path d="M9 0V18M0 9H18" stroke="#C8102E" stroke-width="1.5"/>
+                </svg>
+              </span>
+              <span class="language-menu-text">
+                <span class="language-name">English</span>
+                <span class="language-code-small">EN</span>
+              </span>
+            </button>
+          </div>
+        </div>
+        
+        <!-- CTA Button (Desktop Only) -->
         <a class="btn btn-cta desktop-cta" href="kayit.html" aria-label="Ağın Parçası Ol – 2 Dakikada Kayıt">AĞIN PARÇASI OL</a>
-        <button id="mobile-menu-toggle" class="mobile-menu-toggle" type="button" aria-controls="mobile-menu" aria-expanded="false" aria-label="Menüyü aç">
-          <i class="bi bi-list" id="menu-icon"></i>
-        </button>
-        <button id="mode-toggle" class="btn-light-mode switch-button"><i id="mode-icon" class="bi bi-moon-fill"></i></button>
+        
+        <!-- Mobile Actions: Theme + Hamburger -->
+        <div class="mobile-actions">
+          <button id="mode-toggle" class="btn-light-mode switch-button" aria-label="Karanlık mod"><i id="mode-icon" class="bi bi-moon-fill"></i></button>
+          <button id="mobile-menu-toggle" class="mobile-menu-toggle" type="button" aria-controls="mobile-menu" aria-expanded="false" aria-label="Menüyü aç">
+            <i class="bi bi-list" id="menu-icon"></i>
+          </button>
+        </div>
       </div>
     </div>
   </header>
@@ -134,6 +212,78 @@
       <a href="hakkimizda.html" class="mobile-nav-link">Hakkımızda</a>
       <a href="sss.html" class="mobile-nav-link">SSS</a>
       <a href="iletisim.html" class="mobile-nav-link">İletişim</a>
+      
+      <!-- Divider -->
+      <div class="mobile-menu-divider"></div>
+      
+      <!-- Mobile Language Dropdown (Inside Menu) -->
+      <div class="mobile-language-dropdown-wrapper">
+        <button 
+          type="button" 
+          id="mobile-language-dropdown-trigger" 
+          class="mobile-language-dropdown-trigger" 
+          aria-haspopup="menu" 
+          aria-expanded="false"
+          aria-label="Dil seçimi">
+          <span class="language-flag" id="mobile-language-flag">
+            <svg width="18" height="18" viewBox="0 0 18 18" fill="none" xmlns="http://www.w3.org/2000/svg" class="flag-icon">
+              <rect width="18" height="6" fill="#E30A17"/>
+              <rect y="6" width="18" height="6" fill="#FFFFFF"/>
+              <rect y="12" width="18" height="6" fill="#E30A17"/>
+              <circle cx="9" cy="9" r="3" fill="#E30A17"/>
+              <circle cx="9" cy="9" r="2" fill="#FFFFFF"/>
+              <circle cx="9" cy="9" r="1.2" fill="#E30A17"/>
+            </svg>
+          </span>
+          <span class="language-code" id="mobile-language-code">TR</span>
+          <i class="bi bi-chevron-down language-chevron"></i>
+        </button>
+        <div id="mobile-language-dropdown-menu" class="mobile-language-dropdown-menu" role="menu" aria-hidden="true">
+          <button 
+            type="button" 
+            class="language-menu-item" 
+            role="menuitem" 
+            data-lang="tr"
+            aria-label="Türkçe">
+            <span class="language-flag">
+              <svg width="18" height="18" viewBox="0 0 18 18" fill="none" xmlns="http://www.w3.org/2000/svg" class="flag-icon">
+                <rect width="18" height="6" fill="#E30A17"/>
+                <rect y="6" width="18" height="6" fill="#FFFFFF"/>
+                <rect y="12" width="18" height="6" fill="#E30A17"/>
+                <circle cx="9" cy="9" r="3" fill="#E30A17"/>
+                <circle cx="9" cy="9" r="2" fill="#FFFFFF"/>
+                <circle cx="9" cy="9" r="1.2" fill="#E30A17"/>
+              </svg>
+            </span>
+            <span class="language-menu-text">
+              <span class="language-name">Türkçe</span>
+              <span class="language-code-small">TR</span>
+            </span>
+          </button>
+          <button 
+            type="button" 
+            class="language-menu-item" 
+            role="menuitem" 
+            data-lang="en"
+            aria-label="English">
+            <span class="language-flag">
+              <svg width="18" height="18" viewBox="0 0 18 18" fill="none" xmlns="http://www.w3.org/2000/svg" class="flag-icon">
+                <rect width="18" height="18" fill="#012169"/>
+                <path d="M0 0L18 18M18 0L0 18" stroke="#FFFFFF" stroke-width="2"/>
+                <path d="M0 0L18 18M18 0L0 18" stroke="#C8102E" stroke-width="1.2"/>
+                <path d="M9 0V18M0 9H18" stroke="#FFFFFF" stroke-width="2.5"/>
+                <path d="M9 0V18M0 9H18" stroke="#C8102E" stroke-width="1.5"/>
+              </svg>
+            </span>
+            <span class="language-menu-text">
+              <span class="language-name">English</span>
+              <span class="language-code-small">EN</span>
+            </span>
+          </button>
+        </div>
+      </div>
+      
+      <a href="kayit.html" class="mobile-nav-link mobile-cta-link">AĞIN PARÇASI OL</a>
     </nav>
   </div>
   <!-- ======= end Mobile Menu Sheet ======= -->
@@ -660,7 +810,7 @@
       <div class="row justify-content-center align-items-center g-4">
         <div class="col-12 col-lg-4 col-md-6 mx-auto my-4">
           <div class="box d-flex flex-column justify-content-md-start justify-content-lg-start justify-content-center align-items-center align-items-lg-start align-items-md-start">
-            <a href="#top" class="logo"><img class="my-2" src="zatu-logo.png" alt="Zatu"></a>
+            <a href="#top" class="logo"><img class="my-2" src="logo-main.png" alt="Zatu"></a>
             <p>Zatu, Türkiye'nin ulusal afet hazırlık ağıdır. Komşularınızla önceden bağlantı kurarak afetlere hazırlıklı olun.</p>
             <h4 class="my-2">
               Bizi Takip Edin
@@ -765,6 +915,9 @@
 
   <!--  how it works interactive js file  -->
   <script src="js/how-it-works.js"></script>
+
+  <!--  language dropdown js file  -->
+  <script src="js/language-dropdown.js"></script>
 
   <!-- Initialize City Stats -->
   <script>

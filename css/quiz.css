@@ -48,8 +48,24 @@ body {
 }
 
 .quiz-logo-img {
-  height: 32px;
-  width: auto;
+  width: 13rem;
+  height: auto;
+  max-height: 60px;
+  object-fit: contain;
+}
+
+/* Responsive logo sizes to match main site */
+@media (max-width: 768px) {
+  .quiz-logo-img {
+    max-height: 50px;
+    width: auto;
+  }
+}
+
+@media (max-width: 480px) {
+  .quiz-logo-img {
+    max-height: 46px;
+  }
 }
 
 .quiz-header-title {

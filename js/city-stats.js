@@ -97,23 +97,53 @@ class CityStatsCard {
   render() {
     if (!this.data) return;
 
+    const formattedActiveUsers = this.formatNumber(this.data.activeUsers);
+    const formattedLast24h = this.formatNumber(this.data.last24h);
+    const updateTime = new Date(this.data.updatedAt).toLocaleTimeString('tr-TR', { hour: '2-digit', minute: '2-digit' });
+
     const html = `
       <section class="city-stats-card" aria-live="polite" aria-atomic="true">
-        <h3 class="city-stats-title">${this.escapeHtml(this.data.city)} için Durum</h3>
-        <div class="city-stats-content">
-          <p class="city-stats-item">
-            Bu şehirde şu anda <strong><span class="counter" data-value="${this.data.activeUsers}" aria-label="${this.data.activeUsers} aktif üye">0</span></strong> aktif üye
-          </p>
-          <p class="city-stats-item">
-            Son 24 saatte <strong>+<span class="counter" data-value="${this.data.last24h}" aria-label="${this.data.last24h} yeni katılım">0</span></strong> katılım
-          </p>
-          <p class="city-stats-item">
-            En çok katılım: <strong>${this.data.topDistricts.map(d => this.escapeHtml(d)).join(' • ')}</strong>
-          </p>
+        <!-- Header -->
+        <div class="city-stats-header">
+          <h3 class="city-stats-title">${this.escapeHtml(this.data.city)} İçin Durum</h3>
+          <p class="city-stats-subtitle">Anlık şehir istatistikleri</p>
         </div>
-        <small class="text-muted" style="font-size: 0.75rem; display: block; margin-top: 12px;">
-          Son güncelleme: <time datetime="${new Date(this.data.updatedAt).toISOString()}">${new Date(this.data.updatedAt).toLocaleTimeString('tr-TR')}</time>
-        </small>
+
+        <!-- Primary Stats -->
+        <div class="city-stats-primary">
+          <div class="city-stat-item">
+            <div class="city-stat-number">
+              <span class="counter" data-value="${this.data.activeUsers}" aria-label="${this.data.activeUsers} aktif üye">0</span>
+            </div>
+            <div class="city-stat-label">Aktif Üye</div>
+          </div>
+          <div class="city-stat-item">
+            <div class="city-stat-number city-stat-growth">
+              +<span class="counter" data-value="${this.data.last24h}" aria-label="${this.data.last24h} yeni katılım">0</span>
+            </div>
+            <div class="city-stat-label">Son 24 Saatte Katılım</div>
+          </div>
+        </div>
+
+        <!-- Divider -->
+        <div class="city-stats-divider"></div>
+
+        <!-- Secondary Info -->
+        <div class="city-stats-secondary">
+          <p class="city-stats-secondary-label">En Çok Katılım Olan İlçeler</p>
+          <div class="city-stats-districts">
+            ${this.data.topDistricts.map(d => 
+              `<span class="city-district-chip">${this.escapeHtml(d)}</span>`
+            ).join('')}
+          </div>
+        </div>
+
+        <!-- Footer -->
+        <div class="city-stats-footer">
+          <small class="city-stats-meta">
+            Son güncelleme: <time datetime="${new Date(this.data.updatedAt).toISOString()}">${updateTime}</time>
+          </small>
+        </div>
       </section>
     `;
 
@@ -121,6 +151,11 @@ class CityStatsCard {
     
     // Initialize counters
     this.initCounters();
+  }
+
+  // Helper to format numbers with thousand separators
+  formatNumber(num) {
+    return num.toString().replace(/\B(?=(\d{3})+(?!\d))/g, '.');
   }
 
   // Helper to escape HTML

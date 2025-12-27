@@ -1,0 +1,799 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta http-equiv="X-UA-Compatible" content="IE=edge">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta name="description" content="Afet anında yalnız kalma. Zatu, komşularınla güvenli iletişim ve koordinasyon ağı kurmanı sağlar.">
+  <!-- Open Graph / Facebook -->
+  <meta property="og:type" content="website">
+  <meta property="og:title" content="Zatu | Afet İletişim ve Dayanışma Ağı">
+  <meta property="og:description" content="Afet anında yalnız kalma. Zatu, komşularınla güvenli iletişim ve koordinasyon ağı kurmanı sağlar.">
+  <meta property="og:image" content="zatu-logo.png">
+  <!-- Twitter -->
+  <meta name="twitter:card" content="summary_large_image">
+  <meta name="twitter:title" content="Zatu | Afet İletişim ve Dayanışma Ağı">
+  <meta name="twitter:description" content="Afet anında yalnız kalma. Zatu, komşularınla güvenli iletişim ve koordinasyon ağı kurmanı sağlar.">
+  <!-- fav icon -->
+  <link rel="icon" href="zatu-logo.png" type="image/png">
+
+  <!-- bootstarp css file -->
+  <link rel="stylesheet" href="css/bootstrap.min.css">
+
+  <!-- aos.css file -->
+  <link rel="stylesheet" href="css/aos.css">
+
+  <!-- fancybox css file -->
+  <link rel="stylesheet" href="css/jquery.fancybox.min.css">
+
+  <!-- owl carousel css file -->
+  <link rel="stylesheet" href="css/owl.carousel.min.css">
+  <link rel="stylesheet" href="css/owl.theme.default.min.css">
+
+  <!--  toasts file     -->
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/toastr.js/latest/css/toastr.min.css">
+
+  <!-- bootstrap icons -->
+  <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.11.3/font/bootstrap-icons.min.css">
+
+  <!-- RemixIcon -->
+  <link href="https://cdn.jsdelivr.net/npm/remixicon@3.5.0/fonts/remixicon.css" rel="stylesheet">
+
+  <!-- Google font -->
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Outfit:wght@100;200;300;400;500;600;700;800&display=swap" rel="stylesheet">
+  <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@400;500;600;700;800;900&family=Inter:wght@400;500;600;700;800&display=swap" rel="stylesheet">
+
+  <!-- main css file -->
+  <link rel="stylesheet" href="css/style.css">
+  <title>Zatu | Afet İletişim ve Dayanışma Ağı</title>
+</head>
+
+<body class="home-1" data-aos-easing="fade-up" data-aos-duration="500" data-aos-delay="0">
+
+  <!-- start preLoader -->
+  <div id="preloader">
+    <svg id="mainSVG" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 800 600">
+      <defs>
+        <radialGradient id="mainGrad" cx="346.198916" cy="300" fx="346.198916" fy="300" r="100" gradientUnits="userSpaceOnUse">
+          <stop offset=".68" stop-color="#21df51"></stop>
+          <stop offset=".72" stop-color="#3add63"></stop>
+          <stop offset=".77" stop-color="#4fdd73"></stop>
+          <stop offset=".82" stop-color="#66db83"></stop>
+          <stop offset=".88" stop-color="#7cd893"></stop>
+          <stop offset=".93" stop-color="#95d8a6"></stop>
+          <stop offset=".99" stop-color="#bde6c7"></stop>
+          <stop offset="1" stop-color="#e3f1e7"></stop>
+        </radialGradient>
+      </defs>
+      <circle id="fillDot" cx="400" cy="300" fill="#21df51" r="100"></circle>
+      <circle id="gradDot" cx="400" cy="300" fill="url(#mainGrad)" r="100"></circle>
+    </svg>
+  </div>
+  <!-- end preLoader -->
+
+  <!-- start scroll to top button -->
+  <div id="progress">
+    <span id="progress-value"><i class="bi bi-arrow-up-short"></i></span>
+  </div>
+  <!-- end scroll to top button -->
+
+
+  <!-- ======= start Header ======= -->
+  <header id="site-header" class="header-sticky">
+    <div class="nav-shell">
+      <div class="nav-left">
+        <a class="navbar-brand" href="#top"><img src="zatu-logo.png" class="logo" alt="Zatu"></a>
+      </div>
+      <nav class="nav-center desktop-nav">
+        <div class="navbar-collapse">
+          <ul class="navbar-nav menu" id="navbar">
+            <li class="nav-item">
+              <a class="nav-link" href="#neden-variz">Neden Varız?</a>
+            </li>
+            <li class="nav-item">
+              <a class="nav-link" href="#nasil-calisir">Nasıl Çalışır?</a>
+            </li>
+            <li class="nav-item">
+              <a class="nav-link" href="kayit.html">Ağa Katıl</a>
+            </li>
+            <li class="nav-item">
+              <a class="nav-link" href="#profilini-tamamla">Profilini Tamamla</a>
+            </li>
+            <li class="nav-item">
+              <a class="nav-link" href="#afet-anketi">Afet Görüşleri</a>
+            </li>
+          </ul>
+        </div>
+      </nav>
+      <div class="nav-right">
+        <a class="btn btn-cta desktop-cta" href="kayit.html" aria-label="Ağın Parçası Ol – 2 Dakikada Kayıt">AĞIN PARÇASI OL</a>
+        <button id="mobile-menu-toggle" class="mobile-menu-toggle" type="button" aria-controls="mobile-menu" aria-expanded="false" aria-label="Menüyü aç">
+          <i class="bi bi-list" id="menu-icon"></i>
+        </button>
+        <button id="mode-toggle" class="btn-light-mode switch-button"><i id="mode-icon" class="bi bi-moon-fill"></i></button>
+      </div>
+    </div>
+  </header>
+  <!-- ======= end Header ======= -->
+
+  <!-- ======= Mobile Menu Sheet ======= -->
+  <div id="mobile-menu" class="mobile-menu-sheet" role="dialog" aria-modal="true" aria-labelledby="mobile-menu-title" aria-hidden="true">
+    <div class="mobile-menu-header">
+      <span id="mobile-menu-title" class="mobile-menu-title">Menü</span>
+      <button id="mobile-menu-close" class="mobile-menu-close" aria-label="Kapat" type="button">
+        <i class="bi bi-x-lg"></i>
+      </button>
+    </div>
+    <nav class="mobile-menu-nav">
+      <a href="#nasil-calisir" class="mobile-nav-link" data-first-link>Nasıl Çalışır?</a>
+      <a href="kayit.html" class="mobile-nav-link">Ağa Katıl</a>
+      <a href="#profilini-tamamla" class="mobile-nav-link">Profilini Tamamla</a>
+      <a href="#afet-anketi" class="mobile-nav-link">Afet Görüşleri</a>
+      <a href="hakkimizda.html" class="mobile-nav-link">Hakkımızda</a>
+      <a href="sss.html" class="mobile-nav-link">SSS</a>
+      <a href="iletisim.html" class="mobile-nav-link">İletişim</a>
+    </nav>
+  </div>
+  <!-- ======= end Mobile Menu Sheet ======= -->
+
+  <!-- ============== Start Hero section ========== -->
+  <section class="hero d-flex flex-column justify-content-center align-items-center" id="hero">
+    <div id="particles-js"></div>
+    <div class="container">
+      <div class="row justify-content-center align-items-center">
+        <div class="hero-text col-12 col-lg-5">
+          <div class="row">
+            <div class="col-12">
+              <h1 class="title hero-title col-12" data-aos="fade-up" data-aos-delay="150">AFETTE <span class="hero-accent-purple">YALNIZ</span> <span class="hero-accent-pink">KALMA</span></h1>
+            </div>
+            <div class="col-lg-10 col-12" data-aos="fade-up" data-aos-delay="200">
+              <ul class="list-unstyled my-3 hero-list">
+                <li class="mb-2">• Büyük afette resmi yardım herkese yetişemez</li>
+                <li class="mb-2">• Komşularınla önceden bağlantı kurmak hayat kurtarır</li>
+                <li class="mb-2">• Şehrindeki binlerce insanla aynı endişeyi paylaşıyorsun</li>
+              </ul>
+            </div>
+            <div class="col-12" data-aos="fade-up" data-aos-delay="250">
+              <div class="hero-buttons">
+                <a href="kayit.html" class="btn" aria-label="Ağın Parçası Ol – 2 Dakikada Kayıt">AĞIN PARÇASI OL – 2 DAKİKADA KAYIT</a>
+              </div>
+            </div>
+            <div class="col-12" data-aos="fade-up" data-aos-delay="300">
+              <div class="hero-trust">
+                <p><i class="bi bi-check-circle-fill"></i> Son 24 saatte 1.847 kişi katıldı</p>
+                <p><i class="bi bi-globe"></i> 81 ilde aktif</p>
+                <p><i class="bi bi-shield-check"></i> Zatu teknolojisi ile AFAD entegrasyonu</p>
+              </div>
+            </div>
+          </div>
+        </div>
+        <div class="col-12 col-lg-7 mx-md-auto text-center" data-aos="fade-left" data-aos-delay="100">
+          <div class="hero-image">
+            <div class="hero-img" data-tilt>
+              <img class="img-fluid " alt="Zatu – Ulusal Afet Ağı için teknoloji ve topluluk desteği" src="hero-image.png">
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+  <!-- ============== End Hero section ========== -->
+
+  <!-- ============== Start services section ========== -->
+  <section class="container services py-5" id="neden-variz">
+    <div class="heading">
+      <span class="pretitle" data-aos="fade-up">
+        NEDEN VARIZ?
+      </span>
+      <h2 class="title col-lg-10 col-12" data-aos="fade-up" data-aos-delay="100">
+        TÜRKİYE'DE AFET GERÇEĞİ
+      </h2>
+      <p class="col-lg-7 col-12" data-aos="fade-up" data-aos-delay="150">
+        Hazırlıklı olmak seçim değil, zorunluluk
+      </p>
+    </div>
+    <div class="row gy-4 gx-4 ">
+      <!-- Kart 1: İstatistiksel Gerçekler -->
+      <div class="col-md-6 col-12 col-lg-6 mx-auto ">
+        <div class="box box-service box-hover" data-aos="fade-right" data-aos-delay="250">
+          <div class="box-icon my-2">
+            <i class="bi bi-bar-chart-line" aria-hidden="true"></i>
+          </div>
+          <h2 class="title-2 my-2 ">İstatistiksel Gerçekler</h2>
+          <ul class="list-unstyled my-3 neden-variz-list">
+            <li>6 Şubat 2023'te ilk 48 saatte sistematik A-K başlayamadı</li>
+            <li>Mobil iletişim ve enerji kesintileri yaşandı</li>
+            <li>AFAD personelinin yalnızca %30,7'si A-K teknisyeni</li>
+            <li>42.310 can kaybı; 448.018 tahliye</li>
+          </ul>
+        </div>
+      </div>
+      <div class="col-md-6 col-lg-6 mx-auto" data-aos="fade-down" data-aos-delay="200">
+        <!-- Kart 2: Psikolojik Durum -->
+        <div class="box box-service box-hover">
+          <div class="box-icon my-2">
+            <i class="bi bi-people" aria-hidden="true"></i>
+          </div>
+          <h2 class="title-2 my-2 ">Psikolojik Durum</h2>
+          <ul class="list-unstyled my-3 neden-variz-list">
+            <li>Apartmanında kaç aileyi tanıyorsun?</li>
+            <li>Afette kimle iletişim kuracaksın?</li>
+            <li>Yakının güvende mi anlayabilecek misin?</li>
+            <li>En yakın toplanma noktasını biliyor musun?</li>
+          </ul>
+        </div>
+      </div>
+      <div class="col-md-6 col-lg-6 mx-auto" data-aos="fade-left" data-aos-delay="250">
+        <!-- Kart 3: Teknik Problemler -->
+        <div class="box box-service box-hover">
+          <div class="box-icon my-2">
+            <i class="bi bi-broadcast" aria-hidden="true"></i>
+          </div>
+          <h2 class="title-2 my-2 ">Teknik Problemler</h2>
+          <ul class="list-unstyled my-3 neden-variz-list">
+            <li>Mobil iletişim ve enerji kesintileri</li>
+            <li>Bölgeye acil VSAT terminalleri gönderildi</li>
+            <li>Bazı havalimanları hasardan kapandı</li>
+            <li>Borçlu hatlar acil iletişim için açıldı</li>
+          </ul>
+        </div>
+      </div>
+      <div class="col-md-6 col-lg-6 mx-auto" data-aos="fade-right" data-aos-delay="350">
+        <!-- Kart 4: Sosyal Gerçeklik -->
+        <div class="box box-service box-hover">
+          <div class="box-icon my-2">
+            <i class="bi bi-diagram-3" aria-hidden="true"></i>
+          </div>
+          <h2 class="title-2 my-2 ">Sosyal Gerçeklik</h2>
+          <ul class="list-unstyled my-3 neden-variz-list">
+            <li>Bir komşu ortalama 8 kişiyi etkileyebilir</li>
+            <li>Mahalle bazlı örgütlenmeler en etkilidir</li>
+            <li>Toplumsal dayanışma hayat kurtarır</li>
+            <li>Önceden tanışanlar daha hızlı koordine olur</li>
+          </ul>
+        </div>
+      </div>
+    </div>
+  </section>
+  <!-- ============== End services section ========== -->
+
+  <!-- ============== Start About section (Nasıl Çalışır) ========== -->
+  <section class="about py-5 mt-5 how-it-works" id="nasil-calisir">
+    <div class="container">
+      <div class="heading">
+        <span class="pretitle" data-aos="fade-up">
+          NASIL ÇALIŞIR?
+        </span>
+        <h2 class="title col-lg-10 col-12" data-aos="fade-up" data-aos-delay="100">
+          NASIL ÇALIŞIR?
+        </h2>
+        <p class="col-lg-7 col-12" data-aos="fade-up" data-aos-delay="150">
+          Güvenli mahalle ağına katılmak için 3 basit adım
+        </p>
+      </div>
+
+      <!-- Interactive Steps Container -->
+      <div class="how-it-works-interactive mt-5">
+        <!-- Progress Bar -->
+        <div class="how-it-works-progress mb-4" data-aos="fade-up" data-aos-delay="200">
+          <div class="progress" style="height: 8px; border-radius: 10px; background: #e5e7eb;">
+            <div class="progress-bar bg-success" id="how-it-works-progress-bar" role="progressbar" style="width: 0%; transition: width 0.4s ease;" aria-valuenow="0" aria-valuemin="0" aria-valuemax="100"></div>
+          </div>
+          <div class="progress-steps-indicators d-flex justify-content-between mt-2">
+            <span class="progress-step-indicator" data-step="1">Adım 1</span>
+            <span class="progress-step-indicator" data-step="2">Adım 2</span>
+            <span class="progress-step-indicator" data-step="3">Adım 3</span>
+          </div>
+        </div>
+
+        <!-- Step 1: Ağa Katıl -->
+        <div class="how-it-works-step active" id="how-it-works-step-1" data-aos="fade-up" data-aos-delay="250">
+          <div class="step-card">
+            <header class="step-card-header">
+              <div class="step-badge-wrapper">
+                <span class="step-badge">1</span>
+                <i class="bi bi-person-plus step-icon" aria-hidden="true"></i>
+              </div>
+              <h3 class="step-title">Ağa Katıl</h3>
+            </header>
+            <div class="step-card-body">
+              <p class="step-lead">Temel bilgilerini girerek güvenli mahalle ağına katıl.</p>
+              
+              <form id="how-it-works-form-1" class="how-it-works-form">
+                <div class="form-group-wrapper">
+                  <div class="form-group">
+                    <label for="hiw-fullName" class="form-label">
+                      Ad Soyad <span class="text-danger">*</span>
+                    </label>
+                    <div class="input-wrapper">
+                      <input type="text" class="form-control" id="hiw-fullName" name="fullName" required placeholder="Adınız ve soyadınız">
+                      <i class="bi bi-check-circle-fill input-check" style="display: none;"></i>
+                    </div>
+                  </div>
+
+                  <div class="form-group">
+                    <label for="hiw-phone" class="form-label">
+                      Telefon Numarası <span class="text-muted" style="font-size: 0.85rem;">(Acil bildirimler için – önerilen)</span>
+                    </label>
+                    <div class="input-wrapper">
+                      <input type="tel" class="form-control" id="hiw-phone" name="phone" placeholder="05XX XXX XX XX" pattern="[0-9]{10,11}">
+                      <i class="bi bi-check-circle-fill input-check" style="display: none;"></i>
+                    </div>
+                    <small class="form-text text-muted">10-11 haneli telefon numaranızı giriniz</small>
+                  </div>
+
+                  <div class="form-group">
+                    <label for="hiw-birthDate" class="form-label">
+                      Doğum Tarihi <span class="text-danger">*</span>
+                    </label>
+                    <div class="input-wrapper">
+                      <input type="date" class="form-control" id="hiw-birthDate" name="birthDate" required>
+                      <i class="bi bi-check-circle-fill input-check" style="display: none;"></i>
+                    </div>
+                    <div class="age-display mt-2" id="age-display" style="display: none;">
+                      <span class="age-badge"></span>
+                      <span class="age-message"></span>
+                    </div>
+                  </div>
+                </div>
+
+                <div class="form-actions">
+                  <button type="submit" class="btn btn-primary" id="hiw-step1-submit">
+                    <span class="btn-text">Devam Et</span>
+                    <span class="btn-loader" style="display: none;">
+                      <span class="spinner-border spinner-border-sm" role="status" aria-hidden="true"></span>
+                    </span>
+                  </button>
+                </div>
+              </form>
+            </div>
+          </div>
+        </div>
+
+        <!-- Step 2: Bilgilerini Tamamla -->
+        <div class="how-it-works-step" id="how-it-works-step-2" style="display: none;">
+          <div class="step-card">
+            <header class="step-card-header">
+              <div class="step-badge-wrapper">
+                <span class="step-badge">2</span>
+                <i class="bi bi-geo-alt step-icon" aria-hidden="true"></i>
+              </div>
+              <h3 class="step-title">Bilgilerini Tamamla</h3>
+            </header>
+            <div class="step-card-body">
+              <p class="step-lead">Yaşadığın yeri ve bina bilgilerini paylaş, seni doğru grupla eşleştirelim.</p>
+              
+              <form id="how-it-works-form-2" class="how-it-works-form">
+                <div class="form-group-wrapper">
+                  <div class="form-group">
+                    <label for="hiw-city" class="form-label">
+                      İl <span class="text-danger">*</span>
+                    </label>
+                    <div class="input-wrapper">
+                      <select class="form-select" id="hiw-city" name="city" required>
+                        <option value="">İl seçiniz</option>
+                        <option value="01">Adana</option>
+                        <option value="06">Ankara</option>
+                        <option value="07">Antalya</option>
+                        <option value="16">Bursa</option>
+                        <option value="26">Eskişehir</option>
+                        <option value="27">Gaziantep</option>
+                        <option value="34">İstanbul</option>
+                        <option value="35">İzmir</option>
+                        <option value="58">Sivas</option>
+                        <option value="61">Trabzon</option>
+                      </select>
+                      <i class="bi bi-check-circle-fill input-check" style="display: none;"></i>
+                    </div>
+                  </div>
+
+                  <div class="form-group">
+                    <label for="hiw-district" class="form-label">
+                      İlçe <span class="text-danger">*</span>
+                    </label>
+                    <div class="input-wrapper">
+                      <input type="text" class="form-control" id="hiw-district" name="district" required placeholder="İlçe adınız" disabled>
+                      <i class="bi bi-check-circle-fill input-check" style="display: none;"></i>
+                    </div>
+                  </div>
+
+                  <div class="form-group">
+                    <label for="hiw-neighborhood" class="form-label">
+                      Mahalle <span class="text-danger">*</span>
+                    </label>
+                    <div class="input-wrapper">
+                      <input type="text" class="form-control" id="hiw-neighborhood" name="neighborhood" required placeholder="Mahalle adınız" disabled>
+                      <i class="bi bi-check-circle-fill input-check" style="display: none;"></i>
+                    </div>
+                  </div>
+
+                  <div class="form-group">
+                    <label for="hiw-buildingAge" class="form-label">
+                      Bina Yaşı <span class="text-danger">*</span>
+                    </label>
+                    <div class="input-wrapper">
+                      <select class="form-select" id="hiw-buildingAge" name="buildingAge" required>
+                        <option value="">Seçiniz</option>
+                        <option value="0-5">0-5 yıl</option>
+                        <option value="6-10">6-10 yıl</option>
+                        <option value="11-20">11-20 yıl</option>
+                        <option value="21-30">21-30 yıl</option>
+                        <option value="30+">30+ yıl</option>
+                      </select>
+                      <i class="bi bi-check-circle-fill input-check" style="display: none;"></i>
+                    </div>
+                  </div>
+
+                  <div class="form-group">
+                    <label for="hiw-floor" class="form-label">
+                      Kat Bilgisi <span class="text-danger">*</span>
+                    </label>
+                    <div class="input-wrapper">
+                      <input type="number" class="form-control" id="hiw-floor" name="floor" required placeholder="Bulunduğunuz kat" min="0" max="100">
+                      <i class="bi bi-check-circle-fill input-check" style="display: none;"></i>
+                    </div>
+                  </div>
+                </div>
+
+                <div class="form-actions">
+                  <button type="button" class="btn btn-outline-secondary" onclick="howItWorks.goToStep(1)">
+                    Geri
+                  </button>
+                  <button type="submit" class="btn btn-primary" id="hiw-step2-submit" disabled>
+                    <span class="btn-text">Devam Et</span>
+                    <span class="btn-loader" style="display: none;">
+                      <span class="spinner-border spinner-border-sm" role="status" aria-hidden="true"></span>
+                    </span>
+                  </button>
+                </div>
+              </form>
+            </div>
+          </div>
+        </div>
+
+        <!-- Step 3: Güvenli Ağa Dahil Ol -->
+        <div class="how-it-works-step" id="how-it-works-step-3" style="display: none;">
+          <div class="step-card">
+            <header class="step-card-header">
+              <div class="step-badge-wrapper">
+                <span class="step-badge">3</span>
+                <i class="bi bi-shield-check step-icon" aria-hidden="true"></i>
+              </div>
+              <h3 class="step-title">Güvenli Ağa Dahil Ol</h3>
+            </header>
+            <div class="step-card-body">
+              <div class="success-state text-center mb-4">
+                <div class="success-icon mb-3">
+                  <i class="bi bi-check-circle-fill" style="font-size: 4rem; color: var(--brand-color);"></i>
+                </div>
+                <h4 class="success-title" id="success-greeting">Kayıt tamamlandı!</h4>
+                <p class="step-lead">Artık bulunduğun bölgeye özel bildirimleri alabilirsin.</p>
+              </div>
+
+              <!-- App Download Section -->
+              <div class="app-download-section mt-4 pt-4 border-top">
+                <h5 class="mb-3 text-center">Zatu Uygulamasını İndir</h5>
+                
+                <!-- QR Code -->
+                <div class="qr-code-container mb-4 text-center">
+                  <div class="qr-placeholder bg-light p-3 d-inline-block rounded" style="width: 180px; height: 180px; border: 2px dashed #cbd5e1;">
+                    <div class="d-flex flex-column align-items-center justify-content-center h-100">
+                      <i class="bi bi-qr-code" style="font-size: 80px; color: var(--brand-color);" aria-hidden="true"></i>
+                      <small class="text-muted mt-2">QR Kod</small>
+                    </div>
+                  </div>
+                  <p class="text-muted mt-2 mb-0" style="font-size: 0.875rem;">QR kodu tarayarak uygulamayı indirebilirsiniz</p>
+                </div>
+
+                <!-- App Store Buttons -->
+                <div class="app-links text-center mb-3">
+                  <div class="d-flex flex-column flex-sm-row gap-3 justify-content-center align-items-center">
+                    <a href="#" class="btn btn-outline-dark btn-lg app-store-btn" target="_blank" rel="noopener noreferrer" aria-label="App Store'dan Zatu uygulamasını indir">
+                      <i class="bi bi-apple me-2" aria-hidden="true"></i>
+                      App Store
+                    </a>
+                    <a href="#" class="btn btn-outline-dark btn-lg google-play-btn" target="_blank" rel="noopener noreferrer" aria-label="Google Play'den Zatu uygulamasını indir">
+                      <i class="bi bi-google-play me-2" aria-hidden="true"></i>
+                      Google Play
+                    </a>
+                  </div>
+                </div>
+
+                <div class="text-center">
+                  <button type="button" class="btn btn-link text-muted" id="hiw-skip-download">
+                    Sonra indir
+                  </button>
+                </div>
+              </div>
+            </div>
+          </div>
+        </div>
+
+        <!-- Step 4: Opsiyonel - Afet Görüşlerini Paylaş -->
+        <div class="how-it-works-step optional-step" id="how-it-works-step-4" style="display: none;">
+          <div class="step-card">
+            <header class="step-card-header">
+              <div class="step-badge-wrapper">
+                <span class="step-badge optional">4</span>
+                <i class="bi bi-clipboard-data step-icon" aria-hidden="true"></i>
+              </div>
+              <h3 class="step-title">Afet Görüşlerini Paylaş <span class="optional-badge">(İsteğe Bağlı)</span></h3>
+            </header>
+            <div class="step-card-body">
+              <p class="step-lead">2 dakikalık kısa bir anketle afet algını paylaşabilirsin.</p>
+              
+              <div class="optional-step-actions text-center mt-4">
+                <button type="button" class="btn btn-primary btn-lg mb-3" id="hiw-start-survey" style="width: 100%; max-width: 400px;">
+                  Cevaplamak istiyorum
+                </button>
+                <div>
+                  <button type="button" class="btn btn-link text-muted" id="hiw-skip-survey">
+                    Şimdilik geç
+                  </button>
+                </div>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+
+      <!-- CTA Butonları (Hidden when form is active) -->
+      <div class="row mt-5" id="how-it-works-cta">
+        <div class="col-12 text-center actions-center" data-aos="fade-up" data-aos-delay="350">
+          <a href="kayit.html" class="btn" aria-label="Ağın Parçası Ol – 2 Dakikada Kayıt">AĞIN PARÇASI OL</a>
+        </div>
+      </div>
+    </div>
+  </section>
+  <!-- ============== End About section (Nasıl Çalışır) ========== -->
+
+  <!-- ============== Start City Stats Section ========== -->
+  <section class="container py-5" id="city-stats-section">
+    <div class="row justify-content-center">
+      <div class="col-12 col-lg-8">
+        <div id="city-stats-container"></div>
+      </div>
+    </div>
+  </section>
+  <!-- ============== End City Stats Section ========== -->
+
+  <!-- ============== Start Profilini Tamamla section ========== -->
+  <section id="profilini-tamamla" class="profile-banner py-5" id="profile-survey-section">
+    <div class="container">
+      <div class="text-center" style="max-width: 900px; margin: 0 auto;">
+        <span class="pretitle" data-aos="fade-up">
+          PROFİLİNİ TAMAMLA
+        </span>
+        <h2 class="title col-12" data-aos="fade-up" data-aos-delay="100">
+          5 Soruda Kişisel Afet Analizi
+        </h2>
+        <p class="col-lg-8 col-12 mx-auto" data-aos="fade-up" data-aos-delay="150" style="color: #475569; margin-bottom: 1.5rem;">
+          Sana özel öneriler almak için sadece 2 dakikanı ayır.
+        </p>
+
+        <!-- Profile Survey Component -->
+        <div id="profile-survey-container" class="survey-container">
+          <!-- Progress Bar -->
+          <div class="survey-progress mb-4">
+            <div class="progress" style="height: 8px; border-radius: 10px;">
+              <div class="progress-bar bg-success" id="profile-progress-bar" role="progressbar" style="width: 0%;" aria-valuenow="0" aria-valuemin="0" aria-valuemax="100"></div>
+            </div>
+            <p class="progress-text mt-2" id="profile-progress-text" style="color: #94a3b8; font-size: 0.875rem;">Soru 1/5</p>
+          </div>
+
+          <!-- Question Container -->
+          <div id="profile-questions" class="survey-questions">
+            <!-- Questions will be dynamically inserted here -->
+          </div>
+
+          <!-- Result Message -->
+          <div id="profile-result" class="survey-result d-none">
+            <div class="alert alert-success">
+              <h4>Teşekkürler, yanıtların kaydedildi!</h4>
+              <div id="profile-result-content"></div>
+            </div>
+          </div>
+        </div>
+
+        <p class="footnote muted mt-4" data-aos="fade-up" data-aos-delay="300" style="color: #94a3b8; font-size: 0.85rem; margin-top: 2rem;">
+          Verdiğin bilgiler sadece analiz amacıyla kullanılır.<br>Zatu teknolojisi ile güvenle korunur.
+        </p>
+      </div>
+    </div>
+  </section>
+  <!-- ============== End Profilini Tamamla section ========== -->
+
+  <!-- ============== Start Afet Görüşlerini Paylaş section ========== -->
+  <section id="afet-anketi" class="disaster-banner py-5" id="disaster-survey-section">
+    <div class="container">
+      <div class="text-center" style="max-width: 900px; margin: 0 auto;">
+        <span class="pretitle alert-tag" data-aos="fade-up">
+          AFET GÖRÜŞLERİNİ PAYLAŞ
+        </span>
+        <h2 class="title col-12" data-aos="fade-up" data-aos-delay="100">
+          Cevapların Şehrinin Afet Hazırlık Planına Katkı Sağlıyor
+        </h2>
+        <p class="col-lg-8 col-12 mx-auto" data-aos="fade-up" data-aos-delay="150" style="color: #374151; margin-bottom: 1.5rem; line-height: 1.6;">
+          Her yanıt, yaşadığın bölgedeki AFAD analizine dahil edilir.<br>Seni ilgilendiren çözümler için 5 kısa soruyu yanıtla.
+        </p>
+
+        <!-- Disaster Survey Component -->
+        <div id="disaster-survey-container" class="survey-container">
+          <!-- Progress Bar -->
+          <div class="survey-progress mb-4">
+            <div class="progress" style="height: 8px; border-radius: 10px;">
+              <div class="progress-bar bg-danger" id="disaster-progress-bar" role="progressbar" style="width: 0%;" aria-valuenow="0" aria-valuemin="0" aria-valuemax="100"></div>
+            </div>
+            <p class="progress-text mt-2" id="disaster-progress-text" style="color: #9ca3af; font-size: 0.875rem;">Soru 1/5</p>
+          </div>
+
+          <!-- Question Container -->
+          <div id="disaster-questions" class="survey-questions">
+            <!-- Questions will be dynamically inserted here -->
+          </div>
+
+          <!-- Result Message -->
+          <div id="disaster-result" class="survey-result d-none">
+            <div class="alert alert-success">
+              <h4>Teşekkürler, yanıtların kaydedildi!</h4>
+              <div id="disaster-result-content"></div>
+            </div>
+          </div>
+        </div>
+
+        <p class="footnote muted mt-4" data-aos="fade-up" data-aos-delay="250" style="color: #9ca3af; font-size: 0.85rem; margin-top: 2rem; line-height: 1.6;">
+          Verilerin anonim olarak analiz edilir ve sadece afet planlaması amacıyla paylaşılır.
+        </p>
+      </div>
+    </div>
+  </section>
+  <!-- ============== End Afet Görüşlerini Paylaş section ========== -->
+
+
+
+
+  <!-- ============== Start Footer section ========== -->
+  <div class="footer">
+    <div class="container">
+      <div class="row justify-content-center align-items-center g-4">
+        <div class="col-12 col-lg-4 col-md-6 mx-auto my-4">
+          <div class="box d-flex flex-column justify-content-md-start justify-content-lg-start justify-content-center align-items-center align-items-lg-start align-items-md-start">
+            <a href="#top" class="logo"><img class="my-2" src="zatu-logo.png" alt="Zatu"></a>
+            <p>Zatu, Türkiye'nin ulusal afet hazırlık ağıdır. Komşularınızla önceden bağlantı kurarak afetlere hazırlıklı olun.</p>
+            <h4 class="my-2">
+              Bizi Takip Edin
+            </h4>
+            <div class="social d-flex gap-2">
+              <div class="icon"><i class="bi bi-facebook"></i></div>
+              <div class="icon"><i class="bi bi-instagram"></i></div>
+              <div class="icon"><i class="bi bi-twitter-x"></i></div>
+              <div class="icon"><i class="bi bi-youtube"></i></div>
+            </div>
+          </div>
+        </div>
+        <div class="col-12 col-lg-8 col-md-6 mx-auto d-flex flex-column justify-content-md-start justify-content-lg-start justify-content-center align-items-center align-items-lg-start align-items-md-start my-4 gap-3">
+          <h4>Hızlı Bağlantılar</h4>
+          <ul class="d-flex flex-column gap-3">
+            <li class="d-flex align-items-center gap-2"><i class="bi bi-chevron-right"></i><a href="hakkimizda.html">Hakkımızda</a></li>
+            <li class="d-flex align-items-center gap-2"><i class="bi bi-chevron-right"></i><a href="sss.html">SSS</a></li>
+            <li class="d-flex align-items-center gap-2"><i class="bi bi-chevron-right"></i><a href="iletisim.html">İletişim</a></li>
+            <li class="d-flex align-items-center gap-2"><i class="bi bi-chevron-right"></i><a href="gizlilik-politikasi.html">Gizlilik Politikası</a></li>
+            <li class="d-flex align-items-center gap-2"><i class="bi bi-chevron-right"></i><a href="kvkk-aydinlatma-metni.html">KVKK Aydınlatma Metni</a></li>
+            <li class="d-flex align-items-center gap-2"><i class="bi bi-chevron-right"></i><a href="cerez-politikasi.html">Çerez Politikası</a></li>
+            <li class="d-flex align-items-center gap-2"><i class="bi bi-chevron-right"></i><a href="kullanim-sartlari.html">Kullanım Şartları</a></li>
+          </ul>
+        </div>
+      </div>
+    </div>
+    <hr>
+    <div class="copyrights">
+      <div class="container">
+        <div class="row">
+          <div class="col-12 col-md-6 d-flex justify-content-lg-start justify-content-md-start justify-content-center">
+            <p class="creadits">
+              © 2025 Zatu. Tüm hakları saklıdır.
+            </p>
+          </div>
+          <div class="col-12 col-md-6 d-flex justify-content-lg-end justify-content-md-end justify-content-center pb-md-0 pb-md-0 pb-lg-0 pb-3">
+            <div>
+              <a href="kullanim-sartlari.html">Kullanım Şartları</a>
+              | <a href="gizlilik-politikasi.html">Gizlilik Politikası</a>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+  <!-- ============== end Footer section ========== -->
+
+  <!--  JQuery file     -->
+  <script src="js/jquery-3.6.1.min.js"></script>
+
+  <!-- bootstrap min js -->
+  <script src="js/bootstrap.min.js"></script>
+
+  <!--  toasts file     -->
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/toastr.js/latest/js/toastr.min.js"></script>
+
+  <!--  owl carousel    -->
+  <script src="js/owl.carousel.min.js"></script>
+
+  <!-- aos file    -->
+  <script src="js/aos.js"></script>
+
+  <!-- gsap file    -->
+  <script src="js/gsap.min.js"></script>
+
+  <!--  counter     -->
+  <script src="js/jquery.counterup.min.js"></script>
+  <script src="js/jquery.waypoints.js"></script>
+
+  <!-- particles js file  -->
+  <script src="js/particles.min.js"></script>
+
+  <!-- jquery isotope file -->
+  <script src="js/isotope.min.js"></script>
+
+  <!-- jquery fancybox file -->
+  <script src="js/jquery.fancybox.min.js"></script>
+
+  <!--  Tilt.js file     -->
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/vanilla-tilt/1.7.0/vanilla-tilt.min.js"></script>
+
+  <!--  api mock (for survey endpoints)  -->
+  <script src="js/api-mock.js"></script>
+
+  <!--  surveys js file  -->
+  <script src="js/surveys.js"></script>
+
+  <!--  city stats js files  -->
+  <script src="js/api-stats.js"></script>
+  <script src="js/counter.js"></script>
+  <script src="js/city-stats.js"></script>
+
+  <!--  user progress and sticky cta bar  -->
+  <script src="js/user-progress.js"></script>
+  <script src="js/sticky-cta-bar.js"></script>
+
+  <!--  mobile menu  -->
+  <script src="js/mobile-menu.js"></script>
+
+  <!--  main js file  -->
+  <script src="js/main.js"></script>
+
+  <!--  how it works interactive js file  -->
+  <script src="js/how-it-works.js"></script>
+
+  <!-- Initialize City Stats -->
+  <script>
+    document.addEventListener('DOMContentLoaded', function() {
+      // Get city from localStorage (from registration) or default to İstanbul
+      const step2Data = localStorage.getItem('registration_step2');
+      let city = 'İstanbul';
+      
+      if (step2Data) {
+        try {
+          const data = JSON.parse(step2Data);
+          if (data.city) {
+            city = data.city;
+          }
+        } catch (e) {
+          console.error('Error parsing registration data:', e);
+        }
+      }
+
+      // Initialize city stats card
+      if (document.getElementById('city-stats-container')) {
+        window.cityStatsCard = new CityStatsCard('city-stats-container', city);
+      }
+    });
+  </script>
+
+
+
+
+</body>
+</html>
+

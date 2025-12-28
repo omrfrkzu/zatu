@@ -1,0 +1,879 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta http-equiv="X-UA-Compatible" content="IE=edge">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta name="description" content="Don't be alone in a disaster. National Disaster Network helps you build a safe communication and coordination network with your neighbors.">
+  <link rel="icon" href="../logo-main.png" type="image/png">
+  <link rel="stylesheet" href="../css/bootstrap.min.css">
+  <link rel="stylesheet" href="../css/aos.css">
+  <link rel="stylesheet" href="../css/style.css">
+  <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.11.3/font/bootstrap-icons.min.css">
+  <title>National Disaster Network | Join Network – Join Safe Neighborhood Network</title>
+</head>
+<body class="home-1">
+  <!-- ======= start Header ======= -->
+  <header id="site-header" class="header-sticky">
+    <div class="nav-shell">
+      <!-- Left: Logo -->
+      <div class="nav-left">
+        <a class="navbar-brand" href="index.html"><img src="../logo-main.png" class="logo" alt="National Disaster Network"></a>
+      </div>
+      
+      <!-- Center: Nav Links (Absolute Centered on Desktop) -->
+      <nav class="nav-center desktop-nav">
+        <div class="navbar-collapse">
+          <ul class="navbar-nav menu" id="navbar">
+            <li class="nav-item">
+              <a class="nav-link" href="index.html#why-we-exist">Why We Exist?</a>
+            </li>
+            <li class="nav-item">
+              <a class="nav-link" href="index.html#how-it-works">How It Works?</a>
+            </li>
+            <li class="nav-item">
+              <a class="nav-link" href="kayit.html">Join Network</a>
+            </li>
+            <li class="nav-item">
+              <a class="nav-link" href="index.html#complete-profile">Complete Your Profile</a>
+            </li>
+            <li class="nav-item">
+              <a class="nav-link" href="index.html#disaster-opinions">Disaster Opinions</a>
+            </li>
+          </ul>
+        </div>
+      </nav>
+      
+      <!-- Right: Actions (Desktop: Language + CTA + Theme | Mobile: Theme + Hamburger) -->
+      <div class="nav-right">
+        <!-- Language Dropdown (Desktop Only) -->
+        <div class="language-dropdown-wrapper desktop-language-dropdown">
+          <button 
+            type="button" 
+            id="language-dropdown-trigger" 
+            class="language-dropdown-trigger" 
+            aria-haspopup="menu" 
+            aria-expanded="false"
+            aria-label="Language selection">
+            <span class="language-flag" id="language-flag">
+              <!-- EN Flag SVG -->
+              <svg width="18" height="18" viewBox="0 0 18 18" fill="none" xmlns="http://www.w3.org/2000/svg" class="flag-icon">
+                <rect width="18" height="18" fill="#012169"/>
+                <path d="M0 0L18 18M18 0L0 18" stroke="#FFFFFF" stroke-width="2"/>
+                <path d="M0 0L18 18M18 0L0 18" stroke="#C8102E" stroke-width="1.2"/>
+                <path d="M9 0V18M0 9H18" stroke="#FFFFFF" stroke-width="2.5"/>
+                <path d="M9 0V18M0 9H18" stroke="#C8102E" stroke-width="1.5"/>
+              </svg>
+            </span>
+            <span class="language-code" id="language-code">EN</span>
+            <i class="bi bi-chevron-down language-chevron"></i>
+          </button>
+          <div id="language-dropdown-menu" class="language-dropdown-menu" role="menu" aria-hidden="true">
+            <button 
+              type="button" 
+              class="language-menu-item" 
+              role="menuitem" 
+              data-lang="tr"
+              aria-label="Türkçe">
+              <span class="language-flag">
+                <svg width="18" height="18" viewBox="0 0 18 18" fill="none" xmlns="http://www.w3.org/2000/svg" class="flag-icon">
+                  <rect width="18" height="18" fill="#E30A17"/>
+                  <!-- Crescent (Hilal) -->
+                  <circle cx="7" cy="9" r="4" fill="#FFFFFF"/>
+                  <circle cx="8.5" cy="9" r="3.5" fill="#E30A17"/>
+                  <!-- Star -->
+                  <path d="M12.5 6.5L12.8 7.3L13.6 7.1L12.9 7.6L13.2 8.4L12.5 7.9L11.8 8.4L12.1 7.6L11.4 7.1L12.2 7.3Z" fill="#FFFFFF"/>
+                </svg>
+              </span>
+              <span class="language-code-small">TR</span>
+              <span class="language-name">Türkçe</span>
+            </button>
+            <button 
+              type="button" 
+              class="language-menu-item" 
+              role="menuitem" 
+              data-lang="en"
+              aria-label="English">
+              <span class="language-flag">
+                <svg width="18" height="18" viewBox="0 0 18 18" fill="none" xmlns="http://www.w3.org/2000/svg" class="flag-icon">
+                  <rect width="18" height="18" fill="#012169"/>
+                  <path d="M0 0L18 18M18 0L0 18" stroke="#FFFFFF" stroke-width="2"/>
+                  <path d="M0 0L18 18M18 0L0 18" stroke="#C8102E" stroke-width="1.2"/>
+                  <path d="M9 0V18M0 9H18" stroke="#FFFFFF" stroke-width="2.5"/>
+                  <path d="M9 0V18M0 9H18" stroke="#C8102E" stroke-width="1.5"/>
+                </svg>
+              </span>
+              <span class="language-code-small">EN</span>
+              <span class="language-name">English</span>
+            </button>
+          </div>
+        </div>
+        
+        <!-- CTA Button (Desktop Only) -->
+        <a class="btn btn-cta desktop-cta" href="kayit.html" aria-label="Be Part of the Network – Register in 2 Minutes">BE PART OF THE NETWORK</a>
+        
+        <!-- Mobile Actions: Theme + Hamburger -->
+        <div class="mobile-actions">
+          <button id="mode-toggle" class="btn-light-mode switch-button" aria-label="Dark mode"><i id="mode-icon" class="bi bi-moon-fill"></i></button>
+          <button id="mobile-menu-toggle" class="mobile-menu-toggle" type="button" aria-controls="mobile-menu" aria-expanded="false" aria-label="Open menu">
+            <i class="bi bi-list" id="menu-icon"></i>
+          </button>
+        </div>
+      </div>
+    </div>
+  </header>
+  <!-- ======= end Header ======= -->
+
+  <!-- ======= Mobile Menu Drawer (Fixed Overlay) ======= -->
+  <div id="mobile-menu-wrapper" class="mobile-menu-wrapper" aria-hidden="true">
+    <!-- Overlay -->
+    <button 
+      id="mobile-menu-overlay" 
+      class="mobile-menu-overlay" 
+      aria-label="Close menu"
+      type="button">
+    </button>
+    
+    <!-- Drawer -->
+    <aside id="mobile-menu" class="mobile-menu-drawer" role="navigation" aria-label="Mobile menu">
+      <div class="mobile-menu-header">
+        <a class="navbar-brand" href="index.html">
+          <img src="../logo-main.png" class="logo" alt="National Disaster Network">
+        </a>
+        <button 
+          id="mobile-menu-close" 
+          class="mobile-menu-close" 
+          type="button" 
+          aria-label="Close menu">
+          <i class="bi bi-x-lg"></i>
+        </button>
+      </div>
+      
+      <nav class="mobile-menu-nav">
+        <ul class="mobile-menu-list">
+          <li><a href="index.html#why-we-exist" class="mobile-menu-link">Why We Exist?</a></li>
+          <li><a href="index.html#how-it-works" class="mobile-menu-link">How It Works?</a></li>
+          <li><a href="kayit.html" class="mobile-menu-link">Join Network</a></li>
+          <li><a href="index.html#complete-profile" class="mobile-menu-link">Complete Your Profile</a></li>
+          <li><a href="index.html#disaster-opinions" class="mobile-menu-link">Disaster Opinions</a></li>
+        </ul>
+      </nav>
+      
+      <div class="mobile-menu-footer">
+        <a href="kayit.html" class="mobile-menu-cta">
+          Join Network
+        </a>
+        
+        <!-- Mobile Language Selector -->
+        <div class="language-dropdown-wrapper mobile-language-dropdown">
+          <button 
+            type="button" 
+            id="mobile-language-dropdown-trigger" 
+            class="language-dropdown-trigger" 
+            aria-haspopup="menu" 
+            aria-expanded="false"
+            aria-label="Language selection">
+            <span class="language-flag" id="mobile-language-flag">
+              <svg width="18" height="18" viewBox="0 0 18 18" fill="none" xmlns="http://www.w3.org/2000/svg" class="flag-icon">
+                <rect width="18" height="18" fill="#012169"/>
+                <path d="M0 0L18 18M18 0L0 18" stroke="#FFFFFF" stroke-width="2"/>
+                <path d="M0 0L18 18M18 0L0 18" stroke="#C8102E" stroke-width="1.2"/>
+                <path d="M9 0V18M0 9H18" stroke="#FFFFFF" stroke-width="2.5"/>
+                <path d="M9 0V18M0 9H18" stroke="#C8102E" stroke-width="1.5"/>
+              </svg>
+            </span>
+            <span class="language-code" id="mobile-language-code">EN</span>
+            <i class="bi bi-chevron-down language-chevron"></i>
+          </button>
+          <div id="mobile-language-dropdown-menu" class="language-dropdown-menu" role="menu" aria-hidden="true">
+            <button 
+              type="button" 
+              class="language-menu-item" 
+              role="menuitem" 
+              data-lang="tr"
+              aria-label="Türkçe">
+              <span class="language-flag">
+                <svg width="18" height="18" viewBox="0 0 18 18" fill="none" xmlns="http://www.w3.org/2000/svg" class="flag-icon">
+                  <rect width="18" height="18" fill="#E30A17"/>
+                  <circle cx="7" cy="9" r="4" fill="#FFFFFF"/>
+                  <circle cx="8.5" cy="9" r="3.5" fill="#E30A17"/>
+                  <path d="M12.5 6.5L12.8 7.3L13.6 7.1L12.9 7.6L13.2 8.4L12.5 7.9L11.8 8.4L12.1 7.6L11.4 7.1L12.2 7.3Z" fill="#FFFFFF"/>
+                </svg>
+              </span>
+              <span class="language-code-small">TR</span>
+              <span class="language-name">Türkçe</span>
+            </button>
+            <button 
+              type="button" 
+              class="language-menu-item" 
+              role="menuitem" 
+              data-lang="en"
+              aria-label="English">
+              <span class="language-flag">
+                <svg width="18" height="18" viewBox="0 0 18 18" fill="none" xmlns="http://www.w3.org/2000/svg" class="flag-icon">
+                  <rect width="18" height="18" fill="#012169"/>
+                  <path d="M0 0L18 18M18 0L0 18" stroke="#FFFFFF" stroke-width="2"/>
+                  <path d="M0 0L18 18M18 0L0 18" stroke="#C8102E" stroke-width="1.2"/>
+                  <path d="M9 0V18M0 9H18" stroke="#FFFFFF" stroke-width="2.5"/>
+                  <path d="M9 0V18M0 9H18" stroke="#C8102E" stroke-width="1.5"/>
+                </svg>
+              </span>
+              <span class="language-code-small">EN</span>
+              <span class="language-name">English</span>
+            </button>
+          </div>
+        </div>
+      </div>
+    </aside>
+  </div>
+  <!-- ======= end Mobile Menu Drawer ======= -->
+
+  <!-- ============== Start Registration Form Section ========== -->
+  <section class="about py-5 how-it-works how-it-works-premium" id="kayit" style="min-height: 100vh;">
+    <div class="page-container">
+      <!-- Premium Wrapper Panel with Gradient Background -->
+      <div class="how-it-works-wrapper-premium">
+        <!-- Title Block -->
+        <div class="how-it-works-header-premium" data-aos="fade-up">
+          <span class="section-eyebrow-premium">Register</span>
+          <h2 class="how-it-works-title-premium">3 Simple Steps to Join the Safe Neighborhood Network</h2>
+          <p class="how-it-works-description-premium">Register in 2 minutes, connect with your city</p>
+        </div>
+
+        <!-- Visual Stepper Component - ALWAYS VISIBLE AT TOP -->
+        <div class="how-it-works-stepper-premium" id="registration-stepper" data-aos="fade-up" data-aos-delay="100">
+          <div class="stepper-item-premium active" data-step="1">
+            <div class="stepper-circle-premium active">
+              <span class="stepper-number-premium">1</span>
+              <i class="bi bi-check stepper-check" style="display: none;"></i>
+            </div>
+            <div class="stepper-line-premium"></div>
+            <div class="stepper-content-premium">
+              <div class="stepper-label-premium">Join Network</div>
+            </div>
+          </div>
+          <div class="stepper-item-premium pending" data-step="2">
+            <div class="stepper-circle-premium pending">
+              <span class="stepper-number-premium">2</span>
+              <i class="bi bi-check stepper-check" style="display: none;"></i>
+            </div>
+            <div class="stepper-line-premium"></div>
+            <div class="stepper-content-premium">
+              <div class="stepper-label-premium">Complete Your Information</div>
+            </div>
+          </div>
+          <div class="stepper-item-premium pending" data-step="3">
+            <div class="stepper-circle-premium pending">
+              <span class="stepper-number-premium">3</span>
+              <i class="bi bi-check stepper-check" style="display: none;"></i>
+            </div>
+            <div class="stepper-line-premium"></div>
+            <div class="stepper-content-premium">
+              <div class="stepper-label-premium">Join Safe Network</div>
+            </div>
+          </div>
+        </div>
+
+        <!-- Grid: Left (Benefits) + Right (Form) -->
+        <div class="how-it-works-grid-premium">
+          <!-- LEFT COLUMN (5/12): Benefits & Trust -->
+          <div class="how-it-works-left-premium" data-aos="fade-up" data-aos-delay="150">
+            <!-- Benefit Cards Stack -->
+            <div class="how-it-works-benefits-premium">
+              <div class="benefit-card-premium">
+                <div class="benefit-icon-premium">
+                  <i class="bi bi-clock-fill"></i>
+                </div>
+                <div class="benefit-text-premium">2 minute registration</div>
+              </div>
+              <div class="benefit-card-premium">
+                <div class="benefit-icon-premium">
+                  <i class="bi bi-shield-lock-fill"></i>
+                </div>
+                <div class="benefit-text-premium">Private & secure</div>
+              </div>
+              <div class="benefit-card-premium">
+                <div class="benefit-icon-premium">
+                  <i class="bi bi-people-fill"></i>
+                </div>
+                <div class="benefit-text-premium">Connect with neighbors</div>
+              </div>
+            </div>
+
+            <!-- Trust Badges -->
+            <div class="how-it-works-trust-premium">
+              <div class="trust-badge-premium">
+                <i class="bi bi-shield-check"></i>
+                <span>GDPR Compliant</span>
+              </div>
+              <div class="trust-badge-premium">
+                <i class="bi bi-lock-fill"></i>
+                <span>Privacy-Focused</span>
+              </div>
+            </div>
+          </div>
+
+          <!-- RIGHT COLUMN (7/12): Elevated Form Card -->
+          <div class="how-it-works-right-premium">
+            <!-- Large Elevated Form Card -->
+            <div class="form-card-premium">
+        <!-- Step 1: Join Network -->
+        <div class="how-it-works-step active" id="step1" data-step="1" data-aos="fade-up" data-aos-delay="250">
+          <!-- Form Card Header -->
+          <header class="form-card-header-premium">
+            <div class="form-card-header-top">
+              <span class="step-badge-premium-form">1</span>
+              <div class="form-card-header-content">
+                <h3 class="form-card-title-premium">Join Network</h3>
+                <span class="form-card-progress-premium">Step 1 / 3</span>
+              </div>
+            </div>
+            <div class="form-card-divider-premium"></div>
+          </header>
+          <!-- Form Card Body -->
+          <div class="form-card-body-premium">
+            <p class="form-card-lead-premium">Join the safe neighborhood network by entering your basic information.</p>
+            
+            <form id="step1Form" class="how-it-works-form-premium">
+                <div class="form-group-wrapper">
+                  <div class="form-group">
+                    <label for="fullName" class="form-label">
+                      Full Name <span class="text-danger">*</span>
+                    </label>
+                    <div class="input-wrapper">
+                      <input type="text" class="form-control" id="fullName" name="fullName" required placeholder="Your first and last name">
+                      <i class="bi bi-check-circle-fill input-check" style="display: none;"></i>
+                    </div>
+                    <div class="form-error" id="fullName-error"></div>
+                  </div>
+
+                  <div class="form-group">
+                    <label for="phone" class="form-label">
+                      Phone Number <span class="text-muted" style="font-size: 0.85rem;">(For emergency notifications – recommended)</span>
+                    </label>
+                    <div class="input-wrapper">
+                      <input type="tel" class="form-control" id="phone" name="phone" required placeholder="05XX XXX XX XX" pattern="[0-9]{10,11}">
+                      <i class="bi bi-check-circle-fill input-check" style="display: none;"></i>
+                    </div>
+                    <small class="form-text text-muted">Enter your 10-11 digit phone number</small>
+                    <div class="form-error" id="phone-error"></div>
+                  </div>
+
+                  <div class="form-group">
+                    <label for="birthDate" class="form-label">
+                      Date of Birth <span class="text-danger">*</span>
+                    </label>
+                    <div class="input-wrapper">
+                      <input type="date" class="form-control" id="birthDate" name="birthDate" required>
+                      <i class="bi bi-check-circle-fill input-check" style="display: none;"></i>
+                    </div>
+                    <div class="form-error" id="birthDate-error"></div>
+                  </div>
+
+                  <div class="form-group">
+                    <div class="form-check">
+                      <input class="form-check-input" type="checkbox" id="dataConsent" required>
+                      <label class="form-check-label" for="dataConsent">
+                        I accept that my data will be processed in accordance with the <a href="gizlilik-politikasi.html" target="_blank" class="text-primary">Privacy Policy</a> and <a href="kvkk-aydinlatma-metni.html" target="_blank" class="text-primary">GDPR Disclosure</a>. <span class="text-danger">*</span>
+                      </label>
+                    </div>
+                    <div class="form-error" id="dataConsent-error"></div>
+                  </div>
+                </div>
+
+            <!-- Form Actions Footer -->
+            <div class="form-actions-premium">
+              <div class="form-actions-divider-premium"></div>
+              <div class="form-actions-content-premium">
+                <button type="submit" class="btn btn-primary-premium" id="step1-submit">
+                  <span class="btn-text">Continue</span>
+                  <span class="btn-loader" style="display: none;">
+                    <span class="spinner-border spinner-border-sm" role="status" aria-hidden="true"></span>
+                  </span>
+                </button>
+              </div>
+            </div>
+          </form>
+          </div>
+        </div>
+
+        <!-- Step 2: Complete Your Information -->
+        <div class="how-it-works-step" id="step2" data-step="2" style="display: none;">
+          <!-- Form Card Header -->
+          <header class="form-card-header-premium">
+            <div class="form-card-header-top">
+              <span class="step-badge-premium-form">2</span>
+              <div class="form-card-header-content">
+                <h3 class="form-card-title-premium">Complete Your Information</h3>
+                <span class="form-card-progress-premium">Step 2 / 3</span>
+              </div>
+            </div>
+            <div class="form-card-divider-premium"></div>
+          </header>
+          <!-- Form Card Body -->
+          <div class="form-card-body-premium">
+              <p class="step-lead">Share where you live and building information, let us match you with the right group.</p>
+              
+              <form id="step2Form" class="how-it-works-form">
+                <div class="form-group-wrapper">
+                  <div class="form-group">
+                    <label for="city" class="form-label">
+                      Province <span class="text-danger">*</span>
+                    </label>
+                    <div class="input-wrapper">
+                      <select class="form-select" id="city" name="city" required>
+                        <option value="">Select province</option>
+                        <option value="01">Adana</option>
+                        <option value="06">Ankara</option>
+                        <option value="07">Antalya</option>
+                        <option value="16">Bursa</option>
+                        <option value="26">Eskişehir</option>
+                        <option value="27">Gaziantep</option>
+                        <option value="34">Istanbul</option>
+                        <option value="35">Izmir</option>
+                        <option value="58">Sivas</option>
+                        <option value="61">Trabzon</option>
+                      </select>
+                      <i class="bi bi-check-circle-fill input-check" style="display: none;"></i>
+                    </div>
+                    <div class="form-error" id="city-error"></div>
+                  </div>
+
+                  <div class="form-group">
+                    <label for="district" class="form-label">
+                      District <span class="text-danger">*</span>
+                    </label>
+                    <div class="input-wrapper">
+                      <input type="text" class="form-control" id="district" name="district" required placeholder="Your district name" disabled>
+                      <i class="bi bi-check-circle-fill input-check" style="display: none;"></i>
+                    </div>
+                    <div class="form-error" id="district-error"></div>
+                  </div>
+
+                  <div class="form-group">
+                    <label for="neighborhood" class="form-label">
+                      Neighborhood <span class="text-danger">*</span>
+                    </label>
+                    <div class="input-wrapper">
+                      <input type="text" class="form-control" id="neighborhood" name="neighborhood" required placeholder="Your neighborhood name" disabled>
+                      <i class="bi bi-check-circle-fill input-check" style="display: none;"></i>
+                    </div>
+                    <div class="form-error" id="neighborhood-error"></div>
+                  </div>
+
+                  <div class="form-group">
+                    <label for="buildingAge" class="form-label">
+                      Building Age <span class="text-danger">*</span>
+                    </label>
+                    <div class="input-wrapper">
+                      <select class="form-select" id="buildingAge" name="buildingAge" required>
+                        <option value="">Select</option>
+                        <option value="0-5">0-5 years</option>
+                        <option value="6-10">6-10 years</option>
+                        <option value="11-20">11-20 years</option>
+                        <option value="21-30">21-30 years</option>
+                        <option value="30+">30+ years</option>
+                      </select>
+                      <i class="bi bi-check-circle-fill input-check" style="display: none;"></i>
+                    </div>
+                    <div class="form-error" id="buildingAge-error"></div>
+                  </div>
+
+                  <div class="form-group">
+                    <label for="floor" class="form-label">
+                      Floor Information <span class="text-danger">*</span>
+                    </label>
+                    <div class="input-wrapper">
+                      <input type="number" class="form-control" id="floor" name="floor" required placeholder="Your floor" min="0" max="100">
+                      <i class="bi bi-check-circle-fill input-check" style="display: none;"></i>
+                    </div>
+                    <div class="form-error" id="floor-error"></div>
+                  </div>
+                </div>
+
+            <!-- Form Actions Footer -->
+            <div class="form-actions-premium">
+              <div class="form-actions-divider-premium"></div>
+              <div class="form-actions-content-premium">
+                <button type="button" class="btn btn-outline-secondary-premium" id="step2-back">
+                  Back
+                </button>
+                <button type="submit" class="btn btn-primary-premium" id="step2-submit" disabled>
+                  <span class="btn-text">Continue</span>
+                  <span class="btn-loader" style="display: none;">
+                    <span class="spinner-border spinner-border-sm" role="status" aria-hidden="true"></span>
+                  </span>
+                </button>
+              </div>
+            </div>
+          </form>
+          </div>
+        </div>
+
+        <!-- Step 3: Join Safe Network -->
+        <div class="how-it-works-step" id="step3" data-step="3" style="display: none;">
+          <!-- Form Card Header -->
+          <header class="form-card-header-premium">
+            <div class="form-card-header-top">
+              <span class="step-badge-premium-form">3</span>
+              <div class="form-card-header-content">
+                <h3 class="form-card-title-premium">Join Safe Network</h3>
+                <span class="form-card-progress-premium">Step 3 / 3</span>
+              </div>
+            </div>
+            <div class="form-card-divider-premium"></div>
+          </header>
+          <!-- Form Card Body -->
+          <div class="form-card-body-premium">
+              <div class="success-state text-center">
+                <div class="success-icon mb-3">
+                  <i class="bi bi-check-circle-fill" style="font-size: 4rem; color: var(--brand-color);"></i>
+                </div>
+                <h4 class="success-title" id="success-greeting">Registration completed!</h4>
+                <p class="step-lead">You can now receive notifications specific to your area.</p>
+              </div>
+
+              <!-- App Download Section -->
+              <div class="app-download-section mt-4 pt-4 border-top">
+                <h5 class="mb-3 text-center">Download National Disaster Network App</h5>
+                
+                <!-- QR Code -->
+                <div class="qr-code-container mb-4 text-center">
+                  <div class="qr-placeholder bg-light p-3 d-inline-block rounded" style="width: 180px; height: 180px; border: 2px dashed #cbd5e1;">
+                    <div class="d-flex flex-column align-items-center justify-content-center h-100">
+                      <i class="bi bi-qr-code" style="font-size: 80px; color: var(--brand-color);" aria-hidden="true"></i>
+                      <small class="text-muted mt-2">QR Code</small>
+                    </div>
+                  </div>
+                  <p class="text-muted mt-2 mb-0" style="font-size: 0.875rem;">You can download the app by scanning the QR code</p>
+                </div>
+
+                <!-- App Store Buttons -->
+                <div class="app-links text-center mb-3">
+                  <div class="d-flex flex-column flex-sm-row gap-3 justify-content-center align-items-center">
+                    <a href="#" class="btn btn-outline-dark btn-lg app-store-btn" target="_blank" rel="noopener noreferrer" aria-label="Download National Disaster Network app from App Store">
+                      <i class="bi bi-apple me-2" aria-hidden="true"></i>
+                      App Store
+                    </a>
+                    <a href="#" class="btn btn-outline-dark btn-lg google-play-btn" target="_blank" rel="noopener noreferrer" aria-label="Download National Disaster Network app from Google Play">
+                      <i class="bi bi-google-play me-2" aria-hidden="true"></i>
+                      Google Play
+                    </a>
+                  </div>
+                </div>
+
+                <div class="text-center">
+                  <a href="index.html" class="btn btn-link text-muted" id="go-home">
+                    Back to Home
+                  </a>
+                </div>
+              </div>
+            </div>
+          </div>
+        </div>
+
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+  <!-- ============== End Registration Form Section ========== -->
+
+  <!-- Scripts -->
+  <script src="../js/jquery-3.6.1.min.js"></script>
+  <script src="../js/bootstrap.min.js"></script>
+  <script src="../js/aos.js"></script>
+  <script src="../js/main.js"></script>
+  <script src="../js/language-dropdown.js"></script>
+  <script src="../js/how-it-works-steps.js"></script>
+  <script src="../js/city-stats.js"></script>
+  <script src="../js/user-progress.js"></script>
+  
+  <script>
+    // Initialize AOS
+    AOS.init({
+      duration: 800,
+      easing: 'ease-in-out',
+      once: true
+    });
+
+    // Registration form handling
+    let currentStep = 1;
+
+    // Step 1 Form Submit
+    document.getElementById('step1Form').addEventListener('submit', function(e) {
+      e.preventDefault();
+      const form = this;
+      const formData = new FormData(form);
+      
+      // Validate required fields
+      const fullName = formData.get('fullName');
+      const phone = formData.get('phone');
+      const birthDate = formData.get('birthDate');
+      const dataConsent = document.getElementById('dataConsent').checked;
+
+      let hasError = false;
+
+      // Clear previous errors
+      document.querySelectorAll('.form-error').forEach(el => el.textContent = '');
+      document.querySelectorAll('.input-check').forEach(el => el.style.display = 'none');
+
+      if (!fullName || fullName.trim() === '') {
+        document.getElementById('fullName-error').textContent = 'Full name is required';
+        hasError = true;
+      } else {
+        document.querySelector('#fullName').closest('.input-wrapper').querySelector('.input-check').style.display = 'block';
+      }
+
+      if (!phone || phone.trim() === '') {
+        document.getElementById('phone-error').textContent = 'Phone number is required';
+        hasError = true;
+      } else if (!/^[0-9]{10,11}$/.test(phone.replace(/\s/g, ''))) {
+        document.getElementById('phone-error').textContent = 'Please enter a valid phone number (10-11 digits)';
+        hasError = true;
+      } else {
+        document.querySelector('#phone').closest('.input-wrapper').querySelector('.input-check').style.display = 'block';
+      }
+
+      if (!birthDate) {
+        document.getElementById('birthDate-error').textContent = 'Date of birth is required';
+        hasError = true;
+      } else {
+        document.querySelector('#birthDate').closest('.input-wrapper').querySelector('.input-check').style.display = 'block';
+      }
+
+      if (!dataConsent) {
+        document.getElementById('dataConsent-error').textContent = 'Data processing consent is required';
+        hasError = true;
+      }
+
+      if (hasError) {
+        return;
+      }
+
+      // Show loading
+      const submitBtn = document.getElementById('step1-submit');
+      submitBtn.querySelector('.btn-text').style.display = 'none';
+      submitBtn.querySelector('.btn-loader').style.display = 'inline-block';
+      submitBtn.disabled = true;
+
+      // Save data (localStorage)
+      const step1Data = {
+        fullName: fullName,
+        phone: phone,
+        birthDate: birthDate
+      };
+      localStorage.setItem('registration_step1', JSON.stringify(step1Data));
+
+      // Simulate API call
+      setTimeout(() => {
+        // Move to next step using how-it-works-steps.js
+        if (window.HowItWorksSteps) {
+          window.HowItWorksSteps.showStep(2);
+        } else {
+          goToStep(2);
+        }
+        
+        submitBtn.querySelector('.btn-text').style.display = 'inline';
+        submitBtn.querySelector('.btn-loader').style.display = 'none';
+        submitBtn.disabled = false;
+      }, 500);
+    });
+
+    // Step 2 Form Submit
+    document.getElementById('step2Form').addEventListener('submit', function(e) {
+      e.preventDefault();
+      const form = this;
+      const formData = new FormData(form);
+      
+      // Validate
+      const city = formData.get('city');
+      const district = formData.get('district');
+      const neighborhood = formData.get('neighborhood');
+      const buildingAge = formData.get('buildingAge');
+      const floor = formData.get('floor');
+
+      let hasError = false;
+      document.querySelectorAll('.form-error').forEach(el => el.textContent = '');
+
+      if (!city) {
+        document.getElementById('city-error').textContent = 'Province selection is required';
+        hasError = true;
+      }
+      if (!district || district.trim() === '') {
+        document.getElementById('district-error').textContent = 'District is required';
+        hasError = true;
+      }
+      if (!neighborhood || neighborhood.trim() === '') {
+        document.getElementById('neighborhood-error').textContent = 'Neighborhood is required';
+        hasError = true;
+      }
+      if (!buildingAge) {
+        document.getElementById('buildingAge-error').textContent = 'Building age is required';
+        hasError = true;
+      }
+      if (!floor || floor.trim() === '') {
+        document.getElementById('floor-error').textContent = 'Floor information is required';
+        hasError = true;
+      }
+
+      if (hasError) {
+        return;
+      }
+
+      // Show loading
+      const submitBtn = document.getElementById('step2-submit');
+      submitBtn.querySelector('.btn-text').style.display = 'none';
+      submitBtn.querySelector('.btn-loader').style.display = 'inline-block';
+      submitBtn.disabled = true;
+
+      // Save data
+      const step2Data = {
+        city: city,
+        district: district,
+        neighborhood: neighborhood,
+        buildingAge: buildingAge,
+        floor: floor
+      };
+      localStorage.setItem('registration_step2', JSON.stringify(step2Data));
+
+      // Update user progress
+      if (window.userProgress) {
+        window.userProgress.setRegistered(true);
+      }
+
+      // Move to next step
+      setTimeout(() => {
+        if (window.HowItWorksSteps) {
+          window.HowItWorksSteps.showStep(3);
+        } else {
+          goToStep(3);
+        }
+        
+        submitBtn.querySelector('.btn-text').style.display = 'inline';
+        submitBtn.querySelector('.btn-loader').style.display = 'none';
+        submitBtn.disabled = false;
+      }, 500);
+    });
+
+    // Back button handler
+    document.getElementById('step2-back').addEventListener('click', function() {
+      if (window.HowItWorksSteps) {
+        window.HowItWorksSteps.goToStep(1);
+      } else {
+        goToStep(1);
+      }
+    });
+
+    function goToStep(step) {
+      // Hide all steps
+      document.querySelectorAll('.how-it-works-step').forEach(el => {
+        el.style.display = 'none';
+        el.classList.remove('active');
+      });
+
+      // Show current step
+      const stepEl = document.getElementById('step' + step);
+      if (stepEl) {
+        stepEl.style.display = 'block';
+        stepEl.classList.add('active');
+      }
+      currentStep = step;
+
+      // Update stepper
+      updateStepper(step);
+    }
+
+    function updateStepper(activeStep) {
+      const stepper = document.getElementById('registration-stepper');
+      if (!stepper) return;
+
+      const items = stepper.querySelectorAll('.stepper-item-premium');
+      
+      items.forEach((item, index) => {
+        const stepNum = index + 1;
+        const circle = item.querySelector('.stepper-circle-premium');
+        const number = item.querySelector('.stepper-number-premium');
+        const check = item.querySelector('.stepper-check');
+        
+        item.classList.remove('active', 'completed', 'pending');
+        circle.classList.remove('active', 'completed', 'pending');
+        
+        if (stepNum < activeStep) {
+          // Completed step
+          item.classList.add('completed');
+          circle.classList.add('completed');
+          if (number) number.style.display = 'none';
+          if (check) check.style.display = 'block';
+        } else if (stepNum === activeStep) {
+          // Active step
+          item.classList.add('active');
+          circle.classList.add('active');
+          if (number) number.style.display = 'block';
+          if (check) check.style.display = 'none';
+        } else {
+          // Pending step
+          item.classList.add('pending');
+          circle.classList.add('pending');
+          if (number) number.style.display = 'block';
+          if (check) check.style.display = 'none';
+        }
+      });
+    }
+
+    // Load saved data on page load
+    window.addEventListener('DOMContentLoaded', function() {
+      const step1Data = localStorage.getItem('registration_step1');
+      if (step1Data) {
+        try {
+          const data = JSON.parse(step1Data);
+          if (data.fullName) document.getElementById('fullName').value = data.fullName;
+          if (data.phone) document.getElementById('phone').value = data.phone;
+          if (data.birthDate) document.getElementById('birthDate').value = data.birthDate;
+        } catch (e) {
+          console.error('Error loading step1 data:', e);
+        }
+      }
+
+      const step2Data = localStorage.getItem('registration_step2');
+      if (step2Data) {
+        try {
+          const data = JSON.parse(step2Data);
+          if (data.city) {
+            document.getElementById('city').value = data.city;
+            // Enable district and neighborhood if city is selected
+            document.getElementById('district').disabled = false;
+            document.getElementById('neighborhood').disabled = false;
+          }
+          if (data.district) document.getElementById('district').value = data.district;
+          if (data.neighborhood) document.getElementById('neighborhood').value = data.neighborhood;
+          if (data.buildingAge) document.getElementById('buildingAge').value = data.buildingAge;
+          if (data.floor) document.getElementById('floor').value = data.floor;
+        } catch (e) {
+          console.error('Error loading step2 data:', e);
+        }
+      }
+
+      // Initialize stepper
+      updateStepper(1);
+    });
+
+    // City select handler - enable district/neighborhood
+    document.getElementById('city').addEventListener('change', function() {
+      const district = document.getElementById('district');
+      const neighborhood = document.getElementById('neighborhood');
+      if (this.value) {
+        district.disabled = false;
+        neighborhood.disabled = false;
+      } else {
+        district.disabled = true;
+        neighborhood.disabled = true;
+        district.value = '';
+        neighborhood.value = '';
+      }
+    });
+  </script>
+</body>
+</html>
+

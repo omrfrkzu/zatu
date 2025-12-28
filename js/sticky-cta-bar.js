@@ -93,7 +93,7 @@ class StickyCtaBar {
 
     if (!state.registered) {
       ctas.push({
-        label: 'AĞIN PARÇASI OL',
+        label: 'Ulusal Afet Ağına Katıl',
         id: 'kayit',
         href: 'kayit.html',
         variant: 'primary'

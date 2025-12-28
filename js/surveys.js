@@ -553,7 +553,7 @@ class DisasterSurvey {
 
   getTrustedInstitutionMessage(answer) {
     const messages = {
-      'AFAD': 'AFAD\'a güven duyman önemli. Zatu da AFAD\'la entegre çalışır.',
+      'AFAD': 'AFAD\'a güven duyman önemli. Ulusal Afet Ağı da AFAD\'la entegre çalışır.',
       'Belediye': 'Yerel yönetimlere güvenin güçlü bir toplum için çok önemli.',
       'Ordu': 'Orduya duyduğun güven, kriz anında dayanışmanın göstergesi.',
       'Gönüllüler': 'Gönüllülere güvenmen, toplumsal dayanışmanın kalbini temsil eder.',
@@ -588,7 +588,7 @@ class DisasterSurvey {
 
   getNeedNewSystemMessage(answer) {
     if (answer === 'Kesinlikle var' || answer === 'Olabilir') {
-      return 'Evet, Zatu tam da bu ihtiyaca cevap vermek için geliştirildi.';
+      return 'Evet, Ulusal Afet Ağı tam da bu ihtiyaca cevap vermek için geliştirildi.';
     }
     return 'Farklı düşünceleri duymak değerli. Geri bildirimin sistemin gelişmesine katkı sağlar.';
   }

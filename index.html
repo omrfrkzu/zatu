@@ -435,46 +435,50 @@
     <div class="page-container">
       <!-- Premium Wrapper Panel with Gradient Background -->
       <div class="how-it-works-wrapper-premium">
-        <!-- 2-Column Grid Layout: Left (5/12) + Right (7/12) -->
-        <div class="how-it-works-grid-premium">
-          <!-- LEFT COLUMN (5/12): Title Block + Visual Stepper + Benefit Cards + Trust Badges -->
-          <div class="how-it-works-left-premium">
-            <!-- Title Block -->
-            <div class="how-it-works-header-premium" data-aos="fade-up">
-              <span class="section-eyebrow-premium">Nasıl Çalışır?</span>
-              <h2 class="how-it-works-title-premium">Güvenli Mahalle Ağına Katılmak İçin 3 Basit Adım</h2>
-              <p class="how-it-works-description-premium">Kayıt ol, bilgilerini tamamla, güvenli ağa dahil ol</p>
-            </div>
+        <!-- Title Block -->
+        <div class="how-it-works-header-premium" data-aos="fade-up">
+          <span class="section-eyebrow-premium">Nasıl Çalışır?</span>
+          <h2 class="how-it-works-title-premium">Güvenli Mahalle Ağına Katılmak İçin 3 Basit Adım</h2>
+          <p class="how-it-works-description-premium">Kayıt ol, bilgilerini tamamla, güvenli ağa dahil ol</p>
+        </div>
 
-            <!-- Visual Stepper Component -->
-            <div class="how-it-works-stepper-premium" data-aos="fade-up" data-aos-delay="100">
-              <div class="stepper-item-premium active" data-step="1">
-                <div class="stepper-circle-premium active">
-                  <span class="stepper-number-premium">1</span>
-                </div>
-                <div class="stepper-line-premium"></div>
-                <div class="stepper-content-premium">
-                  <div class="stepper-label-premium">Ağa Katıl</div>
-                </div>
-              </div>
-              <div class="stepper-item-premium" data-step="2">
-                <div class="stepper-circle-premium">
-                  <span class="stepper-number-premium">2</span>
-                </div>
-                <div class="stepper-line-premium"></div>
-                <div class="stepper-content-premium">
-                  <div class="stepper-label-premium">Bilgilerini Tamamla</div>
-                </div>
-              </div>
-              <div class="stepper-item-premium" data-step="3">
-                <div class="stepper-circle-premium">
-                  <span class="stepper-number-premium">3</span>
-                </div>
-                <div class="stepper-content-premium">
-                  <div class="stepper-label-premium">Güvenli Ağa Dahil Ol</div>
-                </div>
-              </div>
+        <!-- Visual Stepper Component - ALWAYS VISIBLE AT TOP -->
+        <div class="how-it-works-stepper-premium" id="how-it-works-stepper" data-aos="fade-up" data-aos-delay="100">
+          <div class="stepper-item-premium active" data-step="1">
+            <div class="stepper-circle-premium active">
+              <span class="stepper-number-premium">1</span>
+              <i class="bi bi-check stepper-check" style="display: none;"></i>
             </div>
+            <div class="stepper-line-premium"></div>
+            <div class="stepper-content-premium">
+              <div class="stepper-label-premium">Ağa Katıl</div>
+            </div>
+          </div>
+          <div class="stepper-item-premium pending" data-step="2">
+            <div class="stepper-circle-premium pending">
+              <span class="stepper-number-premium">2</span>
+              <i class="bi bi-check stepper-check" style="display: none;"></i>
+            </div>
+            <div class="stepper-line-premium"></div>
+            <div class="stepper-content-premium">
+              <div class="stepper-label-premium">Bilgilerini Tamamla</div>
+            </div>
+          </div>
+          <div class="stepper-item-premium pending" data-step="3">
+            <div class="stepper-circle-premium pending">
+              <span class="stepper-number-premium">3</span>
+              <i class="bi bi-check stepper-check" style="display: none;"></i>
+            </div>
+            <div class="stepper-content-premium">
+              <div class="stepper-label-premium">Güvenli Ağa Dahil Ol</div>
+            </div>
+          </div>
+        </div>
+
+        <!-- 2-Column Grid Layout: Left (5/12) + Right (7/12) - Desktop Only -->
+        <div class="how-it-works-grid-premium">
+          <!-- LEFT COLUMN (5/12): Benefit Cards + Trust Badges - Desktop Only -->
+          <div class="how-it-works-left-premium">
 
             <!-- Benefit Cards Stack -->
             <div class="how-it-works-benefits-premium" data-aos="fade-up" data-aos-delay="150">
@@ -520,7 +524,7 @@
             <!-- Large Elevated Form Card -->
             <div class="form-card-premium">
         <!-- Step 1: Ağa Katıl -->
-        <div class="how-it-works-step active" id="how-it-works-step-1" data-aos="fade-up" data-aos-delay="250">
+        <div class="how-it-works-step active" id="how-it-works-step-1" data-step="1" data-aos="fade-up" data-aos-delay="250">
           <!-- Form Card Header -->
           <header class="form-card-header-premium">
             <div class="form-card-header-top">
@@ -529,6 +533,7 @@
                 <h3 class="form-card-title-premium">Ağa Katıl</h3>
                 <span class="form-card-progress-premium">Adım 1 / 3</span>
               </div>
+              <i class="bi bi-chevron-down accordion-chevron-mobile"></i>
             </div>
             <div class="form-card-divider-premium"></div>
           </header>
@@ -591,7 +596,7 @@
         </div>
 
         <!-- Step 2: Bilgilerini Tamamla -->
-        <div class="how-it-works-step" id="how-it-works-step-2" style="display: none;">
+        <div class="how-it-works-step" id="how-it-works-step-2" data-step="2">
           <!-- Form Card Header -->
           <header class="form-card-header-premium">
             <div class="form-card-header-top">
@@ -600,6 +605,7 @@
                 <h3 class="form-card-title-premium">Bilgilerini Tamamla</h3>
                 <span class="form-card-progress-premium">Adım 2 / 3</span>
               </div>
+              <i class="bi bi-chevron-down accordion-chevron-mobile"></i>
             </div>
             <div class="form-card-divider-premium"></div>
           </header>
@@ -683,7 +689,7 @@
             <div class="form-actions-premium">
               <div class="form-actions-divider-premium"></div>
               <div class="form-actions-content-premium">
-                <button type="button" class="btn btn-outline-secondary-premium" onclick="howItWorks.goToStep(1)">
+                <button type="button" class="btn btn-outline-secondary-premium" id="hiw-step2-back">
                   Geri
                 </button>
                 <button type="submit" class="btn btn-primary-premium" id="hiw-step2-submit" disabled>
@@ -699,7 +705,7 @@
         </div>
 
         <!-- Step 3: Güvenli Ağa Dahil Ol -->
-        <div class="how-it-works-step" id="how-it-works-step-3" style="display: none;">
+        <div class="how-it-works-step" id="how-it-works-step-3" data-step="3">
           <!-- Form Card Header -->
           <header class="form-card-header-premium">
             <div class="form-card-header-top">
@@ -708,87 +714,52 @@
                 <h3 class="form-card-title-premium">Güvenli Ağa Dahil Ol</h3>
                 <span class="form-card-progress-premium">Adım 3 / 3</span>
               </div>
+              <i class="bi bi-chevron-down accordion-chevron-mobile"></i>
             </div>
             <div class="form-card-divider-premium"></div>
           </header>
           <!-- Form Card Body -->
           <div class="form-card-body-premium">
-              <div class="success-state text-center mb-4">
+              <div class="success-state text-center">
                 <div class="success-icon mb-3">
                   <i class="bi bi-check-circle-fill" style="font-size: 4rem; color: var(--brand-color);"></i>
                 </div>
                 <h4 class="success-title" id="success-greeting">Kayıt tamamlandı!</h4>
                 <p class="step-lead">Artık bulunduğun bölgeye özel bildirimleri alabilirsin.</p>
               </div>
-
-              <!-- App Download Section -->
-              <div class="app-download-section mt-4 pt-4 border-top">
-                <h5 class="mb-3 text-center">Zatu Uygulamasını İndir</h5>
-                
-                <!-- QR Code -->
-                <div class="qr-code-container mb-4 text-center">
-                  <div class="qr-placeholder bg-light p-3 d-inline-block rounded" style="width: 180px; height: 180px; border: 2px dashed #cbd5e1;">
-                    <div class="d-flex flex-column align-items-center justify-content-center h-100">
-                      <i class="bi bi-qr-code" style="font-size: 80px; color: var(--brand-color);" aria-hidden="true"></i>
-                      <small class="text-muted mt-2">QR Kod</small>
-                    </div>
-                  </div>
-                  <p class="text-muted mt-2 mb-0" style="font-size: 0.875rem;">QR kodu tarayarak uygulamayı indirebilirsiniz</p>
-                </div>
-
-                <!-- App Store Buttons -->
-                <div class="app-links text-center mb-3">
-                  <div class="d-flex flex-column flex-sm-row gap-3 justify-content-center align-items-center">
-                    <a href="#" class="btn btn-outline-dark btn-lg app-store-btn" target="_blank" rel="noopener noreferrer" aria-label="App Store'dan Zatu uygulamasını indir">
-                      <i class="bi bi-apple me-2" aria-hidden="true"></i>
-                      App Store
-                    </a>
-                    <a href="#" class="btn btn-outline-dark btn-lg google-play-btn" target="_blank" rel="noopener noreferrer" aria-label="Google Play'den Zatu uygulamasını indir">
-                      <i class="bi bi-google-play me-2" aria-hidden="true"></i>
-                      Google Play
-                    </a>
-                  </div>
-                </div>
-
-                <div class="text-center">
-                  <button type="button" class="btn btn-link text-muted" id="hiw-skip-download">
-                    Sonra indir
-                  </button>
-                </div>
-              </div>
             </div>
           </div>
         </div>
 
-        <!-- Step 4: Opsiyonel - Afet Görüşlerini Paylaş -->
-        <div class="how-it-works-step optional-step" id="how-it-works-step-4" style="display: none;">
-          <!-- Form Card Header -->
+            </div>
+          </div>
+        </div>
+      </div>
+
+      <!-- Optional Step: Afet Görüşlerini Paylaş - Separate Card After Main Steps -->
+      <div class="how-it-works-optional-section" id="how-it-works-optional" style="display: none;">
+        <div class="form-card-premium optional-step-card">
           <header class="form-card-header-premium">
             <div class="form-card-header-top">
-              <span class="step-badge-premium-form optional">4</span>
+              <span class="step-badge-premium-form optional">?</span>
               <div class="form-card-header-content">
                 <h3 class="form-card-title-premium">Afet Görüşlerini Paylaş <span class="optional-badge">(İsteğe Bağlı)</span></h3>
               </div>
             </div>
             <div class="form-card-divider-premium"></div>
           </header>
-          <!-- Form Card Body -->
           <div class="form-card-body-premium">
-              <p class="step-lead">2 dakikalık kısa bir anketle afet algını paylaşabilirsin.</p>
-              
-              <div class="optional-step-actions text-center mt-4">
-                <button type="button" class="btn btn-primary btn-lg mb-3" id="hiw-start-survey" style="width: 100%; max-width: 400px;">
-                  Cevaplamak istiyorum
+            <p class="step-lead">2 dakikalık kısa bir anketle afet algını paylaşabilirsin.</p>
+            
+            <div class="optional-step-actions text-center mt-4">
+              <button type="button" class="btn btn-primary btn-lg mb-3" id="hiw-start-survey" style="width: 100%; max-width: 400px;">
+                Cevaplamak istiyorum
+              </button>
+              <div>
+                <button type="button" class="btn btn-link text-muted" id="hiw-skip-survey">
+                  Şimdilik geç
                 </button>
-                <div>
-                  <button type="button" class="btn btn-link text-muted" id="hiw-skip-survey">
-                    Şimdilik geç
-                  </button>
-                </div>
               </div>
-            </div>
-          </div>
-        </div>
             </div>
           </div>
         </div>
@@ -844,10 +815,10 @@
         <!-- ZONE 3: Action (CTA Container) -->
         <div class="profile-zone-action" data-aos="fade-up" data-aos-delay="150">
           <div class="profile-cta-container">
-            <a href="quiz.html" class="btn btn-primary-premium-cta">
+            <button type="button" class="btn btn-primary-premium-cta" id="start-profile-test-btn">
               Teste Başla
               <i class="bi bi-arrow-right ms-2"></i>
-            </a>
+            </button>
           </div>
           <div class="profile-trust-line">
             <i class="bi bi-shield-check"></i>
@@ -923,6 +894,7 @@
         <div id="disaster-survey-gate" class="disaster-survey-gate-premium" data-aos="fade-up" data-aos-delay="150">
           <div class="disaster-gate-card-premium">
             <p class="disaster-gate-text-premium">Cevapların şehrinin afet hazırlık planına katkı sağlıyor. Her yanıt, yaşadığın bölgedeki AFAD analizine dahil edilir.</p>
+            <p class="disaster-gate-text-premium-mobile">Yanıtların, yaşadığın bölgenin afet planlamasında kullanılır.</p>
           </div>
         </div>
 
@@ -944,6 +916,10 @@
           <div class="disaster-trust-line">
             <i class="bi bi-shield-lock"></i>
             <span>Verilerin anonim olarak analiz edilir ve sadece afet planlaması amacıyla paylaşılır.</span>
+          </div>
+          <div class="disaster-trust-line-mobile">
+            <i class="bi bi-shield-lock"></i>
+            <span>Yanıtlar anonim analiz edilir</span>
           </div>
         </div>
 
@@ -1160,6 +1136,18 @@
 
   <!--  language dropdown js file  -->
   <script src="js/language-dropdown.js"></script>
+  
+  <!-- How It Works Step-Based Form Management -->
+  <script src="js/how-it-works-steps.js"></script>
+  
+  <!-- Mobile accordion for How It Works section (deprecated, kept for compatibility) -->
+  <script src="js/how-it-works-mobile.js"></script>
+  
+  <!-- Profile Test Wizard -->
+  <script src="js/profile-test-wizard.js"></script>
+  
+  <!-- Disaster Survey Wizard -->
+  <script src="js/disaster-survey-wizard.js"></script>
 
   <!-- Initialize City Stats -->
   <script>
@@ -1186,8 +1174,77 @@
     });
   </script>
 
+  <!-- ============== Disaster Survey Wizard Modal ========== -->
+  <div class="disaster-survey-modal" id="disaster-survey-modal" style="display: none;">
+    <div class="disaster-survey-modal-overlay"></div>
+    <div class="disaster-survey-modal-content">
+      <!-- Modal Header -->
+      <div class="disaster-survey-header">
+        <button type="button" class="disaster-survey-close" id="disaster-survey-close" aria-label="Kapat">
+          <i class="bi bi-x-lg"></i>
+        </button>
+        <div class="disaster-survey-progress">
+          <div class="disaster-survey-progress-bar">
+            <div class="disaster-survey-progress-fill" id="disaster-survey-progress-fill"></div>
+          </div>
+          <div class="disaster-survey-progress-text" id="disaster-survey-progress-text">Soru 1 / 5</div>
+        </div>
+      </div>
 
+      <!-- Modal Body - Question Container -->
+      <div class="disaster-survey-body" id="disaster-survey-body">
+        <!-- Questions will be rendered here -->
+      </div>
 
+      <!-- Modal Footer - Navigation -->
+      <div class="disaster-survey-footer" id="disaster-survey-footer">
+        <button type="button" class="btn btn-outline-secondary" id="disaster-survey-back" style="display: none;">
+          <i class="bi bi-arrow-left me-2"></i>Geri
+        </button>
+        <button type="button" class="btn btn-primary-premium-cta" id="disaster-survey-next" disabled>
+          İleri
+          <i class="bi bi-arrow-right ms-2"></i>
+        </button>
+      </div>
+    </div>
+  </div>
+  <!-- ============== End Disaster Survey Wizard Modal ========== -->
+
+  <!-- ============== Profile Test Wizard Modal ========== -->
+  <div class="profile-test-modal" id="profile-test-modal" style="display: none;">
+    <div class="profile-test-modal-overlay"></div>
+    <div class="profile-test-modal-content">
+      <!-- Modal Header -->
+      <div class="profile-test-header">
+        <button type="button" class="profile-test-close" id="profile-test-close" aria-label="Kapat">
+          <i class="bi bi-x-lg"></i>
+        </button>
+        <div class="profile-test-progress">
+          <div class="profile-test-progress-bar">
+            <div class="profile-test-progress-fill" id="profile-test-progress-fill"></div>
+          </div>
+          <div class="profile-test-progress-text" id="profile-test-progress-text">Soru 1 / 5</div>
+        </div>
+      </div>
+
+      <!-- Modal Body - Question Container -->
+      <div class="profile-test-body" id="profile-test-body">
+        <!-- Questions will be rendered here -->
+      </div>
+
+      <!-- Modal Footer - Navigation -->
+      <div class="profile-test-footer" id="profile-test-footer">
+        <button type="button" class="btn btn-outline-secondary" id="profile-test-back" style="display: none;">
+          <i class="bi bi-arrow-left me-2"></i>Geri
+        </button>
+        <button type="button" class="btn btn-primary-premium-cta" id="profile-test-next" disabled>
+          Devam Et
+          <i class="bi bi-arrow-right ms-2"></i>
+        </button>
+      </div>
+    </div>
+  </div>
+  <!-- ============== End Profile Test Wizard Modal ========== -->
 
 </body>
 </html>

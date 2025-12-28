@@ -127,10 +127,12 @@ class CityStatsCard {
                 <i class="bi bi-people-fill"></i>
               </div>
               <div class="mini-card-content">
-                <div class="mini-card-number">
-                  <span class="counter" data-value="${this.data.activeUsers}" aria-label="${this.data.activeUsers} aktif üye">0</span>
+                <div class="mini-card-main-row">
+                  <div class="mini-card-number">
+                    <span class="counter" data-value="${this.data.activeUsers}" aria-label="${this.data.activeUsers} aktif üye">0</span>
+                  </div>
+                  <div class="mini-card-label">Aktif Üye</div>
                 </div>
-                <div class="mini-card-label">Aktif Üye</div>
                 <div class="mini-card-trend">
                   <i class="bi bi-arrow-up-circle"></i>
                   <span>Artış devam ediyor</span>
@@ -144,10 +146,12 @@ class CityStatsCard {
                 <i class="bi bi-graph-up-arrow"></i>
               </div>
               <div class="mini-card-content">
-                <div class="mini-card-number growth">
-                  +<span class="counter" data-value="${this.data.last24h}" aria-label="${this.data.last24h} yeni katılım">0</span>
+                <div class="mini-card-main-row">
+                  <div class="mini-card-number growth">
+                    +<span class="counter" data-value="${this.data.last24h}" aria-label="${this.data.last24h} yeni katılım">0</span>
+                  </div>
+                  <div class="mini-card-label">Son 24 Saatte Katılım</div>
                 </div>
-                <div class="mini-card-label">Son 24 Saatte Katılım</div>
                 <div class="mini-card-trend">
                   <i class="bi bi-clock"></i>
                   <span>Son güncelleme</span>
@@ -175,12 +179,11 @@ class CityStatsCard {
 
         <!-- Footer Bar -->
         <div class="city-stats-footer-bar">
-          <div class="footer-bar-left">
+          <div class="footer-bar-content">
             <i class="bi bi-clock"></i>
-            <span>Son güncelleme: <time datetime="${new Date(this.data.updatedAt).toISOString()}">${updateTime}</time></span>
-          </div>
-          <div class="footer-bar-right">
-            <span class="city-indicator-dot"></span>
+            <time datetime="${new Date(this.data.updatedAt).toISOString()}">${updateTime}</time>
+            <span class="footer-separator">•</span>
+            <i class="bi bi-geo-alt"></i>
             <span>${this.escapeHtml(this.data.city)}</span>
           </div>
         </div>

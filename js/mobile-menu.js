@@ -6,9 +6,15 @@
   const menuClose = document.getElementById('mobile-menu-close');
   const mobileMenuWrapper = document.getElementById('mobile-menu-wrapper');
   const mobileOverlay = document.getElementById('mobile-menu-overlay');
+  const mobileMenuDrawer = document.getElementById('mobile-menu');
   const menuLinks = document.querySelectorAll('.mobile-nav-item');
   let isOpen = false;
   let previousHash = window.location.hash;
+  
+  // Swipe down to close
+  let touchStartY = 0;
+  let touchCurrentY = 0;
+  let isDragging = false;
 
   // Check if mobile menu elements exist
   if (!menuToggle || !mobileMenuWrapper) {
@@ -36,6 +42,11 @@
     mobileMenuWrapper.classList.remove('active');
     mobileMenuWrapper.setAttribute('aria-hidden', 'true');
     menuToggle.setAttribute('aria-expanded', 'false');
+    
+    // Reset transform
+    if (mobileMenuDrawer) {
+      mobileMenuDrawer.style.transform = '';
+    }
     
     // Unlock body scroll
     document.body.style.overflow = '';
@@ -135,6 +146,94 @@
       }
     }, 250);
   });
+
+  // Swipe down to close handlers
+  if (mobileMenuDrawer) {
+    // Touch start
+    mobileMenuDrawer.addEventListener('touchstart', (e) => {
+      if (e.touches.length === 1) {
+        touchStartY = e.touches[0].clientY;
+        isDragging = true;
+      }
+    }, { passive: true });
+
+    // Touch move
+    mobileMenuDrawer.addEventListener('touchmove', (e) => {
+      if (isDragging && e.touches.length === 1) {
+        touchCurrentY = e.touches[0].clientY;
+        const deltaY = touchCurrentY - touchStartY;
+        
+        // Only allow downward swipe
+        if (deltaY > 0) {
+          const translateY = Math.min(deltaY, 100);
+          mobileMenuDrawer.style.transform = `translateY(${translateY}px)`;
+        }
+      }
+    }, { passive: true });
+
+    // Touch end
+    mobileMenuDrawer.addEventListener('touchend', (e) => {
+      if (isDragging) {
+        const deltaY = touchCurrentY - touchStartY;
+        const threshold = 50; // Minimum swipe distance to close
+        
+        if (deltaY > threshold) {
+          closeMenu();
+        } else {
+          // Snap back
+          mobileMenuDrawer.style.transform = '';
+        }
+        
+        isDragging = false;
+        touchStartY = 0;
+        touchCurrentY = 0;
+      }
+    }, { passive: true });
+  }
+
+  // Swipe down to close handlers
+  if (mobileMenuDrawer) {
+    // Touch start
+    mobileMenuDrawer.addEventListener('touchstart', (e) => {
+      if (e.touches.length === 1 && isOpen) {
+        touchStartY = e.touches[0].clientY;
+        isDragging = true;
+      }
+    }, { passive: true });
+
+    // Touch move
+    mobileMenuDrawer.addEventListener('touchmove', (e) => {
+      if (isDragging && e.touches.length === 1 && isOpen) {
+        touchCurrentY = e.touches[0].clientY;
+        const deltaY = touchCurrentY - touchStartY;
+        
+        // Only allow downward swipe
+        if (deltaY > 0) {
+          const translateY = Math.min(deltaY, 200);
+          mobileMenuDrawer.style.transform = `translateY(${translateY}px)`;
+        }
+      }
+    }, { passive: true });
+
+    // Touch end
+    mobileMenuDrawer.addEventListener('touchend', (e) => {
+      if (isDragging && isOpen) {
+        const deltaY = touchCurrentY - touchStartY;
+        const threshold = 80; // Minimum swipe distance to close
+        
+        if (deltaY > threshold) {
+          closeMenu();
+        } else {
+          // Snap back
+          mobileMenuDrawer.style.transform = '';
+        }
+        
+        isDragging = false;
+        touchStartY = 0;
+        touchCurrentY = 0;
+      }
+    }, { passive: true });
+  }
 
   // Initialize - ensure menu is closed on load
   closeMenu();

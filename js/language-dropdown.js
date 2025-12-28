@@ -107,15 +107,54 @@
       closeDropdown(mobileTrigger, mobileMenu);
     }
 
-    // Here you can add language switching logic
-    // For now, we just update the display
+    // Get current path
+    const currentPath = window.location.pathname;
+    const currentHash = window.location.hash;
+    
+    // Determine if we're currently on /en or root
+    const isEnglishPage = currentPath.includes('/en/') || currentPath === '/en' || currentPath.endsWith('/en');
+    const isTurkishPage = !isEnglishPage;
+    
+    // Redirect based on selected language
+    if (lang === 'en' && isTurkishPage) {
+      // Switch to English: redirect to /en
+      let pathWithoutLang = currentPath.replace(/^\//, '').replace(/^tr\//, '');
+      if (pathWithoutLang === '' || pathWithoutLang === 'index.html') {
+        pathWithoutLang = '';
+      }
+      const newPath = '/en/' + pathWithoutLang;
+      window.location.href = newPath + currentHash;
+    } else if (lang === 'tr' && isEnglishPage) {
+      // Switch to Turkish: redirect to root
+      let pathWithoutEn = currentPath.replace(/^\/en\//, '').replace(/^en\//, '');
+      if (pathWithoutEn === '' || pathWithoutEn === 'index.html') {
+        pathWithoutEn = '';
+      }
+      const newPath = '/' + pathWithoutEn;
+      window.location.href = newPath + currentHash;
+    }
+    
     console.log('Language changed to:', lang);
   }
 
   // Initialize on DOM ready
   function init() {
-    // Set initial language
-    const currentLang = getCurrentLanguage();
+    // Detect current language from URL path
+    const currentPath = window.location.pathname;
+    const isEnglishPage = currentPath.includes('/en/') || currentPath === '/en' || currentPath.endsWith('/en');
+    
+    // Set initial language based on URL or localStorage
+    let currentLang = getCurrentLanguage();
+    if (isEnglishPage) {
+      currentLang = 'en';
+      // Update localStorage to match URL
+      setCurrentLanguage('en');
+    } else {
+      currentLang = 'tr';
+      // Update localStorage to match URL
+      setCurrentLanguage('tr');
+    }
+    
     updateLanguageDisplay(currentLang);
 
     // Desktop dropdown

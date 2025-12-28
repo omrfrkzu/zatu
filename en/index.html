@@ -1,0 +1,1247 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta http-equiv="X-UA-Compatible" content="IE=edge">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta name="description" content="Don't be alone in a disaster. Zatu helps you build a safe communication and coordination network with your neighbors.">
+  <!-- Open Graph / Facebook -->
+  <meta property="og:type" content="website">
+  <meta property="og:title" content="Zatu | Disaster Communication and Solidarity Network">
+  <meta property="og:description" content="Don't be alone in a disaster. Zatu helps you build a safe communication and coordination network with your neighbors.">
+  <meta property="og:image" content="../logo-main.png">
+  <!-- Twitter -->
+  <meta name="twitter:card" content="summary_large_image">
+  <meta name="twitter:title" content="Zatu | Disaster Communication and Solidarity Network">
+  <meta name="twitter:description" content="Don't be alone in a disaster. Zatu helps you build a safe communication and coordination network with your neighbors.">
+  <!-- fav icon -->
+  <link rel="icon" href="../logo-main.png" type="image/png">
+
+  <!-- bootstarp css file -->
+  <link rel="stylesheet" href="../css/bootstrap.min.css">
+
+  <!-- aos.css file -->
+  <link rel="stylesheet" href="../css/aos.css">
+
+  <!-- fancybox css file -->
+  <link rel="stylesheet" href="../css/jquery.fancybox.min.css">
+
+  <!-- owl carousel css file -->
+  <link rel="stylesheet" href="../css/owl.carousel.min.css">
+  <link rel="stylesheet" href="../css/owl.theme.default.min.css">
+
+  <!--  toasts file     -->
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/toastr.js/latest/css/toastr.min.css">
+
+  <!-- bootstrap icons -->
+  <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.11.3/font/bootstrap-icons.min.css">
+
+  <!-- RemixIcon -->
+  <link href="https://cdn.jsdelivr.net/npm/remixicon@3.5.0/fonts/remixicon.css" rel="stylesheet">
+
+  <!-- Google font -->
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Outfit:wght@100;200;300;400;500;600;700;800&display=swap" rel="stylesheet">
+  <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@400;500;600;700;800;900&family=Inter:wght@400;500;600;700;800&display=swap" rel="stylesheet">
+
+  <!-- main css file -->
+  <link rel="stylesheet" href="../css/style.css">
+  <link rel="stylesheet" href="../css/forms-modern.css">
+  <link rel="stylesheet" href="../css/desktop-premium.css">
+  <title>Zatu | Disaster Communication and Solidarity Network</title>
+</head>
+
+<body class="home-1" data-aos-easing="fade-up" data-aos-duration="500" data-aos-delay="0">
+
+  <!-- start preLoader -->
+  <div id="preloader">
+    <svg id="mainSVG" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 800 600">
+      <defs>
+        <radialGradient id="mainGrad" cx="346.198916" cy="300" fx="346.198916" fy="300" r="100" gradientUnits="userSpaceOnUse">
+          <stop offset=".68" stop-color="#21df51"></stop>
+          <stop offset=".72" stop-color="#3add63"></stop>
+          <stop offset=".77" stop-color="#4fdd73"></stop>
+          <stop offset=".82" stop-color="#66db83"></stop>
+          <stop offset=".88" stop-color="#7cd893"></stop>
+          <stop offset=".93" stop-color="#95d8a6"></stop>
+          <stop offset=".99" stop-color="#bde6c7"></stop>
+          <stop offset="1" stop-color="#e3f1e7"></stop>
+        </radialGradient>
+      </defs>
+      <circle id="fillDot" cx="400" cy="300" fill="#21df51" r="100"></circle>
+      <circle id="gradDot" cx="400" cy="300" fill="url(#mainGrad)" r="100"></circle>
+    </svg>
+  </div>
+  <!-- end preLoader -->
+
+  <!-- start scroll to top button -->
+  <div id="progress">
+    <span id="progress-value"><i class="bi bi-arrow-up-short"></i></span>
+  </div>
+  <!-- end scroll to top button -->
+
+
+  <!-- ======= start Header ======= -->
+  <header id="site-header" class="header-sticky">
+    <div class="nav-shell">
+      <!-- Left: Logo -->
+      <div class="nav-left">
+        <a class="navbar-brand" href="#top"><img src="../logo-main.png" class="logo" alt="Zatu"></a>
+      </div>
+      
+      <!-- Center: Nav Links (Absolute Centered on Desktop) -->
+      <nav class="nav-center desktop-nav">
+        <div class="navbar-collapse">
+          <ul class="navbar-nav menu" id="navbar">
+            <li class="nav-item">
+              <a class="nav-link" href="#why-we-exist">Why We Exist?</a>
+            </li>
+            <li class="nav-item">
+              <a class="nav-link" href="#how-it-works">How It Works?</a>
+            </li>
+            <li class="nav-item">
+              <a class="nav-link" href="../kayit.html">Join Network</a>
+            </li>
+            <li class="nav-item">
+              <a class="nav-link" href="#complete-profile">Complete Your Profile</a>
+            </li>
+            <li class="nav-item">
+              <a class="nav-link" href="#disaster-opinions">Disaster Opinions</a>
+            </li>
+          </ul>
+        </div>
+      </nav>
+      
+      <!-- Right: Actions (Desktop: Language + CTA + Theme | Mobile: Theme + Hamburger) -->
+      <div class="nav-right">
+        <!-- Language Dropdown (Desktop Only) -->
+        <div class="language-dropdown-wrapper desktop-language-dropdown">
+          <button 
+            type="button" 
+            id="language-dropdown-trigger" 
+            class="language-dropdown-trigger" 
+            aria-haspopup="menu" 
+            aria-expanded="false"
+            aria-label="Language selection">
+            <span class="language-flag" id="language-flag">
+              <!-- EN Flag SVG -->
+              <svg width="18" height="18" viewBox="0 0 18 18" fill="none" xmlns="http://www.w3.org/2000/svg" class="flag-icon">
+                <rect width="18" height="18" fill="#012169"/>
+                <path d="M0 0L18 18M18 0L0 18" stroke="#FFFFFF" stroke-width="2"/>
+                <path d="M0 0L18 18M18 0L0 18" stroke="#C8102E" stroke-width="1.2"/>
+                <path d="M9 0V18M0 9H18" stroke="#FFFFFF" stroke-width="2.5"/>
+                <path d="M9 0V18M0 9H18" stroke="#C8102E" stroke-width="1.5"/>
+              </svg>
+            </span>
+            <span class="language-code" id="language-code">EN</span>
+            <i class="bi bi-chevron-down language-chevron"></i>
+          </button>
+          <div id="language-dropdown-menu" class="language-dropdown-menu" role="menu" aria-hidden="true">
+            <button 
+              type="button" 
+              class="language-menu-item" 
+              role="menuitem" 
+              data-lang="tr"
+              aria-label="Türkçe">
+              <span class="language-flag">
+                <svg width="18" height="18" viewBox="0 0 18 18" fill="none" xmlns="http://www.w3.org/2000/svg" class="flag-icon">
+                  <rect width="18" height="18" fill="#E30A17"/>
+                  <!-- Crescent (Hilal) -->
+                  <circle cx="7" cy="9" r="4" fill="#FFFFFF"/>
+                  <circle cx="8.5" cy="9" r="3.5" fill="#E30A17"/>
+                  <!-- Star -->
+                  <path d="M12.5 6.5L12.8 7.3L13.6 7.1L12.9 7.6L13.2 8.4L12.5 7.9L11.8 8.4L12.1 7.6L11.4 7.1L12.2 7.3Z" fill="#FFFFFF"/>
+                </svg>
+              </span>
+              <span class="language-code-small">TR</span>
+              <span class="language-name">Türkçe</span>
+            </button>
+            <button 
+              type="button" 
+              class="language-menu-item" 
+              role="menuitem" 
+              data-lang="en"
+              aria-label="English">
+              <span class="language-flag">
+                <svg width="18" height="18" viewBox="0 0 18 18" fill="none" xmlns="http://www.w3.org/2000/svg" class="flag-icon">
+                  <rect width="18" height="18" fill="#012169"/>
+                  <path d="M0 0L18 18M18 0L0 18" stroke="#FFFFFF" stroke-width="2"/>
+                  <path d="M0 0L18 18M18 0L0 18" stroke="#C8102E" stroke-width="1.2"/>
+                  <path d="M9 0V18M0 9H18" stroke="#FFFFFF" stroke-width="2.5"/>
+                  <path d="M9 0V18M0 9H18" stroke="#C8102E" stroke-width="1.5"/>
+                </svg>
+              </span>
+              <span class="language-code-small">EN</span>
+              <span class="language-name">English</span>
+            </button>
+          </div>
+        </div>
+        
+        <!-- CTA Button (Desktop Only) -->
+        <a class="btn btn-cta desktop-cta" href="../kayit.html" aria-label="Be Part of the Network – Register in 2 Minutes">BE PART OF THE NETWORK</a>
+        
+        <!-- Mobile Actions: Theme + Hamburger -->
+        <div class="mobile-actions">
+          <button id="mode-toggle" class="btn-light-mode switch-button" aria-label="Dark mode"><i id="mode-icon" class="bi bi-moon-fill"></i></button>
+          <button id="mobile-menu-toggle" class="mobile-menu-toggle" type="button" aria-controls="mobile-menu" aria-expanded="false" aria-label="Open menu">
+            <i class="bi bi-list" id="menu-icon"></i>
+          </button>
+        </div>
+      </div>
+    </div>
+  </header>
+  <!-- ======= end Header ======= -->
+
+  <!-- ======= Mobile Menu Drawer (Fixed Overlay) ======= -->
+  <div id="mobile-menu-wrapper" class="mobile-menu-wrapper" aria-hidden="true">
+    <!-- Overlay -->
+    <button 
+      id="mobile-menu-overlay" 
+      class="mobile-menu-overlay" 
+      aria-label="Close menu"
+      type="button">
+    </button>
+    
+    <!-- Drawer Panel -->
+    <aside 
+      id="mobile-menu" 
+      class="mobile-menu-drawer" 
+      role="dialog" 
+      aria-modal="true" 
+      aria-labelledby="mobile-menu-title">
+      <!-- Header -->
+      <div class="mobile-menu-header">
+        <span id="mobile-menu-title" class="mobile-menu-title">Menu</span>
+        <button 
+          id="mobile-menu-close" 
+          class="mobile-menu-close" 
+          aria-label="Close" 
+          type="button">
+          <i class="bi bi-x-lg"></i>
+        </button>
+      </div>
+
+      <!-- Navigation Links -->
+      <nav class="mobile-menu-nav">
+        <!-- Primary Links -->
+        <a href="#why-we-exist" class="mobile-nav-item">
+          <span>Why We Exist?</span>
+        </a>
+        <a href="#how-it-works" class="mobile-nav-item">
+          <span>How It Works?</span>
+        </a>
+        <a href="#disaster-opinions" class="mobile-nav-item">
+          <span>Disaster Opinions</span>
+        </a>
+
+        <!-- Divider -->
+        <div class="mobile-menu-divider"></div>
+
+        <!-- Secondary Links -->
+        <a href="../hakkimizda.html" class="mobile-nav-item">
+          <span>About Us</span>
+        </a>
+        <a href="../sss.html" class="mobile-nav-item">
+          <span>FAQ</span>
+        </a>
+      </nav>
+
+      <!-- Bottom Actions (Fixed at bottom) -->
+      <div class="mobile-menu-footer">
+        <!-- Language Selector (Compact) -->
+        <div class="mobile-language-compact">
+          <button 
+            type="button" 
+            id="mobile-language-dropdown-trigger" 
+            class="mobile-language-trigger" 
+            aria-haspopup="menu" 
+            aria-expanded="false"
+            aria-label="Language selection">
+            <span class="language-flag" id="mobile-current-flag">
+              <svg width="18" height="18" viewBox="0 0 20 20" fill="none" xmlns="http://www.w3.org/2000/svg">
+                <rect width="20" height="20" rx="2" fill="#012169"/>
+                <path d="M0 0l20 20M20 0L0 20" stroke="white" stroke-width="2"/>
+                <path d="M0 0l20 20M20 0L0 20" stroke="#C8102E" stroke-width="1.2"/>
+              </svg>
+            </span>
+            <span class="language-name-compact" id="mobile-language-name">English</span>
+            <i class="bi bi-chevron-down language-chevron"></i>
+          </button>
+          <div class="language-dropdown-menu mobile-language-menu" id="mobile-language-dropdown-menu" role="menu" aria-hidden="true">
+            <button class="language-menu-item" data-locale="tr" role="menuitem">
+              <span class="language-flag">
+                <svg width="20" height="20" viewBox="0 0 20 20" fill="none" xmlns="http://www.w3.org/2000/svg">
+                  <rect width="20" height="20" rx="2" fill="#E30A17"/>
+                  <!-- Crescent (Hilal) -->
+                  <circle cx="7.5" cy="10" r="4.5" fill="#FFFFFF"/>
+                  <circle cx="9" cy="10" r="4" fill="#E30A17"/>
+                  <!-- Star -->
+                  <path d="M13.5 7.5L13.8 8.3L14.6 8.1L13.9 8.6L14.2 9.4L13.5 8.9L12.8 9.4L13.1 8.6L12.4 8.1L13.2 8.3Z" fill="#FFFFFF"/>
+                </svg>
+              </span>
+              <span class="language-code">TR</span>
+              <span class="language-name">Türkçe</span>
+            </button>
+            <button class="language-menu-item" data-locale="en" role="menuitem">
+              <span class="language-flag">
+                <svg width="20" height="20" viewBox="0 0 20 20" fill="none" xmlns="http://www.w3.org/2000/svg">
+                  <rect width="20" height="20" rx="2" fill="#012169"/>
+                  <path d="M0 0l20 20M20 0L0 20" stroke="white" stroke-width="2"/>
+                  <path d="M0 0l20 20M20 0L0 20" stroke="#C8102E" stroke-width="1.2"/>
+                </svg>
+              </span>
+              <span class="language-code">EN</span>
+              <span class="language-name">English</span>
+            </button>
+          </div>
+        </div>
+
+        <!-- CTA Button -->
+        <a href="../kayit.html" class="mobile-menu-cta">
+          Join Network
+          <i class="bi bi-arrow-right"></i>
+        </a>
+      </div>
+    </aside>
+  </div>
+  <!-- ======= end Mobile Menu Drawer ======= -->
+
+  <!-- ============== Start Hero section ========== -->
+  <section class="hero d-flex flex-column justify-content-center align-items-center" id="hero">
+    <div id="particles-js"></div>
+    <div class="container">
+      <div class="row justify-content-center align-items-center">
+        <div class="hero-text col-12 col-lg-5">
+          <div class="row">
+            <div class="col-12">
+              <h1 class="title hero-title col-12" data-aos="fade-up" data-aos-delay="150">DON'T BE <span class="hero-accent-purple">ALONE</span> <span class="hero-accent-pink">IN DISASTER</span></h1>
+            </div>
+            <div class="col-lg-10 col-12" data-aos="fade-up" data-aos-delay="200">
+              <ul class="list-unstyled my-3 hero-list">
+                <li class="mb-2">• Official help cannot reach everyone in a major disaster</li>
+                <li class="mb-2">• Connecting with your neighbors beforehand saves lives</li>
+                <li class="mb-2">• You share the same concerns with thousands of people in your city</li>
+              </ul>
+            </div>
+            <div class="col-12" data-aos="fade-up" data-aos-delay="250">
+              <div class="hero-buttons">
+                <a href="../kayit.html" class="btn" aria-label="Be Part of the Network – Register in 2 Minutes">BE PART OF THE NETWORK – REGISTER IN 2 MINUTES</a>
+              </div>
+            </div>
+            <div class="col-12" data-aos="fade-up" data-aos-delay="300">
+              <div class="hero-trust">
+                <p><i class="bi bi-check-circle-fill"></i> 1,847 people joined in the last 24 hours</p>
+                <p><i class="bi bi-globe"></i> Active in 81 provinces</p>
+                <p><i class="bi bi-shield-check"></i> Zatu technology with AFAD integration</p>
+              </div>
+            </div>
+          </div>
+        </div>
+        <div class="col-12 col-lg-7 mx-md-auto text-center" data-aos="fade-left" data-aos-delay="100">
+          <div class="hero-image">
+            <div class="hero-img" data-tilt>
+              <img class="img-fluid " alt="Zatu – Technology and community support for National Disaster Network" src="../hero-image.png">
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+  <!-- ============== End Hero section ========== -->
+
+  <!-- ============== Start services section ========== -->
+  <section class="container services py-5 section-alt-bg bg-pattern" id="why-we-exist" style="position: relative;">
+    <div class="page-container">
+      <div class="section-header">
+        <span class="section-eyebrow" data-aos="fade-up">
+          Why We Exist?
+        </span>
+        <h2 class="section-title" data-aos="fade-up" data-aos-delay="100">
+          The Reality of Disasters in Turkey
+        </h2>
+        <p class="section-description" data-aos="fade-up" data-aos-delay="150">
+          Being prepared is not a choice, it's a necessity
+        </p>
+      </div>
+      
+      <div class="feature-grid">
+        <!-- Card 1: Statistical Facts -->
+        <div class="feature-card" data-aos="fade-up" data-aos-delay="200">
+          <div class="feature-card-icon">
+            <i class="bi bi-bar-chart-line" aria-hidden="true"></i>
+          </div>
+          <h3 class="feature-card-title">Statistical Facts</h3>
+          <p class="feature-card-description">
+            On February 6, 2023, systematic search and rescue could not begin in the first 48 hours. Mobile communication and power outages occurred. Only 30.7% of AFAD personnel are search and rescue technicians. 42,310 lives lost; 448,018 evacuations.
+          </p>
+          <div class="feature-card-stat">
+            <i class="bi bi-shield-check me-1"></i> Real data
+          </div>
+        </div>
+        
+        <!-- Card 2: Psychological State -->
+        <div class="feature-card" data-aos="fade-up" data-aos-delay="250">
+          <div class="feature-card-icon">
+            <i class="bi bi-people" aria-hidden="true"></i>
+          </div>
+          <h3 class="feature-card-title">Psychological State</h3>
+          <p class="feature-card-description">
+            How many families do you know in your building? Who will you communicate with in a disaster? Will you be able to find out if your loved ones are safe? Do you know the nearest gathering point?
+          </p>
+          <div class="feature-card-stat">
+            <i class="bi bi-heart me-1"></i> Human-centered
+          </div>
+        </div>
+        
+        <!-- Card 3: Technical Problems -->
+        <div class="feature-card" data-aos="fade-up" data-aos-delay="300">
+          <div class="feature-card-icon">
+            <i class="bi bi-broadcast" aria-hidden="true"></i>
+          </div>
+          <h3 class="feature-card-title">Technical Problems</h3>
+          <p class="feature-card-description">
+            Mobile communication and power outages. Emergency VSAT terminals were sent to the region. Some airports closed due to damage. Emergency lines were opened for urgent communication.
+          </p>
+          <div class="feature-card-stat">
+            <i class="bi bi-wifi me-1"></i> Communication critical
+          </div>
+        </div>
+        
+        <!-- Card 4: Social Reality -->
+        <div class="feature-card" data-aos="fade-up" data-aos-delay="350">
+          <div class="feature-card-icon">
+            <i class="bi bi-diagram-3" aria-hidden="true"></i>
+          </div>
+          <h3 class="feature-card-title">Social Reality</h3>
+          <p class="feature-card-description">
+            One neighbor can affect an average of 8 people. Neighborhood-based organizations are most effective. Community solidarity saves lives. Those who know each other beforehand coordinate faster.
+          </p>
+          <div class="feature-card-stat">
+            <i class="bi bi-people-fill me-1"></i> Community solidarity
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+  <!-- ============== End services section ========== -->
+
+  <!-- ============== Start About section (How It Works) ========== -->
+  <section class="about py-5 how-it-works how-it-works-premium" id="how-it-works">
+    <div class="page-container">
+      <!-- Premium Wrapper Panel with Gradient Background -->
+      <div class="how-it-works-wrapper-premium">
+        <!-- Title Block -->
+        <div class="how-it-works-header-premium" data-aos="fade-up">
+          <span class="section-eyebrow-premium">How It Works?</span>
+          <h2 class="how-it-works-title-premium">3 Simple Steps to Join the Safe Neighborhood Network</h2>
+          <p class="how-it-works-description-premium">Register, complete your information, join the safe network</p>
+        </div>
+
+        <!-- Visual Stepper Component - ALWAYS VISIBLE AT TOP -->
+        <div class="how-it-works-stepper-premium" id="how-it-works-stepper" data-aos="fade-up" data-aos-delay="100">
+          <div class="stepper-item-premium active" data-step="1">
+            <div class="stepper-circle-premium active">
+              <span class="stepper-number-premium">1</span>
+              <i class="bi bi-check stepper-check" style="display: none;"></i>
+            </div>
+            <div class="stepper-line-premium"></div>
+            <div class="stepper-content-premium">
+              <div class="stepper-label-premium">Join Network</div>
+            </div>
+          </div>
+          <div class="stepper-item-premium pending" data-step="2">
+            <div class="stepper-circle-premium pending">
+              <span class="stepper-number-premium">2</span>
+              <i class="bi bi-check stepper-check" style="display: none;"></i>
+            </div>
+            <div class="stepper-line-premium"></div>
+            <div class="stepper-content-premium">
+              <div class="stepper-label-premium">Complete Your Information</div>
+            </div>
+          </div>
+          <div class="stepper-item-premium pending" data-step="3">
+            <div class="stepper-circle-premium pending">
+              <span class="stepper-number-premium">3</span>
+              <i class="bi bi-check stepper-check" style="display: none;"></i>
+            </div>
+            <div class="stepper-content-premium">
+              <div class="stepper-label-premium">Join Safe Network</div>
+            </div>
+          </div>
+        </div>
+
+        <!-- 2-Column Grid Layout: Left (5/12) + Right (7/12) - Desktop Only -->
+        <div class="how-it-works-grid-premium">
+          <!-- LEFT COLUMN (5/12): Benefit Cards + Trust Badges - Desktop Only -->
+          <div class="how-it-works-left-premium">
+
+            <!-- Benefit Cards Stack -->
+            <div class="how-it-works-benefits-premium" data-aos="fade-up" data-aos-delay="150">
+              <div class="benefit-card-premium">
+                <div class="benefit-icon-premium">
+                  <i class="bi bi-clock-fill"></i>
+                </div>
+                <span class="benefit-text-premium">2 minute registration</span>
+              </div>
+              <div class="benefit-card-premium">
+                <div class="benefit-icon-premium">
+                  <i class="bi bi-shield-lock-fill"></i>
+                </div>
+                <span class="benefit-text-premium">Private and secure</span>
+              </div>
+              <div class="benefit-card-premium">
+                <div class="benefit-icon-premium">
+                  <i class="bi bi-people-fill"></i>
+                </div>
+                <span class="benefit-text-premium">Connect with neighbors</span>
+              </div>
+            </div>
+
+            <!-- Trust Badges Row -->
+            <div class="how-it-works-trust-premium" data-aos="fade-up" data-aos-delay="200">
+              <div class="trust-badge-premium">
+                <i class="bi bi-geo-alt-fill"></i>
+                <span>Active in 81 provinces</span>
+              </div>
+              <div class="trust-badge-premium">
+                <i class="bi bi-check-circle-fill"></i>
+                <span>GDPR compliant</span>
+              </div>
+              <div class="trust-badge-premium">
+                <i class="bi bi-shield-check"></i>
+                <span>AFAD integration</span>
+              </div>
+            </div>
+          </div>
+
+          <!-- RIGHT COLUMN (7/12): Elevated Form Card -->
+          <div class="how-it-works-right-premium">
+            <!-- Large Elevated Form Card -->
+            <div class="form-card-premium">
+        <!-- Step 1: Join Network -->
+        <div class="how-it-works-step active" id="how-it-works-step-1" data-step="1" data-aos="fade-up" data-aos-delay="250">
+          <!-- Form Card Header -->
+          <header class="form-card-header-premium">
+            <div class="form-card-header-top">
+              <span class="step-badge-premium-form">1</span>
+              <div class="form-card-header-content">
+                <h3 class="form-card-title-premium">Join Network</h3>
+                <span class="form-card-progress-premium">Step 1 / 3</span>
+              </div>
+              <i class="bi bi-chevron-down accordion-chevron-mobile"></i>
+            </div>
+            <div class="form-card-divider-premium"></div>
+          </header>
+          <!-- Form Card Body -->
+          <div class="form-card-body-premium">
+            <p class="form-card-lead-premium">Join the safe neighborhood network by entering your basic information.</p>
+            
+            <form id="how-it-works-form-1" class="how-it-works-form-premium">
+                <div class="form-group-wrapper">
+                  <div class="form-group">
+                    <label for="hiw-fullName" class="form-label">
+                      Full Name <span class="text-danger">*</span>
+                    </label>
+                    <div class="input-wrapper">
+                      <input type="text" class="form-control" id="hiw-fullName" name="fullName" required placeholder="Your first and last name">
+                      <i class="bi bi-check-circle-fill input-check" style="display: none;"></i>
+                    </div>
+                  </div>
+
+                  <div class="form-group">
+                    <label for="hiw-phone" class="form-label">
+                      Phone Number <span class="text-muted" style="font-size: 0.85rem;">(For emergency notifications – recommended)</span>
+                    </label>
+                    <div class="input-wrapper">
+                      <input type="tel" class="form-control" id="hiw-phone" name="phone" placeholder="05XX XXX XX XX" pattern="[0-9]{10,11}">
+                      <i class="bi bi-check-circle-fill input-check" style="display: none;"></i>
+                    </div>
+                    <small class="form-text text-muted">Enter your 10-11 digit phone number</small>
+                  </div>
+
+                  <div class="form-group">
+                    <label for="hiw-birthDate" class="form-label">
+                      Date of Birth <span class="text-danger">*</span>
+                    </label>
+                    <div class="input-wrapper">
+                      <input type="date" class="form-control" id="hiw-birthDate" name="birthDate" required>
+                      <i class="bi bi-check-circle-fill input-check" style="display: none;"></i>
+                    </div>
+                    <div class="age-display mt-2" id="age-display" style="display: none;">
+                      <span class="age-badge"></span>
+                      <span class="age-message"></span>
+                    </div>
+                  </div>
+                </div>
+
+            <!-- Form Actions Footer -->
+            <div class="form-actions-premium">
+              <div class="form-actions-divider-premium"></div>
+              <div class="form-actions-content-premium">
+                <button type="submit" class="btn btn-primary-premium" id="hiw-step1-submit">
+                  <span class="btn-text">Continue</span>
+                  <span class="btn-loader" style="display: none;">
+                    <span class="spinner-border spinner-border-sm" role="status" aria-hidden="true"></span>
+                  </span>
+                </button>
+              </div>
+            </div>
+          </form>
+          </div>
+        </div>
+
+        <!-- Step 2: Complete Your Information -->
+        <div class="how-it-works-step" id="how-it-works-step-2" data-step="2">
+          <!-- Form Card Header -->
+          <header class="form-card-header-premium">
+            <div class="form-card-header-top">
+              <span class="step-badge-premium-form">2</span>
+              <div class="form-card-header-content">
+                <h3 class="form-card-title-premium">Complete Your Information</h3>
+                <span class="form-card-progress-premium">Step 2 / 3</span>
+              </div>
+              <i class="bi bi-chevron-down accordion-chevron-mobile"></i>
+            </div>
+            <div class="form-card-divider-premium"></div>
+          </header>
+          <!-- Form Card Body -->
+          <div class="form-card-body-premium">
+              <p class="step-lead">Share where you live and building information, let us match you with the right group.</p>
+              
+              <form id="how-it-works-form-2" class="how-it-works-form">
+                <div class="form-group-wrapper">
+                  <div class="form-group">
+                    <label for="hiw-city" class="form-label">
+                      Province <span class="text-danger">*</span>
+                    </label>
+                    <div class="input-wrapper">
+                      <select class="form-select" id="hiw-city" name="city" required>
+                        <option value="">Select province</option>
+                        <option value="01">Adana</option>
+                        <option value="06">Ankara</option>
+                        <option value="07">Antalya</option>
+                        <option value="16">Bursa</option>
+                        <option value="26">Eskişehir</option>
+                        <option value="27">Gaziantep</option>
+                        <option value="34">Istanbul</option>
+                        <option value="35">Izmir</option>
+                        <option value="58">Sivas</option>
+                        <option value="61">Trabzon</option>
+                      </select>
+                      <i class="bi bi-check-circle-fill input-check" style="display: none;"></i>
+                    </div>
+                  </div>
+
+                  <div class="form-group">
+                    <label for="hiw-district" class="form-label">
+                      District <span class="text-danger">*</span>
+                    </label>
+                    <div class="input-wrapper">
+                      <input type="text" class="form-control" id="hiw-district" name="district" required placeholder="Your district name" disabled>
+                      <i class="bi bi-check-circle-fill input-check" style="display: none;"></i>
+                    </div>
+                  </div>
+
+                  <div class="form-group">
+                    <label for="hiw-neighborhood" class="form-label">
+                      Neighborhood <span class="text-danger">*</span>
+                    </label>
+                    <div class="input-wrapper">
+                      <input type="text" class="form-control" id="hiw-neighborhood" name="neighborhood" required placeholder="Your neighborhood name" disabled>
+                      <i class="bi bi-check-circle-fill input-check" style="display: none;"></i>
+                    </div>
+                  </div>
+
+                  <div class="form-group">
+                    <label for="hiw-buildingAge" class="form-label">
+                      Building Age <span class="text-danger">*</span>
+                    </label>
+                    <div class="input-wrapper">
+                      <select class="form-select" id="hiw-buildingAge" name="buildingAge" required>
+                        <option value="">Select</option>
+                        <option value="0-5">0-5 years</option>
+                        <option value="6-10">6-10 years</option>
+                        <option value="11-20">11-20 years</option>
+                        <option value="21-30">21-30 years</option>
+                        <option value="30+">30+ years</option>
+                      </select>
+                      <i class="bi bi-check-circle-fill input-check" style="display: none;"></i>
+                    </div>
+                  </div>
+
+                  <div class="form-group">
+                    <label for="hiw-floor" class="form-label">
+                      Floor Information <span class="text-danger">*</span>
+                    </label>
+                    <div class="input-wrapper">
+                      <input type="number" class="form-control" id="hiw-floor" name="floor" required placeholder="Your floor" min="0" max="100">
+                      <i class="bi bi-check-circle-fill input-check" style="display: none;"></i>
+                    </div>
+                  </div>
+                </div>
+
+            <!-- Form Actions Footer -->
+            <div class="form-actions-premium">
+              <div class="form-actions-divider-premium"></div>
+              <div class="form-actions-content-premium">
+                <button type="button" class="btn btn-outline-secondary-premium" id="hiw-step2-back">
+                  Back
+                </button>
+                <button type="submit" class="btn btn-primary-premium" id="hiw-step2-submit" disabled>
+                  <span class="btn-text">Continue</span>
+                  <span class="btn-loader" style="display: none;">
+                    <span class="spinner-border spinner-border-sm" role="status" aria-hidden="true"></span>
+                  </span>
+                </button>
+              </div>
+            </div>
+          </form>
+          </div>
+        </div>
+
+        <!-- Step 3: Join Safe Network -->
+        <div class="how-it-works-step" id="how-it-works-step-3" data-step="3">
+          <!-- Form Card Header -->
+          <header class="form-card-header-premium">
+            <div class="form-card-header-top">
+              <span class="step-badge-premium-form">3</span>
+              <div class="form-card-header-content">
+                <h3 class="form-card-title-premium">Join Safe Network</h3>
+                <span class="form-card-progress-premium">Step 3 / 3</span>
+              </div>
+              <i class="bi bi-chevron-down accordion-chevron-mobile"></i>
+            </div>
+            <div class="form-card-divider-premium"></div>
+          </header>
+          <!-- Form Card Body -->
+          <div class="form-card-body-premium">
+              <div class="success-state text-center">
+                <div class="success-icon mb-3">
+                  <i class="bi bi-check-circle-fill" style="font-size: 4rem; color: var(--brand-color);"></i>
+                </div>
+                <h4 class="success-title" id="success-greeting">Registration completed!</h4>
+                <p class="step-lead">You can now receive notifications specific to your area.</p>
+              </div>
+            </div>
+          </div>
+        </div>
+
+            </div>
+          </div>
+        </div>
+      </div>
+
+      <!-- Optional Step: Share Disaster Opinions - Separate Card After Main Steps -->
+      <div class="how-it-works-optional-section" id="how-it-works-optional" style="display: none;">
+        <div class="form-card-premium optional-step-card">
+          <header class="form-card-header-premium">
+            <div class="form-card-header-top">
+              <span class="step-badge-premium-form optional">?</span>
+              <div class="form-card-header-content">
+                <h3 class="form-card-title-premium">Share Disaster Opinions <span class="optional-badge">(Optional)</span></h3>
+              </div>
+            </div>
+            <div class="form-card-divider-premium"></div>
+          </header>
+          <div class="form-card-body-premium">
+            <p class="step-lead">You can share your disaster perception with a short 2-minute survey.</p>
+            
+            <div class="optional-step-actions text-center mt-4">
+              <button type="button" class="btn btn-primary btn-lg mb-3" id="hiw-start-survey" style="width: 100%; max-width: 400px;">
+                I want to answer
+              </button>
+              <div>
+                <button type="button" class="btn btn-link text-muted" id="hiw-skip-survey">
+                  Skip for now
+                </button>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+  <!-- ============== End About section (How It Works) ========== -->
+
+  <!-- ============== Start City Stats Section ========== -->
+  <section class="container py-5" id="city-stats-section" style="position: relative;">
+    <div class="page-container">
+      <div id="city-stats-container"></div>
+    </div>
+  </section>
+  <!-- ============== End City Stats Section ========== -->
+
+  <!-- ============== Start Complete Your Profile section ========== -->
+  <section id="complete-profile" class="profile-banner py-5" style="position: relative;">
+    <div class="page-container">
+      <!-- Premium Card Container -->
+      <div class="profile-banner-premium">
+        <!-- ZONE 1: Header -->
+        <div class="profile-zone-header" data-aos="fade-up">
+          <span class="section-eyebrow-premium">Complete Your Profile</span>
+          <h2 class="section-title-premium">Personal Disaster Analysis in 5 Questions</h2>
+          <p class="section-description-premium">Take just 2 minutes to get personalized recommendations.</p>
+        </div>
+
+        <!-- ZONE 2: Value (Benefit Row) -->
+        <div class="profile-zone-value" data-aos="fade-up" data-aos-delay="100">
+          <div class="profile-benefits-grid">
+            <div class="profile-benefit-item">
+              <div class="benefit-icon-circle">
+                <i class="bi bi-clock-fill"></i>
+              </div>
+              <span class="benefit-label">2 minutes</span>
+            </div>
+            <div class="profile-benefit-item">
+              <div class="benefit-icon-circle">
+                <i class="bi bi-lightbulb-fill"></i>
+              </div>
+              <span class="benefit-label">Personal analysis</span>
+            </div>
+            <div class="profile-benefit-item">
+              <div class="benefit-icon-circle">
+                <i class="bi bi-shield-lock-fill"></i>
+              </div>
+              <span class="benefit-label">Safe & private</span>
+            </div>
+          </div>
+        </div>
+
+        <!-- ZONE 3: Action (CTA Container) -->
+        <div class="profile-zone-action" data-aos="fade-up" data-aos-delay="150">
+          <div class="profile-cta-container">
+            <button type="button" class="btn btn-primary-premium-cta" id="start-profile-test-btn">
+              Start Test
+              <i class="bi bi-arrow-right ms-2"></i>
+            </button>
+          </div>
+          <div class="profile-trust-line">
+            <i class="bi bi-shield-check"></i>
+            <span>The information you provide is used only for analysis purposes. It is securely protected with Zatu technology.</span>
+          </div>
+        </div>
+
+        <!-- Profile Survey Component (Legacy - Hidden) -->
+        <div id="profile-survey-container" class="survey-container" style="display: none;">
+          <!-- Progress Bar -->
+          <div class="survey-progress mb-4">
+            <div class="progress" style="height: 8px; border-radius: 10px;">
+              <div class="progress-bar bg-success" id="profile-progress-bar" role="progressbar" style="width: 0%;" aria-valuenow="0" aria-valuemin="0" aria-valuemax="100"></div>
+            </div>
+            <p class="progress-text mt-2" id="profile-progress-text" style="color: #94a3b8; font-size: 0.875rem;">Question 1/5</p>
+          </div>
+
+          <!-- Question Container -->
+          <div id="profile-questions" class="survey-questions">
+            <!-- Questions will be dynamically inserted here -->
+          </div>
+
+          <!-- Result Message -->
+          <div id="profile-result" class="survey-result d-none">
+            <div class="alert alert-success">
+              <h4>Thank you, your responses have been saved!</h4>
+              <div id="profile-result-content"></div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+  <!-- ============== End Complete Your Profile section ========== -->
+
+  <!-- ============== Start Share Disaster Opinions section ========== -->
+  <section id="disaster-opinions" class="disaster-banner py-5 section-alt-bg" id="disaster-survey-section" style="position: relative;">
+    <div class="page-container">
+      <!-- Premium Container -->
+      <div class="disaster-banner-premium">
+        <!-- ZONE 1: Header -->
+        <div class="disaster-zone-header" data-aos="fade-up">
+          <span class="section-eyebrow-premium">Optional</span>
+          <h2 class="section-title-premium">Share Disaster Opinions</h2>
+          <p class="section-description-premium">A short 2-minute survey. Now or later, your choice.</p>
+        </div>
+
+        <!-- ZONE 2: Value / Impact Row -->
+        <div class="disaster-zone-impact" data-aos="fade-up" data-aos-delay="100">
+          <div class="disaster-impact-grid">
+            <div class="disaster-impact-item">
+              <div class="impact-icon-circle">
+                <i class="bi bi-building"></i>
+              </div>
+              <span class="impact-label">Contribution to urban planning</span>
+            </div>
+            <div class="disaster-impact-item">
+              <div class="impact-icon-circle">
+                <i class="bi bi-shield-check"></i>
+              </div>
+              <span class="impact-label">Included in AFAD analysis</span>
+            </div>
+            <div class="disaster-impact-item">
+              <div class="impact-icon-circle">
+                <i class="bi bi-lock-fill"></i>
+              </div>
+              <span class="impact-label">Anonymous & secure</span>
+            </div>
+          </div>
+        </div>
+
+        <!-- ZONE 3: Message Card (Centerpiece) -->
+        <div id="disaster-survey-gate" class="disaster-survey-gate-premium" data-aos="fade-up" data-aos-delay="150">
+          <div class="disaster-gate-card-premium">
+            <p class="disaster-gate-text-premium">Your responses contribute to your city's disaster preparedness plan. Every response is included in the AFAD analysis for your region.</p>
+            <p class="disaster-gate-text-premium-mobile">Your responses are used in your region's disaster planning.</p>
+          </div>
+        </div>
+
+        <!-- ZONE 4: Action Zone -->
+        <div class="disaster-zone-action" data-aos="fade-up" data-aos-delay="200">
+          <div class="disaster-action-container">
+            <button type="button" class="btn btn-primary-premium-disaster" id="disaster-start-btn">
+              I want to answer
+              <i class="bi bi-arrow-right ms-2"></i>
+            </button>
+            <button type="button" class="btn btn-secondary-premium-disaster" id="disaster-skip-btn">
+              Skip for now
+            </button>
+          </div>
+        </div>
+
+        <!-- ZONE 5: Trust Footer -->
+        <div class="disaster-zone-trust" data-aos="fade-up" data-aos-delay="250">
+          <div class="disaster-trust-line">
+            <i class="bi bi-shield-lock"></i>
+            <span>Your data is analyzed anonymously and shared only for disaster planning purposes.</span>
+          </div>
+          <div class="disaster-trust-line-mobile">
+            <i class="bi bi-shield-lock"></i>
+            <span>Responses are analyzed anonymously</span>
+          </div>
+        </div>
+
+      <!-- Collapsed State (Hidden initially) -->
+      <div id="disaster-survey-collapsed" class="disaster-survey-collapsed" style="display: none;">
+        <div class="disaster-collapsed-card">
+          <p class="disaster-collapsed-text">If you want to share disaster opinions, you can start anytime.</p>
+          <button type="button" class="btn btn-outline-primary disaster-collapsed-btn" id="disaster-resume-btn">
+            Answer later
+          </button>
+        </div>
+      </div>
+
+      <!-- Disaster Survey Component (Hidden initially) -->
+      <div id="disaster-survey-container" class="disaster-survey-container" style="display: none;">
+        <div class="disaster-survey-card">
+          <!-- Modern Stepper -->
+          <div class="modern-stepper" id="disaster-stepper">
+            <div class="modern-stepper-step active" data-step="1">1</div>
+            <div class="modern-stepper-step" data-step="2">2</div>
+            <div class="modern-stepper-step" data-step="3">3</div>
+            <div class="modern-stepper-step" data-step="4">4</div>
+            <div class="modern-stepper-step" data-step="5">5</div>
+          </div>
+
+          <!-- Question Container -->
+          <div class="disaster-question-wrapper">
+            <h3 class="disaster-question-title" id="disaster-question-title"></h3>
+            <p class="disaster-question-helper" id="disaster-question-helper"></p>
+          </div>
+
+          <div class="disaster-input-wrapper" id="disaster-input-wrapper">
+            <!-- Options will be rendered here -->
+          </div>
+
+          <div class="disaster-error-message" id="disaster-error-message"></div>
+
+          <!-- Action Row -->
+          <div class="disaster-actions">
+            <button class="disaster-btn disaster-btn-secondary" id="disaster-back-btn" type="button">
+              <i class="bi bi-arrow-left"></i> Back
+            </button>
+            <button class="disaster-btn disaster-btn-primary" id="disaster-next-btn" type="button" disabled>
+              Continue <i class="bi bi-arrow-right"></i>
+            </button>
+          </div>
+        </div>
+
+        <!-- Result Message -->
+        <div id="disaster-result" class="disaster-result" style="display: none;">
+          <div class="disaster-result-card">
+            <div class="disaster-result-icon">
+              <i class="bi bi-check-circle-fill"></i>
+            </div>
+            <h3 class="disaster-result-title">Thank you!</h3>
+            <p class="disaster-result-description">Your responses have been saved and are contributing to your city's disaster preparedness plan.</p>
+          </div>
+        </div>
+      </div>
+
+      </div>
+    </div>
+  </section>
+  <!-- ============== End Share Disaster Opinions section ========== -->
+
+  <!-- Section Divider -->
+  <hr class="section-divider">
+
+  <!-- CTA Band - Premium Gradient Banner -->
+  <section class="cta-banner-premium">
+    <div class="cta-banner-container">
+      <div class="cta-banner-content" data-aos="fade-up">
+        <h2 class="cta-banner-headline">Join Safe Network, Connect with Your Neighbors</h2>
+        <p class="cta-banner-description">With Zatu, you won't be alone in a disaster. Connect with your neighbors in your neighborhood beforehand, increase your safety.</p>
+        <div class="cta-banner-button">
+          <a href="../kayit.html" class="btn cta-banner-btn">
+            Join Network
+            <i class="bi bi-arrow-right ms-2"></i>
+          </a>
+        </div>
+        <div class="cta-banner-trust">
+          <span class="cta-banner-trust-item">
+            <i class="bi bi-shield-check"></i> GDPR Compliant
+          </span>
+          <span class="cta-banner-trust-item">
+            <i class="bi bi-lock"></i> Privacy-Focused
+          </span>
+          <span class="cta-banner-trust-item">
+            <i class="bi bi-building"></i> AFAD Integration
+          </span>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- Section Divider -->
+  <hr class="section-divider">
+
+  <!-- ============== Start Footer section ========== -->
+  <div class="footer">
+    <div class="page-container">
+      <div class="footer-grid">
+        <!-- Left Column - Brand -->
+        <div class="footer-brand">
+          <a href="#top" class="footer-logo">
+            <img src="../logo-main.png" alt="Zatu">
+          </a>
+          <p class="footer-description">Zatu is Turkey's national disaster preparedness network. Be prepared for disasters by connecting with your neighbors beforehand.</p>
+          <div class="footer-social">
+            <h4 class="footer-social-title">Follow Us</h4>
+            <div class="footer-social-icons">
+              <a href="#" class="footer-social-icon" aria-label="Facebook"><i class="bi bi-facebook"></i></a>
+              <a href="#" class="footer-social-icon" aria-label="Instagram"><i class="bi bi-instagram"></i></a>
+              <a href="#" class="footer-social-icon" aria-label="Twitter"><i class="bi bi-twitter-x"></i></a>
+              <a href="#" class="footer-social-icon" aria-label="YouTube"><i class="bi bi-youtube"></i></a>
+            </div>
+          </div>
+        </div>
+        
+        <!-- Middle Column - Quick Links -->
+        <div class="footer-links">
+          <h4 class="footer-heading">Quick Links</h4>
+          <ul class="footer-links-list">
+            <li><a href="../hakkimizda.html">About Us</a></li>
+            <li><a href="../sss.html">FAQ</a></li>
+            <li><a href="../gizlilik-politikasi.html">Privacy Policy</a></li>
+            <li><a href="../kvkk-aydinlatma-metni.html">GDPR Disclosure</a></li>
+            <li><a href="../cerez-politikasi.html">Cookie Policy</a></li>
+            <li><a href="../kullanim-sartlari.html">Terms of Use</a></li>
+          </ul>
+        </div>
+        
+        <!-- Right Column - Legal (empty for now, can add more later) -->
+        <div class="footer-legal">
+          <!-- Reserved for future content -->
+        </div>
+      </div>
+    </div>
+    
+    <!-- Bottom Bar -->
+    <div class="footer-bottom">
+      <div class="page-container">
+        <div class="footer-bottom-content">
+          <p class="footer-copyright">© 2025 Zatu. All rights reserved.</p>
+          <div class="footer-bottom-links">
+            <a href="../kullanim-sartlari.html">Terms of Use</a>
+            <span class="footer-separator">|</span>
+            <a href="../gizlilik-politikasi.html">Privacy Policy</a>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+  <!-- ============== end Footer section ========== -->
+
+  <!--  JQuery file     -->
+  <script src="../js/jquery-3.6.1.min.js"></script>
+
+  <!-- bootstrap min js -->
+  <script src="../js/bootstrap.min.js"></script>
+
+  <!--  toasts file     -->
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/toastr.js/latest/js/toastr.min.js"></script>
+
+  <!--  owl carousel    -->
+  <script src="../js/owl.carousel.min.js"></script>
+
+  <!-- aos file    -->
+  <script src="../js/aos.js"></script>
+
+  <!-- gsap file    -->
+  <script src="../js/gsap.min.js"></script>
+
+  <!--  counter     -->
+  <script src="../js/jquery.counterup.min.js"></script>
+  <script src="../js/jquery.waypoints.js"></script>
+
+  <!-- particles js file  -->
+  <script src="../js/particles.min.js"></script>
+
+  <!-- jquery isotope file -->
+  <script src="../js/isotope.min.js"></script>
+
+  <!-- jquery fancybox file -->
+  <script src="../js/jquery.fancybox.min.js"></script>
+
+  <!--  Tilt.js file     -->
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/vanilla-tilt/1.7.0/vanilla-tilt.min.js"></script>
+
+  <!--  api mock (for survey endpoints)  -->
+  <script src="../js/api-mock.js"></script>
+
+  <!--  surveys js file  -->
+  <script src="../js/surveys.js"></script>
+  <script src="../js/disaster-survey-modern.js"></script>
+
+  <!--  city stats js files  -->
+  <script src="../js/api-stats.js"></script>
+  <script src="../js/counter.js"></script>
+  <script src="../js/city-stats.js"></script>
+
+  <!--  user progress and sticky cta bar  -->
+  <script src="../js/user-progress.js"></script>
+  <script src="../js/sticky-cta-bar.js"></script>
+
+  <!--  mobile menu  -->
+  <script src="../js/mobile-menu.js"></script>
+
+  <!--  main js file  -->
+  <script src="../js/main.js"></script>
+
+  <!--  how it works interactive js file  -->
+  <script src="../js/how-it-works.js"></script>
+
+  <!--  language dropdown js file  -->
+  <script src="../js/language-dropdown.js"></script>
+  
+  <!-- How It Works Step-Based Form Management -->
+  <script src="../js/how-it-works-steps.js"></script>
+  
+  <!-- Mobile accordion for How It Works section (deprecated, kept for compatibility) -->
+  <script src="../js/how-it-works-mobile.js"></script>
+  
+  <!-- Profile Test Wizard -->
+  <script src="../js/profile-test-wizard.js"></script>
+  
+  <!-- Disaster Survey Wizard -->
+  <script src="../js/disaster-survey-wizard.js"></script>
+
+  <!-- Initialize City Stats -->
+  <script>
+    document.addEventListener('DOMContentLoaded', function() {
+      // Get city from localStorage (from registration) or default to Istanbul
+      const step2Data = localStorage.getItem('registration_step2');
+      let city = 'Istanbul';
+      
+      if (step2Data) {
+        try {
+          const data = JSON.parse(step2Data);
+          if (data.city) {
+            city = data.city;
+          }
+        } catch (e) {
+          console.error('Error parsing registration data:', e);
+        }
+      }
+
+      // Initialize city stats card
+      if (document.getElementById('city-stats-container')) {
+        window.cityStatsCard = new CityStatsCard('city-stats-container', city);
+      }
+    });
+  </script>
+
+  <!-- ============== Disaster Survey Wizard Modal ========== -->
+  <div class="disaster-survey-modal" id="disaster-survey-modal" style="display: none;">
+    <div class="disaster-survey-modal-overlay"></div>
+    <div class="disaster-survey-modal-content">
+      <!-- Modal Header -->
+      <div class="disaster-survey-header">
+        <button type="button" class="disaster-survey-close" id="disaster-survey-close" aria-label="Close">
+          <i class="bi bi-x-lg"></i>
+        </button>
+        <div class="disaster-survey-progress">
+          <div class="disaster-survey-progress-bar">
+            <div class="disaster-survey-progress-fill" id="disaster-survey-progress-fill"></div>
+          </div>
+          <div class="disaster-survey-progress-text" id="disaster-survey-progress-text">Question 1 / 5</div>
+        </div>
+      </div>
+
+      <!-- Modal Body - Question Container -->
+      <div class="disaster-survey-body" id="disaster-survey-body">
+        <!-- Questions will be rendered here -->
+      </div>
+
+      <!-- Modal Footer - Navigation -->
+      <div class="disaster-survey-footer" id="disaster-survey-footer">
+        <button type="button" class="btn btn-outline-secondary" id="disaster-survey-back" style="display: none;">
+          <i class="bi bi-arrow-left me-2"></i>Back
+        </button>
+        <button type="button" class="btn btn-primary-premium-cta" id="disaster-survey-next" disabled>
+          Next
+          <i class="bi bi-arrow-right ms-2"></i>
+        </button>
+      </div>
+    </div>
+  </div>
+  <!-- ============== End Disaster Survey Wizard Modal ========== -->
+
+  <!-- ============== Profile Test Wizard Modal ========== -->
+  <div class="profile-test-modal" id="profile-test-modal" style="display: none;">
+    <div class="profile-test-modal-overlay"></div>
+    <div class="profile-test-modal-content">
+      <!-- Modal Header -->
+      <div class="profile-test-header">
+        <button type="button" class="profile-test-close" id="profile-test-close" aria-label="Close">
+          <i class="bi bi-x-lg"></i>
+        </button>
+        <div class="profile-test-progress">
+          <div class="profile-test-progress-bar">
+            <div class="profile-test-progress-fill" id="profile-test-progress-fill"></div>
+          </div>
+          <div class="profile-test-progress-text" id="profile-test-progress-text">Question 1 / 5</div>
+        </div>
+      </div>
+
+      <!-- Modal Body - Question Container -->
+      <div class="profile-test-body" id="profile-test-body">
+        <!-- Questions will be rendered here -->
+      </div>
+
+      <!-- Modal Footer - Navigation -->
+      <div class="profile-test-footer" id="profile-test-footer">
+        <button type="button" class="btn btn-outline-secondary" id="profile-test-back" style="display: none;">
+          <i class="bi bi-arrow-left me-2"></i>Back
+        </button>
+        <button type="button" class="btn btn-primary-premium-cta" id="profile-test-next" disabled>
+          Continue
+          <i class="bi bi-arrow-right ms-2"></i>
+        </button>
+      </div>
+    </div>
+  </div>
+  <!-- ============== End Profile Test Wizard Modal ========== -->
+
+</body>
+</html>
+

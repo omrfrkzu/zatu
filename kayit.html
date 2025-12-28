@@ -1,0 +1,423 @@
+<!DOCTYPE html>
+<html lang="tr">
+<head>
+  <meta charset="UTF-8">
+  <meta http-equiv="X-UA-Compatible" content="IE=edge">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta name="description" content="Afet anında yalnız kalma. Zatu, komşularınla güvenli iletişim ve koordinasyon ağı kurmanı sağlar.">
+  <link rel="icon" href="logo-main.png" type="image/png">
+  <link rel="stylesheet" href="css/bootstrap.min.css">
+  <link rel="stylesheet" href="css/aos.css">
+  <link rel="stylesheet" href="css/style.css">
+  <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.11.3/font/bootstrap-icons.min.css">
+  <title>Zatu | Afet İletişim ve Dayanışma Ağı</title>
+</head>
+<body class="home-1">
+  <!-- ======= start Header ======= -->
+  <header id="site-header" class="header-sticky">
+    <div class="nav-shell">
+      <div class="nav-left">
+        <a class="navbar-brand" href="index.html"><img src="logo-main.png" class="logo" alt="Zatu"></a>
+      </div>
+      <nav class="nav-center">
+        <div class="collapse navbar-collapse" id="navbarNav">
+          <ul class="navbar-nav menu" id="navbar">
+            <li class="nav-item">
+              <a class="nav-link" href="index.html#neden-variz">Neden Varız?</a>
+            </li>
+            <li class="nav-item">
+              <a class="nav-link" href="index.html#nasil-calisir">Nasıl Çalışır?</a>
+            </li>
+            <li class="nav-item">
+              <a class="nav-link" href="kayit.html">Ağa Katıl</a>
+            </li>
+          </ul>
+        </div>
+      </nav>
+      <div class="nav-right">
+        <a class="btn btn-cta" href="kayit.html">AĞIN PARÇASI OL</a>
+      </div>
+    </div>
+  </header>
+  <!-- ======= end Header ======= -->
+
+  <!-- ============== Start Registration Form ========== -->
+  <section class="container py-5 mt-5" id="kayıt" style="background: var(--bodyColor); min-height: 100vh;">
+    <div class="modern-form-container">
+      <div class="modern-form-section">
+        <h1 class="modern-form-title">Ağa Katıl</h1>
+        <p class="modern-form-subtitle">2 dakikada kayıt ol, şehrinle bağlantıya geç</p>
+
+        <!-- Modern Stepper -->
+        <div class="modern-stepper" id="registration-stepper">
+          <div class="modern-stepper-step active" data-step="1">1</div>
+          <div class="modern-stepper-step" data-step="2">2</div>
+          <div class="modern-stepper-step" data-step="3">3</div>
+        </div>
+
+          <!-- Success Message -->
+          <div class="alert alert-success d-none" id="successMessage" role="alert">
+            <i class="bi bi-check-circle-fill me-2"></i>
+            <span id="successText">Bilgileriniz kaydedildi!</span>
+          </div>
+
+          <!-- Step 1: Temel Bilgiler -->
+          <div class="registration-step" id="step1">
+            <form id="step1Form">
+              <div class="modern-form-field">
+                <label for="fullName" class="modern-form-label required">Ad Soyad</label>
+                <div class="modern-input-wrapper">
+                  <input type="text" class="modern-input" id="fullName" name="fullName" required placeholder="Adınız ve soyadınız">
+                  <span class="modern-input-check" id="fullName-check"><i class="bi bi-check-circle-fill"></i></span>
+                </div>
+                <div class="modern-form-error" id="fullName-error"></div>
+              </div>
+
+              <div class="modern-form-field">
+                <label for="phone" class="modern-form-label required">Telefon</label>
+                <div class="modern-input-wrapper">
+                  <input type="tel" class="modern-input" id="phone" name="phone" required placeholder="05XX XXX XX XX" pattern="[0-9]{10,11}">
+                  <span class="modern-input-check" id="phone-check"><i class="bi bi-check-circle-fill"></i></span>
+                </div>
+                <div class="modern-form-helper">10-11 haneli telefon numaranızı giriniz</div>
+                <div class="modern-form-error" id="phone-error"></div>
+              </div>
+
+              <div class="modern-form-field">
+                <label for="birthDate" class="modern-form-label required">Doğum Tarihi</label>
+                <div class="modern-input-wrapper">
+                  <input type="date" class="modern-input" id="birthDate" name="birthDate" required>
+                  <span class="modern-input-check" id="birthDate-check"><i class="bi bi-check-circle-fill"></i></span>
+                </div>
+                <div class="modern-form-error" id="birthDate-error"></div>
+              </div>
+
+              <div class="modern-checkbox-wrapper">
+                <input type="checkbox" class="modern-checkbox" id="dataConsent" required>
+                <label for="dataConsent" class="modern-checkbox-label">
+                  Verilerimin <a href="gizlilik-politikasi.html" target="_blank">Gizlilik Politikası</a> ve <a href="kvkk-aydinlatma-metni.html" target="_blank">KVKK Aydınlatma Metni</a> kapsamında işlenmesini kabul ediyorum.
+                </label>
+              </div>
+
+              <div style="margin-top: 2rem;">
+                <button type="submit" class="modern-btn-primary" id="step1-submit">
+                  Devam
+                  <i class="bi bi-arrow-right"></i>
+                </button>
+              </div>
+            </form>
+          </div>
+
+          <!-- Step 2: Şehir Bağlantısı -->
+          <div class="registration-step d-none" id="step2">
+            <form id="step2Form">
+              <div class="modern-form-field">
+                <label for="city" class="modern-form-label required">İl</label>
+                <div class="modern-input-wrapper">
+                  <select class="modern-select" id="city" name="city" required>
+                    <option value="">İl seçiniz</option>
+                    <option value="01">Adana</option>
+                    <option value="06">Ankara</option>
+                    <option value="07">Antalya</option>
+                    <option value="34">İstanbul</option>
+                    <option value="35">İzmir</option>
+                    <option value="16">Bursa</option>
+                    <option value="26">Eskişehir</option>
+                    <option value="58">Sivas</option>
+                    <option value="27">Gaziantep</option>
+                    <option value="61">Trabzon</option>
+                  </select>
+                  <span class="modern-input-check" id="city-check"><i class="bi bi-check-circle-fill"></i></span>
+                </div>
+                <div class="modern-form-error" id="city-error"></div>
+              </div>
+
+              <div class="modern-form-field">
+                <label for="district" class="modern-form-label required">İlçe</label>
+                <div class="modern-input-wrapper">
+                  <input type="text" class="modern-input" id="district" name="district" required placeholder="İlçe adınız">
+                  <span class="modern-input-check" id="district-check"><i class="bi bi-check-circle-fill"></i></span>
+                </div>
+                <div class="modern-form-error" id="district-error"></div>
+              </div>
+
+              <div class="modern-form-field">
+                <label for="buildingAge" class="modern-form-label">Bina Yaşı</label>
+                <select class="modern-select" id="buildingAge" name="buildingAge">
+                  <option value="">Seçiniz</option>
+                  <option value="0-5">0-5 yıl</option>
+                  <option value="6-10">6-10 yıl</option>
+                  <option value="11-20">11-20 yıl</option>
+                  <option value="21-30">21-30 yıl</option>
+                  <option value="30+">30+ yıl</option>
+                </select>
+              </div>
+
+              <div class="modern-form-field">
+                <label for="floor" class="modern-form-label">Kat</label>
+                <input type="number" class="modern-input" id="floor" name="floor" placeholder="Bulunduğunuz kat" min="0" max="100">
+              </div>
+
+              <div style="margin-top: 2rem; display: flex; gap: 1rem; flex-direction: column-reverse;">
+                <button type="button" class="modern-link-secondary" onclick="goToStep(1)" style="order: 2;">Geri</button>
+                <button type="submit" class="modern-btn-primary" id="step2-submit" style="order: 1;">
+                  Devam
+                  <i class="bi bi-arrow-right"></i>
+                </button>
+              </div>
+            </form>
+          </div>
+
+          <!-- Step 3: Uygulama İndir -->
+          <div class="registration-step d-none" id="step3">
+            <h2 class="mb-4">Adım 3: Uygulama İndir</h2>
+            <div class="text-center">
+              <p class="lead mb-4">Kayıt işleminiz tamamlandı! Zatu uygulamasını indirerek afet hazırlık ağına tam olarak katılın.</p>
+              
+              <!-- QR Code -->
+              <div class="qr-code-container mb-4">
+                <div class="qr-placeholder bg-light p-4 d-inline-block rounded" style="width: 200px; height: 200px;">
+                  <div class="d-flex flex-column align-items-center justify-content-center h-100">
+                    <i class="bi bi-qr-code" style="font-size: 80px; color: #1fa84f;"></i>
+                    <small class="text-muted mt-2">QR Kod</small>
+                  </div>
+                </div>
+                <p class="text-muted mt-2">QR kodu tarayarak uygulamayı indirebilirsiniz</p>
+              </div>
+
+              <!-- App Store Links -->
+              <div class="app-links mb-4">
+                <h4 class="mb-3">Uygulamayı İndir</h4>
+                <div class="d-flex flex-column flex-md-row gap-3 justify-content-center">
+                  <a href="#" class="btn btn-outline-dark btn-lg" target="_blank">
+                    <i class="bi bi-apple me-2"></i>
+                    App Store
+                  </a>
+                  <a href="#" class="btn btn-outline-dark btn-lg" target="_blank">
+                    <i class="bi bi-google-play me-2"></i>
+                    Google Play
+                  </a>
+                </div>
+              </div>
+
+              <!-- Features -->
+              <div class="app-features mt-5">
+                <h4 class="mb-3">Uygulama Özellikleri</h4>
+                <div class="row">
+                  <div class="col-md-4 mb-3">
+                    <div class="feature-item">
+                      <i class="bi bi-bell-fill text-success" style="font-size: 2rem;"></i>
+                      <h5 class="mt-2">AFAD Bildirimleri</h5>
+                      <p class="text-muted">Resmi afet bildirimlerini anında alın</p>
+                    </div>
+                  </div>
+                  <div class="col-md-4 mb-3">
+                    <div class="feature-item">
+                      <i class="bi bi-people-fill text-success" style="font-size: 2rem;"></i>
+                      <h5 class="mt-2">Komşu Ağı</h5>
+                      <p class="text-muted">Mahallenizdeki insanlarla bağlantı kurun</p>
+                    </div>
+                  </div>
+                  <div class="col-md-4 mb-3">
+                    <div class="feature-item">
+                      <i class="bi bi-map-fill text-success" style="font-size: 2rem;"></i>
+                      <h5 class="mt-2">Konum Paylaşımı</h5>
+                      <p class="text-muted">Acil durumlarda konumunuzu paylaşın</p>
+                    </div>
+                  </div>
+                </div>
+              </div>
+
+              <div class="mt-4">
+                <a href="index.html" class="btn btn-success btn-lg">Ana Sayfaya Dön</a>
+              </div>
+            </div>
+          </div>
+
+          <!-- City Stats Card (shown after registration) -->
+          <div id="registration-city-stats" class="mt-5"></div>
+        </div>
+      </div>
+    </div>
+  </section>
+  <!-- ============== End Registration Form ========== -->
+
+  <!-- Scripts -->
+  <script src="js/jquery-3.6.1.min.js"></script>
+  <script src="js/bootstrap.min.js"></script>
+  <script src="js/aos.js"></script>
+  <script>
+    let currentStep = 1;
+
+    // Step 1 Form Submit
+    document.getElementById('step1Form').addEventListener('submit', function(e) {
+      e.preventDefault();
+      const formData = new FormData(this);
+      
+      // Validate
+      if (!document.getElementById('dataConsent').checked) {
+        alert('Lütfen veri işleme onayını veriniz.');
+        return;
+      }
+
+      // Save data (localStorage)
+      const step1Data = {
+        fullName: formData.get('fullName'),
+        phone: formData.get('phone'),
+        birthDate: formData.get('birthDate')
+      };
+      localStorage.setItem('registration_step1', JSON.stringify(step1Data));
+
+      // Show success message
+      showSuccessMessage('Temel bilgileriniz kaydedildi!');
+      
+      // Move to next step
+      setTimeout(() => {
+        goToStep(2);
+      }, 1000);
+    });
+
+    // Step 2 Form Submit
+    document.getElementById('step2Form').addEventListener('submit', function(e) {
+      e.preventDefault();
+      const formData = new FormData(this);
+      
+      // Save data
+      const step2Data = {
+        city: formData.get('city'),
+        district: formData.get('district'),
+        buildingAge: formData.get('buildingAge'),
+        floor: formData.get('floor')
+      };
+      localStorage.setItem('registration_step2', JSON.stringify(step2Data));
+
+      // Update user progress
+      if (window.userProgress) {
+        window.userProgress.setRegistered(true);
+      }
+
+      // Show success message
+      showSuccessMessage('Şehir bilgileriniz kaydedildi!');
+      
+      // Move to next step
+      setTimeout(() => {
+        goToStep(3);
+        // Initialize city stats when step 3 is shown
+        setTimeout(() => {
+          initCityStats();
+        }, 500);
+      }, 1000);
+    });
+
+    function goToStep(step) {
+      // Hide all steps
+      document.querySelectorAll('.registration-step').forEach(el => {
+        el.classList.add('d-none');
+      });
+
+      // Show current step
+      document.getElementById('step' + step).classList.remove('d-none');
+      currentStep = step;
+
+      // Update modern stepper
+      const stepper = document.getElementById('registration-stepper');
+      if (stepper) {
+        const steps = stepper.querySelectorAll('.modern-stepper-step');
+        steps.forEach((stepEl, index) => {
+          stepEl.classList.remove('active', 'completed');
+          if (index + 1 < step) {
+            stepEl.classList.add('completed');
+          } else if (index + 1 === step) {
+            stepEl.classList.add('active');
+          }
+        });
+      }
+
+      currentStep = step;
+    }
+
+    function showSuccessMessage(message) {
+      const successEl = document.getElementById('successMessage');
+      const successText = document.getElementById('successText');
+      successText.textContent = message;
+      successEl.classList.remove('d-none');
+      
+      setTimeout(() => {
+        successEl.classList.add('d-none');
+      }, 3000);
+    }
+
+    // Initialize city stats after step 2 completion
+    function initCityStats() {
+      const step2Data = localStorage.getItem('registration_step2');
+      if (step2Data) {
+        try {
+          const data = JSON.parse(step2Data);
+          if (data.city && document.getElementById('registration-city-stats')) {
+            // Destroy existing instance if any
+            if (window.registrationCityStats) {
+              window.registrationCityStats.destroy();
+            }
+            // Create new CityStatsCard instance with 60s polling and animated counter
+            window.registrationCityStats = new CityStatsCard('registration-city-stats', data.city);
+          }
+        } catch (e) {
+          console.error('Error initializing city stats:', e);
+        }
+      }
+    }
+
+    // Load saved data on page load
+    window.addEventListener('DOMContentLoaded', function() {
+      const step1Data = localStorage.getItem('registration_step1');
+      if (step1Data) {
+        const data = JSON.parse(step1Data);
+        document.getElementById('fullName').value = data.fullName || '';
+        document.getElementById('phone').value = data.phone || '';
+        document.getElementById('birthDate').value = data.birthDate || '';
+      }
+
+      const step2Data = localStorage.getItem('registration_step2');
+      if (step2Data) {
+        const data = JSON.parse(step2Data);
+        document.getElementById('city').value = data.city || '';
+        document.getElementById('district').value = data.district || '';
+        document.getElementById('buildingAge').value = data.buildingAge || '';
+        document.getElementById('floor').value = data.floor || '';
+      }
+    });
+  </script>
+
+  <!-- City Stats Scripts -->
+  <script src="js/api-stats.js"></script>
+  <script src="js/counter.js"></script>
+  <script src="js/city-stats.js"></script>
+
+  <!-- Initialize City Stats after registration -->
+  <script>
+    // Initialize city stats after step 2 completion
+    function initCityStats() {
+      const step2Data = localStorage.getItem('registration_step2');
+      if (step2Data) {
+        const data = JSON.parse(step2Data);
+        if (data.city && document.getElementById('registration-city-stats')) {
+          if (window.registrationCityStats) {
+            window.registrationCityStats.destroy();
+          }
+          window.registrationCityStats = new CityStatsCard('registration-city-stats', data.city);
+        }
+      }
+    }
+
+    // Call initCityStats when step 2 is completed
+    document.addEventListener('DOMContentLoaded', function() {
+      // Check if we're on step 3 (after city selection)
+      const currentStep = parseInt(localStorage.getItem('registration_current_step') || '1');
+      if (currentStep >= 2) {
+        initCityStats();
+      }
+    });
+  </script>
+</body>
+</html>
+

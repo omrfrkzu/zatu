@@ -1,0 +1,1194 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta http-equiv="X-UA-Compatible" content="IE=edge">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta name="description" content="Afet anında yalnız kalma. Zatu, komşularınla güvenli iletişim ve koordinasyon ağı kurmanı sağlar.">
+  <!-- Open Graph / Facebook -->
+  <meta property="og:type" content="website">
+  <meta property="og:title" content="Zatu | Afet İletişim ve Dayanışma Ağı">
+  <meta property="og:description" content="Afet anında yalnız kalma. Zatu, komşularınla güvenli iletişim ve koordinasyon ağı kurmanı sağlar.">
+  <meta property="og:image" content="logo-main.png">
+  <!-- Twitter -->
+  <meta name="twitter:card" content="summary_large_image">
+  <meta name="twitter:title" content="Zatu | Afet İletişim ve Dayanışma Ağı">
+  <meta name="twitter:description" content="Afet anında yalnız kalma. Zatu, komşularınla güvenli iletişim ve koordinasyon ağı kurmanı sağlar.">
+  <!-- fav icon -->
+  <link rel="icon" href="logo-main.png" type="image/png">
+
+  <!-- bootstarp css file -->
+  <link rel="stylesheet" href="css/bootstrap.min.css">
+
+  <!-- aos.css file -->
+  <link rel="stylesheet" href="css/aos.css">
+
+  <!-- fancybox css file -->
+  <link rel="stylesheet" href="css/jquery.fancybox.min.css">
+
+  <!-- owl carousel css file -->
+  <link rel="stylesheet" href="css/owl.carousel.min.css">
+  <link rel="stylesheet" href="css/owl.theme.default.min.css">
+
+  <!--  toasts file     -->
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/toastr.js/latest/css/toastr.min.css">
+
+  <!-- bootstrap icons -->
+  <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.11.3/font/bootstrap-icons.min.css">
+
+  <!-- RemixIcon -->
+  <link href="https://cdn.jsdelivr.net/npm/remixicon@3.5.0/fonts/remixicon.css" rel="stylesheet">
+
+  <!-- Google font -->
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Outfit:wght@100;200;300;400;500;600;700;800&display=swap" rel="stylesheet">
+  <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@400;500;600;700;800;900&family=Inter:wght@400;500;600;700;800&display=swap" rel="stylesheet">
+
+  <!-- main css file -->
+  <link rel="stylesheet" href="css/style.css">
+  <link rel="stylesheet" href="css/forms-modern.css">
+  <link rel="stylesheet" href="css/desktop-premium.css">
+  <title>Zatu | Afet İletişim ve Dayanışma Ağı</title>
+</head>
+
+<body class="home-1" data-aos-easing="fade-up" data-aos-duration="500" data-aos-delay="0">
+
+  <!-- start preLoader -->
+  <div id="preloader">
+    <svg id="mainSVG" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 800 600">
+      <defs>
+        <radialGradient id="mainGrad" cx="346.198916" cy="300" fx="346.198916" fy="300" r="100" gradientUnits="userSpaceOnUse">
+          <stop offset=".68" stop-color="#21df51"></stop>
+          <stop offset=".72" stop-color="#3add63"></stop>
+          <stop offset=".77" stop-color="#4fdd73"></stop>
+          <stop offset=".82" stop-color="#66db83"></stop>
+          <stop offset=".88" stop-color="#7cd893"></stop>
+          <stop offset=".93" stop-color="#95d8a6"></stop>
+          <stop offset=".99" stop-color="#bde6c7"></stop>
+          <stop offset="1" stop-color="#e3f1e7"></stop>
+        </radialGradient>
+      </defs>
+      <circle id="fillDot" cx="400" cy="300" fill="#21df51" r="100"></circle>
+      <circle id="gradDot" cx="400" cy="300" fill="url(#mainGrad)" r="100"></circle>
+    </svg>
+  </div>
+  <!-- end preLoader -->
+
+  <!-- start scroll to top button -->
+  <div id="progress">
+    <span id="progress-value"><i class="bi bi-arrow-up-short"></i></span>
+  </div>
+  <!-- end scroll to top button -->
+
+
+  <!-- ======= start Header ======= -->
+  <header id="site-header" class="header-sticky">
+    <div class="nav-shell">
+      <!-- Left: Logo -->
+      <div class="nav-left">
+        <a class="navbar-brand" href="#top"><img src="logo-main.png" class="logo" alt="Zatu"></a>
+      </div>
+      
+      <!-- Center: Nav Links (Absolute Centered on Desktop) -->
+      <nav class="nav-center desktop-nav">
+        <div class="navbar-collapse">
+          <ul class="navbar-nav menu" id="navbar">
+            <li class="nav-item">
+              <a class="nav-link" href="#neden-variz">Neden Varız?</a>
+            </li>
+            <li class="nav-item">
+              <a class="nav-link" href="#nasil-calisir">Nasıl Çalışır?</a>
+            </li>
+            <li class="nav-item">
+              <a class="nav-link" href="kayit.html">Ağa Katıl</a>
+            </li>
+            <li class="nav-item">
+              <a class="nav-link" href="#profilini-tamamla">Profilini Tamamla</a>
+            </li>
+            <li class="nav-item">
+              <a class="nav-link" href="#afet-anketi">Afet Görüşleri</a>
+            </li>
+          </ul>
+        </div>
+      </nav>
+      
+      <!-- Right: Actions (Desktop: Language + CTA + Theme | Mobile: Theme + Hamburger) -->
+      <div class="nav-right">
+        <!-- Language Dropdown (Desktop Only) -->
+        <div class="language-dropdown-wrapper desktop-language-dropdown">
+          <button 
+            type="button" 
+            id="language-dropdown-trigger" 
+            class="language-dropdown-trigger" 
+            aria-haspopup="menu" 
+            aria-expanded="false"
+            aria-label="Dil seçimi">
+            <span class="language-flag" id="language-flag">
+              <!-- TR Flag SVG -->
+              <svg width="18" height="18" viewBox="0 0 18 18" fill="none" xmlns="http://www.w3.org/2000/svg" class="flag-icon">
+                <rect width="18" height="18" fill="#E30A17"/>
+                <!-- Crescent (Hilal) -->
+                <circle cx="7" cy="9" r="4" fill="#FFFFFF"/>
+                <circle cx="8.5" cy="9" r="3.5" fill="#E30A17"/>
+                <!-- Star -->
+                <path d="M12.5 6.5L12.8 7.3L13.6 7.1L12.9 7.6L13.2 8.4L12.5 7.9L11.8 8.4L12.1 7.6L11.4 7.1L12.2 7.3Z" fill="#FFFFFF"/>
+              </svg>
+            </span>
+            <span class="language-code" id="language-code">TR</span>
+            <i class="bi bi-chevron-down language-chevron"></i>
+          </button>
+          <div id="language-dropdown-menu" class="language-dropdown-menu" role="menu" aria-hidden="true">
+            <button 
+              type="button" 
+              class="language-menu-item" 
+              role="menuitem" 
+              data-lang="tr"
+              aria-label="Türkçe">
+              <span class="language-flag">
+                <svg width="18" height="18" viewBox="0 0 18 18" fill="none" xmlns="http://www.w3.org/2000/svg" class="flag-icon">
+                  <rect width="18" height="18" fill="#E30A17"/>
+                  <!-- Crescent (Hilal) -->
+                  <circle cx="7" cy="9" r="4" fill="#FFFFFF"/>
+                  <circle cx="8.5" cy="9" r="3.5" fill="#E30A17"/>
+                  <!-- Star -->
+                  <path d="M12.5 6.5L12.8 7.3L13.6 7.1L12.9 7.6L13.2 8.4L12.5 7.9L11.8 8.4L12.1 7.6L11.4 7.1L12.2 7.3Z" fill="#FFFFFF"/>
+                </svg>
+              </span>
+              <span class="language-code-small">TR</span>
+              <span class="language-name">Türkçe</span>
+            </button>
+            <button 
+              type="button" 
+              class="language-menu-item" 
+              role="menuitem" 
+              data-lang="en"
+              aria-label="English">
+              <span class="language-flag">
+                <svg width="18" height="18" viewBox="0 0 18 18" fill="none" xmlns="http://www.w3.org/2000/svg" class="flag-icon">
+                  <rect width="18" height="18" fill="#012169"/>
+                  <path d="M0 0L18 18M18 0L0 18" stroke="#FFFFFF" stroke-width="2"/>
+                  <path d="M0 0L18 18M18 0L0 18" stroke="#C8102E" stroke-width="1.2"/>
+                  <path d="M9 0V18M0 9H18" stroke="#FFFFFF" stroke-width="2.5"/>
+                  <path d="M9 0V18M0 9H18" stroke="#C8102E" stroke-width="1.5"/>
+                </svg>
+              </span>
+              <span class="language-code-small">EN</span>
+              <span class="language-name">English</span>
+            </button>
+          </div>
+        </div>
+        
+        <!-- CTA Button (Desktop Only) -->
+        <a class="btn btn-cta desktop-cta" href="kayit.html" aria-label="Ağın Parçası Ol – 2 Dakikada Kayıt">AĞIN PARÇASI OL</a>
+        
+        <!-- Mobile Actions: Theme + Hamburger -->
+        <div class="mobile-actions">
+          <button id="mode-toggle" class="btn-light-mode switch-button" aria-label="Karanlık mod"><i id="mode-icon" class="bi bi-moon-fill"></i></button>
+          <button id="mobile-menu-toggle" class="mobile-menu-toggle" type="button" aria-controls="mobile-menu" aria-expanded="false" aria-label="Menüyü aç">
+            <i class="bi bi-list" id="menu-icon"></i>
+          </button>
+        </div>
+      </div>
+    </div>
+  </header>
+  <!-- ======= end Header ======= -->
+
+  <!-- ======= Mobile Menu Drawer (Fixed Overlay) ======= -->
+  <div id="mobile-menu-wrapper" class="mobile-menu-wrapper" aria-hidden="true">
+    <!-- Overlay -->
+    <button 
+      id="mobile-menu-overlay" 
+      class="mobile-menu-overlay" 
+      aria-label="Menüyü kapat"
+      type="button">
+    </button>
+    
+    <!-- Drawer Panel -->
+    <aside 
+      id="mobile-menu" 
+      class="mobile-menu-drawer" 
+      role="dialog" 
+      aria-modal="true" 
+      aria-labelledby="mobile-menu-title">
+      <!-- Header -->
+      <div class="mobile-menu-header">
+        <span id="mobile-menu-title" class="mobile-menu-title">Menü</span>
+        <button 
+          id="mobile-menu-close" 
+          class="mobile-menu-close" 
+          aria-label="Kapat" 
+          type="button">
+          <i class="bi bi-x-lg"></i>
+        </button>
+      </div>
+
+      <!-- Navigation Links -->
+      <nav class="mobile-menu-nav">
+        <!-- Primary Links -->
+        <a href="#neden-variz" class="mobile-nav-item">
+          <span>Neden Varız?</span>
+        </a>
+        <a href="#nasil-calisir" class="mobile-nav-item">
+          <span>Nasıl Çalışır?</span>
+        </a>
+        <a href="#afet-anketi" class="mobile-nav-item">
+          <span>Afet Görüşleri</span>
+        </a>
+
+        <!-- Divider -->
+        <div class="mobile-menu-divider"></div>
+
+        <!-- Secondary Links -->
+        <a href="hakkimizda.html" class="mobile-nav-item">
+          <span>Hakkımızda</span>
+        </a>
+        <a href="sss.html" class="mobile-nav-item">
+          <span>SSS</span>
+        </a>
+      </nav>
+
+      <!-- Bottom Actions (Fixed at bottom) -->
+      <div class="mobile-menu-footer">
+        <!-- Language Selector (Compact) -->
+        <div class="mobile-language-compact">
+          <button 
+            type="button" 
+            id="mobile-language-dropdown-trigger" 
+            class="mobile-language-trigger" 
+            aria-haspopup="menu" 
+            aria-expanded="false"
+            aria-label="Dil seçimi">
+            <span class="language-flag" id="mobile-current-flag">
+              <svg width="18" height="18" viewBox="0 0 20 20" fill="none" xmlns="http://www.w3.org/2000/svg">
+                <rect width="20" height="20" rx="2" fill="#E30A17"/>
+                <!-- Crescent (Hilal) -->
+                <circle cx="7.5" cy="10" r="4.5" fill="#FFFFFF"/>
+                <circle cx="9" cy="10" r="4" fill="#E30A17"/>
+                <!-- Star -->
+                <path d="M13.5 7.5L13.8 8.3L14.6 8.1L13.9 8.6L14.2 9.4L13.5 8.9L12.8 9.4L13.1 8.6L12.4 8.1L13.2 8.3Z" fill="#FFFFFF"/>
+              </svg>
+            </span>
+            <span class="language-name-compact" id="mobile-language-name">Türkçe</span>
+            <i class="bi bi-chevron-down language-chevron"></i>
+          </button>
+          <div class="language-dropdown-menu mobile-language-menu" id="mobile-language-dropdown-menu" role="menu" aria-hidden="true">
+            <button class="language-menu-item" data-locale="tr" role="menuitem">
+              <span class="language-flag">
+                <svg width="20" height="20" viewBox="0 0 20 20" fill="none" xmlns="http://www.w3.org/2000/svg">
+                  <rect width="20" height="20" rx="2" fill="#E30A17"/>
+                  <!-- Crescent (Hilal) -->
+                  <circle cx="7.5" cy="10" r="4.5" fill="#FFFFFF"/>
+                  <circle cx="9" cy="10" r="4" fill="#E30A17"/>
+                  <!-- Star -->
+                  <path d="M13.5 7.5L13.8 8.3L14.6 8.1L13.9 8.6L14.2 9.4L13.5 8.9L12.8 9.4L13.1 8.6L12.4 8.1L13.2 8.3Z" fill="#FFFFFF"/>
+                </svg>
+              </span>
+              <span class="language-code">TR</span>
+              <span class="language-name">Türkçe</span>
+            </button>
+            <button class="language-menu-item" data-locale="en" role="menuitem">
+              <span class="language-flag">
+                <svg width="20" height="20" viewBox="0 0 20 20" fill="none" xmlns="http://www.w3.org/2000/svg">
+                  <rect width="20" height="20" rx="2" fill="#012169"/>
+                  <path d="M0 0l20 20M20 0L0 20" stroke="white" stroke-width="2"/>
+                  <path d="M0 0l20 20M20 0L0 20" stroke="#C8102E" stroke-width="1.2"/>
+                </svg>
+              </span>
+              <span class="language-code">EN</span>
+              <span class="language-name">English</span>
+            </button>
+          </div>
+        </div>
+
+        <!-- CTA Button -->
+        <a href="kayit.html" class="mobile-menu-cta">
+          Ağa Katıl
+          <i class="bi bi-arrow-right"></i>
+        </a>
+      </div>
+    </aside>
+  </div>
+  <!-- ======= end Mobile Menu Drawer ======= -->
+
+  <!-- ============== Start Hero section ========== -->
+  <section class="hero d-flex flex-column justify-content-center align-items-center" id="hero">
+    <div id="particles-js"></div>
+    <div class="container">
+      <div class="row justify-content-center align-items-center">
+        <div class="hero-text col-12 col-lg-5">
+          <div class="row">
+            <div class="col-12">
+              <h1 class="title hero-title col-12" data-aos="fade-up" data-aos-delay="150">AFETTE <span class="hero-accent-purple">YALNIZ</span> <span class="hero-accent-pink">KALMA</span></h1>
+            </div>
+            <div class="col-lg-10 col-12" data-aos="fade-up" data-aos-delay="200">
+              <ul class="list-unstyled my-3 hero-list">
+                <li class="mb-2">• Büyük afette resmi yardım herkese yetişemez</li>
+                <li class="mb-2">• Komşularınla önceden bağlantı kurmak hayat kurtarır</li>
+                <li class="mb-2">• Şehrindeki binlerce insanla aynı endişeyi paylaşıyorsun</li>
+              </ul>
+            </div>
+            <div class="col-12" data-aos="fade-up" data-aos-delay="250">
+              <div class="hero-buttons">
+                <a href="kayit.html" class="btn" aria-label="Ağın Parçası Ol – 2 Dakikada Kayıt">AĞIN PARÇASI OL – 2 DAKİKADA KAYIT</a>
+              </div>
+            </div>
+            <div class="col-12" data-aos="fade-up" data-aos-delay="300">
+              <div class="hero-trust">
+                <p><i class="bi bi-check-circle-fill"></i> Son 24 saatte 1.847 kişi katıldı</p>
+                <p><i class="bi bi-globe"></i> 81 ilde aktif</p>
+                <p><i class="bi bi-shield-check"></i> Zatu teknolojisi ile AFAD entegrasyonu</p>
+              </div>
+            </div>
+          </div>
+        </div>
+        <div class="col-12 col-lg-7 mx-md-auto text-center" data-aos="fade-left" data-aos-delay="100">
+          <div class="hero-image">
+            <div class="hero-img" data-tilt>
+              <img class="img-fluid " alt="Zatu – Ulusal Afet Ağı için teknoloji ve topluluk desteği" src="hero-image.png">
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+  <!-- ============== End Hero section ========== -->
+
+  <!-- ============== Start services section ========== -->
+  <section class="container services py-5 section-alt-bg bg-pattern" id="neden-variz" style="position: relative;">
+    <div class="page-container">
+      <div class="section-header">
+        <span class="section-eyebrow" data-aos="fade-up">
+          Neden Varız?
+        </span>
+        <h2 class="section-title" data-aos="fade-up" data-aos-delay="100">
+          Türkiye'de Afet Gerçeği
+        </h2>
+        <p class="section-description" data-aos="fade-up" data-aos-delay="150">
+          Hazırlıklı olmak seçim değil, zorunluluk
+        </p>
+      </div>
+      
+      <div class="feature-grid">
+        <!-- Kart 1: İstatistiksel Gerçekler -->
+        <div class="feature-card" data-aos="fade-up" data-aos-delay="200">
+          <div class="feature-card-icon">
+            <i class="bi bi-bar-chart-line" aria-hidden="true"></i>
+          </div>
+          <h3 class="feature-card-title">İstatistiksel Gerçekler</h3>
+          <p class="feature-card-description">
+            6 Şubat 2023'te ilk 48 saatte sistematik A-K başlayamadı. Mobil iletişim ve enerji kesintileri yaşandı. AFAD personelinin yalnızca %30,7'si A-K teknisyeni. 42.310 can kaybı; 448.018 tahliye.
+          </p>
+          <div class="feature-card-stat">
+            <i class="bi bi-shield-check me-1"></i> Gerçek veriler
+          </div>
+        </div>
+        
+        <!-- Kart 2: Psikolojik Durum -->
+        <div class="feature-card" data-aos="fade-up" data-aos-delay="250">
+          <div class="feature-card-icon">
+            <i class="bi bi-people" aria-hidden="true"></i>
+          </div>
+          <h3 class="feature-card-title">Psikolojik Durum</h3>
+          <p class="feature-card-description">
+            Apartmanında kaç aileyi tanıyorsun? Afette kimle iletişim kuracaksın? Yakının güvende mi anlayabilecek misin? En yakın toplanma noktasını biliyor musun?
+          </p>
+          <div class="feature-card-stat">
+            <i class="bi bi-heart me-1"></i> İnsan odaklı
+          </div>
+        </div>
+        
+        <!-- Kart 3: Teknik Problemler -->
+        <div class="feature-card" data-aos="fade-up" data-aos-delay="300">
+          <div class="feature-card-icon">
+            <i class="bi bi-broadcast" aria-hidden="true"></i>
+          </div>
+          <h3 class="feature-card-title">Teknik Problemler</h3>
+          <p class="feature-card-description">
+            Mobil iletişim ve enerji kesintileri. Bölgeye acil VSAT terminalleri gönderildi. Bazı havalimanları hasardan kapandı. Borçlu hatlar acil iletişim için açıldı.
+          </p>
+          <div class="feature-card-stat">
+            <i class="bi bi-wifi me-1"></i> İletişim kritik
+          </div>
+        </div>
+        
+        <!-- Kart 4: Sosyal Gerçeklik -->
+        <div class="feature-card" data-aos="fade-up" data-aos-delay="350">
+          <div class="feature-card-icon">
+            <i class="bi bi-diagram-3" aria-hidden="true"></i>
+          </div>
+          <h3 class="feature-card-title">Sosyal Gerçeklik</h3>
+          <p class="feature-card-description">
+            Bir komşu ortalama 8 kişiyi etkileyebilir. Mahalle bazlı örgütlenmeler en etkilidir. Toplumsal dayanışma hayat kurtarır. Önceden tanışanlar daha hızlı koordine olur.
+          </p>
+          <div class="feature-card-stat">
+            <i class="bi bi-people-fill me-1"></i> Toplumsal dayanışma
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+  <!-- ============== End services section ========== -->
+
+  <!-- ============== Start About section (Nasıl Çalışır) ========== -->
+  <section class="about py-5 how-it-works how-it-works-premium" id="nasil-calisir">
+    <div class="page-container">
+      <!-- Premium Wrapper Panel with Gradient Background -->
+      <div class="how-it-works-wrapper-premium">
+        <!-- 2-Column Grid Layout: Left (5/12) + Right (7/12) -->
+        <div class="how-it-works-grid-premium">
+          <!-- LEFT COLUMN (5/12): Title Block + Visual Stepper + Benefit Cards + Trust Badges -->
+          <div class="how-it-works-left-premium">
+            <!-- Title Block -->
+            <div class="how-it-works-header-premium" data-aos="fade-up">
+              <span class="section-eyebrow-premium">Nasıl Çalışır?</span>
+              <h2 class="how-it-works-title-premium">Güvenli Mahalle Ağına Katılmak İçin 3 Basit Adım</h2>
+              <p class="how-it-works-description-premium">Kayıt ol, bilgilerini tamamla, güvenli ağa dahil ol</p>
+            </div>
+
+            <!-- Visual Stepper Component -->
+            <div class="how-it-works-stepper-premium" data-aos="fade-up" data-aos-delay="100">
+              <div class="stepper-item-premium active" data-step="1">
+                <div class="stepper-circle-premium active">
+                  <span class="stepper-number-premium">1</span>
+                </div>
+                <div class="stepper-line-premium"></div>
+                <div class="stepper-content-premium">
+                  <div class="stepper-label-premium">Ağa Katıl</div>
+                </div>
+              </div>
+              <div class="stepper-item-premium" data-step="2">
+                <div class="stepper-circle-premium">
+                  <span class="stepper-number-premium">2</span>
+                </div>
+                <div class="stepper-line-premium"></div>
+                <div class="stepper-content-premium">
+                  <div class="stepper-label-premium">Bilgilerini Tamamla</div>
+                </div>
+              </div>
+              <div class="stepper-item-premium" data-step="3">
+                <div class="stepper-circle-premium">
+                  <span class="stepper-number-premium">3</span>
+                </div>
+                <div class="stepper-content-premium">
+                  <div class="stepper-label-premium">Güvenli Ağa Dahil Ol</div>
+                </div>
+              </div>
+            </div>
+
+            <!-- Benefit Cards Stack -->
+            <div class="how-it-works-benefits-premium" data-aos="fade-up" data-aos-delay="150">
+              <div class="benefit-card-premium">
+                <div class="benefit-icon-premium">
+                  <i class="bi bi-clock-fill"></i>
+                </div>
+                <span class="benefit-text-premium">2 dakikada kayıt</span>
+              </div>
+              <div class="benefit-card-premium">
+                <div class="benefit-icon-premium">
+                  <i class="bi bi-shield-lock-fill"></i>
+                </div>
+                <span class="benefit-text-premium">Gizli ve güvenli</span>
+              </div>
+              <div class="benefit-card-premium">
+                <div class="benefit-icon-premium">
+                  <i class="bi bi-people-fill"></i>
+                </div>
+                <span class="benefit-text-premium">Komşularınla bağlantı kur</span>
+              </div>
+            </div>
+
+            <!-- Trust Badges Row -->
+            <div class="how-it-works-trust-premium" data-aos="fade-up" data-aos-delay="200">
+              <div class="trust-badge-premium">
+                <i class="bi bi-geo-alt-fill"></i>
+                <span>81 ilde aktif</span>
+              </div>
+              <div class="trust-badge-premium">
+                <i class="bi bi-check-circle-fill"></i>
+                <span>KVKK uyumlu</span>
+              </div>
+              <div class="trust-badge-premium">
+                <i class="bi bi-shield-check"></i>
+                <span>AFAD entegrasyonu</span>
+              </div>
+            </div>
+          </div>
+
+          <!-- RIGHT COLUMN (7/12): Elevated Form Card -->
+          <div class="how-it-works-right-premium">
+            <!-- Large Elevated Form Card -->
+            <div class="form-card-premium">
+        <!-- Step 1: Ağa Katıl -->
+        <div class="how-it-works-step active" id="how-it-works-step-1" data-aos="fade-up" data-aos-delay="250">
+          <!-- Form Card Header -->
+          <header class="form-card-header-premium">
+            <div class="form-card-header-top">
+              <span class="step-badge-premium-form">1</span>
+              <div class="form-card-header-content">
+                <h3 class="form-card-title-premium">Ağa Katıl</h3>
+                <span class="form-card-progress-premium">Adım 1 / 3</span>
+              </div>
+            </div>
+            <div class="form-card-divider-premium"></div>
+          </header>
+          <!-- Form Card Body -->
+          <div class="form-card-body-premium">
+            <p class="form-card-lead-premium">Temel bilgilerini girerek güvenli mahalle ağına katıl.</p>
+            
+            <form id="how-it-works-form-1" class="how-it-works-form-premium">
+                <div class="form-group-wrapper">
+                  <div class="form-group">
+                    <label for="hiw-fullName" class="form-label">
+                      Ad Soyad <span class="text-danger">*</span>
+                    </label>
+                    <div class="input-wrapper">
+                      <input type="text" class="form-control" id="hiw-fullName" name="fullName" required placeholder="Adınız ve soyadınız">
+                      <i class="bi bi-check-circle-fill input-check" style="display: none;"></i>
+                    </div>
+                  </div>
+
+                  <div class="form-group">
+                    <label for="hiw-phone" class="form-label">
+                      Telefon Numarası <span class="text-muted" style="font-size: 0.85rem;">(Acil bildirimler için – önerilen)</span>
+                    </label>
+                    <div class="input-wrapper">
+                      <input type="tel" class="form-control" id="hiw-phone" name="phone" placeholder="05XX XXX XX XX" pattern="[0-9]{10,11}">
+                      <i class="bi bi-check-circle-fill input-check" style="display: none;"></i>
+                    </div>
+                    <small class="form-text text-muted">10-11 haneli telefon numaranızı giriniz</small>
+                  </div>
+
+                  <div class="form-group">
+                    <label for="hiw-birthDate" class="form-label">
+                      Doğum Tarihi <span class="text-danger">*</span>
+                    </label>
+                    <div class="input-wrapper">
+                      <input type="date" class="form-control" id="hiw-birthDate" name="birthDate" required>
+                      <i class="bi bi-check-circle-fill input-check" style="display: none;"></i>
+                    </div>
+                    <div class="age-display mt-2" id="age-display" style="display: none;">
+                      <span class="age-badge"></span>
+                      <span class="age-message"></span>
+                    </div>
+                  </div>
+                </div>
+
+            <!-- Form Actions Footer -->
+            <div class="form-actions-premium">
+              <div class="form-actions-divider-premium"></div>
+              <div class="form-actions-content-premium">
+                <button type="submit" class="btn btn-primary-premium" id="hiw-step1-submit">
+                  <span class="btn-text">Devam Et</span>
+                  <span class="btn-loader" style="display: none;">
+                    <span class="spinner-border spinner-border-sm" role="status" aria-hidden="true"></span>
+                  </span>
+                </button>
+              </div>
+            </div>
+          </form>
+          </div>
+        </div>
+
+        <!-- Step 2: Bilgilerini Tamamla -->
+        <div class="how-it-works-step" id="how-it-works-step-2" style="display: none;">
+          <!-- Form Card Header -->
+          <header class="form-card-header-premium">
+            <div class="form-card-header-top">
+              <span class="step-badge-premium-form">2</span>
+              <div class="form-card-header-content">
+                <h3 class="form-card-title-premium">Bilgilerini Tamamla</h3>
+                <span class="form-card-progress-premium">Adım 2 / 3</span>
+              </div>
+            </div>
+            <div class="form-card-divider-premium"></div>
+          </header>
+          <!-- Form Card Body -->
+          <div class="form-card-body-premium">
+              <p class="step-lead">Yaşadığın yeri ve bina bilgilerini paylaş, seni doğru grupla eşleştirelim.</p>
+              
+              <form id="how-it-works-form-2" class="how-it-works-form">
+                <div class="form-group-wrapper">
+                  <div class="form-group">
+                    <label for="hiw-city" class="form-label">
+                      İl <span class="text-danger">*</span>
+                    </label>
+                    <div class="input-wrapper">
+                      <select class="form-select" id="hiw-city" name="city" required>
+                        <option value="">İl seçiniz</option>
+                        <option value="01">Adana</option>
+                        <option value="06">Ankara</option>
+                        <option value="07">Antalya</option>
+                        <option value="16">Bursa</option>
+                        <option value="26">Eskişehir</option>
+                        <option value="27">Gaziantep</option>
+                        <option value="34">İstanbul</option>
+                        <option value="35">İzmir</option>
+                        <option value="58">Sivas</option>
+                        <option value="61">Trabzon</option>
+                      </select>
+                      <i class="bi bi-check-circle-fill input-check" style="display: none;"></i>
+                    </div>
+                  </div>
+
+                  <div class="form-group">
+                    <label for="hiw-district" class="form-label">
+                      İlçe <span class="text-danger">*</span>
+                    </label>
+                    <div class="input-wrapper">
+                      <input type="text" class="form-control" id="hiw-district" name="district" required placeholder="İlçe adınız" disabled>
+                      <i class="bi bi-check-circle-fill input-check" style="display: none;"></i>
+                    </div>
+                  </div>
+
+                  <div class="form-group">
+                    <label for="hiw-neighborhood" class="form-label">
+                      Mahalle <span class="text-danger">*</span>
+                    </label>
+                    <div class="input-wrapper">
+                      <input type="text" class="form-control" id="hiw-neighborhood" name="neighborhood" required placeholder="Mahalle adınız" disabled>
+                      <i class="bi bi-check-circle-fill input-check" style="display: none;"></i>
+                    </div>
+                  </div>
+
+                  <div class="form-group">
+                    <label for="hiw-buildingAge" class="form-label">
+                      Bina Yaşı <span class="text-danger">*</span>
+                    </label>
+                    <div class="input-wrapper">
+                      <select class="form-select" id="hiw-buildingAge" name="buildingAge" required>
+                        <option value="">Seçiniz</option>
+                        <option value="0-5">0-5 yıl</option>
+                        <option value="6-10">6-10 yıl</option>
+                        <option value="11-20">11-20 yıl</option>
+                        <option value="21-30">21-30 yıl</option>
+                        <option value="30+">30+ yıl</option>
+                      </select>
+                      <i class="bi bi-check-circle-fill input-check" style="display: none;"></i>
+                    </div>
+                  </div>
+
+                  <div class="form-group">
+                    <label for="hiw-floor" class="form-label">
+                      Kat Bilgisi <span class="text-danger">*</span>
+                    </label>
+                    <div class="input-wrapper">
+                      <input type="number" class="form-control" id="hiw-floor" name="floor" required placeholder="Bulunduğunuz kat" min="0" max="100">
+                      <i class="bi bi-check-circle-fill input-check" style="display: none;"></i>
+                    </div>
+                  </div>
+                </div>
+
+            <!-- Form Actions Footer -->
+            <div class="form-actions-premium">
+              <div class="form-actions-divider-premium"></div>
+              <div class="form-actions-content-premium">
+                <button type="button" class="btn btn-outline-secondary-premium" onclick="howItWorks.goToStep(1)">
+                  Geri
+                </button>
+                <button type="submit" class="btn btn-primary-premium" id="hiw-step2-submit" disabled>
+                  <span class="btn-text">Devam Et</span>
+                  <span class="btn-loader" style="display: none;">
+                    <span class="spinner-border spinner-border-sm" role="status" aria-hidden="true"></span>
+                  </span>
+                </button>
+              </div>
+            </div>
+          </form>
+          </div>
+        </div>
+
+        <!-- Step 3: Güvenli Ağa Dahil Ol -->
+        <div class="how-it-works-step" id="how-it-works-step-3" style="display: none;">
+          <!-- Form Card Header -->
+          <header class="form-card-header-premium">
+            <div class="form-card-header-top">
+              <span class="step-badge-premium-form">3</span>
+              <div class="form-card-header-content">
+                <h3 class="form-card-title-premium">Güvenli Ağa Dahil Ol</h3>
+                <span class="form-card-progress-premium">Adım 3 / 3</span>
+              </div>
+            </div>
+            <div class="form-card-divider-premium"></div>
+          </header>
+          <!-- Form Card Body -->
+          <div class="form-card-body-premium">
+              <div class="success-state text-center mb-4">
+                <div class="success-icon mb-3">
+                  <i class="bi bi-check-circle-fill" style="font-size: 4rem; color: var(--brand-color);"></i>
+                </div>
+                <h4 class="success-title" id="success-greeting">Kayıt tamamlandı!</h4>
+                <p class="step-lead">Artık bulunduğun bölgeye özel bildirimleri alabilirsin.</p>
+              </div>
+
+              <!-- App Download Section -->
+              <div class="app-download-section mt-4 pt-4 border-top">
+                <h5 class="mb-3 text-center">Zatu Uygulamasını İndir</h5>
+                
+                <!-- QR Code -->
+                <div class="qr-code-container mb-4 text-center">
+                  <div class="qr-placeholder bg-light p-3 d-inline-block rounded" style="width: 180px; height: 180px; border: 2px dashed #cbd5e1;">
+                    <div class="d-flex flex-column align-items-center justify-content-center h-100">
+                      <i class="bi bi-qr-code" style="font-size: 80px; color: var(--brand-color);" aria-hidden="true"></i>
+                      <small class="text-muted mt-2">QR Kod</small>
+                    </div>
+                  </div>
+                  <p class="text-muted mt-2 mb-0" style="font-size: 0.875rem;">QR kodu tarayarak uygulamayı indirebilirsiniz</p>
+                </div>
+
+                <!-- App Store Buttons -->
+                <div class="app-links text-center mb-3">
+                  <div class="d-flex flex-column flex-sm-row gap-3 justify-content-center align-items-center">
+                    <a href="#" class="btn btn-outline-dark btn-lg app-store-btn" target="_blank" rel="noopener noreferrer" aria-label="App Store'dan Zatu uygulamasını indir">
+                      <i class="bi bi-apple me-2" aria-hidden="true"></i>
+                      App Store
+                    </a>
+                    <a href="#" class="btn btn-outline-dark btn-lg google-play-btn" target="_blank" rel="noopener noreferrer" aria-label="Google Play'den Zatu uygulamasını indir">
+                      <i class="bi bi-google-play me-2" aria-hidden="true"></i>
+                      Google Play
+                    </a>
+                  </div>
+                </div>
+
+                <div class="text-center">
+                  <button type="button" class="btn btn-link text-muted" id="hiw-skip-download">
+                    Sonra indir
+                  </button>
+                </div>
+              </div>
+            </div>
+          </div>
+        </div>
+
+        <!-- Step 4: Opsiyonel - Afet Görüşlerini Paylaş -->
+        <div class="how-it-works-step optional-step" id="how-it-works-step-4" style="display: none;">
+          <!-- Form Card Header -->
+          <header class="form-card-header-premium">
+            <div class="form-card-header-top">
+              <span class="step-badge-premium-form optional">4</span>
+              <div class="form-card-header-content">
+                <h3 class="form-card-title-premium">Afet Görüşlerini Paylaş <span class="optional-badge">(İsteğe Bağlı)</span></h3>
+              </div>
+            </div>
+            <div class="form-card-divider-premium"></div>
+          </header>
+          <!-- Form Card Body -->
+          <div class="form-card-body-premium">
+              <p class="step-lead">2 dakikalık kısa bir anketle afet algını paylaşabilirsin.</p>
+              
+              <div class="optional-step-actions text-center mt-4">
+                <button type="button" class="btn btn-primary btn-lg mb-3" id="hiw-start-survey" style="width: 100%; max-width: 400px;">
+                  Cevaplamak istiyorum
+                </button>
+                <div>
+                  <button type="button" class="btn btn-link text-muted" id="hiw-skip-survey">
+                    Şimdilik geç
+                  </button>
+                </div>
+              </div>
+            </div>
+          </div>
+        </div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+  <!-- ============== End About section (Nasıl Çalışır) ========== -->
+
+  <!-- ============== Start City Stats Section ========== -->
+  <section class="container py-5" id="city-stats-section" style="position: relative;">
+    <div class="page-container">
+      <div id="city-stats-container"></div>
+    </div>
+  </section>
+  <!-- ============== End City Stats Section ========== -->
+
+  <!-- ============== Start Profilini Tamamla section ========== -->
+  <section id="profilini-tamamla" class="profile-banner py-5" style="position: relative;">
+    <div class="page-container">
+      <!-- Premium Card Container -->
+      <div class="profile-banner-premium">
+        <!-- ZONE 1: Header -->
+        <div class="profile-zone-header" data-aos="fade-up">
+          <span class="section-eyebrow-premium">Profilini Tamamla</span>
+          <h2 class="section-title-premium">5 Soruda Kişisel Afet Analizi</h2>
+          <p class="section-description-premium">Sana özel öneriler almak için sadece 2 dakikanı ayır.</p>
+        </div>
+
+        <!-- ZONE 2: Value (Benefit Row) -->
+        <div class="profile-zone-value" data-aos="fade-up" data-aos-delay="100">
+          <div class="profile-benefits-grid">
+            <div class="profile-benefit-item">
+              <div class="benefit-icon-circle">
+                <i class="bi bi-clock-fill"></i>
+              </div>
+              <span class="benefit-label">2 dakika</span>
+            </div>
+            <div class="profile-benefit-item">
+              <div class="benefit-icon-circle">
+                <i class="bi bi-lightbulb-fill"></i>
+              </div>
+              <span class="benefit-label">Kişisel analiz</span>
+            </div>
+            <div class="profile-benefit-item">
+              <div class="benefit-icon-circle">
+                <i class="bi bi-shield-lock-fill"></i>
+              </div>
+              <span class="benefit-label">Güvenli & gizli</span>
+            </div>
+          </div>
+        </div>
+
+        <!-- ZONE 3: Action (CTA Container) -->
+        <div class="profile-zone-action" data-aos="fade-up" data-aos-delay="150">
+          <div class="profile-cta-container">
+            <a href="quiz.html" class="btn btn-primary-premium-cta">
+              Teste Başla
+              <i class="bi bi-arrow-right ms-2"></i>
+            </a>
+          </div>
+          <div class="profile-trust-line">
+            <i class="bi bi-shield-check"></i>
+            <span>Verdiğin bilgiler sadece analiz amacıyla kullanılır. Zatu teknolojisi ile güvenle korunur.</span>
+          </div>
+        </div>
+
+        <!-- Profile Survey Component (Legacy - Hidden) -->
+        <div id="profile-survey-container" class="survey-container" style="display: none;">
+          <!-- Progress Bar -->
+          <div class="survey-progress mb-4">
+            <div class="progress" style="height: 8px; border-radius: 10px;">
+              <div class="progress-bar bg-success" id="profile-progress-bar" role="progressbar" style="width: 0%;" aria-valuenow="0" aria-valuemin="0" aria-valuemax="100"></div>
+            </div>
+            <p class="progress-text mt-2" id="profile-progress-text" style="color: #94a3b8; font-size: 0.875rem;">Soru 1/5</p>
+          </div>
+
+          <!-- Question Container -->
+          <div id="profile-questions" class="survey-questions">
+            <!-- Questions will be dynamically inserted here -->
+          </div>
+
+          <!-- Result Message -->
+          <div id="profile-result" class="survey-result d-none">
+            <div class="alert alert-success">
+              <h4>Teşekkürler, yanıtların kaydedildi!</h4>
+              <div id="profile-result-content"></div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+  <!-- ============== End Profilini Tamamla section ========== -->
+
+  <!-- ============== Start Afet Görüşlerini Paylaş section ========== -->
+  <section id="afet-anketi" class="disaster-banner py-5 section-alt-bg" id="disaster-survey-section" style="position: relative;">
+    <div class="page-container">
+      <!-- Premium Container -->
+      <div class="disaster-banner-premium">
+        <!-- ZONE 1: Header -->
+        <div class="disaster-zone-header" data-aos="fade-up">
+          <span class="section-eyebrow-premium">İsteğe Bağlı</span>
+          <h2 class="section-title-premium">Afet Görüşlerini Paylaş</h2>
+          <p class="section-description-premium">2 dakikada, kısa bir anket. İstersen şimdi, istersen sonra.</p>
+        </div>
+
+        <!-- ZONE 2: Value / Impact Row -->
+        <div class="disaster-zone-impact" data-aos="fade-up" data-aos-delay="100">
+          <div class="disaster-impact-grid">
+            <div class="disaster-impact-item">
+              <div class="impact-icon-circle">
+                <i class="bi bi-building"></i>
+              </div>
+              <span class="impact-label">Şehir planlamasına katkı</span>
+            </div>
+            <div class="disaster-impact-item">
+              <div class="impact-icon-circle">
+                <i class="bi bi-shield-check"></i>
+              </div>
+              <span class="impact-label">AFAD analizine dahil</span>
+            </div>
+            <div class="disaster-impact-item">
+              <div class="impact-icon-circle">
+                <i class="bi bi-lock-fill"></i>
+              </div>
+              <span class="impact-label">Anonim & güvenli</span>
+            </div>
+          </div>
+        </div>
+
+        <!-- ZONE 3: Message Card (Centerpiece) -->
+        <div id="disaster-survey-gate" class="disaster-survey-gate-premium" data-aos="fade-up" data-aos-delay="150">
+          <div class="disaster-gate-card-premium">
+            <p class="disaster-gate-text-premium">Cevapların şehrinin afet hazırlık planına katkı sağlıyor. Her yanıt, yaşadığın bölgedeki AFAD analizine dahil edilir.</p>
+          </div>
+        </div>
+
+        <!-- ZONE 4: Action Zone -->
+        <div class="disaster-zone-action" data-aos="fade-up" data-aos-delay="200">
+          <div class="disaster-action-container">
+            <button type="button" class="btn btn-primary-premium-disaster" id="disaster-start-btn">
+              Cevaplamak istiyorum
+              <i class="bi bi-arrow-right ms-2"></i>
+            </button>
+            <button type="button" class="btn btn-secondary-premium-disaster" id="disaster-skip-btn">
+              Şimdilik geç
+            </button>
+          </div>
+        </div>
+
+        <!-- ZONE 5: Trust Footer -->
+        <div class="disaster-zone-trust" data-aos="fade-up" data-aos-delay="250">
+          <div class="disaster-trust-line">
+            <i class="bi bi-shield-lock"></i>
+            <span>Verilerin anonim olarak analiz edilir ve sadece afet planlaması amacıyla paylaşılır.</span>
+          </div>
+        </div>
+
+      <!-- Collapsed State (Hidden initially) -->
+      <div id="disaster-survey-collapsed" class="disaster-survey-collapsed" style="display: none;">
+        <div class="disaster-collapsed-card">
+          <p class="disaster-collapsed-text">Afet görüşlerini paylaşmak istersen, istediğin zaman başlayabilirsin.</p>
+          <button type="button" class="btn btn-outline-primary disaster-collapsed-btn" id="disaster-resume-btn">
+            Sonradan cevapla
+          </button>
+        </div>
+      </div>
+
+      <!-- Disaster Survey Component (Hidden initially) -->
+      <div id="disaster-survey-container" class="disaster-survey-container" style="display: none;">
+        <div class="disaster-survey-card">
+          <!-- Modern Stepper -->
+          <div class="modern-stepper" id="disaster-stepper">
+            <div class="modern-stepper-step active" data-step="1">1</div>
+            <div class="modern-stepper-step" data-step="2">2</div>
+            <div class="modern-stepper-step" data-step="3">3</div>
+            <div class="modern-stepper-step" data-step="4">4</div>
+            <div class="modern-stepper-step" data-step="5">5</div>
+          </div>
+
+          <!-- Question Container -->
+          <div class="disaster-question-wrapper">
+            <h3 class="disaster-question-title" id="disaster-question-title"></h3>
+            <p class="disaster-question-helper" id="disaster-question-helper"></p>
+          </div>
+
+          <div class="disaster-input-wrapper" id="disaster-input-wrapper">
+            <!-- Options will be rendered here -->
+          </div>
+
+          <div class="disaster-error-message" id="disaster-error-message"></div>
+
+          <!-- Action Row -->
+          <div class="disaster-actions">
+            <button class="disaster-btn disaster-btn-secondary" id="disaster-back-btn" type="button">
+              <i class="bi bi-arrow-left"></i> Geri
+            </button>
+            <button class="disaster-btn disaster-btn-primary" id="disaster-next-btn" type="button" disabled>
+              Devam <i class="bi bi-arrow-right"></i>
+            </button>
+          </div>
+        </div>
+
+        <!-- Result Message -->
+        <div id="disaster-result" class="disaster-result" style="display: none;">
+          <div class="disaster-result-card">
+            <div class="disaster-result-icon">
+              <i class="bi bi-check-circle-fill"></i>
+            </div>
+            <h3 class="disaster-result-title">Teşekkürler!</h3>
+            <p class="disaster-result-description">Yanıtların kaydedildi ve şehrinin afet hazırlık planına katkı sağlıyor.</p>
+          </div>
+        </div>
+      </div>
+
+      </div>
+    </div>
+  </section>
+  <!-- ============== End Afet Görüşlerini Paylaş section ========== -->
+
+  <!-- Section Divider -->
+  <hr class="section-divider">
+
+  <!-- CTA Band - Premium Gradient Banner -->
+  <section class="cta-banner-premium">
+    <div class="cta-banner-container">
+      <div class="cta-banner-content" data-aos="fade-up">
+        <h2 class="cta-banner-headline">Güvenli Ağa Katıl, Komşularınla Bağlantı Kur</h2>
+        <p class="cta-banner-description">Zatu ile afet anında yalnız kalmayacaksın. Mahallendeki komşularınla önceden bağlantı kur, güvenliğini artır.</p>
+        <div class="cta-banner-button">
+          <a href="kayit.html" class="btn cta-banner-btn">
+            Ağa Katıl
+            <i class="bi bi-arrow-right ms-2"></i>
+          </a>
+        </div>
+        <div class="cta-banner-trust">
+          <span class="cta-banner-trust-item">
+            <i class="bi bi-shield-check"></i> KVKK Uyumlu
+          </span>
+          <span class="cta-banner-trust-item">
+            <i class="bi bi-lock"></i> Gizlilik Odaklı
+          </span>
+          <span class="cta-banner-trust-item">
+            <i class="bi bi-building"></i> AFAD Entegrasyonu
+          </span>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- Section Divider -->
+  <hr class="section-divider">
+
+  <!-- ============== Start Footer section ========== -->
+  <div class="footer">
+    <div class="page-container">
+      <div class="footer-grid">
+        <!-- Left Column - Brand -->
+        <div class="footer-brand">
+          <a href="#top" class="footer-logo">
+            <img src="logo-main.png" alt="Zatu">
+          </a>
+          <p class="footer-description">Zatu, Türkiye'nin ulusal afet hazırlık ağıdır. Komşularınızla önceden bağlantı kurarak afetlere hazırlıklı olun.</p>
+          <div class="footer-social">
+            <h4 class="footer-social-title">Bizi Takip Edin</h4>
+            <div class="footer-social-icons">
+              <a href="#" class="footer-social-icon" aria-label="Facebook"><i class="bi bi-facebook"></i></a>
+              <a href="#" class="footer-social-icon" aria-label="Instagram"><i class="bi bi-instagram"></i></a>
+              <a href="#" class="footer-social-icon" aria-label="Twitter"><i class="bi bi-twitter-x"></i></a>
+              <a href="#" class="footer-social-icon" aria-label="YouTube"><i class="bi bi-youtube"></i></a>
+            </div>
+          </div>
+        </div>
+        
+        <!-- Middle Column - Quick Links -->
+        <div class="footer-links">
+          <h4 class="footer-heading">Hızlı Bağlantılar</h4>
+          <ul class="footer-links-list">
+            <li><a href="hakkimizda.html">Hakkımızda</a></li>
+            <li><a href="sss.html">SSS</a></li>
+            <li><a href="gizlilik-politikasi.html">Gizlilik Politikası</a></li>
+            <li><a href="kvkk-aydinlatma-metni.html">KVKK Aydınlatma Metni</a></li>
+            <li><a href="cerez-politikasi.html">Çerez Politikası</a></li>
+            <li><a href="kullanim-sartlari.html">Kullanım Şartları</a></li>
+          </ul>
+        </div>
+        
+        <!-- Right Column - Legal (empty for now, can add more later) -->
+        <div class="footer-legal">
+          <!-- Reserved for future content -->
+        </div>
+      </div>
+    </div>
+    
+    <!-- Bottom Bar -->
+    <div class="footer-bottom">
+      <div class="page-container">
+        <div class="footer-bottom-content">
+          <p class="footer-copyright">© 2025 Zatu. Tüm hakları saklıdır.</p>
+          <div class="footer-bottom-links">
+            <a href="kullanim-sartlari.html">Kullanım Şartları</a>
+            <span class="footer-separator">|</span>
+            <a href="gizlilik-politikasi.html">Gizlilik Politikası</a>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+  <!-- ============== end Footer section ========== -->
+
+  <!--  JQuery file     -->
+  <script src="js/jquery-3.6.1.min.js"></script>
+
+  <!-- bootstrap min js -->
+  <script src="js/bootstrap.min.js"></script>
+
+  <!--  toasts file     -->
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/toastr.js/latest/js/toastr.min.js"></script>
+
+  <!--  owl carousel    -->
+  <script src="js/owl.carousel.min.js"></script>
+
+  <!-- aos file    -->
+  <script src="js/aos.js"></script>
+
+  <!-- gsap file    -->
+  <script src="js/gsap.min.js"></script>
+
+  <!--  counter     -->
+  <script src="js/jquery.counterup.min.js"></script>
+  <script src="js/jquery.waypoints.js"></script>
+
+  <!-- particles js file  -->
+  <script src="js/particles.min.js"></script>
+
+  <!-- jquery isotope file -->
+  <script src="js/isotope.min.js"></script>
+
+  <!-- jquery fancybox file -->
+  <script src="js/jquery.fancybox.min.js"></script>
+
+  <!--  Tilt.js file     -->
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/vanilla-tilt/1.7.0/vanilla-tilt.min.js"></script>
+
+  <!--  api mock (for survey endpoints)  -->
+  <script src="js/api-mock.js"></script>
+
+  <!--  surveys js file  -->
+  <script src="js/surveys.js"></script>
+  <script src="js/disaster-survey-modern.js"></script>
+
+  <!--  city stats js files  -->
+  <script src="js/api-stats.js"></script>
+  <script src="js/counter.js"></script>
+  <script src="js/city-stats.js"></script>
+
+  <!--  user progress and sticky cta bar  -->
+  <script src="js/user-progress.js"></script>
+  <script src="js/sticky-cta-bar.js"></script>
+
+  <!--  mobile menu  -->
+  <script src="js/mobile-menu.js"></script>
+
+  <!--  main js file  -->
+  <script src="js/main.js"></script>
+
+  <!--  how it works interactive js file  -->
+  <script src="js/how-it-works.js"></script>
+
+  <!--  language dropdown js file  -->
+  <script src="js/language-dropdown.js"></script>
+
+  <!-- Initialize City Stats -->
+  <script>
+    document.addEventListener('DOMContentLoaded', function() {
+      // Get city from localStorage (from registration) or default to İstanbul
+      const step2Data = localStorage.getItem('registration_step2');
+      let city = 'İstanbul';
+      
+      if (step2Data) {
+        try {
+          const data = JSON.parse(step2Data);
+          if (data.city) {
+            city = data.city;
+          }
+        } catch (e) {
+          console.error('Error parsing registration data:', e);
+        }
+      }
+
+      // Initialize city stats card
+      if (document.getElementById('city-stats-container')) {
+        window.cityStatsCard = new CityStatsCard('city-stats-container', city);
+      }
+    });
+  </script>
+
+
+
+
+</body>
+</html>
+

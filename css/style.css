@@ -4387,6 +4387,13 @@ body.dark-mode .disaster-trust-line {
   overflow: visible; /* Allow nav links to extend if needed */
 }
 
+/* Ensure all navbar children are vertically aligned */
+.nav-shell > * {
+  display: flex;
+  align-items: center;
+  height: 100%;
+}
+
 /* Desktop: True centered nav links with absolute positioning */
 @media (min-width: 1024px) {
   .nav-shell {
@@ -4400,9 +4407,11 @@ body.dark-mode .disaster-trust-line {
   }
   
   .nav-center {
-    position: absolute;
-    left: 50%;
-    transform: translateX(-50%);
+    position: relative;
+    left: auto;
+    transform: none;
+    flex: 0 1 auto;
+    margin-left: 2rem;
     z-index: 1;
     overflow: visible;
   }
@@ -4437,21 +4446,22 @@ body.dark-mode .disaster-trust-line {
 
 .nav-center {
   display: none; /* Hidden on mobile */
-  justify-content: center;
+  justify-content: flex-start;
   position: relative;
   min-width: 0;
   align-items: center;
-  height: 40px;
+  height: 100%;
   overflow: visible; /* Allow nav links to be fully visible */
 }
 
-/* Desktop: Show nav center with absolute centering */
+/* Desktop: Show nav center left-aligned near logo */
 @media (min-width: 1024px) {
   .nav-center {
     display: flex;
-    position: absolute;
-    left: 50%;
-    transform: translateX(-50%);
+    position: relative;
+    left: auto;
+    transform: none;
+    margin-left: 2rem;
     overflow: visible;
     white-space: nowrap;
   }
@@ -4501,7 +4511,7 @@ body.dark-mode .mobile-menu-toggle:focus {
 .nav-center .navbar-collapse {
   display: flex !important;
   align-items: center;
-  justify-content: center;
+  justify-content: flex-start;
   width: 100%;
   overflow: visible; /* Prevent truncation */
 }
@@ -4521,8 +4531,8 @@ body.dark-mode .mobile-menu-toggle:focus {
 .nav-center .menu {
   display: flex !important;
   flex-direction: row !important;
-  justify-content: center;
-  gap: 8px;
+  justify-content: flex-start;
+  gap: 6px;
   align-items: center;
   list-style: none;
   margin: 0 !important;
@@ -4538,7 +4548,7 @@ body.dark-mode .mobile-menu-toggle:focus {
   .nav-center .navbar-collapse .menu,
   .nav-center .navbar-nav,
   .nav-center .menu {
-    gap: 8px;
+    gap: 6px;
     overflow: visible;
     white-space: nowrap;
   }
@@ -4658,7 +4668,7 @@ body.dark-mode .mobile-menu-toggle:focus {
   height: 40px;
   display: inline-flex;
   align-items: center;
-  gap: 6px;
+  gap: 0;
   padding: 0 12px;
   border-radius: 999px;
   border: 1px solid rgba(0, 0, 0, 0.1);
@@ -4671,6 +4681,19 @@ body.dark-mode .mobile-menu-toggle:focus {
   transition: all 0.2s ease;
   white-space: nowrap;
   line-height: 1;
+}
+
+.language-dropdown-trigger .language-flag {
+  order: 1;
+}
+
+.language-dropdown-trigger .language-code {
+  order: 2;
+}
+
+.language-dropdown-trigger .language-chevron {
+  order: 3;
+  margin-left: 6px;
 }
 
 .language-dropdown-trigger:hover {
@@ -4699,6 +4722,10 @@ body.dark-mode .mobile-menu-toggle:focus {
   flex-shrink: 0;
   width: 18px;
   height: 18px;
+  margin-right: 7px;
+  border-radius: 2px;
+  visibility: visible !important;
+  opacity: 1 !important;
 }
 
 .flag-icon {
@@ -4706,12 +4733,24 @@ body.dark-mode .mobile-menu-toggle:focus {
   height: 18px !important;
   border-radius: 2px;
   flex-shrink: 0;
-  display: block;
+  display: block !important;
+  vertical-align: middle;
+  visibility: visible !important;
+  opacity: 1 !important;
+}
+
+.language-flag svg {
+  display: block !important;
+  width: 100% !important;
+  height: 100% !important;
+  visibility: visible !important;
+  opacity: 1 !important;
 }
 
 .language-code {
   font-weight: 600;
   color: #111827;
+  margin-left: 0;
 }
 
 .language-chevron {
@@ -4776,6 +4815,12 @@ body.dark-mode .mobile-menu-toggle:focus {
   flex-shrink: 0;
   width: 18px;
   height: 18px;
+}
+
+.language-menu-item .language-flag svg {
+  display: block;
+  width: 100%;
+  height: 100%;
 }
 
 .language-menu-item .language-code-small,
@@ -5296,9 +5341,22 @@ body.dark-mode .nav-center .navbar-collapse {
   background: rgba(0, 0, 0, 0.02);
 }
 
-.mobile-language-trigger .language-flag {
+.mobile-language-trigger .language-flag,
+#mobile-current-flag {
+  display: inline-flex !important;
+  align-items: center;
+  justify-content: center;
   flex-shrink: 0;
+  width: 20px;
+  height: 20px;
   margin-right: 0.5rem;
+}
+
+.mobile-language-trigger .language-flag svg,
+#mobile-current-flag svg {
+  display: block;
+  width: 100%;
+  height: 100%;
 }
 
 .language-name-compact {

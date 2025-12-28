@@ -10,17 +10,20 @@
   <link rel="stylesheet" href="css/aos.css">
   <link rel="stylesheet" href="css/style.css">
   <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.11.3/font/bootstrap-icons.min.css">
-  <title>Zatu | Afet İletişim ve Dayanışma Ağı</title>
+  <title>Zatu | Ağa Katıl – Güvenli Mahalle Ağına Katıl</title>
 </head>
 <body class="home-1">
   <!-- ======= start Header ======= -->
   <header id="site-header" class="header-sticky">
     <div class="nav-shell">
+      <!-- Left: Logo -->
       <div class="nav-left">
         <a class="navbar-brand" href="index.html"><img src="logo-main.png" class="logo" alt="Zatu"></a>
       </div>
-      <nav class="nav-center">
-        <div class="collapse navbar-collapse" id="navbarNav">
+      
+      <!-- Center: Nav Links (Absolute Centered on Desktop) -->
+      <nav class="nav-center desktop-nav">
+        <div class="navbar-collapse">
           <ul class="navbar-nav menu" id="navbar">
             <li class="nav-item">
               <a class="nav-link" href="index.html#neden-variz">Neden Varız?</a>
@@ -31,263 +34,707 @@
             <li class="nav-item">
               <a class="nav-link" href="kayit.html">Ağa Katıl</a>
             </li>
+            <li class="nav-item">
+              <a class="nav-link" href="index.html#profilini-tamamla">Profilini Tamamla</a>
+            </li>
+            <li class="nav-item">
+              <a class="nav-link" href="index.html#afet-anketi">Afet Görüşleri</a>
+            </li>
           </ul>
         </div>
       </nav>
+      
+      <!-- Right: Actions (Desktop: Language + CTA + Theme | Mobile: Theme + Hamburger) -->
       <div class="nav-right">
-        <a class="btn btn-cta" href="kayit.html">AĞIN PARÇASI OL</a>
+        <!-- Language Dropdown (Desktop Only) -->
+        <div class="language-dropdown-wrapper desktop-language-dropdown">
+          <button 
+            type="button" 
+            id="language-dropdown-trigger" 
+            class="language-dropdown-trigger" 
+            aria-haspopup="menu" 
+            aria-expanded="false"
+            aria-label="Dil seçimi">
+            <span class="language-flag" id="language-flag">
+              <!-- TR Flag SVG -->
+              <svg width="18" height="18" viewBox="0 0 18 18" fill="none" xmlns="http://www.w3.org/2000/svg" class="flag-icon">
+                <rect width="18" height="18" fill="#E30A17"/>
+                <!-- Crescent (Hilal) -->
+                <circle cx="7" cy="9" r="4" fill="#FFFFFF"/>
+                <circle cx="8.5" cy="9" r="3.5" fill="#E30A17"/>
+                <!-- Star -->
+                <path d="M12.5 6.5L12.8 7.3L13.6 7.1L12.9 7.6L13.2 8.4L12.5 7.9L11.8 8.4L12.1 7.6L11.4 7.1L12.2 7.3Z" fill="#FFFFFF"/>
+              </svg>
+            </span>
+            <span class="language-code" id="language-code">TR</span>
+            <i class="bi bi-chevron-down language-chevron"></i>
+          </button>
+          <div id="language-dropdown-menu" class="language-dropdown-menu" role="menu" aria-hidden="true">
+            <button 
+              type="button" 
+              class="language-menu-item" 
+              role="menuitem" 
+              data-lang="tr"
+              aria-label="Türkçe">
+              <span class="language-flag">
+                <svg width="18" height="18" viewBox="0 0 18 18" fill="none" xmlns="http://www.w3.org/2000/svg" class="flag-icon">
+                  <rect width="18" height="18" fill="#E30A17"/>
+                  <!-- Crescent (Hilal) -->
+                  <circle cx="7" cy="9" r="4" fill="#FFFFFF"/>
+                  <circle cx="8.5" cy="9" r="3.5" fill="#E30A17"/>
+                  <!-- Star -->
+                  <path d="M12.5 6.5L12.8 7.3L13.6 7.1L12.9 7.6L13.2 8.4L12.5 7.9L11.8 8.4L12.1 7.6L11.4 7.1L12.2 7.3Z" fill="#FFFFFF"/>
+                </svg>
+              </span>
+              <span class="language-code-small">TR</span>
+              <span class="language-name">Türkçe</span>
+            </button>
+            <button 
+              type="button" 
+              class="language-menu-item" 
+              role="menuitem" 
+              data-lang="en"
+              aria-label="English">
+              <span class="language-flag">
+                <svg width="18" height="18" viewBox="0 0 18 18" fill="none" xmlns="http://www.w3.org/2000/svg" class="flag-icon">
+                  <rect width="18" height="18" fill="#012169"/>
+                  <path d="M0 0L18 18M18 0L0 18" stroke="#FFFFFF" stroke-width="2"/>
+                  <path d="M0 0L18 18M18 0L0 18" stroke="#C8102E" stroke-width="1.2"/>
+                  <path d="M9 0V18M0 9H18" stroke="#FFFFFF" stroke-width="2.5"/>
+                  <path d="M9 0V18M0 9H18" stroke="#C8102E" stroke-width="1.5"/>
+                </svg>
+              </span>
+              <span class="language-code-small">EN</span>
+              <span class="language-name">English</span>
+            </button>
+          </div>
+        </div>
+        
+        <!-- CTA Button (Desktop Only) -->
+        <a class="btn btn-cta desktop-cta" href="kayit.html" aria-label="Ağın Parçası Ol – 2 Dakikada Kayıt">AĞIN PARÇASI OL</a>
+        
+        <!-- Mobile Actions: Theme + Hamburger -->
+        <div class="mobile-actions">
+          <button id="mode-toggle" class="btn-light-mode switch-button" aria-label="Karanlık mod"><i id="mode-icon" class="bi bi-moon-fill"></i></button>
+          <button id="mobile-menu-toggle" class="mobile-menu-toggle" type="button" aria-controls="mobile-menu" aria-expanded="false" aria-label="Menüyü aç">
+            <i class="bi bi-list" id="menu-icon"></i>
+          </button>
+        </div>
       </div>
     </div>
   </header>
   <!-- ======= end Header ======= -->
 
-  <!-- ============== Start Registration Form ========== -->
-  <section class="container py-5 mt-5" id="kayıt" style="background: var(--bodyColor); min-height: 100vh;">
-    <div class="modern-form-container">
-      <div class="modern-form-section">
-        <h1 class="modern-form-title">Ağa Katıl</h1>
-        <p class="modern-form-subtitle">2 dakikada kayıt ol, şehrinle bağlantıya geç</p>
+  <!-- ======= Mobile Menu Drawer (Fixed Overlay) ======= -->
+  <div id="mobile-menu-wrapper" class="mobile-menu-wrapper" aria-hidden="true">
+    <!-- Overlay -->
+    <button 
+      id="mobile-menu-overlay" 
+      class="mobile-menu-overlay" 
+      aria-label="Menüyü kapat"
+      type="button">
+    </button>
+    
+    <!-- Drawer -->
+    <aside id="mobile-menu" class="mobile-menu-drawer" role="navigation" aria-label="Mobil menü">
+      <div class="mobile-menu-header">
+        <a class="navbar-brand" href="index.html">
+          <img src="logo-main.png" class="logo" alt="Zatu">
+        </a>
+        <button 
+          id="mobile-menu-close" 
+          class="mobile-menu-close" 
+          type="button" 
+          aria-label="Menüyü kapat">
+          <i class="bi bi-x-lg"></i>
+        </button>
+      </div>
+      
+      <nav class="mobile-menu-nav">
+        <ul class="mobile-menu-list">
+          <li><a href="index.html#neden-variz" class="mobile-menu-link">Neden Varız?</a></li>
+          <li><a href="index.html#nasil-calisir" class="mobile-menu-link">Nasıl Çalışır?</a></li>
+          <li><a href="kayit.html" class="mobile-menu-link">Ağa Katıl</a></li>
+          <li><a href="index.html#profilini-tamamla" class="mobile-menu-link">Profilini Tamamla</a></li>
+          <li><a href="index.html#afet-anketi" class="mobile-menu-link">Afet Görüşleri</a></li>
+        </ul>
+      </nav>
+      
+      <div class="mobile-menu-footer">
+        <a href="kayit.html" class="mobile-menu-cta">
+          Ağa Katıl
+        </a>
+        
+        <!-- Mobile Language Selector -->
+        <div class="language-dropdown-wrapper mobile-language-dropdown">
+          <button 
+            type="button" 
+            id="mobile-language-dropdown-trigger" 
+            class="language-dropdown-trigger" 
+            aria-haspopup="menu" 
+            aria-expanded="false"
+            aria-label="Dil seçimi">
+            <span class="language-flag" id="mobile-language-flag">
+              <svg width="18" height="18" viewBox="0 0 18 18" fill="none" xmlns="http://www.w3.org/2000/svg" class="flag-icon">
+                <rect width="18" height="18" fill="#E30A17"/>
+                <circle cx="7" cy="9" r="4" fill="#FFFFFF"/>
+                <circle cx="8.5" cy="9" r="3.5" fill="#E30A17"/>
+                <path d="M12.5 6.5L12.8 7.3L13.6 7.1L12.9 7.6L13.2 8.4L12.5 7.9L11.8 8.4L12.1 7.6L11.4 7.1L12.2 7.3Z" fill="#FFFFFF"/>
+              </svg>
+            </span>
+            <span class="language-code" id="mobile-language-code">TR</span>
+            <i class="bi bi-chevron-down language-chevron"></i>
+          </button>
+          <div id="mobile-language-dropdown-menu" class="language-dropdown-menu" role="menu" aria-hidden="true">
+            <button 
+              type="button" 
+              class="language-menu-item" 
+              role="menuitem" 
+              data-lang="tr"
+              aria-label="Türkçe">
+              <span class="language-flag">
+                <svg width="18" height="18" viewBox="0 0 18 18" fill="none" xmlns="http://www.w3.org/2000/svg" class="flag-icon">
+                  <rect width="18" height="18" fill="#E30A17"/>
+                  <circle cx="7" cy="9" r="4" fill="#FFFFFF"/>
+                  <circle cx="8.5" cy="9" r="3.5" fill="#E30A17"/>
+                  <path d="M12.5 6.5L12.8 7.3L13.6 7.1L12.9 7.6L13.2 8.4L12.5 7.9L11.8 8.4L12.1 7.6L11.4 7.1L12.2 7.3Z" fill="#FFFFFF"/>
+                </svg>
+              </span>
+              <span class="language-code-small">TR</span>
+              <span class="language-name">Türkçe</span>
+            </button>
+            <button 
+              type="button" 
+              class="language-menu-item" 
+              role="menuitem" 
+              data-lang="en"
+              aria-label="English">
+              <span class="language-flag">
+                <svg width="18" height="18" viewBox="0 0 18 18" fill="none" xmlns="http://www.w3.org/2000/svg" class="flag-icon">
+                  <rect width="18" height="18" fill="#012169"/>
+                  <path d="M0 0L18 18M18 0L0 18" stroke="#FFFFFF" stroke-width="2"/>
+                  <path d="M0 0L18 18M18 0L0 18" stroke="#C8102E" stroke-width="1.2"/>
+                  <path d="M9 0V18M0 9H18" stroke="#FFFFFF" stroke-width="2.5"/>
+                  <path d="M9 0V18M0 9H18" stroke="#C8102E" stroke-width="1.5"/>
+                </svg>
+              </span>
+              <span class="language-code-small">EN</span>
+              <span class="language-name">English</span>
+            </button>
+          </div>
+        </div>
+      </div>
+    </aside>
+  </div>
+  <!-- ======= end Mobile Menu Drawer ======= -->
 
-        <!-- Modern Stepper -->
-        <div class="modern-stepper" id="registration-stepper">
-          <div class="modern-stepper-step active" data-step="1">1</div>
-          <div class="modern-stepper-step" data-step="2">2</div>
-          <div class="modern-stepper-step" data-step="3">3</div>
+  <!-- ============== Start Registration Form Section ========== -->
+  <section class="about py-5 how-it-works how-it-works-premium" id="kayit" style="min-height: 100vh;">
+    <div class="page-container">
+      <!-- Premium Wrapper Panel with Gradient Background -->
+      <div class="how-it-works-wrapper-premium">
+        <!-- Title Block -->
+        <div class="how-it-works-header-premium" data-aos="fade-up">
+          <span class="section-eyebrow-premium">Kayıt Ol</span>
+          <h2 class="how-it-works-title-premium">Güvenli Mahalle Ağına Katılmak İçin 3 Basit Adım</h2>
+          <p class="how-it-works-description-premium">2 dakikada kayıt ol, şehrinle bağlantıya geç</p>
         </div>
 
-          <!-- Success Message -->
-          <div class="alert alert-success d-none" id="successMessage" role="alert">
-            <i class="bi bi-check-circle-fill me-2"></i>
-            <span id="successText">Bilgileriniz kaydedildi!</span>
+        <!-- Visual Stepper Component - ALWAYS VISIBLE AT TOP -->
+        <div class="how-it-works-stepper-premium" id="registration-stepper" data-aos="fade-up" data-aos-delay="100">
+          <div class="stepper-item-premium active" data-step="1">
+            <div class="stepper-circle-premium active">
+              <span class="stepper-number-premium">1</span>
+              <i class="bi bi-check stepper-check" style="display: none;"></i>
+            </div>
+            <div class="stepper-line-premium"></div>
+            <div class="stepper-content-premium">
+              <div class="stepper-label-premium">Ağa Katıl</div>
+            </div>
           </div>
-
-          <!-- Step 1: Temel Bilgiler -->
-          <div class="registration-step" id="step1">
-            <form id="step1Form">
-              <div class="modern-form-field">
-                <label for="fullName" class="modern-form-label required">Ad Soyad</label>
-                <div class="modern-input-wrapper">
-                  <input type="text" class="modern-input" id="fullName" name="fullName" required placeholder="Adınız ve soyadınız">
-                  <span class="modern-input-check" id="fullName-check"><i class="bi bi-check-circle-fill"></i></span>
-                </div>
-                <div class="modern-form-error" id="fullName-error"></div>
-              </div>
-
-              <div class="modern-form-field">
-                <label for="phone" class="modern-form-label required">Telefon</label>
-                <div class="modern-input-wrapper">
-                  <input type="tel" class="modern-input" id="phone" name="phone" required placeholder="05XX XXX XX XX" pattern="[0-9]{10,11}">
-                  <span class="modern-input-check" id="phone-check"><i class="bi bi-check-circle-fill"></i></span>
-                </div>
-                <div class="modern-form-helper">10-11 haneli telefon numaranızı giriniz</div>
-                <div class="modern-form-error" id="phone-error"></div>
-              </div>
-
-              <div class="modern-form-field">
-                <label for="birthDate" class="modern-form-label required">Doğum Tarihi</label>
-                <div class="modern-input-wrapper">
-                  <input type="date" class="modern-input" id="birthDate" name="birthDate" required>
-                  <span class="modern-input-check" id="birthDate-check"><i class="bi bi-check-circle-fill"></i></span>
-                </div>
-                <div class="modern-form-error" id="birthDate-error"></div>
-              </div>
-
-              <div class="modern-checkbox-wrapper">
-                <input type="checkbox" class="modern-checkbox" id="dataConsent" required>
-                <label for="dataConsent" class="modern-checkbox-label">
-                  Verilerimin <a href="gizlilik-politikasi.html" target="_blank">Gizlilik Politikası</a> ve <a href="kvkk-aydinlatma-metni.html" target="_blank">KVKK Aydınlatma Metni</a> kapsamında işlenmesini kabul ediyorum.
-                </label>
-              </div>
-
-              <div style="margin-top: 2rem;">
-                <button type="submit" class="modern-btn-primary" id="step1-submit">
-                  Devam
-                  <i class="bi bi-arrow-right"></i>
-                </button>
-              </div>
-            </form>
+          <div class="stepper-item-premium pending" data-step="2">
+            <div class="stepper-circle-premium pending">
+              <span class="stepper-number-premium">2</span>
+              <i class="bi bi-check stepper-check" style="display: none;"></i>
+            </div>
+            <div class="stepper-line-premium"></div>
+            <div class="stepper-content-premium">
+              <div class="stepper-label-premium">Bilgilerini Tamamla</div>
+            </div>
           </div>
-
-          <!-- Step 2: Şehir Bağlantısı -->
-          <div class="registration-step d-none" id="step2">
-            <form id="step2Form">
-              <div class="modern-form-field">
-                <label for="city" class="modern-form-label required">İl</label>
-                <div class="modern-input-wrapper">
-                  <select class="modern-select" id="city" name="city" required>
-                    <option value="">İl seçiniz</option>
-                    <option value="01">Adana</option>
-                    <option value="06">Ankara</option>
-                    <option value="07">Antalya</option>
-                    <option value="34">İstanbul</option>
-                    <option value="35">İzmir</option>
-                    <option value="16">Bursa</option>
-                    <option value="26">Eskişehir</option>
-                    <option value="58">Sivas</option>
-                    <option value="27">Gaziantep</option>
-                    <option value="61">Trabzon</option>
-                  </select>
-                  <span class="modern-input-check" id="city-check"><i class="bi bi-check-circle-fill"></i></span>
-                </div>
-                <div class="modern-form-error" id="city-error"></div>
-              </div>
-
-              <div class="modern-form-field">
-                <label for="district" class="modern-form-label required">İlçe</label>
-                <div class="modern-input-wrapper">
-                  <input type="text" class="modern-input" id="district" name="district" required placeholder="İlçe adınız">
-                  <span class="modern-input-check" id="district-check"><i class="bi bi-check-circle-fill"></i></span>
-                </div>
-                <div class="modern-form-error" id="district-error"></div>
-              </div>
-
-              <div class="modern-form-field">
-                <label for="buildingAge" class="modern-form-label">Bina Yaşı</label>
-                <select class="modern-select" id="buildingAge" name="buildingAge">
-                  <option value="">Seçiniz</option>
-                  <option value="0-5">0-5 yıl</option>
-                  <option value="6-10">6-10 yıl</option>
-                  <option value="11-20">11-20 yıl</option>
-                  <option value="21-30">21-30 yıl</option>
-                  <option value="30+">30+ yıl</option>
-                </select>
-              </div>
-
-              <div class="modern-form-field">
-                <label for="floor" class="modern-form-label">Kat</label>
-                <input type="number" class="modern-input" id="floor" name="floor" placeholder="Bulunduğunuz kat" min="0" max="100">
-              </div>
-
-              <div style="margin-top: 2rem; display: flex; gap: 1rem; flex-direction: column-reverse;">
-                <button type="button" class="modern-link-secondary" onclick="goToStep(1)" style="order: 2;">Geri</button>
-                <button type="submit" class="modern-btn-primary" id="step2-submit" style="order: 1;">
-                  Devam
-                  <i class="bi bi-arrow-right"></i>
-                </button>
-              </div>
-            </form>
+          <div class="stepper-item-premium pending" data-step="3">
+            <div class="stepper-circle-premium pending">
+              <span class="stepper-number-premium">3</span>
+              <i class="bi bi-check stepper-check" style="display: none;"></i>
+            </div>
+            <div class="stepper-line-premium"></div>
+            <div class="stepper-content-premium">
+              <div class="stepper-label-premium">Güvenli Ağa Dahil Ol</div>
+            </div>
           </div>
+        </div>
 
-          <!-- Step 3: Uygulama İndir -->
-          <div class="registration-step d-none" id="step3">
-            <h2 class="mb-4">Adım 3: Uygulama İndir</h2>
-            <div class="text-center">
-              <p class="lead mb-4">Kayıt işleminiz tamamlandı! Zatu uygulamasını indirerek afet hazırlık ağına tam olarak katılın.</p>
-              
-              <!-- QR Code -->
-              <div class="qr-code-container mb-4">
-                <div class="qr-placeholder bg-light p-4 d-inline-block rounded" style="width: 200px; height: 200px;">
-                  <div class="d-flex flex-column align-items-center justify-content-center h-100">
-                    <i class="bi bi-qr-code" style="font-size: 80px; color: #1fa84f;"></i>
-                    <small class="text-muted mt-2">QR Kod</small>
-                  </div>
+        <!-- Grid: Left (Benefits) + Right (Form) -->
+        <div class="how-it-works-grid-premium">
+          <!-- LEFT COLUMN (5/12): Benefits & Trust -->
+          <div class="how-it-works-left-premium" data-aos="fade-up" data-aos-delay="150">
+            <!-- Benefit Cards Stack -->
+            <div class="how-it-works-benefits-premium">
+              <div class="benefit-card-premium">
+                <div class="benefit-icon-premium">
+                  <i class="bi bi-clock-fill"></i>
                 </div>
-                <p class="text-muted mt-2">QR kodu tarayarak uygulamayı indirebilirsiniz</p>
+                <div class="benefit-text-premium">2 dakikada kayıt</div>
               </div>
-
-              <!-- App Store Links -->
-              <div class="app-links mb-4">
-                <h4 class="mb-3">Uygulamayı İndir</h4>
-                <div class="d-flex flex-column flex-md-row gap-3 justify-content-center">
-                  <a href="#" class="btn btn-outline-dark btn-lg" target="_blank">
-                    <i class="bi bi-apple me-2"></i>
-                    App Store
-                  </a>
-                  <a href="#" class="btn btn-outline-dark btn-lg" target="_blank">
-                    <i class="bi bi-google-play me-2"></i>
-                    Google Play
-                  </a>
+              <div class="benefit-card-premium">
+                <div class="benefit-icon-premium">
+                  <i class="bi bi-shield-lock-fill"></i>
                 </div>
+                <div class="benefit-text-premium">Gizli & güvenli</div>
               </div>
-
-              <!-- Features -->
-              <div class="app-features mt-5">
-                <h4 class="mb-3">Uygulama Özellikleri</h4>
-                <div class="row">
-                  <div class="col-md-4 mb-3">
-                    <div class="feature-item">
-                      <i class="bi bi-bell-fill text-success" style="font-size: 2rem;"></i>
-                      <h5 class="mt-2">AFAD Bildirimleri</h5>
-                      <p class="text-muted">Resmi afet bildirimlerini anında alın</p>
-                    </div>
-                  </div>
-                  <div class="col-md-4 mb-3">
-                    <div class="feature-item">
-                      <i class="bi bi-people-fill text-success" style="font-size: 2rem;"></i>
-                      <h5 class="mt-2">Komşu Ağı</h5>
-                      <p class="text-muted">Mahallenizdeki insanlarla bağlantı kurun</p>
-                    </div>
-                  </div>
-                  <div class="col-md-4 mb-3">
-                    <div class="feature-item">
-                      <i class="bi bi-map-fill text-success" style="font-size: 2rem;"></i>
-                      <h5 class="mt-2">Konum Paylaşımı</h5>
-                      <p class="text-muted">Acil durumlarda konumunuzu paylaşın</p>
-                    </div>
-                  </div>
+              <div class="benefit-card-premium">
+                <div class="benefit-icon-premium">
+                  <i class="bi bi-people-fill"></i>
                 </div>
+                <div class="benefit-text-premium">Komşularınla bağlantı</div>
               </div>
+            </div>
 
-              <div class="mt-4">
-                <a href="index.html" class="btn btn-success btn-lg">Ana Sayfaya Dön</a>
+            <!-- Trust Badges -->
+            <div class="how-it-works-trust-premium">
+              <div class="trust-badge-premium">
+                <i class="bi bi-shield-check"></i>
+                <span>KVKK Uyumlu</span>
+              </div>
+              <div class="trust-badge-premium">
+                <i class="bi bi-lock-fill"></i>
+                <span>Gizlilik Odaklı</span>
               </div>
             </div>
           </div>
 
-          <!-- City Stats Card (shown after registration) -->
-          <div id="registration-city-stats" class="mt-5"></div>
+          <!-- RIGHT COLUMN (7/12): Elevated Form Card -->
+          <div class="how-it-works-right-premium">
+            <!-- Large Elevated Form Card -->
+            <div class="form-card-premium">
+        <!-- Step 1: Ağa Katıl -->
+        <div class="how-it-works-step active" id="step1" data-step="1" data-aos="fade-up" data-aos-delay="250">
+          <!-- Form Card Header -->
+          <header class="form-card-header-premium">
+            <div class="form-card-header-top">
+              <span class="step-badge-premium-form">1</span>
+              <div class="form-card-header-content">
+                <h3 class="form-card-title-premium">Ağa Katıl</h3>
+                <span class="form-card-progress-premium">Adım 1 / 3</span>
+              </div>
+            </div>
+            <div class="form-card-divider-premium"></div>
+          </header>
+          <!-- Form Card Body -->
+          <div class="form-card-body-premium">
+            <p class="form-card-lead-premium">Temel bilgilerini girerek güvenli mahalle ağına katıl.</p>
+            
+            <form id="step1Form" class="how-it-works-form-premium">
+                <div class="form-group-wrapper">
+                  <div class="form-group">
+                    <label for="fullName" class="form-label">
+                      Ad Soyad <span class="text-danger">*</span>
+                    </label>
+                    <div class="input-wrapper">
+                      <input type="text" class="form-control" id="fullName" name="fullName" required placeholder="Adınız ve soyadınız">
+                      <i class="bi bi-check-circle-fill input-check" style="display: none;"></i>
+                    </div>
+                    <div class="form-error" id="fullName-error"></div>
+                  </div>
+
+                  <div class="form-group">
+                    <label for="phone" class="form-label">
+                      Telefon Numarası <span class="text-muted" style="font-size: 0.85rem;">(Acil bildirimler için – önerilen)</span>
+                    </label>
+                    <div class="input-wrapper">
+                      <input type="tel" class="form-control" id="phone" name="phone" required placeholder="05XX XXX XX XX" pattern="[0-9]{10,11}">
+                      <i class="bi bi-check-circle-fill input-check" style="display: none;"></i>
+                    </div>
+                    <small class="form-text text-muted">10-11 haneli telefon numaranızı giriniz</small>
+                    <div class="form-error" id="phone-error"></div>
+                  </div>
+
+                  <div class="form-group">
+                    <label for="birthDate" class="form-label">
+                      Doğum Tarihi <span class="text-danger">*</span>
+                    </label>
+                    <div class="input-wrapper">
+                      <input type="date" class="form-control" id="birthDate" name="birthDate" required>
+                      <i class="bi bi-check-circle-fill input-check" style="display: none;"></i>
+                    </div>
+                    <div class="form-error" id="birthDate-error"></div>
+                  </div>
+
+                  <div class="form-group">
+                    <div class="form-check">
+                      <input class="form-check-input" type="checkbox" id="dataConsent" required>
+                      <label class="form-check-label" for="dataConsent">
+                        Verilerimin <a href="gizlilik-politikasi.html" target="_blank" class="text-primary">Gizlilik Politikası</a> ve <a href="kvkk-aydinlatma-metni.html" target="_blank" class="text-primary">KVKK Aydınlatma Metni</a> kapsamında işlenmesini kabul ediyorum. <span class="text-danger">*</span>
+                      </label>
+                    </div>
+                    <div class="form-error" id="dataConsent-error"></div>
+                  </div>
+                </div>
+
+            <!-- Form Actions Footer -->
+            <div class="form-actions-premium">
+              <div class="form-actions-divider-premium"></div>
+              <div class="form-actions-content-premium">
+                <button type="submit" class="btn btn-primary-premium" id="step1-submit">
+                  <span class="btn-text">Devam Et</span>
+                  <span class="btn-loader" style="display: none;">
+                    <span class="spinner-border spinner-border-sm" role="status" aria-hidden="true"></span>
+                  </span>
+                </button>
+              </div>
+            </div>
+          </form>
+          </div>
+        </div>
+
+        <!-- Step 2: Bilgilerini Tamamla -->
+        <div class="how-it-works-step" id="step2" data-step="2" style="display: none;">
+          <!-- Form Card Header -->
+          <header class="form-card-header-premium">
+            <div class="form-card-header-top">
+              <span class="step-badge-premium-form">2</span>
+              <div class="form-card-header-content">
+                <h3 class="form-card-title-premium">Bilgilerini Tamamla</h3>
+                <span class="form-card-progress-premium">Adım 2 / 3</span>
+              </div>
+            </div>
+            <div class="form-card-divider-premium"></div>
+          </header>
+          <!-- Form Card Body -->
+          <div class="form-card-body-premium">
+              <p class="step-lead">Yaşadığın yeri ve bina bilgilerini paylaş, seni doğru grupla eşleştirelim.</p>
+              
+              <form id="step2Form" class="how-it-works-form">
+                <div class="form-group-wrapper">
+                  <div class="form-group">
+                    <label for="city" class="form-label">
+                      İl <span class="text-danger">*</span>
+                    </label>
+                    <div class="input-wrapper">
+                      <select class="form-select" id="city" name="city" required>
+                        <option value="">İl seçiniz</option>
+                        <option value="01">Adana</option>
+                        <option value="06">Ankara</option>
+                        <option value="07">Antalya</option>
+                        <option value="16">Bursa</option>
+                        <option value="26">Eskişehir</option>
+                        <option value="27">Gaziantep</option>
+                        <option value="34">İstanbul</option>
+                        <option value="35">İzmir</option>
+                        <option value="58">Sivas</option>
+                        <option value="61">Trabzon</option>
+                      </select>
+                      <i class="bi bi-check-circle-fill input-check" style="display: none;"></i>
+                    </div>
+                    <div class="form-error" id="city-error"></div>
+                  </div>
+
+                  <div class="form-group">
+                    <label for="district" class="form-label">
+                      İlçe <span class="text-danger">*</span>
+                    </label>
+                    <div class="input-wrapper">
+                      <input type="text" class="form-control" id="district" name="district" required placeholder="İlçe adınız" disabled>
+                      <i class="bi bi-check-circle-fill input-check" style="display: none;"></i>
+                    </div>
+                    <div class="form-error" id="district-error"></div>
+                  </div>
+
+                  <div class="form-group">
+                    <label for="neighborhood" class="form-label">
+                      Mahalle <span class="text-danger">*</span>
+                    </label>
+                    <div class="input-wrapper">
+                      <input type="text" class="form-control" id="neighborhood" name="neighborhood" required placeholder="Mahalle adınız" disabled>
+                      <i class="bi bi-check-circle-fill input-check" style="display: none;"></i>
+                    </div>
+                    <div class="form-error" id="neighborhood-error"></div>
+                  </div>
+
+                  <div class="form-group">
+                    <label for="buildingAge" class="form-label">
+                      Bina Yaşı <span class="text-danger">*</span>
+                    </label>
+                    <div class="input-wrapper">
+                      <select class="form-select" id="buildingAge" name="buildingAge" required>
+                        <option value="">Seçiniz</option>
+                        <option value="0-5">0-5 yıl</option>
+                        <option value="6-10">6-10 yıl</option>
+                        <option value="11-20">11-20 yıl</option>
+                        <option value="21-30">21-30 yıl</option>
+                        <option value="30+">30+ yıl</option>
+                      </select>
+                      <i class="bi bi-check-circle-fill input-check" style="display: none;"></i>
+                    </div>
+                    <div class="form-error" id="buildingAge-error"></div>
+                  </div>
+
+                  <div class="form-group">
+                    <label for="floor" class="form-label">
+                      Kat Bilgisi <span class="text-danger">*</span>
+                    </label>
+                    <div class="input-wrapper">
+                      <input type="number" class="form-control" id="floor" name="floor" required placeholder="Bulunduğunuz kat" min="0" max="100">
+                      <i class="bi bi-check-circle-fill input-check" style="display: none;"></i>
+                    </div>
+                    <div class="form-error" id="floor-error"></div>
+                  </div>
+                </div>
+
+            <!-- Form Actions Footer -->
+            <div class="form-actions-premium">
+              <div class="form-actions-divider-premium"></div>
+              <div class="form-actions-content-premium">
+                <button type="button" class="btn btn-outline-secondary-premium" id="step2-back">
+                  Geri
+                </button>
+                <button type="submit" class="btn btn-primary-premium" id="step2-submit" disabled>
+                  <span class="btn-text">Devam Et</span>
+                  <span class="btn-loader" style="display: none;">
+                    <span class="spinner-border spinner-border-sm" role="status" aria-hidden="true"></span>
+                  </span>
+                </button>
+              </div>
+            </div>
+          </form>
+          </div>
+        </div>
+
+        <!-- Step 3: Güvenli Ağa Dahil Ol -->
+        <div class="how-it-works-step" id="step3" data-step="3" style="display: none;">
+          <!-- Form Card Header -->
+          <header class="form-card-header-premium">
+            <div class="form-card-header-top">
+              <span class="step-badge-premium-form">3</span>
+              <div class="form-card-header-content">
+                <h3 class="form-card-title-premium">Güvenli Ağa Dahil Ol</h3>
+                <span class="form-card-progress-premium">Adım 3 / 3</span>
+              </div>
+            </div>
+            <div class="form-card-divider-premium"></div>
+          </header>
+          <!-- Form Card Body -->
+          <div class="form-card-body-premium">
+              <div class="success-state text-center">
+                <div class="success-icon mb-3">
+                  <i class="bi bi-check-circle-fill" style="font-size: 4rem; color: var(--brand-color);"></i>
+                </div>
+                <h4 class="success-title" id="success-greeting">Kayıt tamamlandı!</h4>
+                <p class="step-lead">Artık bulunduğun bölgeye özel bildirimleri alabilirsin.</p>
+              </div>
+
+              <!-- App Download Section -->
+              <div class="app-download-section mt-4 pt-4 border-top">
+                <h5 class="mb-3 text-center">Zatu Uygulamasını İndir</h5>
+                
+                <!-- QR Code -->
+                <div class="qr-code-container mb-4 text-center">
+                  <div class="qr-placeholder bg-light p-3 d-inline-block rounded" style="width: 180px; height: 180px; border: 2px dashed #cbd5e1;">
+                    <div class="d-flex flex-column align-items-center justify-content-center h-100">
+                      <i class="bi bi-qr-code" style="font-size: 80px; color: var(--brand-color);" aria-hidden="true"></i>
+                      <small class="text-muted mt-2">QR Kod</small>
+                    </div>
+                  </div>
+                  <p class="text-muted mt-2 mb-0" style="font-size: 0.875rem;">QR kodu tarayarak uygulamayı indirebilirsiniz</p>
+                </div>
+
+                <!-- App Store Buttons -->
+                <div class="app-links text-center mb-3">
+                  <div class="d-flex flex-column flex-sm-row gap-3 justify-content-center align-items-center">
+                    <a href="#" class="btn btn-outline-dark btn-lg app-store-btn" target="_blank" rel="noopener noreferrer" aria-label="App Store'dan Zatu uygulamasını indir">
+                      <i class="bi bi-apple me-2" aria-hidden="true"></i>
+                      App Store
+                    </a>
+                    <a href="#" class="btn btn-outline-dark btn-lg google-play-btn" target="_blank" rel="noopener noreferrer" aria-label="Google Play'den Zatu uygulamasını indir">
+                      <i class="bi bi-google-play me-2" aria-hidden="true"></i>
+                      Google Play
+                    </a>
+                  </div>
+                </div>
+
+                <div class="text-center">
+                  <a href="index.html" class="btn btn-link text-muted" id="go-home">
+                    Ana Sayfaya Dön
+                  </a>
+                </div>
+              </div>
+            </div>
+          </div>
+        </div>
+
+            </div>
+          </div>
         </div>
       </div>
     </div>
   </section>
-  <!-- ============== End Registration Form ========== -->
+  <!-- ============== End Registration Form Section ========== -->
 
   <!-- Scripts -->
   <script src="js/jquery-3.6.1.min.js"></script>
   <script src="js/bootstrap.min.js"></script>
   <script src="js/aos.js"></script>
+  <script src="js/main.js"></script>
+  <script src="js/language-dropdown.js"></script>
+  <script src="js/how-it-works-steps.js"></script>
+  <script src="js/city-stats.js"></script>
+  <script src="js/user-progress.js"></script>
+  
   <script>
+    // Initialize AOS
+    AOS.init({
+      duration: 800,
+      easing: 'ease-in-out',
+      once: true
+    });
+
+    // Registration form handling
     let currentStep = 1;
 
     // Step 1 Form Submit
     document.getElementById('step1Form').addEventListener('submit', function(e) {
       e.preventDefault();
-      const formData = new FormData(this);
+      const form = this;
+      const formData = new FormData(form);
       
-      // Validate
-      if (!document.getElementById('dataConsent').checked) {
-        alert('Lütfen veri işleme onayını veriniz.');
+      // Validate required fields
+      const fullName = formData.get('fullName');
+      const phone = formData.get('phone');
+      const birthDate = formData.get('birthDate');
+      const dataConsent = document.getElementById('dataConsent').checked;
+
+      let hasError = false;
+
+      // Clear previous errors
+      document.querySelectorAll('.form-error').forEach(el => el.textContent = '');
+      document.querySelectorAll('.input-check').forEach(el => el.style.display = 'none');
+
+      if (!fullName || fullName.trim() === '') {
+        document.getElementById('fullName-error').textContent = 'Ad Soyad gereklidir';
+        hasError = true;
+      } else {
+        document.querySelector('#fullName').closest('.input-wrapper').querySelector('.input-check').style.display = 'block';
+      }
+
+      if (!phone || phone.trim() === '') {
+        document.getElementById('phone-error').textContent = 'Telefon numarası gereklidir';
+        hasError = true;
+      } else if (!/^[0-9]{10,11}$/.test(phone.replace(/\s/g, ''))) {
+        document.getElementById('phone-error').textContent = 'Geçerli bir telefon numarası giriniz (10-11 hane)';
+        hasError = true;
+      } else {
+        document.querySelector('#phone').closest('.input-wrapper').querySelector('.input-check').style.display = 'block';
+      }
+
+      if (!birthDate) {
+        document.getElementById('birthDate-error').textContent = 'Doğum tarihi gereklidir';
+        hasError = true;
+      } else {
+        document.querySelector('#birthDate').closest('.input-wrapper').querySelector('.input-check').style.display = 'block';
+      }
+
+      if (!dataConsent) {
+        document.getElementById('dataConsent-error').textContent = 'Veri işleme onayı gereklidir';
+        hasError = true;
+      }
+
+      if (hasError) {
         return;
       }
 
+      // Show loading
+      const submitBtn = document.getElementById('step1-submit');
+      submitBtn.querySelector('.btn-text').style.display = 'none';
+      submitBtn.querySelector('.btn-loader').style.display = 'inline-block';
+      submitBtn.disabled = true;
+
       // Save data (localStorage)
       const step1Data = {
-        fullName: formData.get('fullName'),
-        phone: formData.get('phone'),
-        birthDate: formData.get('birthDate')
+        fullName: fullName,
+        phone: phone,
+        birthDate: birthDate
       };
       localStorage.setItem('registration_step1', JSON.stringify(step1Data));
 
-      // Show success message
-      showSuccessMessage('Temel bilgileriniz kaydedildi!');
-      
-      // Move to next step
+      // Simulate API call
       setTimeout(() => {
-        goToStep(2);
-      }, 1000);
+        // Move to next step using how-it-works-steps.js
+        if (window.HowItWorksSteps) {
+          window.HowItWorksSteps.showStep(2);
+        } else {
+          goToStep(2);
+        }
+        
+        submitBtn.querySelector('.btn-text').style.display = 'inline';
+        submitBtn.querySelector('.btn-loader').style.display = 'none';
+        submitBtn.disabled = false;
+      }, 500);
     });
 
     // Step 2 Form Submit
     document.getElementById('step2Form').addEventListener('submit', function(e) {
       e.preventDefault();
-      const formData = new FormData(this);
+      const form = this;
+      const formData = new FormData(form);
       
+      // Validate
+      const city = formData.get('city');
+      const district = formData.get('district');
+      const neighborhood = formData.get('neighborhood');
+      const buildingAge = formData.get('buildingAge');
+      const floor = formData.get('floor');
+
+      let hasError = false;
+      document.querySelectorAll('.form-error').forEach(el => el.textContent = '');
+
+      if (!city) {
+        document.getElementById('city-error').textContent = 'İl seçimi gereklidir';
+        hasError = true;
+      }
+      if (!district || district.trim() === '') {
+        document.getElementById('district-error').textContent = 'İlçe gereklidir';
+        hasError = true;
+      }
+      if (!neighborhood || neighborhood.trim() === '') {
+        document.getElementById('neighborhood-error').textContent = 'Mahalle gereklidir';
+        hasError = true;
+      }
+      if (!buildingAge) {
+        document.getElementById('buildingAge-error').textContent = 'Bina yaşı gereklidir';
+        hasError = true;
+      }
+      if (!floor || floor.trim() === '') {
+        document.getElementById('floor-error').textContent = 'Kat bilgisi gereklidir';
+        hasError = true;
+      }
+
+      if (hasError) {
+        return;
+      }
+
+      // Show loading
+      const submitBtn = document.getElementById('step2-submit');
+      submitBtn.querySelector('.btn-text').style.display = 'none';
+      submitBtn.querySelector('.btn-loader').style.display = 'inline-block';
+      submitBtn.disabled = true;
+
       // Save data
       const step2Data = {
-        city: formData.get('city'),
-        district: formData.get('district'),
-        buildingAge: formData.get('buildingAge'),
-        floor: formData.get('floor')
+        city: city,
+        district: district,
+        neighborhood: neighborhood,
+        buildingAge: buildingAge,
+        floor: floor
       };
       localStorage.setItem('registration_step2', JSON.stringify(step2Data));
 
@@ -296,128 +743,136 @@
         window.userProgress.setRegistered(true);
       }
 
-      // Show success message
-      showSuccessMessage('Şehir bilgileriniz kaydedildi!');
-      
       // Move to next step
       setTimeout(() => {
-        goToStep(3);
-        // Initialize city stats when step 3 is shown
-        setTimeout(() => {
-          initCityStats();
-        }, 500);
-      }, 1000);
+        if (window.HowItWorksSteps) {
+          window.HowItWorksSteps.showStep(3);
+        } else {
+          goToStep(3);
+        }
+        
+        submitBtn.querySelector('.btn-text').style.display = 'inline';
+        submitBtn.querySelector('.btn-loader').style.display = 'none';
+        submitBtn.disabled = false;
+      }, 500);
+    });
+
+    // Back button handler
+    document.getElementById('step2-back').addEventListener('click', function() {
+      if (window.HowItWorksSteps) {
+        window.HowItWorksSteps.goToStep(1);
+      } else {
+        goToStep(1);
+      }
     });
 
     function goToStep(step) {
       // Hide all steps
-      document.querySelectorAll('.registration-step').forEach(el => {
-        el.classList.add('d-none');
+      document.querySelectorAll('.how-it-works-step').forEach(el => {
+        el.style.display = 'none';
+        el.classList.remove('active');
       });
 
       // Show current step
-      document.getElementById('step' + step).classList.remove('d-none');
+      const stepEl = document.getElementById('step' + step);
+      if (stepEl) {
+        stepEl.style.display = 'block';
+        stepEl.classList.add('active');
+      }
       currentStep = step;
 
-      // Update modern stepper
+      // Update stepper
+      updateStepper(step);
+    }
+
+    function updateStepper(activeStep) {
       const stepper = document.getElementById('registration-stepper');
-      if (stepper) {
-        const steps = stepper.querySelectorAll('.modern-stepper-step');
-        steps.forEach((stepEl, index) => {
-          stepEl.classList.remove('active', 'completed');
-          if (index + 1 < step) {
-            stepEl.classList.add('completed');
-          } else if (index + 1 === step) {
-            stepEl.classList.add('active');
-          }
-        });
-      }
+      if (!stepper) return;
 
-      currentStep = step;
-    }
-
-    function showSuccessMessage(message) {
-      const successEl = document.getElementById('successMessage');
-      const successText = document.getElementById('successText');
-      successText.textContent = message;
-      successEl.classList.remove('d-none');
+      const items = stepper.querySelectorAll('.stepper-item-premium');
       
-      setTimeout(() => {
-        successEl.classList.add('d-none');
-      }, 3000);
-    }
-
-    // Initialize city stats after step 2 completion
-    function initCityStats() {
-      const step2Data = localStorage.getItem('registration_step2');
-      if (step2Data) {
-        try {
-          const data = JSON.parse(step2Data);
-          if (data.city && document.getElementById('registration-city-stats')) {
-            // Destroy existing instance if any
-            if (window.registrationCityStats) {
-              window.registrationCityStats.destroy();
-            }
-            // Create new CityStatsCard instance with 60s polling and animated counter
-            window.registrationCityStats = new CityStatsCard('registration-city-stats', data.city);
-          }
-        } catch (e) {
-          console.error('Error initializing city stats:', e);
+      items.forEach((item, index) => {
+        const stepNum = index + 1;
+        const circle = item.querySelector('.stepper-circle-premium');
+        const number = item.querySelector('.stepper-number-premium');
+        const check = item.querySelector('.stepper-check');
+        
+        item.classList.remove('active', 'completed', 'pending');
+        circle.classList.remove('active', 'completed', 'pending');
+        
+        if (stepNum < activeStep) {
+          // Completed step
+          item.classList.add('completed');
+          circle.classList.add('completed');
+          if (number) number.style.display = 'none';
+          if (check) check.style.display = 'block';
+        } else if (stepNum === activeStep) {
+          // Active step
+          item.classList.add('active');
+          circle.classList.add('active');
+          if (number) number.style.display = 'block';
+          if (check) check.style.display = 'none';
+        } else {
+          // Pending step
+          item.classList.add('pending');
+          circle.classList.add('pending');
+          if (number) number.style.display = 'block';
+          if (check) check.style.display = 'none';
         }
-      }
+      });
     }
 
     // Load saved data on page load
     window.addEventListener('DOMContentLoaded', function() {
       const step1Data = localStorage.getItem('registration_step1');
       if (step1Data) {
-        const data = JSON.parse(step1Data);
-        document.getElementById('fullName').value = data.fullName || '';
-        document.getElementById('phone').value = data.phone || '';
-        document.getElementById('birthDate').value = data.birthDate || '';
-      }
-
-      const step2Data = localStorage.getItem('registration_step2');
-      if (step2Data) {
-        const data = JSON.parse(step2Data);
-        document.getElementById('city').value = data.city || '';
-        document.getElementById('district').value = data.district || '';
-        document.getElementById('buildingAge').value = data.buildingAge || '';
-        document.getElementById('floor').value = data.floor || '';
-      }
-    });
-  </script>
-
-  <!-- City Stats Scripts -->
-  <script src="js/api-stats.js"></script>
-  <script src="js/counter.js"></script>
-  <script src="js/city-stats.js"></script>
-
-  <!-- Initialize City Stats after registration -->
-  <script>
-    // Initialize city stats after step 2 completion
-    function initCityStats() {
-      const step2Data = localStorage.getItem('registration_step2');
-      if (step2Data) {
-        const data = JSON.parse(step2Data);
-        if (data.city && document.getElementById('registration-city-stats')) {
-          if (window.registrationCityStats) {
-            window.registrationCityStats.destroy();
-          }
-          window.registrationCityStats = new CityStatsCard('registration-city-stats', data.city);
+        try {
+          const data = JSON.parse(step1Data);
+          if (data.fullName) document.getElementById('fullName').value = data.fullName;
+          if (data.phone) document.getElementById('phone').value = data.phone;
+          if (data.birthDate) document.getElementById('birthDate').value = data.birthDate;
+        } catch (e) {
+          console.error('Error loading step1 data:', e);
         }
       }
-    }
 
-    // Call initCityStats when step 2 is completed
-    document.addEventListener('DOMContentLoaded', function() {
-      // Check if we're on step 3 (after city selection)
-      const currentStep = parseInt(localStorage.getItem('registration_current_step') || '1');
-      if (currentStep >= 2) {
-        initCityStats();
+      const step2Data = localStorage.getItem('registration_step2');
+      if (step2Data) {
+        try {
+          const data = JSON.parse(step2Data);
+          if (data.city) {
+            document.getElementById('city').value = data.city;
+            // Enable district and neighborhood if city is selected
+            document.getElementById('district').disabled = false;
+            document.getElementById('neighborhood').disabled = false;
+          }
+          if (data.district) document.getElementById('district').value = data.district;
+          if (data.neighborhood) document.getElementById('neighborhood').value = data.neighborhood;
+          if (data.buildingAge) document.getElementById('buildingAge').value = data.buildingAge;
+          if (data.floor) document.getElementById('floor').value = data.floor;
+        } catch (e) {
+          console.error('Error loading step2 data:', e);
+        }
+      }
+
+      // Initialize stepper
+      updateStepper(1);
+    });
+
+    // City select handler - enable district/neighborhood
+    document.getElementById('city').addEventListener('change', function() {
+      const district = document.getElementById('district');
+      const neighborhood = document.getElementById('neighborhood');
+      if (this.value) {
+        district.disabled = false;
+        neighborhood.disabled = false;
+      } else {
+        district.disabled = true;
+        neighborhood.disabled = true;
+        district.value = '';
+        neighborhood.value = '';
       }
     });
   </script>
 </body>
 </html>
-

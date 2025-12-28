@@ -6328,27 +6328,149 @@ body.dark-mode .nav-center .navbar-collapse {
 }
 
 .mobile-language-menu {
-  position: absolute;
-  bottom: calc(100% + 8px);
+  position: fixed;
+  bottom: 0;
   left: 0;
   right: 0;
   margin: 0;
-  z-index: 10;
+  z-index: 10000;
   background: #ffffff;
-  border-radius: 14px;
+  border-radius: 24px 24px 0 0;
   border: 1px solid rgba(0, 0, 0, 0.08);
-  box-shadow: 0 8px 24px rgba(0, 0, 0, 0.12);
+  box-shadow: 0 -8px 32px rgba(0, 0, 0, 0.16);
   overflow: hidden;
   opacity: 0;
   visibility: hidden;
-  max-height: 0;
-  transition: all 0.2s cubic-bezier(0.4, 0, 0.2, 1);
+  transform: translateY(100%);
+  transition: all 0.3s cubic-bezier(0.4, 0, 0.2, 1);
+  max-height: 50vh;
+  display: flex;
+  flex-direction: column;
 }
 
 .mobile-language-menu[aria-hidden="false"] {
   opacity: 1;
   visibility: visible;
-  max-height: 200px;
+  transform: translateY(0);
+}
+
+/* Language menu overlay */
+.mobile-language-menu-overlay {
+  position: fixed;
+  inset: 0;
+  background: rgba(0, 0, 0, 0.5);
+  backdrop-filter: blur(4px);
+  z-index: 9999;
+  opacity: 0;
+  visibility: hidden;
+  transition: all 0.3s ease;
+}
+
+.mobile-language-menu-overlay.active {
+  opacity: 1;
+  visibility: visible;
+}
+
+/* Language menu header */
+.mobile-language-menu-header {
+  padding: 16px 20px;
+  border-bottom: 1px solid rgba(0, 0, 0, 0.06);
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  flex-shrink: 0;
+}
+
+.mobile-language-menu-title {
+  font-size: 18px;
+  font-weight: 700;
+  color: #111827;
+  margin: 0;
+  font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', 'Inter', 'SF Pro Display', sans-serif;
+}
+
+.mobile-language-menu-close {
+  width: 36px;
+  height: 36px;
+  border-radius: 8px;
+  background: rgba(0, 0, 0, 0.04);
+  border: none;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  cursor: pointer;
+  color: #374151;
+  font-size: 18px;
+  transition: all 0.2s ease;
+}
+
+.mobile-language-menu-close:hover {
+  background: rgba(0, 0, 0, 0.08);
+}
+
+/* Language menu items container */
+.mobile-language-menu-items {
+  padding: 8px;
+  overflow-y: auto;
+  -webkit-overflow-scrolling: touch;
+  flex: 1;
+}
+
+.mobile-language-menu-item {
+  width: 100%;
+  display: flex;
+  align-items: center;
+  gap: 12px;
+  padding: 14px 16px;
+  border-radius: 12px;
+  border: none;
+  background: transparent;
+  cursor: pointer;
+  transition: all 0.2s ease;
+  min-height: 52px;
+  text-align: left;
+  font-size: 16px;
+  font-weight: 500;
+  color: #111827;
+  font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', 'Inter', 'SF Pro Display', sans-serif;
+}
+
+.mobile-language-menu-item:hover,
+.mobile-language-menu-item:focus {
+  background: #f3f4f6;
+  outline: none;
+}
+
+.mobile-language-menu-item:active {
+  transform: scale(0.98);
+}
+
+.mobile-language-menu-item .language-flag {
+  width: 28px;
+  height: 28px;
+  border-radius: 6px;
+  overflow: hidden;
+  flex-shrink: 0;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+.mobile-language-menu-item .language-flag svg {
+  width: 100%;
+  height: 100%;
+  display: block;
+}
+
+.mobile-language-menu-item .language-code {
+  font-weight: 600;
+  color: #6b7280;
+  font-size: 14px;
+  min-width: 32px;
+}
+
+.mobile-language-menu-item .language-name {
+  flex: 1;
 }
 
 /* CTA Button - Sticky at Bottom */
@@ -6458,9 +6580,39 @@ body.dark-mode .mobile-language-trigger:hover {
 }
 
 body.dark-mode .mobile-language-menu {
-  background: #374151;
+  background: #1f2937;
   border-color: rgba(255, 255, 255, 0.12);
-  box-shadow: 0 8px 24px rgba(0, 0, 0, 0.4);
+  box-shadow: 0 -8px 32px rgba(0, 0, 0, 0.4);
+}
+
+body.dark-mode .mobile-language-menu-header {
+  border-bottom-color: rgba(255, 255, 255, 0.08);
+}
+
+body.dark-mode .mobile-language-menu-title {
+  color: #f9fafb;
+}
+
+body.dark-mode .mobile-language-menu-close {
+  background: rgba(255, 255, 255, 0.08);
+  color: #f9fafb;
+}
+
+body.dark-mode .mobile-language-menu-close:hover {
+  background: rgba(255, 255, 255, 0.12);
+}
+
+body.dark-mode .mobile-language-menu-item {
+  color: #f9fafb;
+}
+
+body.dark-mode .mobile-language-menu-item:hover,
+body.dark-mode .mobile-language-menu-item:focus {
+  background: #374151;
+}
+
+body.dark-mode .mobile-language-menu-item .language-code {
+  color: #9ca3af;
 }
 
 /* ================= End Modern Mobile Menu Drawer ===================== */

@@ -276,7 +276,7 @@
             type="button" 
             id="mobile-language-dropdown-trigger" 
             class="mobile-language-trigger" 
-            aria-haspopup="menu" 
+            aria-haspopup="dialog" 
             aria-expanded="false"
             aria-label="Language selection">
             <span class="language-flag" id="mobile-current-flag">
@@ -289,24 +289,33 @@
             <span class="language-name-compact" id="mobile-language-name">English</span>
             <i class="bi bi-chevron-down language-chevron"></i>
           </button>
-          <div class="language-dropdown-menu mobile-language-menu" id="mobile-language-dropdown-menu" role="menu" aria-hidden="true">
-            <button class="language-menu-item" data-locale="tr" role="menuitem">
+        </div>
+        
+        <!-- Language Selection Bottom Sheet Modal -->
+        <div class="mobile-language-menu-overlay" id="mobile-language-menu-overlay" aria-hidden="true"></div>
+        <div class="mobile-language-menu" id="mobile-language-dropdown-menu" role="dialog" aria-modal="true" aria-labelledby="mobile-language-menu-title" aria-hidden="true">
+          <div class="mobile-language-menu-header">
+            <h3 class="mobile-language-menu-title" id="mobile-language-menu-title">Select Language</h3>
+            <button class="mobile-language-menu-close" id="mobile-language-menu-close" aria-label="Close" type="button">
+              <i class="bi bi-x-lg"></i>
+            </button>
+          </div>
+          <div class="mobile-language-menu-items">
+            <button class="mobile-language-menu-item" data-locale="tr" role="menuitem" type="button">
               <span class="language-flag">
-                <svg width="20" height="20" viewBox="0 0 20 20" fill="none" xmlns="http://www.w3.org/2000/svg">
+                <svg width="28" height="28" viewBox="0 0 20 20" fill="none" xmlns="http://www.w3.org/2000/svg">
                   <rect width="20" height="20" rx="2" fill="#E30A17"/>
-                  <!-- Crescent (Hilal) -->
                   <circle cx="7.5" cy="10" r="4.5" fill="#FFFFFF"/>
                   <circle cx="9" cy="10" r="4" fill="#E30A17"/>
-                  <!-- Star -->
                   <path d="M13.5 7.5L13.8 8.3L14.6 8.1L13.9 8.6L14.2 9.4L13.5 8.9L12.8 9.4L13.1 8.6L12.4 8.1L13.2 8.3Z" fill="#FFFFFF"/>
                 </svg>
               </span>
               <span class="language-code">TR</span>
               <span class="language-name">Türkçe</span>
             </button>
-            <button class="language-menu-item" data-locale="en" role="menuitem">
+            <button class="mobile-language-menu-item" data-locale="en" role="menuitem" type="button">
               <span class="language-flag">
-                <svg width="20" height="20" viewBox="0 0 20 20" fill="none" xmlns="http://www.w3.org/2000/svg">
+                <svg width="28" height="28" viewBox="0 0 20 20" fill="none" xmlns="http://www.w3.org/2000/svg">
                   <rect width="20" height="20" rx="2" fill="#012169"/>
                   <path d="M0 0l20 20M20 0L0 20" stroke="white" stroke-width="2"/>
                   <path d="M0 0l20 20M20 0L0 20" stroke="#C8102E" stroke-width="1.2"/>

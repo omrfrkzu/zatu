@@ -101,10 +101,18 @@
       closeDropdown(desktopTrigger, desktopMenu);
     }
 
-    const mobileTrigger = document.getElementById('mobile-language-dropdown-trigger');
+    // Close mobile bottom sheet modal
     const mobileMenu = document.getElementById('mobile-language-dropdown-menu');
-    if (mobileTrigger && mobileMenu) {
-      closeDropdown(mobileTrigger, mobileMenu);
+    const mobileMenuOverlay = document.getElementById('mobile-language-menu-overlay');
+    if (mobileMenu && mobileMenuOverlay) {
+      mobileMenu.setAttribute('aria-hidden', 'true');
+      mobileMenuOverlay.setAttribute('aria-hidden', 'true');
+      mobileMenuOverlay.classList.remove('active');
+      document.body.style.overflow = '';
+    }
+    const mobileTrigger = document.getElementById('mobile-language-dropdown-trigger');
+    if (mobileTrigger) {
+      mobileTrigger.setAttribute('aria-expanded', 'false');
     }
 
     // Get current path
@@ -181,49 +189,93 @@
       });
     }
 
-    // Mobile dropdown
+    // Mobile dropdown - Bottom Sheet Modal
     const mobileTrigger = document.getElementById('mobile-language-dropdown-trigger');
     const mobileMenu = document.getElementById('mobile-language-dropdown-menu');
+    const mobileMenuOverlay = document.getElementById('mobile-language-menu-overlay');
+    const mobileMenuClose = document.getElementById('mobile-language-menu-close');
     
-    if (mobileTrigger && mobileMenu) {
-      // Toggle on trigger click
+    // Function to open mobile language menu
+    function openMobileLanguageMenu() {
+      if (mobileMenu && mobileMenuOverlay) {
+        mobileMenu.setAttribute('aria-hidden', 'false');
+        mobileMenuOverlay.setAttribute('aria-hidden', 'false');
+        mobileMenuOverlay.classList.add('active');
+        if (mobileTrigger) {
+          mobileTrigger.setAttribute('aria-expanded', 'true');
+        }
+        // Prevent body scroll
+        document.body.style.overflow = 'hidden';
+      }
+    }
+    
+    // Function to close mobile language menu
+    function closeMobileLanguageMenu() {
+      if (mobileMenu && mobileMenuOverlay) {
+        mobileMenu.setAttribute('aria-hidden', 'true');
+        mobileMenuOverlay.setAttribute('aria-hidden', 'true');
+        mobileMenuOverlay.classList.remove('active');
+        if (mobileTrigger) {
+          mobileTrigger.setAttribute('aria-expanded', 'false');
+        }
+        // Restore body scroll
+        document.body.style.overflow = '';
+      }
+    }
+    
+    if (mobileTrigger && mobileMenu && mobileMenuOverlay) {
+      // Open on trigger click
       mobileTrigger.addEventListener('click', function(e) {
+        e.preventDefault();
         e.stopPropagation();
-        toggleDropdown(mobileTrigger, mobileMenu);
+        openMobileLanguageMenu();
       });
 
+      // Close on overlay click
+      mobileMenuOverlay.addEventListener('click', function(e) {
+        e.preventDefault();
+        e.stopPropagation();
+        closeMobileLanguageMenu();
+      });
+      
+      // Close on close button click
+      if (mobileMenuClose) {
+        mobileMenuClose.addEventListener('click', function(e) {
+          e.preventDefault();
+          e.stopPropagation();
+          closeMobileLanguageMenu();
+        });
+      }
+
       // Handle menu item clicks
-      const mobileMenuItems = mobileMenu.querySelectorAll('.language-menu-item');
+      const mobileMenuItems = mobileMenu.querySelectorAll('.mobile-language-menu-item');
       mobileMenuItems.forEach(item => {
         item.addEventListener('click', function(e) {
+          e.preventDefault();
           e.stopPropagation();
           const lang = this.getAttribute('data-locale');
           if (lang) {
-            handleLanguageSelect(lang);
+            closeMobileLanguageMenu();
+            // Small delay to allow modal to close smoothly
+            setTimeout(() => {
+              handleLanguageSelect(lang);
+            }, 200);
           }
         });
       });
+      
+      // Close on escape key
+      document.addEventListener('keydown', function(e) {
+        if (e.key === 'Escape' && mobileMenu.getAttribute('aria-hidden') === 'false') {
+          closeMobileLanguageMenu();
+        }
+      });
     }
 
-    // Close dropdowns when clicking outside
+    // Close desktop dropdown when clicking outside
     document.addEventListener('click', function(e) {
       if (desktopTrigger && desktopMenu && !desktopTrigger.contains(e.target) && !desktopMenu.contains(e.target)) {
         closeDropdown(desktopTrigger, desktopMenu);
-      }
-      if (mobileTrigger && mobileMenu && !mobileTrigger.contains(e.target) && !mobileMenu.contains(e.target)) {
-        closeDropdown(mobileTrigger, mobileMenu);
-      }
-    });
-
-    // Close dropdowns on escape key
-    document.addEventListener('keydown', function(e) {
-      if (e.key === 'Escape') {
-        if (desktopTrigger && desktopMenu) {
-          closeDropdown(desktopTrigger, desktopMenu);
-        }
-        if (mobileTrigger && mobileMenu) {
-          closeDropdown(mobileTrigger, mobileMenu);
-        }
       }
     });
   }

@@ -6489,6 +6489,33 @@ body.dark-mode .nav-center .navbar-collapse {
 }
 
 /* CTA Button - Sticky at Bottom */
+.mobile-mode-toggle {
+  height: 48px;
+  width: 100%;
+  border-radius: 12px;
+  background: rgba(0, 0, 0, 0.04);
+  border: 1px solid rgba(0, 0, 0, 0.08);
+  color: var(--text-color, #1f2937);
+  font-weight: 500;
+  font-size: 15px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  gap: 8px;
+  margin-bottom: 12px;
+  transition: all 0.2s ease;
+  cursor: pointer;
+}
+
+.mobile-mode-toggle:hover {
+  background: rgba(0, 0, 0, 0.06);
+  border-color: rgba(0, 0, 0, 0.12);
+}
+
+.mobile-mode-toggle i {
+  font-size: 18px;
+}
+
 .mobile-menu-cta {
   height: 52px;
   width: 100%;
@@ -6581,6 +6608,17 @@ body.dark-mode .mobile-menu-section-label {
 body.dark-mode .mobile-menu-footer {
   background: #111827;
   border-top-color: rgba(255, 255, 255, 0.08);
+}
+
+body.dark-mode .mobile-mode-toggle {
+  background: rgba(255, 255, 255, 0.08);
+  border-color: rgba(255, 255, 255, 0.12);
+  color: #f9fafb;
+}
+
+body.dark-mode .mobile-mode-toggle:hover {
+  background: rgba(255, 255, 255, 0.12);
+  border-color: rgba(255, 255, 255, 0.16);
 }
 
 body.dark-mode .mobile-language-trigger {

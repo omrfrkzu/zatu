@@ -5804,6 +5804,14 @@ body.dark-mode .mobile-menu-toggle:focus {
   .desktop-cta {
     display: inline-block !important;
   }
+  
+  .desktop-mode-toggle {
+    display: inline-flex !important;
+    align-items: center;
+    justify-content: center;
+    min-width: 44px;
+    min-height: 44px;
+  }
 }
 
 /* Mobile: <1024px - Hide horizontal nav, show hamburger */
@@ -5821,6 +5829,10 @@ body.dark-mode .mobile-menu-toggle:focus {
   }
   
   .desktop-cta {
+    display: none !important;
+  }
+  
+  .desktop-mode-toggle {
     display: none !important;
   }
   

@@ -217,22 +217,36 @@ $(window).scroll(function () {
 // Function to toggle between light and dark mode
 function toggleDarkMode() {
     const body = document.body;
-    const icon = document.getElementById('mode-icon');
+    const mobileIcon = document.getElementById('mode-icon');
+    const desktopIcon = document.getElementById('mode-icon-desktop');
 
     // Toggle the dark mode class
     body.classList.toggle('dark-mode');
 
-    // Toggle the icon
-    if (body.classList.contains('dark-mode')) {
-        icon.classList.remove('bi-moon-fill');
-        icon.classList.add('bi-sun-fill');
-    } else {
-        icon.classList.remove('bi-sun-fill');
-        icon.classList.add('bi-moon-fill');
+    // Toggle the icons (both mobile and desktop)
+    const isDarkMode = body.classList.contains('dark-mode');
+    
+    if (mobileIcon) {
+        if (isDarkMode) {
+            mobileIcon.classList.remove('bi-moon-fill');
+            mobileIcon.classList.add('bi-sun-fill');
+        } else {
+            mobileIcon.classList.remove('bi-sun-fill');
+            mobileIcon.classList.add('bi-moon-fill');
+        }
+    }
+    
+    if (desktopIcon) {
+        if (isDarkMode) {
+            desktopIcon.classList.remove('bi-moon-fill');
+            desktopIcon.classList.add('bi-sun-fill');
+        } else {
+            desktopIcon.classList.remove('bi-sun-fill');
+            desktopIcon.classList.add('bi-moon-fill');
+        }
     }
 
     // Save the user's preference to localStorage
-    const isDarkMode = body.classList.contains('dark-mode');
     localStorage.setItem('dark-mode', isDarkMode);
 }
 
@@ -246,20 +260,40 @@ if (isDarkModeSaved === 'true') {
     document.body.classList.remove('dark-mode');
 }
 
-// Update the icon based on the saved preference
-const icon = document.getElementById('mode-icon');
-if (icon) {
+// Update the icons based on the saved preference
+const mobileIcon = document.getElementById('mode-icon');
+const desktopIcon = document.getElementById('mode-icon-desktop');
+
+if (mobileIcon) {
     if (isDarkModeSaved === 'true') {
-        icon.classList.add('bi-sun-fill');
+        mobileIcon.classList.remove('bi-moon-fill');
+        mobileIcon.classList.add('bi-sun-fill');
     } else {
-        icon.classList.add('bi-moon-fill');
+        mobileIcon.classList.remove('bi-sun-fill');
+        mobileIcon.classList.add('bi-moon-fill');
     }
 }
 
-// Add event listener to the mode toggle button
+if (desktopIcon) {
+    if (isDarkModeSaved === 'true') {
+        desktopIcon.classList.remove('bi-moon-fill');
+        desktopIcon.classList.add('bi-sun-fill');
+    } else {
+        desktopIcon.classList.remove('bi-sun-fill');
+        desktopIcon.classList.add('bi-moon-fill');
+    }
+}
+
+// Add event listener to the mobile mode toggle button
 const modeToggle = document.getElementById('mode-toggle');
 if (modeToggle) {
     modeToggle.addEventListener('click', toggleDarkMode);
+}
+
+// Add event listener to the desktop mode toggle button
+const modeToggleDesktop = document.getElementById('mode-toggle-desktop');
+if (modeToggleDesktop) {
+    modeToggleDesktop.addEventListener('click', toggleDarkMode);
 }
 
 

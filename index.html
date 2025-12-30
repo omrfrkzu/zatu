@@ -87,7 +87,7 @@
     <div class="nav-shell">
       <!-- Left: Logo -->
       <div class="nav-left">
-        <a class="navbar-brand" href="#top"><img src="images/logo/logo-main.png" class="logo" alt="Ulusal Afet Ağı"></a>
+        <a class="navbar-brand" href="#top">Ulusal Afet Ağı</a>
       </div>
       
       <!-- Center: Nav Links (Absolute Centered on Desktop) -->
@@ -102,12 +102,6 @@
             </li>
             <li class="nav-item">
               <a class="nav-link" href="kayit.html">Ağa Katıl</a>
-            </li>
-            <li class="nav-item">
-              <a class="nav-link" href="#profilini-tamamla">Profilini Tamamla</a>
-            </li>
-            <li class="nav-item">
-              <a class="nav-link" href="#afet-anketi">Afet Görüşleri</a>
             </li>
           </ul>
         </div>
@@ -179,14 +173,12 @@
           </div>
         </div>
         
-        <!-- Theme Toggle Button (Desktop Only) -->
-        <button id="mode-toggle-desktop" class="btn-light-mode switch-button desktop-mode-toggle" aria-label="Karanlık mod"><i id="mode-icon-desktop" class="bi bi-moon-fill"></i></button>
-        
         <!-- CTA Button (Desktop Only) -->
         <a class="btn btn-cta desktop-cta" href="kayit.html" aria-label="Ağa Katıl – 2 Dakikada Kayıt">Ağa Katıl</a>
         
-        <!-- Mobile Actions: Hamburger -->
+        <!-- Mobile Actions: Theme + Hamburger -->
         <div class="mobile-actions">
+          <button id="mode-toggle" class="btn-light-mode switch-button" aria-label="Karanlık mod"><i id="mode-icon" class="bi bi-moon-fill"></i></button>
           <button id="mobile-menu-toggle" class="mobile-menu-toggle" type="button" aria-controls="mobile-menu" aria-expanded="false" aria-label="Menüyü aç">
             <i class="bi bi-list" id="menu-icon"></i>
           </button>
@@ -241,11 +233,6 @@
           <a href="#nasil-calisir" class="mobile-nav-item">
             <i class="bi bi-gear" aria-hidden="true"></i>
             <span>Nasıl Çalışır?</span>
-            <i class="bi bi-chevron-right mobile-nav-chevron" aria-hidden="true"></i>
-          </a>
-          <a href="#afet-anketi" class="mobile-nav-item">
-            <i class="bi bi-chat-dots" aria-hidden="true"></i>
-            <span>Afet Görüşleri</span>
             <i class="bi bi-chevron-right mobile-nav-chevron" aria-hidden="true"></i>
           </a>
         </div>
@@ -332,14 +319,21 @@
         <div class="hero-text col-12 col-lg-5">
           <div class="row">
             <div class="col-12">
-              <h1 class="title hero-title col-12" data-aos="fade-up" data-aos-delay="150">AFETTE <span class="hero-accent-purple">YALNIZ</span> <span class="hero-accent-pink">KALMA</span></h1>
+              <h1 class="title hero-title col-12" data-aos="fade-up" data-aos-delay="150"><span class="hero-title-break">Ulusal</span> <span class="hero-accent-purple">Afet</span> <span class="hero-accent-pink">Ağı</span></h1>
             </div>
             <div class="col-lg-10 col-12" data-aos="fade-up" data-aos-delay="200">
-              <ul class="list-unstyled my-3 hero-list">
-                <li class="mb-2">• Büyük afette resmi yardım herkese yetişemez</li>
-                <li class="mb-2">• Komşularınla önceden bağlantı kurmak hayat kurtarır</li>
-                <li class="mb-2">• Şehrindeki binlerce insanla aynı endişeyi paylaşıyorsun</li>
-              </ul>
+              <p class="hero-subtitle my-3">
+                Gelişmiş ülkelerde afetlere karşı önceden kurulan bu ağ, artık Türkiye'de de var.<br>
+                Birçok ülkede yıllardır uygulanan afet hazırlık modeli, Türkiye'de Ulusal Afet Ağı ile hayata geçiriliyor.<br>
+                Çalışma; üniversiteler ve alanında uzman akademisyenlerin katkılarıyla şekillendirildi.
+              </p>
+            </div>
+            <div class="col-12" data-aos="fade-up" data-aos-delay="220">
+              <div class="hero-buttons">
+                <button class="btn" id="katki-verenler-btn">
+                  <i class="bi bi-people-fill me-2"></i>Katkı Verenler
+                </button>
+              </div>
             </div>
             <div class="col-12" data-aos="fade-up" data-aos-delay="250">
               <div class="hero-buttons">
@@ -348,8 +342,8 @@
             </div>
             <div class="col-12" data-aos="fade-up" data-aos-delay="300">
               <div class="hero-trust">
-                <p><i class="bi bi-check-circle-fill"></i> Son 24 saatte 1.847 kişi katıldı</p>
-                <p><i class="bi bi-globe"></i> 81 ilde aktif</p>
+                <p><i class="bi bi-check-circle-fill"></i> Son 24 saatte 1.847 kişi Ulusal Afet Ağı'na dahil oldu</p>
+                <p><i class="bi bi-globe"></i> 81 ilde aktif kullanım</p>
                 <p><i class="bi bi-shield-check"></i> <span class="zatu-link" id="zatu-link" style="cursor: pointer; text-decoration: underline; color: inherit;">ZATU</span> altyapısı ile KURUM entegrasyonu</p>
               </div>
             </div>
@@ -366,6 +360,63 @@
     </div>
   </section>
   <!-- ============== End Hero section ========== -->
+
+  <!-- ============== Start Why We Exist Section ========== -->
+  <section class="container services py-5 section-alt-bg bg-pattern" id="neden-variz-detay" style="position: relative;">
+    <div class="page-container">
+      <div class="feature-grid feature-grid-3">
+        <!-- Kart 1: Önce Ailem Güvende Olsun Diye -->
+        <div class="feature-card" data-aos="fade-up" data-aos-delay="200">
+          <div class="feature-card-icon">
+            <i class="bi bi-heart-fill" aria-hidden="true"></i>
+          </div>
+          <h3 class="feature-card-title">Önce Ailem Güvende Olsun Diye</h3>
+          <p class="feature-card-description">
+            Afet anında insanın ilk refleksi ailesine ulaşmaktır. Sevdiklerinin nerede olduğunu, güvende olup olmadığını bilmek ister. Bu bilgiye ulaşamamak panik ve belirsizliği artırır. Ailesinin durumunu bilen insan, daha sağlıklı karar verir. Aile güvende olmadan kimse bir sonraki adıma geçemez.
+          </p>
+          <div class="feature-card-stat">
+            <i class="bi bi-people me-1"></i> Aile odaklı
+          </div>
+        </div>
+        
+        <!-- Kart 2: Birbirimizi Yalnız Bırakmamak İçin -->
+        <div class="feature-card" data-aos="fade-up" data-aos-delay="250">
+          <div class="feature-card-icon">
+            <i class="bi bi-diagram-3-fill" aria-hidden="true"></i>
+          </div>
+          <h3 class="feature-card-title">Birbirimizi Yalnız Bırakmamak İçin</h3>
+          <p class="feature-card-description">
+            Aileden sonra çevreyle bağ kurabilmek önemlidir. Kimin yardıma ihtiyacı olduğunu bilmek hayati önem taşır. Bu bağ kurulamadığında insanlar kendini yalnız hisseder. Bir ağın parçası olduğunu bilmek panikten kurtarır.
+          </p>
+          <div class="feature-card-stat">
+            <i class="bi bi-shield-check me-1"></i> Toplumsal bağ
+          </div>
+        </div>
+        
+        <!-- Kart 3: Birlikte Yardım Edebilmek İçin -->
+        <div class="feature-card" data-aos="fade-up" data-aos-delay="300">
+          <div class="feature-card-icon">
+            <i class="bi bi-people-fill" aria-hidden="true"></i>
+          </div>
+          <h3 class="feature-card-title">Birlikte Yardım Edebilmek İçin</h3>
+          <p class="feature-card-description">
+            İnsan yalnızca yardım istemek değil, yardım edebilmek de ister. Ailesi güvende olan birey başkalarına destek olabilir. Bu dayanışma afet etkilerini azaltır. Birlikte hareket eden toplumlar daha hızlı toparlanır.
+          </p>
+          <div class="feature-card-stat">
+            <i class="bi bi-heart-fill me-1"></i> Dayanışma
+          </div>
+        </div>
+      </div>
+      
+      <!-- Özet Cümle -->
+      <div class="text-center mt-5" data-aos="fade-up" data-aos-delay="350">
+        <p class="section-description" style="font-size: 1.1rem; max-width: 800px; margin: 0 auto; line-height: 1.8;">
+          <strong>Ulusal Afet Ağı, insanların afet anında yalnız kalmaması ve birbirine yardım edebilmesi için kurulmuştur.</strong>
+        </p>
+      </div>
+    </div>
+  </section>
+  <!-- ============== End Why We Exist Section ========== -->
 
   <!-- ============== Start services section ========== -->
   <section class="container services py-5 section-alt-bg bg-pattern" id="neden-variz" style="position: relative;">
@@ -440,10 +491,11 @@
         </div>
       </div>
       
-      <!-- Katkı Verenler Button -->
+      <!-- Afet Hazırlık Testini Çöz Button -->
       <div class="text-center mt-5" data-aos="fade-up" data-aos-delay="400">
-        <button class="btn btn-outline-primary" id="katki-verenler-btn">
-          <i class="bi bi-people-fill me-2"></i>Katkı Verenler
+        <button type="button" class="btn btn-primary-premium-cta" id="start-profile-test-btn">
+          Afet Hazırlık Testini Çöz
+          <i class="bi bi-arrow-right ms-2"></i>
         </button>
       </div>
     </div>
@@ -788,279 +840,23 @@
   </section>
   <!-- ============== End About section (Nasıl Çalışır) ========== -->
 
-  <!-- ============== Start Why We Exist Section ========== -->
-  <section class="container services py-5 section-alt-bg bg-pattern" id="neden-variz-detay" style="position: relative;">
-    <div class="page-container">
-      <div class="feature-grid feature-grid-3">
-        <!-- Kart 1: Önce Ailem Güvende Olsun Diye -->
-        <div class="feature-card" data-aos="fade-up" data-aos-delay="200">
-          <div class="feature-card-icon">
-            <i class="bi bi-heart-fill" aria-hidden="true"></i>
-          </div>
-          <h3 class="feature-card-title">Önce Ailem Güvende Olsun Diye</h3>
-          <p class="feature-card-description">
-            Afet anında insanın ilk refleksi ailesine ulaşmaktır. Sevdiklerinin nerede olduğunu, güvende olup olmadığını bilmek ister. Bu bilgiye ulaşamamak panik ve belirsizliği artırır. Ailesinin durumunu bilen insan, daha sağlıklı karar verir. Aile güvende olmadan kimse bir sonraki adıma geçemez.
-          </p>
-          <div class="feature-card-stat">
-            <i class="bi bi-people me-1"></i> Aile odaklı
-          </div>
-        </div>
-        
-        <!-- Kart 2: Birbirimizi Yalnız Bırakmamak İçin -->
-        <div class="feature-card" data-aos="fade-up" data-aos-delay="250">
-          <div class="feature-card-icon">
-            <i class="bi bi-diagram-3-fill" aria-hidden="true"></i>
-          </div>
-          <h3 class="feature-card-title">Birbirimizi Yalnız Bırakmamak İçin</h3>
-          <p class="feature-card-description">
-            Aileden sonra çevreyle bağ kurabilmek önemlidir. Kimin yardıma ihtiyacı olduğunu bilmek hayati önem taşır. Bu bağ kurulamadığında insanlar kendini yalnız hisseder. Bir ağın parçası olduğunu bilmek panikten kurtarır.
-          </p>
-          <div class="feature-card-stat">
-            <i class="bi bi-shield-check me-1"></i> Toplumsal bağ
-          </div>
-        </div>
-        
-        <!-- Kart 3: Birlikte Yardım Edebilmek İçin -->
-        <div class="feature-card" data-aos="fade-up" data-aos-delay="300">
-          <div class="feature-card-icon">
-            <i class="bi bi-people-fill" aria-hidden="true"></i>
-          </div>
-          <h3 class="feature-card-title">Birlikte Yardım Edebilmek İçin</h3>
-          <p class="feature-card-description">
-            İnsan yalnızca yardım istemek değil, yardım edebilmek de ister. Ailesi güvende olan birey başkalarına destek olabilir. Bu dayanışma afet etkilerini azaltır. Birlikte hareket eden toplumlar daha hızlı toparlanır.
-          </p>
-          <div class="feature-card-stat">
-            <i class="bi bi-heart-fill me-1"></i> Dayanışma
-          </div>
-        </div>
-      </div>
-      
-      <!-- Özet Cümle -->
-      <div class="text-center mt-5" data-aos="fade-up" data-aos-delay="350">
-        <p class="section-description" style="font-size: 1.1rem; max-width: 800px; margin: 0 auto; line-height: 1.8;">
-          <strong>Ulusal Afet Ağı, insanların afet anında yalnız kalmaması ve birbirine yardım edebilmesi için kurulmuştur.</strong>
-        </p>
-      </div>
-    </div>
-  </section>
-  <!-- ============== End Why We Exist Section ========== -->
-
   <!-- ============== Start City Stats Section ========== -->
   <section class="container py-5" id="city-stats-section" style="position: relative;">
     <div class="page-container">
       <div id="city-stats-container"></div>
+      
+      <!-- Afet Görüşlerini Paylaş Button -->
+      <div class="text-center mt-5" data-aos="fade-up" data-aos-delay="400">
+        <button type="button" class="btn btn-primary-premium-disaster" id="disaster-start-btn">
+          Afet Görüşlerini Paylaş
+          <i class="bi bi-arrow-right ms-2"></i>
+        </button>
+      </div>
     </div>
   </section>
   <!-- ============== End City Stats Section ========== -->
 
-  <!-- ============== Start Profilini Tamamla section ========== -->
-  <section id="profilini-tamamla" class="profile-banner py-5" style="position: relative;">
-    <div class="page-container">
-      <!-- Premium Card Container -->
-      <div class="profile-banner-premium">
-        <!-- ZONE 1: Header -->
-        <div class="profile-zone-header" data-aos="fade-up">
-          <span class="section-eyebrow-premium">Profilini Tamamla</span>
-          <h2 class="section-title-premium">5 Soruda Kişisel Afet Analizi</h2>
-          <p class="section-description-premium">Sana özel öneriler almak için sadece 2 dakikanı ayır.</p>
-        </div>
 
-        <!-- ZONE 2: Value (Benefit Row) -->
-        <div class="profile-zone-value" data-aos="fade-up" data-aos-delay="100">
-          <div class="profile-benefits-grid">
-            <div class="profile-benefit-item">
-              <div class="benefit-icon-circle">
-                <i class="bi bi-clock-fill"></i>
-              </div>
-              <span class="benefit-label">2 dakika</span>
-            </div>
-            <div class="profile-benefit-item">
-              <div class="benefit-icon-circle">
-                <i class="bi bi-lightbulb-fill"></i>
-              </div>
-              <span class="benefit-label">Kişisel analiz</span>
-            </div>
-            <div class="profile-benefit-item">
-              <div class="benefit-icon-circle">
-                <i class="bi bi-shield-lock-fill"></i>
-              </div>
-              <span class="benefit-label">Güvenli & gizli</span>
-            </div>
-          </div>
-        </div>
-
-        <!-- ZONE 3: Action (CTA Container) -->
-        <div class="profile-zone-action" data-aos="fade-up" data-aos-delay="150">
-          <div class="profile-cta-container">
-            <button type="button" class="btn btn-primary-premium-cta" id="start-profile-test-btn">
-              Teste Başla
-              <i class="bi bi-arrow-right ms-2"></i>
-            </button>
-          </div>
-          <div class="profile-trust-line">
-            <i class="bi bi-shield-check"></i>
-            <span>Verdiğin bilgiler sadece analiz amacıyla kullanılır. Ulusal Afet Ağı teknolojisi ile güvenle korunur.</span>
-          </div>
-        </div>
-
-        <!-- Profile Survey Component (Legacy - Hidden) -->
-        <div id="profile-survey-container" class="survey-container" style="display: none;">
-          <!-- Progress Bar -->
-          <div class="survey-progress mb-4">
-            <div class="progress" style="height: 8px; border-radius: 10px;">
-              <div class="progress-bar bg-success" id="profile-progress-bar" role="progressbar" style="width: 0%;" aria-valuenow="0" aria-valuemin="0" aria-valuemax="100"></div>
-            </div>
-            <p class="progress-text mt-2" id="profile-progress-text" style="color: #94a3b8; font-size: 0.875rem;">Soru 1/5</p>
-          </div>
-
-          <!-- Question Container -->
-          <div id="profile-questions" class="survey-questions">
-            <!-- Questions will be dynamically inserted here -->
-          </div>
-
-          <!-- Result Message -->
-          <div id="profile-result" class="survey-result d-none">
-            <div class="alert alert-success">
-              <h4>Teşekkürler, yanıtların kaydedildi!</h4>
-              <div id="profile-result-content"></div>
-            </div>
-          </div>
-        </div>
-      </div>
-    </div>
-  </section>
-  <!-- ============== End Profilini Tamamla section ========== -->
-
-  <!-- ============== Start Afet Görüşlerini Paylaş section ========== -->
-  <section id="afet-anketi" class="disaster-banner py-5 section-alt-bg" id="disaster-survey-section" style="position: relative;">
-    <div class="page-container">
-      <!-- Premium Container -->
-      <div class="disaster-banner-premium">
-        <!-- ZONE 1: Header -->
-        <div class="disaster-zone-header" data-aos="fade-up">
-          <span class="section-eyebrow-premium">İsteğe Bağlı</span>
-          <h2 class="section-title-premium">Afet Görüşlerini Paylaş</h2>
-          <p class="section-description-premium">2 dakikada, kısa bir anket. İstersen şimdi, istersen sonra.</p>
-        </div>
-
-        <!-- ZONE 2: Value / Impact Row -->
-        <div class="disaster-zone-impact" data-aos="fade-up" data-aos-delay="100">
-          <div class="disaster-impact-grid">
-            <div class="disaster-impact-item">
-              <div class="impact-icon-circle">
-                <i class="bi bi-building"></i>
-              </div>
-              <span class="impact-label">Şehir planlamasına katkı</span>
-            </div>
-            <div class="disaster-impact-item">
-              <div class="impact-icon-circle">
-                <i class="bi bi-shield-check"></i>
-              </div>
-              <span class="impact-label">AFAD analizine dahil</span>
-            </div>
-            <div class="disaster-impact-item">
-              <div class="impact-icon-circle">
-                <i class="bi bi-lock-fill"></i>
-              </div>
-              <span class="impact-label">Anonim & güvenli</span>
-            </div>
-          </div>
-        </div>
-
-        <!-- ZONE 3: Message Card (Centerpiece) -->
-        <div id="disaster-survey-gate" class="disaster-survey-gate-premium" data-aos="fade-up" data-aos-delay="150">
-          <div class="disaster-gate-card-premium">
-            <p class="disaster-gate-text-premium">Cevapların şehrinin afet hazırlık planına katkı sağlıyor. Her yanıt, yaşadığın bölgedeki AFAD analizine dahil edilir.</p>
-            <p class="disaster-gate-text-premium-mobile">Yanıtların, yaşadığın bölgenin afet planlamasında kullanılır.</p>
-          </div>
-        </div>
-
-        <!-- ZONE 4: Action Zone -->
-        <div class="disaster-zone-action" data-aos="fade-up" data-aos-delay="200">
-          <div class="disaster-action-container">
-            <button type="button" class="btn btn-primary-premium-disaster" id="disaster-start-btn">
-              Cevaplamak istiyorum
-              <i class="bi bi-arrow-right ms-2"></i>
-            </button>
-            <button type="button" class="btn btn-secondary-premium-disaster" id="disaster-skip-btn">
-              Şimdilik geç
-            </button>
-          </div>
-        </div>
-
-        <!-- ZONE 5: Trust Footer -->
-        <div class="disaster-zone-trust" data-aos="fade-up" data-aos-delay="250">
-          <div class="disaster-trust-line">
-            <i class="bi bi-shield-lock"></i>
-            <span>Verilerin anonim olarak analiz edilir ve sadece afet planlaması amacıyla paylaşılır.</span>
-          </div>
-          <div class="disaster-trust-line-mobile">
-            <i class="bi bi-shield-lock"></i>
-            <span>Yanıtlar anonim analiz edilir</span>
-          </div>
-        </div>
-
-      <!-- Collapsed State (Hidden initially) -->
-      <div id="disaster-survey-collapsed" class="disaster-survey-collapsed" style="display: none;">
-        <div class="disaster-collapsed-card">
-          <p class="disaster-collapsed-text">Afet görüşlerini paylaşmak istersen, istediğin zaman başlayabilirsin.</p>
-          <button type="button" class="btn btn-outline-primary disaster-collapsed-btn" id="disaster-resume-btn">
-            Sonradan cevapla
-          </button>
-        </div>
-      </div>
-
-      <!-- Disaster Survey Component (Hidden initially) -->
-      <div id="disaster-survey-container" class="disaster-survey-container" style="display: none;">
-        <div class="disaster-survey-card">
-          <!-- Modern Stepper -->
-          <div class="modern-stepper" id="disaster-stepper">
-            <div class="modern-stepper-step active" data-step="1">1</div>
-            <div class="modern-stepper-step" data-step="2">2</div>
-            <div class="modern-stepper-step" data-step="3">3</div>
-            <div class="modern-stepper-step" data-step="4">4</div>
-            <div class="modern-stepper-step" data-step="5">5</div>
-          </div>
-
-          <!-- Question Container -->
-          <div class="disaster-question-wrapper">
-            <h3 class="disaster-question-title" id="disaster-question-title"></h3>
-            <p class="disaster-question-helper" id="disaster-question-helper"></p>
-          </div>
-
-          <div class="disaster-input-wrapper" id="disaster-input-wrapper">
-            <!-- Options will be rendered here -->
-          </div>
-
-          <div class="disaster-error-message" id="disaster-error-message"></div>
-
-          <!-- Action Row -->
-          <div class="disaster-actions">
-            <button class="disaster-btn disaster-btn-secondary" id="disaster-back-btn" type="button">
-              <i class="bi bi-arrow-left"></i> Geri
-            </button>
-            <button class="disaster-btn disaster-btn-primary" id="disaster-next-btn" type="button" disabled>
-              Devam <i class="bi bi-arrow-right"></i>
-            </button>
-          </div>
-        </div>
-
-        <!-- Result Message -->
-        <div id="disaster-result" class="disaster-result" style="display: none;">
-          <div class="disaster-result-card">
-            <div class="disaster-result-icon">
-              <i class="bi bi-check-circle-fill"></i>
-            </div>
-            <h3 class="disaster-result-title">Teşekkürler!</h3>
-            <p class="disaster-result-description">Yanıtların kaydedildi ve şehrinin afet hazırlık planına katkı sağlıyor.</p>
-          </div>
-        </div>
-      </div>
-
-      </div>
-    </div>
-  </section>
-  <!-- ============== End Afet Görüşlerini Paylaş section ========== -->
 
   <!-- Section Divider -->
   <hr class="section-divider">
@@ -1143,7 +939,7 @@
         <!-- Left Column - Brand -->
         <div class="footer-brand">
           <a href="#top" class="footer-logo">
-            <img src="images/logo/logo-main.png" alt="Ulusal Afet Ağı">
+            Ulusal Afet Ağı
           </a>
           <p class="footer-description">Ulusal Afet Ağı, Türkiye'nin ulusal afet hazırlık ağıdır. Komşularınızla önceden bağlantı kurarak afetlere hazırlıklı olun.</p>
           <div class="footer-social">

@@ -634,11 +634,28 @@ svg {
   line-height: 1.2;
 }
 
+/* Hero Title Break: Mobile line break after "Ulusal" */
+@media (max-width: 767px) {
+  .hero .hero-title .hero-title-break {
+    display: block;
+  }
+}
+
 /* Hero List: Keep left-aligned, add max-width and spacing */
 .hero .hero-list {
   text-align: left;
   max-width: 100%;
   line-height: 1.8;
+}
+
+/* Hero Subtitle: Paragraph text styling */
+.hero .hero-subtitle {
+  text-align: left;
+  max-width: 100%;
+  line-height: 1.8;
+  font-size: 1rem;
+  color: var(--textColor);
+  margin: 1rem 0;
 }
 
 /* Hero Buttons: Center on mobile, left on md+ */
@@ -660,6 +677,10 @@ svg {
 
 @media (min-width: 768px) {
   .hero .hero-title {
+    text-align: left;
+  }
+  
+  .hero .hero-subtitle {
     text-align: left;
   }
   
@@ -687,6 +708,12 @@ svg {
     line-height: 1.7;
   }
   
+  .hero .hero-subtitle {
+    font-size: 15px;
+    line-height: 1.7;
+    text-align: center;
+  }
+  
   .hero .hero-buttons {
     width: 100%;
   }
@@ -694,6 +721,16 @@ svg {
   .hero .hero-buttons .btn {
     width: 100%;
     max-width: 100%;
+  }
+  
+  /* Katkı Verenler butonu mobilde diğer butona göre daha küçük ve kısa */
+  .hero .hero-buttons #katki-verenler-btn {
+    font-size: 0.6rem;
+    padding: 0.25rem 0.6rem;
+    width: auto;
+    max-width: fit-content;
+    margin: 0 auto;
+    min-width: auto;
   }
 }
 
@@ -5273,6 +5310,7 @@ body.dark-mode .disaster-trust-line {
   .nav-shell {
     padding: var(--nav-pad-y) 24px;
     max-width: 1200px;
+    position: relative;
   }
   
   .nav-left {
@@ -5281,11 +5319,11 @@ body.dark-mode .disaster-trust-line {
   }
   
   .nav-center {
-    position: relative;
-    left: auto;
-    transform: none;
+    position: absolute;
+    left: 50%;
+    transform: translateX(-50%);
     flex: 0 1 auto;
-    margin-left: 2rem;
+    margin-left: 0;
     z-index: 1;
     overflow: visible;
   }
@@ -5316,6 +5354,14 @@ body.dark-mode .disaster-trust-line {
   text-decoration: none;
   padding: 0;
   flex-shrink: 0;
+  font-size: 1.25rem;
+  font-weight: 600;
+  color: var(--textColor);
+  transition: color 0.3s ease;
+}
+
+.nav-left .navbar-brand:hover {
+  color: var(--brand-color);
 }
 
 .nav-center {
@@ -9535,6 +9581,15 @@ section {
 .footer-logo {
   display: inline-block;
   margin-bottom: 0.375rem;
+  font-size: 1.5rem;
+  font-weight: 600;
+  color: var(--textColor);
+  text-decoration: none;
+  transition: color 0.3s ease;
+}
+
+.footer-logo:hover {
+  color: var(--brand-color);
 }
 
 .footer-logo img {

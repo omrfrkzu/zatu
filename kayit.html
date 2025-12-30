@@ -18,7 +18,7 @@
     <div class="nav-shell">
       <!-- Left: Logo -->
       <div class="nav-left">
-        <a class="navbar-brand" href="index.html"><img src="images/logo/logo-main.png" class="logo" alt="Ulusal Afet Ağı"></a>
+        <a class="navbar-brand" href="index.html">Ulusal Afet Ağı</a>
       </div>
       
       <!-- Center: Nav Links (Absolute Centered on Desktop) -->
@@ -33,12 +33,6 @@
             </li>
             <li class="nav-item">
               <a class="nav-link" href="kayit.html">Ağa Katıl</a>
-            </li>
-            <li class="nav-item">
-              <a class="nav-link" href="index.html#profilini-tamamla">Profilini Tamamla</a>
-            </li>
-            <li class="nav-item">
-              <a class="nav-link" href="index.html#afet-anketi">Afet Görüşleri</a>
             </li>
           </ul>
         </div>
@@ -110,14 +104,12 @@
           </div>
         </div>
         
-        <!-- Theme Toggle Button (Desktop Only) -->
-        <button id="mode-toggle-desktop" class="btn-light-mode switch-button desktop-mode-toggle" aria-label="Karanlık mod"><i id="mode-icon-desktop" class="bi bi-moon-fill"></i></button>
-        
         <!-- CTA Button (Desktop Only) -->
         <a class="btn btn-cta desktop-cta" href="kayit.html" aria-label="Ağa Katıl – 2 Dakikada Kayıt">Ağa Katıl</a>
         
-        <!-- Mobile Actions: Hamburger -->
+        <!-- Mobile Actions: Theme + Hamburger -->
         <div class="mobile-actions">
+          <button id="mode-toggle" class="btn-light-mode switch-button" aria-label="Karanlık mod"><i id="mode-icon" class="bi bi-moon-fill"></i></button>
           <button id="mobile-menu-toggle" class="mobile-menu-toggle" type="button" aria-controls="mobile-menu" aria-expanded="false" aria-label="Menüyü aç">
             <i class="bi bi-list" id="menu-icon"></i>
           </button>
@@ -137,119 +129,92 @@
       type="button">
     </button>
     
-    <!-- Drawer Panel -->
-    <aside 
-      id="mobile-menu" 
-      class="mobile-menu-drawer" 
-      role="dialog" 
-      aria-modal="true" 
-      aria-labelledby="mobile-menu-title">
-      <!-- Header with Swipe Handle -->
+    <!-- Drawer -->
+    <aside id="mobile-menu" class="mobile-menu-drawer" role="navigation" aria-label="Mobil menü">
       <div class="mobile-menu-header">
-        <div class="mobile-menu-swipe-handle"></div>
-        <div class="mobile-menu-header-content">
-          <h2 id="mobile-menu-title" class="mobile-menu-title">Menü</h2>
-          <button 
-            id="mobile-menu-close" 
-            class="mobile-menu-close" 
-            aria-label="Kapat" 
-            type="button">
-            <i class="bi bi-x-lg"></i>
-          </button>
-        </div>
+        <a class="navbar-brand" href="index.html">
+          Ulusal Afet Ağı
+        </a>
+        <button 
+          id="mobile-menu-close" 
+          class="mobile-menu-close" 
+          type="button" 
+          aria-label="Menüyü kapat">
+          <i class="bi bi-x-lg"></i>
+        </button>
       </div>
-
-      <!-- Navigation Links -->
+      
       <nav class="mobile-menu-nav">
-        <!-- Primary Section -->
-        <div class="mobile-menu-section">
-          <div class="mobile-menu-section-label">Ana Menü</div>
-          <a href="index.html#neden-variz" class="mobile-nav-item">
-            <i class="bi bi-question-circle" aria-hidden="true"></i>
-            <span>Neden Varız?</span>
-            <i class="bi bi-chevron-right mobile-nav-chevron" aria-hidden="true"></i>
-          </a>
-          <a href="index.html#nasil-calisir" class="mobile-nav-item">
-            <i class="bi bi-gear" aria-hidden="true"></i>
-            <span>Nasıl Çalışır?</span>
-            <i class="bi bi-chevron-right mobile-nav-chevron" aria-hidden="true"></i>
-          </a>
-          <a href="index.html#afet-anketi" class="mobile-nav-item">
-            <i class="bi bi-chat-dots" aria-hidden="true"></i>
-            <span>Afet Görüşleri</span>
-            <i class="bi bi-chevron-right mobile-nav-chevron" aria-hidden="true"></i>
-          </a>
-        </div>
-
+        <ul class="mobile-menu-list">
+          <li><a href="index.html#neden-variz" class="mobile-menu-link">Neden Varız?</a></li>
+          <li><a href="index.html#nasil-calisir" class="mobile-menu-link">Nasıl Çalışır?</a></li>
+          <li><a href="kayit.html" class="mobile-menu-link">Ağa Katıl</a></li>
+        </ul>
       </nav>
-
-      <!-- Bottom Actions (Fixed at bottom) -->
+      
       <div class="mobile-menu-footer">
-        <!-- Language Selector (Compact) -->
-        <div class="mobile-language-compact">
+        <a href="kayit.html" class="mobile-menu-cta">
+          Ağa Katıl
+        </a>
+        
+        <!-- Mobile Language Selector -->
+        <div class="language-dropdown-wrapper mobile-language-dropdown">
           <button 
             type="button" 
             id="mobile-language-dropdown-trigger" 
-            class="mobile-language-trigger" 
-            aria-haspopup="dialog" 
+            class="language-dropdown-trigger" 
+            aria-haspopup="menu" 
             aria-expanded="false"
             aria-label="Dil seçimi">
-            <span class="language-flag" id="mobile-current-flag">
-              <svg width="18" height="18" viewBox="0 0 20 20" fill="none" xmlns="http://www.w3.org/2000/svg">
-                <rect width="20" height="20" rx="2" fill="#E30A17"/>
-                <!-- Crescent (Hilal) -->
-                <circle cx="7.5" cy="10" r="4.5" fill="#FFFFFF"/>
-                <circle cx="9" cy="10" r="4" fill="#E30A17"/>
-                <!-- Star -->
-                <path d="M13.5 7.5L13.8 8.3L14.6 8.1L13.9 8.6L14.2 9.4L13.5 8.9L12.8 9.4L13.1 8.6L12.4 8.1L13.2 8.3Z" fill="#FFFFFF"/>
+            <span class="language-flag" id="mobile-language-flag">
+              <svg width="18" height="18" viewBox="0 0 18 18" fill="none" xmlns="http://www.w3.org/2000/svg" class="flag-icon">
+                <rect width="18" height="18" fill="#E30A17"/>
+                <circle cx="7" cy="9" r="4" fill="#FFFFFF"/>
+                <circle cx="8.5" cy="9" r="3.5" fill="#E30A17"/>
+                <path d="M12.5 6.5L12.8 7.3L13.6 7.1L12.9 7.6L13.2 8.4L12.5 7.9L11.8 8.4L12.1 7.6L11.4 7.1L12.2 7.3Z" fill="#FFFFFF"/>
               </svg>
             </span>
-            <span class="language-name-compact" id="mobile-language-name">Türkçe</span>
+            <span class="language-code" id="mobile-language-code">TR</span>
             <i class="bi bi-chevron-down language-chevron"></i>
           </button>
-        </div>
-        
-        <!-- Language Selection Bottom Sheet Modal -->
-        <div class="mobile-language-menu-overlay" id="mobile-language-menu-overlay" aria-hidden="true"></div>
-        <div class="mobile-language-menu" id="mobile-language-dropdown-menu" role="dialog" aria-modal="true" aria-labelledby="mobile-language-menu-title" aria-hidden="true">
-          <div class="mobile-language-menu-header">
-            <h3 class="mobile-language-menu-title" id="mobile-language-menu-title">Dil Seç</h3>
-            <button class="mobile-language-menu-close" id="mobile-language-menu-close" aria-label="Kapat" type="button">
-              <i class="bi bi-x-lg"></i>
-            </button>
-          </div>
-          <div class="mobile-language-menu-items">
-            <button class="mobile-language-menu-item" data-locale="tr" role="menuitem" type="button">
+          <div id="mobile-language-dropdown-menu" class="language-dropdown-menu" role="menu" aria-hidden="true">
+            <button 
+              type="button" 
+              class="language-menu-item" 
+              role="menuitem" 
+              data-lang="tr"
+              aria-label="Türkçe">
               <span class="language-flag">
-                <svg width="28" height="28" viewBox="0 0 20 20" fill="none" xmlns="http://www.w3.org/2000/svg">
-                  <rect width="20" height="20" rx="2" fill="#E30A17"/>
-                  <circle cx="7.5" cy="10" r="4.5" fill="#FFFFFF"/>
-                  <circle cx="9" cy="10" r="4" fill="#E30A17"/>
-                  <path d="M13.5 7.5L13.8 8.3L14.6 8.1L13.9 8.6L14.2 9.4L13.5 8.9L12.8 9.4L13.1 8.6L12.4 8.1L13.2 8.3Z" fill="#FFFFFF"/>
+                <svg width="18" height="18" viewBox="0 0 18 18" fill="none" xmlns="http://www.w3.org/2000/svg" class="flag-icon">
+                  <rect width="18" height="18" fill="#E30A17"/>
+                  <circle cx="7" cy="9" r="4" fill="#FFFFFF"/>
+                  <circle cx="8.5" cy="9" r="3.5" fill="#E30A17"/>
+                  <path d="M12.5 6.5L12.8 7.3L13.6 7.1L12.9 7.6L13.2 8.4L12.5 7.9L11.8 8.4L12.1 7.6L11.4 7.1L12.2 7.3Z" fill="#FFFFFF"/>
                 </svg>
               </span>
-              <span class="language-code">TR</span>
+              <span class="language-code-small">TR</span>
               <span class="language-name">Türkçe</span>
             </button>
-            <button class="mobile-language-menu-item" data-locale="en" role="menuitem" type="button">
+            <button 
+              type="button" 
+              class="language-menu-item" 
+              role="menuitem" 
+              data-lang="en"
+              aria-label="English">
               <span class="language-flag">
-                <svg width="28" height="28" viewBox="0 0 20 20" fill="none" xmlns="http://www.w3.org/2000/svg">
-                  <rect width="20" height="20" rx="2" fill="#012169"/>
-                  <path d="M0 0l20 20M20 0L0 20" stroke="white" stroke-width="2"/>
-                  <path d="M0 0l20 20M20 0L0 20" stroke="#C8102E" stroke-width="1.2"/>
+                <svg width="18" height="18" viewBox="0 0 18 18" fill="none" xmlns="http://www.w3.org/2000/svg" class="flag-icon">
+                  <rect width="18" height="18" fill="#012169"/>
+                  <path d="M0 0L18 18M18 0L0 18" stroke="#FFFFFF" stroke-width="2"/>
+                  <path d="M0 0L18 18M18 0L0 18" stroke="#C8102E" stroke-width="1.2"/>
+                  <path d="M9 0V18M0 9H18" stroke="#FFFFFF" stroke-width="2.5"/>
+                  <path d="M9 0V18M0 9H18" stroke="#C8102E" stroke-width="1.5"/>
                 </svg>
               </span>
-              <span class="language-code">EN</span>
+              <span class="language-code-small">EN</span>
               <span class="language-name">English</span>
             </button>
           </div>
         </div>
-
-        <!-- CTA Button -->
-        <a href="kayit.html" class="mobile-menu-cta">
-          Ağa Katıl
-          <i class="bi bi-arrow-right"></i>
-        </a>
       </div>
     </aside>
   </div>
@@ -611,7 +576,6 @@
   <script src="js/jquery-3.6.1.min.js"></script>
   <script src="js/bootstrap.min.js"></script>
   <script src="js/aos.js"></script>
-  <script src="js/mobile-menu.js"></script>
   <script src="js/main.js"></script>
   <script src="js/language-dropdown.js"></script>
   <script src="js/how-it-works-steps.js"></script>

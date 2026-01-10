@@ -7720,7 +7720,9 @@ body.dark-mode .disaster-trust-line {
   display: flex;
   align-items: center;
   gap: 10px;
-  flex-shrink: 0;
+  flex-shrink: 1;
+  min-width: 0;
+  overflow: hidden;
 }
 
 .nav-left .navbar-brand {
@@ -7728,11 +7730,15 @@ body.dark-mode .disaster-trust-line {
   align-items: center;
   text-decoration: none;
   padding: 0;
-  flex-shrink: 0;
+  flex-shrink: 1;
+  min-width: 0;
   font-size: 1.25rem;
   font-weight: 600;
   color: #FFFFFF;
   transition: color 0.3s ease;
+  white-space: nowrap;
+  overflow: hidden;
+  text-overflow: ellipsis;
 }
 
 .nav-left .navbar-brand:hover {

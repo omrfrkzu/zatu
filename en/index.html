@@ -38,6 +38,9 @@
 
   <!-- RemixIcon -->
   <link href="https://cdn.jsdelivr.net/npm/remixicon@3.5.0/fonts/remixicon.css" rel="stylesheet">
+  
+  <!-- Leaflet CSS for real map -->
+  <link rel="stylesheet" href="https://unpkg.com/leaflet@1.9.4/dist/leaflet.css" integrity="sha256-p4NxAoJBhIIN+hmNHrzRCf9tD/miZyoHS5obTRR9BMY=" crossorigin=""/>
 
   <!-- Google font -->
   <link rel="preconnect" href="https://fonts.googleapis.com">
@@ -312,47 +315,142 @@
   <!-- ======= end Mobile Menu Drawer ======= -->
 
   <!-- ============== Start Hero section ========== -->
-  <section class="hero d-flex flex-column justify-content-center align-items-center" id="hero">
+  <section class="hero-modern d-flex flex-column justify-content-center align-items-center" id="hero">
     <div id="particles-js"></div>
+    <!-- Network Pattern Background -->
+    <div class="network-pattern-bg">
+      <svg class="network-pattern-svg" viewBox="0 0 1200 800" xmlns="http://www.w3.org/2000/svg">
+        <defs>
+          <pattern id="networkPattern" x="0" y="0" width="100" height="100" patternUnits="userSpaceOnUse">
+            <circle cx="50" cy="50" r="2" fill="rgba(31, 122, 91, 0.15)"/>
+            <line x1="50" y1="50" x2="150" y2="50" stroke="rgba(31, 122, 91, 0.08)" stroke-width="0.5"/>
+            <line x1="50" y1="50" x2="50" y2="150" stroke="rgba(31, 122, 91, 0.08)" stroke-width="0.5"/>
+            <line x1="50" y1="50" x2="150" y2="150" stroke="rgba(31, 122, 91, 0.06)" stroke-width="0.5"/>
+          </pattern>
+        </defs>
+        <rect width="100%" height="100%" fill="url(#networkPattern)"/>
+      </svg>
+    </div>
     <div class="container">
       <div class="row justify-content-center align-items-center">
-        <div class="hero-text col-12 col-lg-5">
-          <div class="row">
-            <div class="col-12">
-              <h1 class="title hero-title col-12" data-aos="fade-up" data-aos-delay="150"><span class="hero-title-break">National</span> <span class="hero-accent-purple">Disaster</span> <span class="hero-accent-pink">Network</span></h1>
+        <div class="hero-text col-12 col-lg-6">
+          <div class="hero-content-modern">
+            <!-- System Status Badge -->
+            <div class="system-status-badge" data-aos="fade-up" data-aos-delay="50">
+              <span class="status-indicator-dot active"></span>
+              <span class="status-text">System Active</span>
+              <span class="status-update-time" id="system-last-update">Last update: <span id="update-time-text">2 min ago</span></span>
             </div>
-            <div class="col-lg-10 col-12" data-aos="fade-up" data-aos-delay="200">
-              <p class="hero-subtitle my-3">
-                This network, established in advance against disasters in developed countries, now exists in Turkey as well.<br>
-                The disaster preparedness model applied in many countries for years is being implemented in Turkey with the National Disaster Network.<br>
-                The work was shaped with contributions from universities and expert academics in the field.
-              </p>
+            
+            <div class="hero-eyebrow" data-aos="fade-up" data-aos-delay="100">National Disaster Coordination Network</div>
+            <h1 class="hero-title-modern" data-aos="fade-up" data-aos-delay="150">
+              Disaster Preparedness and <span class="hero-accent">Coordination System</span>
+            </h1>
+            <p class="hero-subtitle-modern" data-aos="fade-up" data-aos-delay="200">
+              Active disaster preparedness network across Turkey. Neighborhood-based coordination, real-time status monitoring, and secure communication infrastructure.
+            </p>
+            <div class="hero-actions-modern" data-aos="fade-up" data-aos-delay="250">
+              <a href="kayit.html" class="btn btn-hero-primary" aria-label="Join the Network">
+                <i class="bi bi-diagram-3-fill me-2"></i>Join the Network
+                <i class="bi bi-arrow-right ms-2"></i>
+              </a>
+              <a href="preparedness-test.html" class="btn btn-hero-secondary">
+                <i class="bi bi-clipboard-check me-2"></i>Preparedness Assessment
+              </a>
             </div>
-            <div class="col-12" data-aos="fade-up" data-aos-delay="220">
-              <div class="hero-buttons">
-                <button class="btn" id="katki-verenler-btn">
-                  <i class="bi bi-people-fill me-2"></i>Contributors
-                </button>
+            <div class="hero-stats-modern" data-aos="fade-up" data-aos-delay="300">
+              <div class="hero-stat-card">
+                <div class="hero-stat-number" id="count-up-joined">0</div>
+                <div class="hero-stat-label">Joined in last 24 hours</div>
               </div>
-            </div>
-            <div class="col-12" data-aos="fade-up" data-aos-delay="250">
-              <div class="hero-buttons">
-                <a href="kayit.html" class="btn" aria-label="Join National Disaster Network">JOIN NATIONAL DISASTER NETWORK</a>
+              <div class="hero-stat-card">
+                <div class="hero-stat-number">81</div>
+                <div class="hero-stat-label">Active province coordination</div>
               </div>
-            </div>
-            <div class="col-12" data-aos="fade-up" data-aos-delay="300">
-              <div class="hero-trust">
-                <p><i class="bi bi-check-circle-fill"></i> 1,847 people joined the National Disaster Network in the last 24 hours</p>
-                <p><i class="bi bi-globe"></i> Active use in 81 provinces</p>
-                <p><i class="bi bi-shield-check"></i> <span class="zatu-link" id="zatu-link" style="cursor: pointer; text-decoration: underline; color: inherit;">ZATU</span> infrastructure with INSTITUTION integration</p>
+              <div class="hero-stat-card">
+                <div class="hero-stat-number" id="network-total-users">0</div>
+                <div class="hero-stat-label">Total registered users</div>
               </div>
             </div>
           </div>
         </div>
-        <div class="col-12 col-lg-7 mx-md-auto text-center" data-aos="fade-left" data-aos-delay="100">
-          <div class="hero-image">
-            <div class="hero-img" data-tilt>
-              <img class="img-fluid " alt="National Disaster Network – Technology and community support for National Disaster Network" src="../images/hero/hero-image.png">
+        <div class="col-12 col-lg-6" data-aos="fade-left" data-aos-delay="200">
+          <!-- Network Status Card -->
+          <div class="network-status-card">
+            <div class="network-status-header">
+              <div class="network-status-title">
+                <i class="bi bi-activity me-2"></i>
+                <span>Network Status</span>
+              </div>
+              <div class="network-status-indicator">
+                <span class="status-dot active"></span>
+                <span class="status-text">Active</span>
+              </div>
+            </div>
+            <div class="network-status-metrics">
+              <div class="network-metric">
+                <div class="metric-value" id="network-active-users">12,847</div>
+                <div class="metric-label">Active Users</div>
+              </div>
+              <div class="network-metric">
+                <div class="metric-value" id="network-volunteers">3,421</div>
+                <div class="metric-label">Verified Volunteers</div>
+              </div>
+              <div class="network-metric">
+                <div class="metric-value" id="network-update-time">2 min ago</div>
+                <div class="metric-label">Last Update</div>
+              </div>
+            </div>
+          </div>
+          
+          <div class="hero-map-card">
+            <div class="map-header">
+              <h3 class="map-title">Turkey Disaster Preparedness Status</h3>
+              <span class="map-subtitle">Regional Preparedness Levels</span>
+            </div>
+            <div class="gis-map-container" id="gis-map-container">
+              <!-- Real Turkey Map using Leaflet -->
+              <div id="turkey-disaster-map"></div>
+              
+              <!-- Legend Toggle Button (shown when legend is closed) -->
+              <button class="legend-toggle-btn" id="legend-toggle-btn" aria-label="Open legend" style="display: none;">
+                <i class="bi bi-info-circle"></i>
+              </button>
+              
+              <!-- Map Legend -->
+              <div class="map-legend-gis" id="map-legend-gis">
+                <div class="legend-header">
+                  <span class="legend-title">Preparedness Level</span>
+                  <button class="legend-close-btn" id="legend-close-btn" aria-label="Close legend">
+                    <i class="bi bi-x-lg"></i>
+                  </button>
+                </div>
+                <div class="legend-items">
+                  <div class="legend-item-gis">
+                    <div class="legend-color-box" style="background: #4CAF50; border-color: #388E3C;"></div>
+                    <span class="legend-label-gis">Low Risk</span>
+                  </div>
+                  <div class="legend-item-gis">
+                    <div class="legend-color-box" style="background: #FFB300; border-color: #F57C00;"></div>
+                    <span class="legend-label-gis">Medium Risk</span>
+                  </div>
+                  <div class="legend-item-gis">
+                    <div class="legend-color-box" style="background: #E53935; border-color: #C62828;"></div>
+                    <span class="legend-label-gis">High Risk</span>
+                  </div>
+                </div>
+                <div class="legend-divider"></div>
+                <div class="legend-fault-toggle">
+                  <label class="fault-toggle-label">
+                    <input type="checkbox" id="fault-line-toggle" class="fault-toggle-input">
+                    <span class="fault-toggle-slider"></span>
+                    <div class="fault-toggle-content">
+                      <div class="legend-line" style="border-top: 2px dashed #6C5F5B; opacity: 0.8;"></div>
+                      <span class="legend-label-gis">Fault Line</span>
+                    </div>
+                  </label>
+                </div>
+              </div>
             </div>
           </div>
         </div>
@@ -900,6 +998,9 @@
 
   <!--  JQuery file     -->
   <script src="../js/jquery-3.6.1.min.js"></script>
+  
+  <!-- Leaflet JS for real map -->
+  <script src="https://unpkg.com/leaflet@1.9.4/dist/leaflet.js" integrity="sha256-20nQCchB9co0qIjJZRGuk2/Z9VM+kNiyxNV1lvTlZBo=" crossorigin=""></script>
 
   <!-- bootstrap min js -->
   <script src="../js/bootstrap.min.js"></script>
@@ -975,6 +1076,405 @@
   <!-- Initialize City Stats -->
   <script>
     document.addEventListener('DOMContentLoaded', function() {
+      // Count-up animation for numbers
+      function animateCountUp(element, target, duration = 2000) {
+        const start = 0;
+        const increment = target / (duration / 16);
+        let current = start;
+        
+        const timer = setInterval(() => {
+          current += increment;
+          if (current >= target) {
+            current = target;
+            clearInterval(timer);
+          }
+          element.textContent = Math.floor(current).toLocaleString('en-US');
+        }, 16);
+      }
+      
+      // Animate "last 24h joined"
+      const countUpElement = document.getElementById('count-up-joined');
+      if (countUpElement) {
+        animateCountUp(countUpElement, 1847, 2000);
+      }
+      
+      // Animate total users
+      const totalUsersEl = document.getElementById('network-total-users');
+      if (totalUsersEl) {
+        animateCountUp(totalUsersEl, 124583, 2500);
+      }
+      
+      // System Status Updates (live data simulation)
+      function updateSystemStatus() {
+        const updateTimeText = document.getElementById('update-time-text');
+        if (updateTimeText) {
+          const minutes = Math.floor(Math.random() * 3) + 1;
+          updateTimeText.textContent = minutes + ' min ago';
+        }
+      }
+      
+      // Network Status Updates (mock data)
+      function updateNetworkStatus() {
+        const activeUsersEl = document.getElementById('network-active-users');
+        const volunteersEl = document.getElementById('network-volunteers');
+        const updateTimeEl = document.getElementById('network-update-time');
+        
+        if (activeUsersEl) {
+          const baseUsers = 12847;
+          const variation = Math.floor(Math.random() * 50) - 25;
+          activeUsersEl.textContent = (baseUsers + variation).toLocaleString('en-US');
+        }
+        
+        if (volunteersEl) {
+          const baseVolunteers = 3421;
+          const variation = Math.floor(Math.random() * 20) - 10;
+          volunteersEl.textContent = (baseVolunteers + variation).toLocaleString('en-US');
+        }
+        
+        if (updateTimeEl) {
+          const minutes = Math.floor(Math.random() * 5) + 1;
+          updateTimeEl.textContent = minutes + ' min ago';
+        }
+      }
+      
+      // Update system status every 60 seconds
+      updateSystemStatus();
+      setInterval(updateSystemStatus, 60000);
+      
+      // Update network status every 30 seconds
+      updateNetworkStatus();
+      setInterval(updateNetworkStatus, 30000);
+      
+      // Initialize Real Turkey Map with Leaflet
+      if (document.getElementById('turkey-disaster-map')) {
+        // Turkey bounds to restrict panning
+        const turkeyBounds = [
+          [35.5, 25.5],  // Southwest corner
+          [42.5, 45.0]   // Northeast corner
+        ];
+
+        // Initialize map centered on Turkey with restricted bounds
+        const map = L.map('turkey-disaster-map', {
+          center: [39.0, 35.0],
+          zoom: 6,
+          minZoom: 5,
+          maxZoom: 9,
+          zoomControl: true,
+          attributionControl: false,
+          scrollWheelZoom: false,  // Disable default scroll zoom
+          doubleClickZoom: false,
+          boxZoom: false,
+          dragging: true,
+          touchZoom: true,
+          maxBounds: turkeyBounds,
+          maxBoundsViscosity: 1.0  // Prevent panning outside bounds
+        });
+        
+        // Custom CTRL + Scroll zoom handler
+        let isCtrlPressed = false;
+        const mapContainer = map.getContainer();
+        
+        // Track CTRL key state
+        document.addEventListener('keydown', function(e) {
+          if (e.ctrlKey || e.metaKey) {
+            isCtrlPressed = true;
+          }
+        });
+        
+        document.addEventListener('keyup', function(e) {
+          if (!e.ctrlKey && !e.metaKey) {
+            isCtrlPressed = false;
+          }
+        });
+        
+        // Handle scroll wheel zoom only when CTRL is pressed
+        mapContainer.addEventListener('wheel', function(e) {
+          if (isCtrlPressed || e.ctrlKey || e.metaKey) {
+            e.preventDefault();
+            e.stopPropagation();
+            
+            const delta = e.deltaY;
+            const currentZoom = map.getZoom();
+            
+            // Smooth zoom with delta sensitivity
+            const zoomDelta = delta > 0 ? -0.5 : 0.5;
+            const newZoom = Math.max(
+              map.getMinZoom(),
+              Math.min(map.getMaxZoom(), currentZoom + zoomDelta)
+            );
+            
+            map.setZoom(newZoom, { animate: true });
+          }
+        }, { passive: false });
+
+        // Add OpenStreetMap tile layer (light, professional style)
+        L.tileLayer('https://{s}.tile.openstreetmap.org/{z}/{x}/{y}.png', {
+          maxZoom: 9,
+          minZoom: 5,
+          attribution: '&copy; <a href="https://www.openstreetmap.org/copyright">OpenStreetMap</a> contributors'
+        }).addTo(map);
+
+        // Risk level colors (matching legend exactly - clearer colors)
+        const riskColors = {
+          low: '#4CAF50',      // Green (clearly visible)
+          medium: '#FFB300',   // Amber/Yellow (clearly visible)
+          high: '#E53935'      // Red (clearly visible, not neon)
+        };
+
+        // Border color for region separation
+        const borderColor = '#6B7280'; // Subtle gray border
+        
+        // Store fault line layer group for toggle (initially hidden)
+        const faultLineLayer = L.layerGroup();
+
+        // Regional data with more accurate Turkey coordinates
+        const regionData = [
+          {
+            name: 'Marmara Region',
+            risk: 'medium',
+            coordinates: [[41.2, 27.0], [41.5, 29.8], [40.1, 30.2], [40.0, 28.5], [40.8, 27.2], [41.2, 27.0]],
+            stats: 'Pop: 25M • Preparedness: 68%'
+          },
+          {
+            name: 'Aegean Region',
+            risk: 'high',
+            coordinates: [[39.5, 26.0], [39.8, 28.8], [38.2, 29.5], [37.8, 27.5], [38.5, 26.2], [39.5, 26.0]],
+            stats: 'Pop: 10M • Preparedness: 52%'
+          },
+          {
+            name: 'Mediterranean Region',
+            risk: 'high',
+            coordinates: [[37.2, 30.0], [37.8, 32.8], [36.0, 33.5], [35.5, 31.2], [36.5, 30.2], [37.2, 30.0]],
+            stats: 'Pop: 10M • Preparedness: 55%'
+          },
+          {
+            name: 'Central Anatolia',
+            risk: 'low',
+            coordinates: [[40.2, 32.0], [40.8, 34.8], [38.8, 35.2], [38.5, 33.0], [39.5, 32.2], [40.2, 32.0]],
+            stats: 'Pop: 12M • Preparedness: 75%'
+          },
+          {
+            name: 'Black Sea Region',
+            risk: 'medium',
+            coordinates: [[41.8, 35.0], [42.2, 37.8], [40.2, 38.2], [40.0, 36.0], [41.0, 35.2], [41.8, 35.0]],
+            stats: 'Pop: 8M • Preparedness: 65%'
+          },
+          {
+            name: 'Eastern Anatolia',
+            risk: 'high',
+            coordinates: [[40.5, 40.0], [41.0, 42.8], [38.8, 43.2], [38.5, 41.0], [39.5, 40.2], [40.5, 40.0]],
+            stats: 'Pop: 6M • Preparedness: 48%'
+          },
+          {
+            name: 'Southeastern Anatolia',
+            risk: 'high',
+            coordinates: [[37.8, 38.0], [38.5, 40.8], [36.2, 41.2], [36.0, 39.0], [37.0, 38.2], [37.8, 38.0]],
+            stats: 'Pop: 8M • Preparedness: 50%'
+          }
+        ];
+
+        // Add regional polygons with choropleth coloring (with fade-in animation)
+        const regionLayer = L.layerGroup();
+        let regionIndex = 0;
+        
+        regionData.forEach(region => {
+          const polygon = L.polygon(region.coordinates, {
+            color: borderColor,
+            weight: 2,
+            fillColor: riskColors[region.risk],
+            fillOpacity: 0.6,  // More visible semi-transparent fill
+            opacity: 1,
+            smoothFactor: 1
+          });
+          
+          // Add fade-in animation
+          polygon.setStyle({ opacity: 0, fillOpacity: 0 });
+          regionLayer.addLayer(polygon);
+          
+          setTimeout(() => {
+            polygon.setStyle({ 
+              opacity: 1,
+              fillOpacity: 0.6
+            });
+          }, regionIndex * 100);
+
+          // Add hover effects with smooth transitions
+          polygon.on('mouseover', function(e) {
+            this.setStyle({
+              fillOpacity: 0.8,
+              weight: 3,
+              opacity: 1
+            });
+            
+            const riskLabel = region.risk === 'low' ? 'Low Risk' : 
+                            region.risk === 'medium' ? 'Medium Risk' : 'High Risk';
+            
+            const popup = L.popup({
+              className: 'risk-popup',
+              closeButton: true,
+              autoPan: false,
+              offset: [0, -10]
+            })
+              .setLatLng(e.latlng)
+              .setContent(`
+                <div class="map-tooltip-content">
+                  <div class="tooltip-region-name">${region.name}</div>
+                  <div class="tooltip-risk-level risk-${region.risk}">${riskLabel}</div>
+                  <div class="tooltip-stats">${region.stats}</div>
+                </div>
+              `)
+              .openOn(map);
+          });
+
+          polygon.on('mouseout', function() {
+            this.setStyle({
+              fillOpacity: 0.6,
+              weight: 2,
+              opacity: 1
+            });
+            map.closePopup();
+          });
+          
+          regionIndex++;
+        });
+        
+        regionLayer.addTo(map);
+
+        // Add fault lines as toggleable layer
+        const faultLines = [
+          {
+            name: 'North Anatolian Fault',
+            coordinates: [[41.0, 27.5], [40.8, 30.0], [40.5, 32.5], [40.2, 35.0], [40.0, 37.5], [39.8, 40.0]]
+          },
+          {
+            name: 'East Anatolian Fault',
+            coordinates: [[37.5, 37.5], [38.2, 39.5], [39.0, 41.5], [39.8, 43.0]]
+          }
+        ];
+
+        faultLines.forEach((fault, index) => {
+          const polyline = L.polyline(fault.coordinates, {
+            color: '#6C5F5B',
+            weight: 3,
+            opacity: 0.9,
+            dashArray: '12, 6',
+            className: 'fault-line-layer'
+          });
+          
+          faultLineLayer.addLayer(polyline);
+        });
+        
+        // Add network nodes for major cities
+        const cityNodes = [
+          { name: 'Istanbul', coords: [41.0082, 28.9784], size: 8 },
+          { name: 'Ankara', coords: [39.9334, 32.8597], size: 7 },
+          { name: 'Izmir', coords: [38.4237, 27.1428], size: 6 },
+          { name: 'Bursa', coords: [40.1826, 29.0665], size: 5 },
+          { name: 'Antalya', coords: [36.8841, 30.7056], size: 5 },
+          { name: 'Adana', coords: [37.0000, 35.3213], size: 5 }
+        ];
+        
+        const networkNodesLayer = L.layerGroup();
+        
+        cityNodes.forEach((city, index) => {
+          const node = L.circleMarker(city.coords, {
+            radius: city.size,
+            fillColor: '#1F7A5B',
+            color: '#FFFFFF',
+            weight: 2,
+            fillOpacity: 0.8,
+            className: 'network-city-node'
+          }).addTo(map);
+          
+          // Add fade-in
+          node.setStyle({ opacity: 0 });
+          setTimeout(() => {
+            node.setStyle({ opacity: 1 });
+          }, 800 + (index * 100));
+          
+          networkNodesLayer.addLayer(node);
+          
+          // Add subtle connection lines between some major cities
+          if (index > 0 && index <= 3) {
+            const connection = L.polyline([cityNodes[0].coords, city.coords], {
+              color: 'rgba(31, 122, 91, 0.15)',
+              weight: 1,
+              opacity: 0.3,
+              dashArray: '3, 3',
+              className: 'network-connection-line'
+            }).addTo(map);
+            
+            connection.setStyle({ opacity: 0 });
+            setTimeout(() => {
+              connection.setStyle({ opacity: 0.3 });
+            }, 1000 + (index * 150));
+          }
+        });
+        
+        networkNodesLayer.addTo(map);
+
+        // Fault line toggle functionality
+        const faultToggle = document.getElementById('fault-line-toggle');
+        if (faultToggle) {
+          // Initially hide fault lines
+          if (!faultToggle.checked) {
+            // Fault line layer is not added to map initially
+          } else {
+            map.addLayer(faultLineLayer);
+          }
+          
+          faultToggle.addEventListener('change', function(e) {
+            if (e.target.checked) {
+              map.addLayer(faultLineLayer);
+            } else {
+              map.removeLayer(faultLineLayer);
+            }
+          });
+        }
+        
+        // Ensure map stays within Turkey bounds
+        map.on('drag', function() {
+          map.panInsideBounds(turkeyBounds, { animate: false });
+        });
+        
+        // Legend close button functionality
+        const legendCloseBtn = document.getElementById('legend-close-btn');
+        const legendBox = document.getElementById('map-legend-gis');
+        const legendToggleBtn = document.getElementById('legend-toggle-btn');
+        
+        if (legendCloseBtn && legendBox && legendToggleBtn) {
+          // Close legend
+          legendCloseBtn.addEventListener('click', function() {
+            legendBox.classList.add('hidden');
+            legendToggleBtn.style.display = 'flex';
+            
+            // Increase map region visibility when legend is closed
+            regionLayer.eachLayer(function(layer) {
+              if (layer instanceof L.Polygon) {
+                layer.setStyle({
+                  fillOpacity: 0.75  // More visible when legend is closed
+                });
+              }
+            });
+          });
+          
+          // Open legend
+          legendToggleBtn.addEventListener('click', function() {
+            legendBox.classList.remove('hidden');
+            legendToggleBtn.style.display = 'none';
+            
+            // Restore normal map region visibility when legend is open
+            regionLayer.eachLayer(function(layer) {
+              if (layer instanceof L.Polygon) {
+                layer.setStyle({
+                  fillOpacity: 0.6  // Normal visibility when legend is open
+                });
+              }
+            });
+          });
+        }
+      }
+      
       // Get city from localStorage (from registration) or default to Istanbul
       const step2Data = localStorage.getItem('registration_step2');
       let city = 'Istanbul';

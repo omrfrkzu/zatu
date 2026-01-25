@@ -1,0 +1,77 @@
+/* ================= Survey Page Styles ===================== */
+
+.survey-page-body {
+  /* Inherits from test-page.css */
+  /* All styles are shared with test page */
+}
+
+/* Additional survey-specific styles if needed */
+.survey-question-description {
+  font-size: 1.125rem;
+  color: var(--test-text-secondary);
+  line-height: 1.6;
+  margin-top: 0.75rem;
+  max-width: 700px;
+  margin-left: auto;
+  margin-right: auto;
+}
+
+/* Success/Thank you message styles */
+.survey-success-container {
+  text-align: center;
+  padding: 2rem 0;
+  animation: fadeInUp 0.5s ease-out;
+}
+
+.survey-success-icon {
+  width: 80px;
+  height: 80px;
+  border-radius: 50%;
+  background: var(--test-accent-light);
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  margin: 0 auto 1.5rem;
+  color: var(--test-accent);
+  font-size: 2.5rem;
+  animation: scaleIn 0.5s ease-out;
+}
+
+.survey-success-title {
+  font-size: 1.75rem;
+  font-weight: 700;
+  color: var(--test-text-primary);
+  margin-bottom: 0.75rem;
+}
+
+.survey-success-text {
+  font-size: 1.0625rem;
+  color: var(--test-text-secondary);
+  line-height: 1.6;
+  max-width: 600px;
+  margin: 0 auto 2rem;
+}
+
+.survey-success-action {
+  margin-top: 2rem;
+}
+
+.survey-success-action .btn {
+  padding: 0.875rem 2rem;
+  font-size: 1rem;
+  font-weight: 600;
+  border-radius: 12px;
+}
+
+@keyframes scaleIn {
+  from {
+    transform: scale(0);
+    opacity: 0;
+  }
+  to {
+    transform: scale(1);
+    opacity: 1;
+  }
+}
+
+

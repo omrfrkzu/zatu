@@ -1,0 +1,1978 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta http-equiv="X-UA-Compatible" content="IE=edge">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta name="description" content="Afet anında yalnız kalma. Ulusal Afet Ağı, komşularınla güvenli iletişim ve koordinasyon ağı kurmanı sağlar.">
+  <!-- Open Graph / Facebook -->
+  <meta property="og:type" content="website">
+  <meta property="og:title" content="Ulusal Afet Ağı | Afet İletişim ve Dayanışma Ağı">
+  <meta property="og:description" content="Afet anında yalnız kalma. Ulusal Afet Ağı, komşularınla güvenli iletişim ve koordinasyon ağı kurmanı sağlar.">
+  <meta property="og:image" content="images/logo1.png">
+  <!-- Twitter -->
+  <meta name="twitter:card" content="summary_large_image">
+  <meta name="twitter:title" content="Ulusal Afet Ağı | Afet İletişim ve Dayanışma Ağı">
+  <meta name="twitter:description" content="Afet anında yalnız kalma. Ulusal Afet Ağı, komşularınla güvenli iletişim ve koordinasyon ağı kurmanı sağlar.">
+  <!-- fav icon -->
+  <link rel="icon" href="images/ulusal-afet-ağı.jpeg" type="image/jpeg">
+
+  <!-- bootstarp css file -->
+  <link rel="stylesheet" href="css/bootstrap.min.css">
+
+  <!-- aos.css file -->
+  <link rel="stylesheet" href="css/aos.css">
+
+  <!-- fancybox css file -->
+  <link rel="stylesheet" href="css/jquery.fancybox.min.css">
+
+  <!-- owl carousel css file -->
+  <link rel="stylesheet" href="css/owl.carousel.min.css">
+  <link rel="stylesheet" href="css/owl.theme.default.min.css">
+
+  <!--  toasts file     -->
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/toastr.js/latest/css/toastr.min.css">
+
+  <!-- bootstrap icons -->
+  <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.11.3/font/bootstrap-icons.min.css">
+
+  <!-- RemixIcon -->
+  <link href="https://cdn.jsdelivr.net/npm/remixicon@3.5.0/fonts/remixicon.css" rel="stylesheet">
+  
+  <!-- Leaflet CSS for real map -->
+  <link rel="stylesheet" href="https://unpkg.com/leaflet@1.9.4/dist/leaflet.css" integrity="sha256-p4NxAoJBhIIN+hmNHrzRCf9tD/miZyoHS5obTRR9BMY=" crossorigin=""/>
+
+  <!-- Google font -->
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Outfit:wght@100;200;300;400;500;600;700;800&display=swap" rel="stylesheet">
+  <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@400;500;600;700;800;900&family=Inter:wght@400;500;600;700;800&display=swap" rel="stylesheet">
+
+  <!-- main css file -->
+  <link rel="stylesheet" href="css/style.css">
+  <link rel="stylesheet" href="css/forms-modern.css">
+  <link rel="stylesheet" href="css/desktop-premium.css">
+  <title>Ulusal Afet Ağı | Afet İletişim ve Dayanışma Ağı</title>
+</head>
+
+<body class="home-1" data-aos-easing="fade-up" data-aos-duration="500" data-aos-delay="0">
+  
+  <!-- Global Network Pattern Background -->
+  <div class="global-network-pattern" id="global-network-pattern">
+    <svg class="network-pattern-svg-global" viewBox="0 0 2000 2000" xmlns="http://www.w3.org/2000/svg" preserveAspectRatio="xMidYMid slice">
+      <defs>
+        <pattern id="globalNetworkPattern" x="0" y="0" width="120" height="120" patternUnits="userSpaceOnUse">
+          <circle cx="60" cy="60" r="1.5" fill="rgba(27, 94, 214, 0.06)"/>
+          <line x1="60" y1="60" x2="180" y2="60" stroke="rgba(27, 94, 214, 0.04)" stroke-width="0.5"/>
+          <line x1="60" y1="60" x2="60" y2="180" stroke="rgba(27, 94, 214, 0.04)" stroke-width="0.5"/>
+          <line x1="60" y1="60" x2="180" y2="180" stroke="rgba(27, 94, 214, 0.03)" stroke-width="0.5"/>
+          <line x1="60" y1="60" x2="0" y2="60" stroke="rgba(27, 94, 214, 0.04)" stroke-width="0.5"/>
+          <line x1="60" y1="60" x2="60" y2="0" stroke="rgba(27, 94, 214, 0.04)" stroke-width="0.5"/>
+        </pattern>
+      </defs>
+      <rect width="100%" height="100%" fill="url(#globalNetworkPattern)"/>
+    </svg>
+  </div>
+
+  <!-- start preLoader -->
+  <div id="preloader">
+    <svg id="mainSVG" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 800 600">
+      <defs>
+        <radialGradient id="mainGrad" cx="346.198916" cy="300" fx="346.198916" fy="300" r="100" gradientUnits="userSpaceOnUse">
+          <stop offset=".68" stop-color="#0B1E3A"></stop>
+          <stop offset=".72" stop-color="#1B5ED6"></stop>
+          <stop offset=".77" stop-color="#1E6BFF"></stop>
+          <stop offset=".82" stop-color="#4A85FF"></stop>
+          <stop offset=".88" stop-color="#6B9EFF"></stop>
+          <stop offset=".93" stop-color="#8BB5FF"></stop>
+          <stop offset=".99" stop-color="#A8CAFF"></stop>
+          <stop offset="1" stop-color="#E6F0FF"></stop>
+        </radialGradient>
+      </defs>
+      <circle id="fillDot" cx="400" cy="300" fill="#1B5ED6" r="100"></circle>
+      <circle id="gradDot" cx="400" cy="300" fill="url(#mainGrad)" r="100"></circle>
+    </svg>
+  </div>
+  <!-- end preLoader -->
+
+  <!-- start scroll to top button -->
+  <div id="progress">
+    <span id="progress-value"><i class="bi bi-arrow-up-short"></i></span>
+  </div>
+  <!-- end scroll to top button -->
+
+
+  <!-- ======= start Header ======= -->
+  <header id="site-header" class="header-sticky">
+    <div class="nav-shell">
+      <!-- Left: Logo -->
+      <div class="nav-left">
+        <a class="navbar-brand" href="#top"><img src="images/logo1.png" class="logo" alt="Ulusal Afet Ağı"></a>
+      </div>
+      
+      <!-- Center: Nav Links (Absolute Centered on Desktop) -->
+      <nav class="nav-center desktop-nav">
+        <div class="navbar-collapse">
+          <ul class="navbar-nav menu" id="navbar">
+            <li class="nav-item">
+              <a class="nav-link" href="#neden-variz">Neden Varız?</a>
+            </li>
+            <li class="nav-item">
+              <a class="nav-link" href="#nasil-calisir">Nasıl Çalışır?</a>
+            </li>
+            <li class="nav-item">
+              <a class="nav-link" href="kayit.html">Ağa Katıl</a>
+            </li>
+          </ul>
+        </div>
+      </nav>
+      
+      <!-- Right: Actions (Desktop: Language + CTA + Theme | Mobile: Theme + Hamburger) -->
+      <div class="nav-right">
+        <!-- Language Dropdown (Desktop Only) -->
+        <div class="language-dropdown-wrapper desktop-language-dropdown">
+          <button 
+            type="button" 
+            id="language-dropdown-trigger" 
+            class="language-dropdown-trigger" 
+            aria-haspopup="menu" 
+            aria-expanded="false"
+            aria-label="Dil seçimi">
+            <span class="language-flag" id="language-flag">
+              <!-- TR Flag SVG -->
+              <svg width="18" height="18" viewBox="0 0 18 18" fill="none" xmlns="http://www.w3.org/2000/svg" class="flag-icon">
+                <rect width="18" height="18" fill="#E30A17"/>
+                <!-- Crescent (Hilal) -->
+                <circle cx="7" cy="9" r="4" fill="#FFFFFF"/>
+                <circle cx="8.5" cy="9" r="3.5" fill="#E30A17"/>
+                <!-- Star -->
+                <path d="M12.5 6.5L12.8 7.3L13.6 7.1L12.9 7.6L13.2 8.4L12.5 7.9L11.8 8.4L12.1 7.6L11.4 7.1L12.2 7.3Z" fill="#FFFFFF"/>
+              </svg>
+            </span>
+            <span class="language-code" id="language-code">TR</span>
+            <i class="bi bi-chevron-down language-chevron"></i>
+          </button>
+          <div id="language-dropdown-menu" class="language-dropdown-menu" role="menu" aria-hidden="true">
+            <button 
+              type="button" 
+              class="language-menu-item" 
+              role="menuitem" 
+              data-lang="tr"
+              aria-label="Türkçe">
+              <span class="language-flag">
+                <svg width="18" height="18" viewBox="0 0 18 18" fill="none" xmlns="http://www.w3.org/2000/svg" class="flag-icon">
+                  <rect width="18" height="18" fill="#E30A17"/>
+                  <!-- Crescent (Hilal) -->
+                  <circle cx="7" cy="9" r="4" fill="#FFFFFF"/>
+                  <circle cx="8.5" cy="9" r="3.5" fill="#E30A17"/>
+                  <!-- Star -->
+                  <path d="M12.5 6.5L12.8 7.3L13.6 7.1L12.9 7.6L13.2 8.4L12.5 7.9L11.8 8.4L12.1 7.6L11.4 7.1L12.2 7.3Z" fill="#FFFFFF"/>
+                </svg>
+              </span>
+              <span class="language-code-small">TR</span>
+              <span class="language-name">Türkçe</span>
+            </button>
+            <button 
+              type="button" 
+              class="language-menu-item" 
+              role="menuitem" 
+              data-lang="en"
+              aria-label="English">
+              <span class="language-flag">
+                <svg width="18" height="18" viewBox="0 0 18 18" fill="none" xmlns="http://www.w3.org/2000/svg" class="flag-icon">
+                  <rect width="18" height="18" fill="#012169"/>
+                  <path d="M0 0L18 18M18 0L0 18" stroke="#FFFFFF" stroke-width="2"/>
+                  <path d="M0 0L18 18M18 0L0 18" stroke="#C8102E" stroke-width="1.2"/>
+                  <path d="M9 0V18M0 9H18" stroke="#FFFFFF" stroke-width="2.5"/>
+                  <path d="M9 0V18M0 9H18" stroke="#C8102E" stroke-width="1.5"/>
+                </svg>
+              </span>
+              <span class="language-code-small">EN</span>
+              <span class="language-name">English</span>
+            </button>
+          </div>
+        </div>
+        
+        <!-- CTA Button (Desktop Only) -->
+        <a class="btn btn-cta desktop-cta" href="kayit.html" aria-label="Ağa Katıl – 2 Dakikada Kayıt">Ağa Katıl</a>
+        
+        <!-- Dark Mode Toggle (Visible on both desktop and mobile) -->
+        <button id="mode-toggle" class="btn-light-mode switch-button mode-toggle-universal" aria-label="Karanlık mod">
+          <i id="mode-icon" class="bi bi-moon-fill"></i>
+        </button>
+        
+        <!-- Mobile Actions: Hamburger (Mobile only) -->
+        <div class="mobile-actions">
+          <button id="mobile-menu-toggle" class="mobile-menu-toggle" type="button" aria-controls="mobile-menu" aria-expanded="false" aria-label="Menüyü aç">
+            <i class="bi bi-list" id="menu-icon"></i>
+          </button>
+        </div>
+      </div>
+    </div>
+  </header>
+  <!-- ======= end Header ======= -->
+
+  <!-- ======= Mobile Menu Drawer (Fixed Overlay) ======= -->
+  <div id="mobile-menu-wrapper" class="mobile-menu-wrapper" aria-hidden="true">
+    <!-- Overlay -->
+    <button 
+      id="mobile-menu-overlay" 
+      class="mobile-menu-overlay" 
+      aria-label="Menüyü kapat"
+      type="button">
+    </button>
+    
+    <!-- Drawer Panel -->
+    <aside 
+      id="mobile-menu" 
+      class="mobile-menu-drawer" 
+      role="dialog" 
+      aria-modal="true" 
+      aria-labelledby="mobile-menu-title">
+      <!-- Header with Swipe Handle -->
+      <div class="mobile-menu-header">
+        <div class="mobile-menu-swipe-handle"></div>
+        <div class="mobile-menu-header-content">
+          <h2 id="mobile-menu-title" class="mobile-menu-title">Menü</h2>
+          <button 
+            id="mobile-menu-close" 
+            class="mobile-menu-close" 
+            aria-label="Kapat" 
+            type="button">
+            <i class="bi bi-x-lg"></i>
+          </button>
+        </div>
+      </div>
+
+      <!-- Navigation Links -->
+      <nav class="mobile-menu-nav">
+        <!-- Primary Section -->
+        <div class="mobile-menu-section">
+          <div class="mobile-menu-section-label">Ana Menü</div>
+          <a href="#neden-variz" class="mobile-nav-item">
+            <i class="bi bi-question-circle" aria-hidden="true"></i>
+            <span>Neden Varız?</span>
+            <i class="bi bi-chevron-right mobile-nav-chevron" aria-hidden="true"></i>
+          </a>
+          <a href="#nasil-calisir" class="mobile-nav-item">
+            <i class="bi bi-gear" aria-hidden="true"></i>
+            <span>Nasıl Çalışır?</span>
+            <i class="bi bi-chevron-right mobile-nav-chevron" aria-hidden="true"></i>
+          </a>
+          <a href="#disaster-scenario" class="mobile-nav-item">
+            <i class="bi bi-exclamation-triangle" aria-hidden="true"></i>
+            <span>Afet Senaryosu</span>
+            <i class="bi bi-chevron-right mobile-nav-chevron" aria-hidden="true"></i>
+          </a>
+        </div>
+
+      </nav>
+
+      <!-- Bottom Actions (Fixed at bottom) -->
+      <div class="mobile-menu-footer">
+        <!-- Language Selector (Compact) -->
+        <div class="mobile-language-compact">
+          <button 
+            type="button" 
+            id="mobile-language-dropdown-trigger" 
+            class="mobile-language-trigger" 
+            aria-haspopup="dialog" 
+            aria-expanded="false"
+            aria-label="Dil seçimi">
+            <span class="language-flag" id="mobile-current-flag">
+              <svg width="18" height="18" viewBox="0 0 20 20" fill="none" xmlns="http://www.w3.org/2000/svg">
+                <rect width="20" height="20" rx="2" fill="#E30A17"/>
+                <!-- Crescent (Hilal) -->
+                <circle cx="7.5" cy="10" r="4.5" fill="#FFFFFF"/>
+                <circle cx="9" cy="10" r="4" fill="#E30A17"/>
+                <!-- Star -->
+                <path d="M13.5 7.5L13.8 8.3L14.6 8.1L13.9 8.6L14.2 9.4L13.5 8.9L12.8 9.4L13.1 8.6L12.4 8.1L13.2 8.3Z" fill="#FFFFFF"/>
+              </svg>
+            </span>
+            <span class="language-name-compact" id="mobile-language-name">Türkçe</span>
+            <i class="bi bi-chevron-down language-chevron"></i>
+          </button>
+        </div>
+        
+        <!-- Language Selection Bottom Sheet Modal -->
+        <div class="mobile-language-menu-overlay" id="mobile-language-menu-overlay" aria-hidden="true"></div>
+        <div class="mobile-language-menu" id="mobile-language-dropdown-menu" role="dialog" aria-modal="true" aria-labelledby="mobile-language-menu-title" aria-hidden="true">
+          <div class="mobile-language-menu-header">
+            <h3 class="mobile-language-menu-title" id="mobile-language-menu-title">Dil Seç</h3>
+            <button class="mobile-language-menu-close" id="mobile-language-menu-close" aria-label="Kapat" type="button">
+              <i class="bi bi-x-lg"></i>
+            </button>
+          </div>
+          <div class="mobile-language-menu-items">
+            <button class="mobile-language-menu-item" data-locale="tr" role="menuitem" type="button">
+              <span class="language-flag">
+                <svg width="28" height="28" viewBox="0 0 20 20" fill="none" xmlns="http://www.w3.org/2000/svg">
+                  <rect width="20" height="20" rx="2" fill="#E30A17"/>
+                  <circle cx="7.5" cy="10" r="4.5" fill="#FFFFFF"/>
+                  <circle cx="9" cy="10" r="4" fill="#E30A17"/>
+                  <path d="M13.5 7.5L13.8 8.3L14.6 8.1L13.9 8.6L14.2 9.4L13.5 8.9L12.8 9.4L13.1 8.6L12.4 8.1L13.2 8.3Z" fill="#FFFFFF"/>
+                </svg>
+              </span>
+              <span class="language-code">TR</span>
+              <span class="language-name">Türkçe</span>
+            </button>
+            <button class="mobile-language-menu-item" data-locale="en" role="menuitem" type="button">
+              <span class="language-flag">
+                <svg width="28" height="28" viewBox="0 0 20 20" fill="none" xmlns="http://www.w3.org/2000/svg">
+                  <rect width="20" height="20" rx="2" fill="#012169"/>
+                  <path d="M0 0l20 20M20 0L0 20" stroke="white" stroke-width="2"/>
+                  <path d="M0 0l20 20M20 0L0 20" stroke="#C8102E" stroke-width="1.2"/>
+                </svg>
+              </span>
+              <span class="language-code">EN</span>
+              <span class="language-name">English</span>
+            </button>
+          </div>
+        </div>
+
+        <!-- CTA Button -->
+        <a href="kayit.html" class="mobile-menu-cta">
+          <i class="bi bi-diagram-3-fill me-2"></i>Ağa Katıl
+          <i class="bi bi-arrow-right ms-2"></i>
+        </a>
+      </div>
+    </aside>
+  </div>
+  <!-- ======= end Mobile Menu Drawer ======= -->
+
+  <!-- ============== Start Hero section ========== -->
+  <section class="hero-modern d-flex flex-column justify-content-center align-items-center" id="hero">
+    <div id="particles-js"></div>
+    <!-- Network Pattern Background -->
+    <div class="network-pattern-bg">
+      <svg class="network-pattern-svg" viewBox="0 0 1200 800" xmlns="http://www.w3.org/2000/svg">
+        <defs>
+          <pattern id="networkPattern" x="0" y="0" width="100" height="100" patternUnits="userSpaceOnUse">
+            <circle cx="50" cy="50" r="2" fill="rgba(27, 94, 214, 0.15)"/>
+            <line x1="50" y1="50" x2="150" y2="50" stroke="rgba(27, 94, 214, 0.08)" stroke-width="0.5"/>
+            <line x1="50" y1="50" x2="50" y2="150" stroke="rgba(27, 94, 214, 0.08)" stroke-width="0.5"/>
+            <line x1="50" y1="50" x2="150" y2="150" stroke="rgba(27, 94, 214, 0.06)" stroke-width="0.5"/>
+          </pattern>
+        </defs>
+        <rect width="100%" height="100%" fill="url(#networkPattern)"/>
+      </svg>
+    </div>
+    <div class="container">
+      <div class="row justify-content-center align-items-center">
+        <div class="hero-text col-12 col-lg-6">
+          <div class="hero-content-modern">
+            <!-- System Status Badge -->
+            <div class="system-status-badge" data-aos="fade-up" data-aos-delay="50">
+              <span class="status-indicator-dot active"></span>
+              <span class="status-text">Sistem Aktif</span>
+              <span class="status-update-time" id="system-last-update">Son güncelleme: <span id="update-time-text">2 dk önce</span></span>
+            </div>
+            
+            <div class="hero-eyebrow" data-aos="fade-up" data-aos-delay="100">Ulusal Afet Koordinasyon Ağı</div>
+            <h1 class="hero-title-modern" data-aos="fade-up" data-aos-delay="150">
+              Afet Hazırlık ve <span class="hero-accent">Koordinasyon Sistemi</span>
+            </h1>
+            <p class="hero-subtitle-modern" data-aos="fade-up" data-aos-delay="200">
+              Türkiye genelinde aktif afet hazırlık ağı. Mahalle bazlı koordinasyon, gerçek zamanlı durum takibi ve güvenli iletişim altyapısı.
+            </p>
+            <div class="hero-actions-modern" data-aos="fade-up" data-aos-delay="250">
+              <a href="kayit.html" class="btn btn-hero-primary" aria-label="Ağa Katıl">
+                <i class="bi bi-diagram-3-fill me-2"></i>Ağa Katıl
+                <i class="bi bi-arrow-right ms-2"></i>
+              </a>
+              <a href="hazirlik-testi.html" class="btn btn-hero-secondary">
+                <i class="bi bi-clipboard-check me-2"></i>Hazırlık Değerlendirmesi
+              </a>
+            </div>
+            <div class="hero-stats-modern" data-aos="fade-up" data-aos-delay="300">
+              <div class="hero-stat-card">
+                <div class="hero-stat-number" id="count-up-joined">0</div>
+                <div class="hero-stat-label">Son 24 saatte ağa bağlanan</div>
+              </div>
+              <div class="hero-stat-card">
+                <div class="hero-stat-number">81</div>
+                <div class="hero-stat-label">Aktif il koordinasyonu</div>
+              </div>
+              <div class="hero-stat-card">
+                <div class="hero-stat-number" id="network-total-users">0</div>
+                <div class="hero-stat-label">Toplam kayıtlı kullanıcı</div>
+              </div>
+            </div>
+          </div>
+        </div>
+        <div class="col-12 col-lg-6" data-aos="fade-left" data-aos-delay="200">
+          <!-- Network Status Card -->
+          <div class="network-status-card">
+            <div class="network-status-header">
+              <div class="network-status-title">
+                <i class="bi bi-activity me-2"></i>
+                <span>Ağ Durumu</span>
+              </div>
+              <div class="network-status-indicator">
+                <span class="status-dot active"></span>
+                <span class="status-text">Aktif</span>
+              </div>
+            </div>
+            <div class="network-status-metrics">
+              <div class="network-metric">
+                <div class="metric-value" id="network-active-users">12,847</div>
+                <div class="metric-label">Aktif Kullanıcı</div>
+              </div>
+              <div class="network-metric">
+                <div class="metric-value" id="network-volunteers">3,421</div>
+                <div class="metric-label">Doğrulanmış Gönüllü</div>
+              </div>
+              <div class="network-metric">
+                <div class="metric-value" id="network-update-time">2 dk önce</div>
+                <div class="metric-label">Son Güncelleme</div>
+              </div>
+            </div>
+          </div>
+          
+          <div class="hero-map-card">
+            <div class="map-header">
+              <h3 class="map-title">Türkiye Afet Hazırlık Durumu</h3>
+              <span class="map-subtitle">Bölgesel Hazırlık Seviyeleri</span>
+            </div>
+            <div class="gis-map-container" id="gis-map-container">
+              <!-- Real Turkey Map using Leaflet -->
+              <div id="turkey-disaster-map"></div>
+              
+              <!-- Legend Toggle Button (shown when legend is closed) -->
+              <button class="legend-toggle-btn" id="legend-toggle-btn" aria-label="Legend'ı aç" style="display: none;">
+                <i class="bi bi-info-circle"></i>
+              </button>
+              
+              <!-- Map Legend -->
+              <div class="map-legend-gis" id="map-legend-gis">
+                <div class="legend-header">
+                  <span class="legend-title">Hazırlık Seviyesi</span>
+                  <button class="legend-close-btn" id="legend-close-btn" aria-label="Legend'ı kapat">
+                    <i class="bi bi-x-lg"></i>
+                  </button>
+                </div>
+                <div class="legend-items">
+                  <div class="legend-item-gis">
+                    <div class="legend-color-box" style="background: #1B5ED6; border-color: #1B5ED6;"></div>
+                    <span class="legend-label-gis">Düşük Risk</span>
+                  </div>
+                  <div class="legend-item-gis">
+                    <div class="legend-color-box" style="background: #FFB300; border-color: #F57C00;"></div>
+                    <span class="legend-label-gis">Orta Risk</span>
+                  </div>
+                  <div class="legend-item-gis">
+                    <div class="legend-color-box" style="background: #E53935; border-color: #C62828;"></div>
+                    <span class="legend-label-gis">Yüksek Risk</span>
+                  </div>
+                </div>
+                <div class="legend-divider"></div>
+                <div class="legend-fault-toggle">
+                  <label class="fault-toggle-label">
+                    <input type="checkbox" id="fault-line-toggle" class="fault-toggle-input">
+                    <span class="fault-toggle-slider"></span>
+                    <div class="fault-toggle-content">
+                      <div class="legend-line" style="border-top: 2px dashed #6C5F5B; opacity: 0.8;"></div>
+                      <span class="legend-label-gis">Fay Hattı</span>
+                    </div>
+                  </label>
+                </div>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+  <!-- ============== End Hero section ========== -->
+
+  <!-- ============== Start Why We Exist Section ========== -->
+  <section class="container services py-5 section-alt-bg bg-pattern" id="neden-variz" style="position: relative;">
+    <div class="page-container">
+      <div class="feature-grid feature-grid-3">
+        <!-- Kart 1: Önce Ailem Güvende Olsun Diye -->
+        <div class="feature-card" data-aos="fade-up" data-aos-delay="200">
+          <h3 class="feature-card-title">Önce Ailem Güvende Olsun Diye</h3>
+          <p class="feature-card-description">
+            Afet anında insanın ilk refleksi ailesine ulaşmaktır. Sevdiklerinin nerede olduğunu, güvende olup olmadığını bilmek ister. Bu bilgiye ulaşamamak panik ve belirsizliği artırır. Ailesinin durumunu bilen insan, daha sağlıklı karar verir. Aile güvende olmadan kimse bir sonraki adıma geçemez.
+          </p>
+          <div class="feature-card-stat">
+            <i class="bi bi-diagram-3 me-1"></i> Aile ağı odaklı
+          </div>
+        </div>
+        
+        <!-- Kart 2: Birbirimizi Yalnız Bırakmamak İçin -->
+        <div class="feature-card" data-aos="fade-up" data-aos-delay="250">
+          <h3 class="feature-card-title">Birbirimizi Yalnız Bırakmamak İçin</h3>
+          <p class="feature-card-description">
+            Aileden sonra çevreyle ağ bağlantısı kurabilmek önemlidir. Kimin yardıma ihtiyacı olduğunu bilmek hayati önem taşır. Bu ağ bağlantısı kurulamadığında insanlar kendini yalnız hisseder. Bir ağın parçası olduğunu bilmek panikten kurtarır.
+          </p>
+          <div class="feature-card-stat">
+            <i class="bi bi-share-network me-1"></i> Toplumsal ağ bağlantısı
+          </div>
+        </div>
+        
+        <!-- Kart 3: Birlikte Yardım Edebilmek İçin -->
+        <div class="feature-card" data-aos="fade-up" data-aos-delay="300">
+          <h3 class="feature-card-title">Birlikte Yardım Edebilmek İçin</h3>
+          <p class="feature-card-description">
+            İnsan yalnızca yardım istemek değil, yardım edebilmek de ister. Ailesi güvende olan birey ağ üzerinden başkalarına destek olabilir. Bu dayanışma ağı afet etkilerini azaltır. Birlikte hareket eden toplumlar daha hızlı toparlanır.
+          </p>
+          <div class="feature-card-stat">
+            <i class="bi bi-diagram-3-fill me-1"></i> Ağ dayanışması
+          </div>
+        </div>
+      </div>
+      
+      <!-- Özet Cümle -->
+      <div class="text-center mt-5" data-aos="fade-up" data-aos-delay="350">
+        <p class="section-description" style="font-size: 1.1rem; max-width: 800px; margin: 0 auto; line-height: 1.8;">
+          <strong>Ulusal Afet Ağı, insanların afet anında yalnız kalmaması ve ağ üzerinden birbirine yardım edebilmesi için kurulmuştur.</strong>
+        </p>
+      </div>
+      
+      <!-- Afet Hazırlık Testini Çöz Button -->
+      <div class="text-center mt-5" data-aos="fade-up" data-aos-delay="400">
+        <a href="hazirlik-testi.html" class="btn btn-primary-premium-cta">
+          <i class="bi bi-clipboard-check me-2"></i>Ağ Hazırlık Testini Çöz
+          <i class="bi bi-arrow-right ms-2"></i>
+        </a>
+      </div>
+    </div>
+  </section>
+  <!-- ============== End Why We Exist Section ========== -->
+
+  <!-- Section Connector -->
+  <div class="section-connector">
+    <div class="connector-line"></div>
+    <div class="connector-node"></div>
+    <div class="connector-line"></div>
+  </div>
+
+  <!-- ============== Start About section (Nasıl Çalışır) ========== -->
+  <section class="about py-5 how-it-works how-it-works-premium" id="nasil-calisir">
+    <div class="page-container">
+      <!-- Premium Wrapper Panel with Gradient Background -->
+      <div class="how-it-works-wrapper-premium">
+        <!-- Title Block -->
+        <div class="how-it-works-header-premium text-center" data-aos="fade-up">
+          <span class="section-eyebrow-premium">Ağ Entegrasyonu</span>
+          <h2 class="how-it-works-title-premium">Ağa Katılım Süreci</h2>
+          <p class="how-it-works-description-premium">Kayıt, bilgi tamamlama ve ağ bağlantısı kurulumu</p>
+        </div>
+
+        <!-- Network Flow Visual - Connected Nodes -->
+        <div class="network-flow-container" id="how-it-works-stepper" data-aos="fade-up" data-aos-delay="100">
+          <div class="network-flow-wrapper">
+            <!-- Node 1 -->
+            <div class="network-node active" data-step="1">
+              <div class="network-node-circle active">
+                <span class="network-node-number">1</span>
+                <i class="bi bi-check network-node-check" style="display: none;"></i>
+              </div>
+              <div class="network-node-label">
+                <span class="label-full">Ağa Katıl</span>
+                <span class="label-mobile">Kayıt</span>
+              </div>
+            </div>
+            
+            <!-- Connection Line 1 -->
+            <div class="network-connection">
+              <svg class="network-connection-line" viewBox="0 0 100 10" preserveAspectRatio="none">
+                <line x1="0" y1="5" x2="100" y2="5" stroke="rgba(27, 94, 214, 0.3)" stroke-width="2" class="connection-line-path"/>
+                <circle class="connection-pulse" cx="50" cy="5" r="3" fill="rgba(27, 94, 214, 0.6)">
+                  <animate attributeName="r" values="3;6;3" dur="2s" repeatCount="indefinite"/>
+                  <animate attributeName="opacity" values="0.6;0.2;0.6" dur="2s" repeatCount="indefinite"/>
+                </circle>
+              </svg>
+            </div>
+            
+            <!-- Node 2 -->
+            <div class="network-node pending" data-step="2">
+              <div class="network-node-circle pending">
+                <span class="network-node-number">2</span>
+                <i class="bi bi-check network-node-check" style="display: none;"></i>
+              </div>
+              <div class="network-node-label">
+                <span class="label-full">Bilgi Tamamlama</span>
+                <span class="label-mobile">Bilgi</span>
+              </div>
+            </div>
+            
+            <!-- Connection Line 2 -->
+            <div class="network-connection">
+              <svg class="network-connection-line" viewBox="0 0 100 10" preserveAspectRatio="none">
+                <line x1="0" y1="5" x2="100" y2="5" stroke="rgba(27, 94, 214, 0.2)" stroke-width="2" class="connection-line-path"/>
+              </svg>
+            </div>
+            
+            <!-- Node 3 -->
+            <div class="network-node pending" data-step="3">
+              <div class="network-node-circle pending">
+                <span class="network-node-number">3</span>
+                <i class="bi bi-check network-node-check" style="display: none;"></i>
+              </div>
+              <div class="network-node-label">
+                <span class="label-full">Ağ Entegrasyonu</span>
+                <span class="label-mobile">Ağ</span>
+              </div>
+            </div>
+          </div>
+        </div>
+
+        <!-- 2-Column Grid Layout: Left (5/12) + Right (7/12) - Desktop Only -->
+        <div class="how-it-works-grid-premium">
+          <!-- LEFT COLUMN (5/12): Benefit Cards + Trust Badges - Desktop Only -->
+          <div class="how-it-works-left-premium">
+
+            <!-- Benefit Cards Stack -->
+            <div class="how-it-works-benefits-premium" data-aos="fade-up" data-aos-delay="150">
+              <div class="benefit-card-premium">
+                <div class="benefit-icon-premium">
+                  <i class="bi bi-clock-fill"></i>
+                </div>
+                <span class="benefit-text-premium">2 dakikada kayıt</span>
+              </div>
+              <div class="benefit-card-premium">
+                <div class="benefit-icon-premium">
+                  <i class="bi bi-shield-lock-fill"></i>
+                </div>
+                <span class="benefit-text-premium">Gizli ve güvenli</span>
+              </div>
+              <div class="benefit-card-premium">
+                <div class="benefit-icon-premium">
+                  <i class="bi bi-people-fill"></i>
+                </div>
+                <span class="benefit-text-premium">Komşularınla ağ bağlantısı kur</span>
+              </div>
+            </div>
+
+            <!-- Trust Badges Row -->
+            <div class="how-it-works-trust-premium" data-aos="fade-up" data-aos-delay="200">
+              <div class="trust-badge-premium">
+                <i class="bi bi-geo-alt-fill"></i>
+                <span>81 ilde aktif</span>
+              </div>
+              <div class="trust-badge-premium">
+                <i class="bi bi-check-circle-fill"></i>
+                <span>KVKK uyumlu</span>
+              </div>
+              <div class="trust-badge-premium">
+                <i class="bi bi-shield-check"></i>
+                <span>AFAD entegrasyonu</span>
+              </div>
+            </div>
+          </div>
+
+          <!-- RIGHT COLUMN (7/12): Elevated Form Card -->
+          <div class="how-it-works-right-premium">
+            <!-- Large Elevated Form Card -->
+            <div class="form-card-premium">
+        <!-- Step 1: Ağa Katıl -->
+        <div class="how-it-works-step active" id="how-it-works-step-1" data-step="1" data-aos="fade-up" data-aos-delay="250">
+          <!-- Form Card Header -->
+          <header class="form-card-header-premium">
+            <div class="form-card-header-top">
+              <span class="step-badge-premium-form">1</span>
+              <div class="form-card-header-content">
+                <h3 class="form-card-title-premium">Ağ Kaydı</h3>
+                <span class="form-card-progress-premium">Adım 1 / 3</span>
+              </div>
+              <i class="bi bi-chevron-down accordion-chevron-mobile"></i>
+            </div>
+            <div class="form-card-divider-premium"></div>
+          </header>
+          <!-- Form Card Body -->
+          <div class="form-card-body-premium">
+            <p class="form-card-lead-premium">Temel bilgilerini girerek güvenli mahalle ağına bağlan.</p>
+            
+            <form id="how-it-works-form-1" class="how-it-works-form-premium">
+                <div class="form-group-wrapper">
+                  <div class="form-group">
+                    <label for="hiw-fullName" class="form-label">
+                      Ad Soyad <span class="text-danger">*</span>
+                    </label>
+                    <div class="input-wrapper">
+                      <input type="text" class="form-control" id="hiw-fullName" name="fullName" required placeholder="Adınız ve soyadınız">
+                      <i class="bi bi-check-circle-fill input-check" style="display: none;"></i>
+                    </div>
+                  </div>
+
+                  <div class="form-group">
+                    <label for="hiw-phone" class="form-label">
+                      Telefon Numarası <span class="text-muted" style="font-size: 0.85rem;">(Acil bildirimler için – önerilen)</span>
+                    </label>
+                    <div class="input-wrapper">
+                      <input type="tel" class="form-control" id="hiw-phone" name="phone" placeholder="05XX XXX XX XX" pattern="[0-9]{10,11}">
+                      <i class="bi bi-check-circle-fill input-check" style="display: none;"></i>
+                    </div>
+                    <small class="form-text text-muted">10-11 haneli telefon numaranızı giriniz</small>
+                  </div>
+
+                  <div class="form-group">
+                    <label for="hiw-birthDate" class="form-label">
+                      Doğum Tarihi <span class="text-danger">*</span>
+                    </label>
+                    <div class="input-wrapper">
+                      <input type="date" class="form-control" id="hiw-birthDate" name="birthDate" required>
+                      <i class="bi bi-check-circle-fill input-check" style="display: none;"></i>
+                    </div>
+                    <div class="age-display mt-2" id="age-display" style="display: none;">
+                      <span class="age-badge"></span>
+                      <span class="age-message"></span>
+                    </div>
+                  </div>
+                </div>
+
+            <!-- Form Actions Footer -->
+            <div class="form-actions-premium">
+              <div class="form-actions-divider-premium"></div>
+              <div class="form-actions-content-premium">
+                <button type="submit" class="btn btn-primary-premium" id="hiw-step1-submit">
+                  <span class="btn-text">Devam Et</span>
+                  <span class="btn-loader" style="display: none;">
+                    <span class="spinner-border spinner-border-sm" role="status" aria-hidden="true"></span>
+                  </span>
+                </button>
+              </div>
+            </div>
+          </form>
+          </div>
+        </div>
+
+        <!-- Step 2: Bilgilerini Tamamla -->
+        <div class="how-it-works-step" id="how-it-works-step-2" data-step="2" style="display: none;">
+          <!-- Form Card Header -->
+          <header class="form-card-header-premium">
+            <div class="form-card-header-top">
+              <span class="step-badge-premium-form">2</span>
+              <div class="form-card-header-content">
+                <h3 class="form-card-title-premium">Bilgi Tamamlama</h3>
+                <span class="form-card-progress-premium">Adım 2 / 3</span>
+              </div>
+              <i class="bi bi-chevron-down accordion-chevron-mobile"></i>
+            </div>
+            <div class="form-card-divider-premium"></div>
+          </header>
+          <!-- Form Card Body -->
+          <div class="form-card-body-premium">
+              <p class="step-lead">Yaşadığın yeri ve bina bilgilerini paylaş, seni doğru ağ grubuna bağlayalım.</p>
+              
+              <form id="how-it-works-form-2" class="how-it-works-form">
+                <div class="form-group-wrapper">
+                  <div class="form-group">
+                    <label for="hiw-city" class="form-label">
+                      İl <span class="text-danger">*</span>
+                    </label>
+                    <div class="input-wrapper">
+                      <select class="form-select" id="hiw-city" name="city" required>
+                        <option value="">İl seçiniz</option>
+                        <option value="01">Adana</option>
+                        <option value="06">Ankara</option>
+                        <option value="07">Antalya</option>
+                        <option value="16">Bursa</option>
+                        <option value="26">Eskişehir</option>
+                        <option value="27">Gaziantep</option>
+                        <option value="34">İstanbul</option>
+                        <option value="35">İzmir</option>
+                        <option value="58">Sivas</option>
+                        <option value="61">Trabzon</option>
+                      </select>
+                      <i class="bi bi-check-circle-fill input-check" style="display: none;"></i>
+                    </div>
+                  </div>
+
+                  <div class="form-group">
+                    <label for="hiw-district" class="form-label">
+                      İlçe <span class="text-danger">*</span>
+                    </label>
+                    <div class="input-wrapper">
+                      <input type="text" class="form-control" id="hiw-district" name="district" required placeholder="İlçe adınız" disabled>
+                      <i class="bi bi-check-circle-fill input-check" style="display: none;"></i>
+                    </div>
+                  </div>
+
+                  <div class="form-group">
+                    <label for="hiw-neighborhood" class="form-label">
+                      Mahalle <span class="text-danger">*</span>
+                    </label>
+                    <div class="input-wrapper">
+                      <input type="text" class="form-control" id="hiw-neighborhood" name="neighborhood" required placeholder="Mahalle adınız" disabled>
+                      <i class="bi bi-check-circle-fill input-check" style="display: none;"></i>
+                    </div>
+                  </div>
+
+                  <div class="form-group">
+                    <label for="hiw-buildingAge" class="form-label">
+                      Bina Yaşı <span class="text-danger">*</span>
+                    </label>
+                    <div class="input-wrapper">
+                      <select class="form-select" id="hiw-buildingAge" name="buildingAge" required>
+                        <option value="">Seçiniz</option>
+                        <option value="0-5">0-5 yıl</option>
+                        <option value="6-10">6-10 yıl</option>
+                        <option value="11-20">11-20 yıl</option>
+                        <option value="21-30">21-30 yıl</option>
+                        <option value="30+">30+ yıl</option>
+                      </select>
+                      <i class="bi bi-check-circle-fill input-check" style="display: none;"></i>
+                    </div>
+                  </div>
+
+                  <div class="form-group">
+                    <label for="hiw-floor" class="form-label">
+                      Kat Bilgisi <span class="text-danger">*</span>
+                    </label>
+                    <div class="input-wrapper">
+                      <input type="number" class="form-control" id="hiw-floor" name="floor" required placeholder="Bulunduğunuz kat" min="0" max="100">
+                      <i class="bi bi-check-circle-fill input-check" style="display: none;"></i>
+                    </div>
+                  </div>
+                </div>
+
+            <!-- Form Actions Footer -->
+            <div class="form-actions-premium">
+              <div class="form-actions-divider-premium"></div>
+              <div class="form-actions-content-premium">
+                <button type="button" class="btn btn-outline-secondary-premium" id="hiw-step2-back">
+                  Geri
+                </button>
+                <button type="submit" class="btn btn-primary-premium" id="hiw-step2-submit" disabled>
+                  <span class="btn-text">Devam Et</span>
+                  <span class="btn-loader" style="display: none;">
+                    <span class="spinner-border spinner-border-sm" role="status" aria-hidden="true"></span>
+                  </span>
+                </button>
+              </div>
+            </div>
+          </form>
+          </div>
+        </div>
+
+        <!-- Step 3: Güvenli Ağa Dahil Ol -->
+        <div class="how-it-works-step" id="how-it-works-step-3" data-step="3" style="display: none;">
+          <!-- Form Card Header -->
+          <header class="form-card-header-premium">
+            <div class="form-card-header-top">
+              <span class="step-badge-premium-form">3</span>
+              <div class="form-card-header-content">
+                <h3 class="form-card-title-premium">Ağ Entegrasyonu Tamamlandı</h3>
+                <span class="form-card-progress-premium">Adım 3 / 3</span>
+              </div>
+              <i class="bi bi-chevron-down accordion-chevron-mobile"></i>
+            </div>
+            <div class="form-card-divider-premium"></div>
+          </header>
+          <!-- Form Card Body -->
+          <div class="form-card-body-premium">
+              <div class="success-state text-center">
+                <div class="success-icon mb-3">
+                  <i class="bi bi-check-circle-fill" style="font-size: 4rem; color: var(--brand-color);"></i>
+                </div>
+                <h4 class="success-title" id="success-greeting">Ağ entegrasyonu tamamlandı</h4>
+                <p class="step-lead">Bölgesel koordinasyon ağına bağlandınız. Afet durumlarında otomatik bildirimler alacaksınız.</p>
+              </div>
+            </div>
+          </div>
+        </div>
+
+            </div>
+          </div>
+        </div>
+      </div>
+
+      <!-- Optional Step: Afet Görüşlerini Paylaş - Separate Card After Main Steps -->
+      <div class="how-it-works-optional-section" id="how-it-works-optional" style="display: none;">
+        <div class="form-card-premium optional-step-card">
+          <header class="form-card-header-premium">
+            <div class="form-card-header-top">
+              <span class="step-badge-premium-form optional">?</span>
+              <div class="form-card-header-content">
+                <h3 class="form-card-title-premium">Afet Görüşlerini Paylaş <span class="optional-badge">(İsteğe Bağlı)</span></h3>
+              </div>
+            </div>
+            <div class="form-card-divider-premium"></div>
+          </header>
+          <div class="form-card-body-premium">
+            <p class="step-lead">2 dakikalık kısa bir anketle afet algını paylaşabilirsin.</p>
+            
+            <div class="optional-step-actions text-center mt-4">
+              <button type="button" class="btn btn-primary btn-lg mb-3" id="hiw-start-survey" style="width: 100%; max-width: 400px;">
+                Cevaplamak istiyorum
+              </button>
+              <div>
+                <button type="button" class="btn btn-link text-muted" id="hiw-skip-survey">
+                  Şimdilik geç
+                </button>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+  <!-- ============== End About section (Nasıl Çalışır) ========== -->
+
+  <!-- ============== Start City Stats Section ========== -->
+  <section class="container py-5" id="city-stats-section" style="position: relative;">
+    <div class="page-container">
+      <div id="city-stats-container"></div>
+      
+      <!-- Afet Görüşlerini Paylaş Button -->
+      <div class="text-center mt-5" data-aos="fade-up" data-aos-delay="400">
+        <a href="ag-gorusleri.html" class="btn btn-primary-premium-disaster">
+          <i class="bi bi-share-network me-2"></i>Ağ Görüşlerini Paylaş
+          <i class="bi bi-arrow-right ms-2"></i>
+        </a>
+      </div>
+    </div>
+  </section>
+  <!-- ============== End City Stats Section ========== -->
+
+  <!-- Section Connector -->
+  <div class="section-connector">
+    <div class="connector-line"></div>
+    <div class="connector-node"></div>
+    <div class="connector-line"></div>
+  </div>
+
+  <!-- ============== Start Disaster Scenario Section ========== -->
+  <section class="container py-5 section-alt-bg" id="disaster-scenario" style="position: relative;">
+    <div class="page-container">
+      <div class="text-center mb-5" data-aos="fade-up">
+        <span class="section-eyebrow-premium">Operasyonel Senaryo</span>
+        <h2 class="section-title-premium">Deprem Anında Sistem Nasıl Çalışır?</h2>
+        <p class="section-description-premium">Afet durumunda koordinasyon ve iletişim operasyonel akışı</p>
+      </div>
+      
+      <div class="operational-flow-container">
+        <!-- Step 1: Detection -->
+        <div class="operational-step" data-aos="fade-up" data-aos-delay="100">
+          <div class="operational-step-number">1</div>
+          <div class="operational-step-content">
+            <h3 class="operational-step-title">Deprem Tespiti</h3>
+            <p class="operational-step-description">
+              Sistem deprem tespitini gerçek zamanlı olarak alır. Bölgesel risk seviyeleri güncellenir ve ilgili kullanıcılara otomatik bildirim gönderilir.
+            </p>
+            <div class="operational-step-metrics">
+              <span class="metric-badge"><i class="bi bi-clock me-1"></i>0-30 saniye</span>
+              <span class="metric-badge"><i class="bi bi-broadcast me-1"></i>Otomatik bildirim</span>
+            </div>
+          </div>
+        </div>
+        
+        <!-- Connection Line -->
+        <div class="operational-connector" data-aos="fade-up" data-aos-delay="150">
+          <div class="connector-line-vertical"></div>
+          <div class="connector-node-small"></div>
+        </div>
+        
+        <!-- Step 2: Network Activation -->
+        <div class="operational-step" data-aos="fade-up" data-aos-delay="200">
+          <div class="operational-step-number">2</div>
+          <div class="operational-step-content">
+            <h3 class="operational-step-title">Ağ Aktivasyonu</h3>
+            <p class="operational-step-description">
+              Mahalle ve bölge bazlı koordinasyon ağları aktif hale gelir. Aile ağı bağlantıları kontrol edilir, güvenlik durumu sorgulanır.
+            </p>
+            <div class="operational-step-metrics">
+              <span class="metric-badge"><i class="bi bi-diagram-3 me-1"></i>Ağ bağlantıları aktif</span>
+              <span class="metric-badge"><i class="bi bi-people me-1"></i>Aile durumu takibi</span>
+            </div>
+          </div>
+        </div>
+        
+        <!-- Connection Line -->
+        <div class="operational-connector" data-aos="fade-up" data-aos-delay="250">
+          <div class="connector-line-vertical"></div>
+          <div class="connector-node-small"></div>
+        </div>
+        
+        <!-- Step 3: Coordination -->
+        <div class="operational-step" data-aos="fade-up" data-aos-delay="300">
+          <div class="operational-step-number">3</div>
+          <div class="operational-step-content">
+            <h3 class="operational-step-title">Koordinasyon ve Yardım</h3>
+            <p class="operational-step-description">
+              Yardım ihtiyacı olanlar tespit edilir. Kaynak dağıtımı koordine edilir. Karşılıklı yardım ağı üzerinden destek sağlanır.
+            </p>
+            <div class="operational-step-metrics">
+              <span class="metric-badge"><i class="bi bi-heart me-1"></i>Yardım koordinasyonu</span>
+              <span class="metric-badge"><i class="bi bi-share me-1"></i>Kaynak paylaşımı</span>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+  <!-- ============== End Disaster Scenario Section ========== -->
+
+  <!-- Section Connector -->
+  <div class="section-connector">
+    <div class="connector-line"></div>
+    <div class="connector-node"></div>
+    <div class="connector-line"></div>
+  </div>
+
+  <!-- ============== Start Trust & Security Section ========== -->
+  <section class="container py-5" id="trust-security" style="position: relative;">
+    <div class="page-container">
+      <div class="text-center mb-5" data-aos="fade-up">
+        <span class="section-eyebrow-premium">Güven ve Güvenlik</span>
+        <h2 class="section-title-premium">Ulusal Düzeyde Güvenilir Altyapı</h2>
+        <p class="section-description-premium">Veri güvenliği, gizlilik ve kurumsal güven standartları</p>
+      </div>
+      
+      <div class="trust-grid">
+        <!-- Trust Item 1: Data Security -->
+        <div class="trust-card" data-aos="fade-up" data-aos-delay="100">
+          <div class="trust-icon">
+            <i class="bi bi-shield-lock-fill"></i>
+          </div>
+          <h3 class="trust-title">Veri Güvenliği</h3>
+          <p class="trust-description">
+            Tüm veriler şifrelenmiş olarak saklanır. Endüstri standardı güvenlik protokolleri kullanılır. Düzenli güvenlik denetimleri yapılır.
+          </p>
+        </div>
+        
+        <!-- Trust Item 2: Privacy -->
+        <div class="trust-card" data-aos="fade-up" data-aos-delay="200">
+          <div class="trust-icon">
+            <i class="bi bi-file-earmark-lock-fill"></i>
+          </div>
+          <h3 class="trust-title">KVKK Uyumluluğu</h3>
+          <p class="trust-description">
+            Kişisel Verilerin Korunması Kanunu'na tam uyumlu. Veri işleme faaliyetleri şeffaf ve denetlenebilir. Kullanıcı hakları korunur.
+          </p>
+        </div>
+        
+        <!-- Trust Item 3: Institutional Trust -->
+        <div class="trust-card" data-aos="fade-up" data-aos-delay="300">
+          <div class="trust-icon">
+            <i class="bi bi-building-check"></i>
+          </div>
+          <h3 class="trust-title">Kurumsal Güven</h3>
+          <p class="trust-description">
+            Ulusal düzeyde afet hazırlık altyapısı. Kamu kurumları ile koordinasyon. Sürdürülebilir ve güvenilir sistem operasyonu.
+          </p>
+        </div>
+      </div>
+      
+      <div class="trust-footer text-center mt-5" data-aos="fade-up" data-aos-delay="400">
+        <p class="trust-footer-text">
+          <i class="bi bi-shield-check me-2"></i>
+          <strong>Ulusal Afet Ağı</strong>, afet durumlarında güvenli koordinasyon ve iletişim için tasarlanmış operasyonel bir sistemdir.
+        </p>
+      </div>
+    </div>
+  </section>
+  <!-- ============== End Trust & Security Section ========== -->
+
+  <!-- Section Connector -->
+  <div class="section-connector">
+    <div class="connector-line"></div>
+    <div class="connector-node"></div>
+    <div class="connector-line"></div>
+  </div>
+
+
+
+  <!-- Section Divider -->
+  <hr class="section-divider">
+
+  <!-- CTA Band - Premium Gradient Banner -->
+  <section class="cta-banner-premium">
+    <div class="cta-banner-container">
+      <div class="cta-banner-content" data-aos="fade-up">
+        <h2 class="cta-banner-headline">Ulusal Afet Koordinasyon Ağına Katıl</h2>
+        <p class="cta-banner-description">Mahalle bazlı koordinasyon ağına dahil ol. Afet durumlarında güvenli iletişim ve koordinasyon altyapısına eriş.</p>
+        <div class="cta-banner-button">
+          <a href="kayit.html" class="btn cta-banner-btn">
+            <i class="bi bi-diagram-3-fill me-2"></i>Ağa Katıl
+            <i class="bi bi-arrow-right ms-2"></i>
+          </a>
+        </div>
+        <div class="cta-banner-trust">
+          <span class="cta-banner-trust-item">
+            <i class="bi bi-shield-check"></i> KVKK Uyumlu
+          </span>
+          <span class="cta-banner-trust-item">
+            <i class="bi bi-lock"></i> Gizlilik Odaklı
+          </span>
+          <span class="cta-banner-trust-item">
+            <i class="bi bi-building"></i> AFAD Entegrasyonu
+          </span>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- Section Divider -->
+  <hr class="section-divider">
+
+  <!-- Katkı Verenler Modal -->
+  <div id="katki-verenler-modal" class="katki-verenler-modal-overlay" style="display: none;">
+    <div class="katki-verenler-modal-content">
+      <div class="katki-verenler-modal-header">
+        <h3 class="katki-verenler-modal-title">Katkı Verenler</h3>
+        <button class="katki-verenler-modal-close" id="katki-verenler-modal-close" aria-label="Kapat">
+          <i class="bi bi-x-lg"></i>
+        </button>
+      </div>
+      <div class="katki-verenler-modal-body">
+        <div class="katki-verenler-grid" id="katki-verenler-grid">
+          <!-- Hocalar buraya JavaScript ile eklenecek -->
+        </div>
+        <div class="katki-verenler-footer">
+          <p class="katki-verenler-disclaimer">
+            Akademik katkılar danışmanlık ve değerlendirme kapsamında sunulmuştur.
+          </p>
+        </div>
+      </div>
+    </div>
+  </div>
+
+  <!-- ZATU Info Popup -->
+  <div id="zatu-popup" class="zatu-popup-overlay" style="display: none;">
+    <div class="zatu-popup-content">
+      <div class="zatu-popup-header">
+        <h3 class="zatu-popup-title">ZATU Nedir?</h3>
+        <button class="zatu-popup-close" id="zatu-popup-close" aria-label="Kapat">
+          <i class="bi bi-x-lg"></i>
+        </button>
+      </div>
+      <div class="zatu-popup-body">
+        <p>ZATU, Ulusal Afet Ağı'nın teknolojik altyapısını sağlayan yerli bir yazılım sistemidir.</p>
+        <p>Afet anında konum, durum ve iletişim bilgilerinin hızlı şekilde iletilmesini sağlar.</p>
+        <p>Kamu kurumları ve yerel yönetimlerle birlikte çalışabilecek şekilde tasarlanmıştır.</p>
+        <p>Afet anında bilgi paylaşımı ve koordinasyonu destekler.</p>
+        <p><strong>Ulusal Afet Ağı, ZATU altyapısı üzerinde çalışır. ZATU, Ulusal Afet Ağı'nın teknolojik altyapı sağlayıcısıdır.</strong></p>
+      </div>
+    </div>
+  </div>
+
+  <!-- ============== Start Footer section ========== -->
+  <div class="footer">
+    <div class="page-container">
+      <div class="footer-grid">
+        <!-- Left Column - Brand -->
+        <div class="footer-brand">
+          <a href="#top" class="footer-logo">
+            <img src="images/logo1.png" class="logo" alt="Ulusal Afet Ağı">
+          </a>
+          <p class="footer-description">Ulusal Afet Ağı, Türkiye'nin ulusal afet hazırlık ağıdır. Komşularınızla önceden bağlantı kurarak afetlere hazırlıklı olun.</p>
+          <div class="footer-social">
+            <h4 class="footer-social-title">Bizi Takip Edin</h4>
+            <div class="footer-social-icons">
+              <a href="https://www.instagram.com/zatuturkiye" class="footer-social-icon" target="_blank" rel="noopener noreferrer" aria-label="Instagram"><i class="bi bi-instagram"></i></a>
+            </div>
+          </div>
+        </div>
+        
+        <!-- Right Column - Mobile App Download -->
+        <div class="footer-legal">
+          <h4 class="footer-heading">Mobil Uygulamayı İndirin</h4>
+          <div class="footer-app-download">
+            <a href="https://apps.apple.com/tr/app/zatu-özel-afet-uygulamasi/id6463898919" class="footer-app-button" target="_blank" rel="noopener noreferrer" aria-label="App Store'dan Ulusal Afet Ağı uygulamasını indir">
+              <img src="images/app-store.webp" alt="App Store'dan İndir" class="app-store-badge">
+            </a>
+            <a href="https://play.google.com/store/apps/details?id=com.zelze.zatu_app&pcampaignid=web_share" class="footer-app-button" target="_blank" rel="noopener noreferrer" aria-label="Google Play'den Ulusal Afet Ağı uygulamasını indir">
+              <img src="https://play.google.com/intl/en_us/badges/static/images/badges/tr_badge_web_generic.png" alt="Google Play'den İndir" class="google-play-badge">
+            </a>
+          </div>
+        </div>
+      </div>
+    </div>
+    
+    <!-- Bottom Bar -->
+    <div class="footer-bottom">
+      <div class="page-container">
+        <div class="footer-bottom-content">
+          <p class="footer-copyright">© 2025 Ulusal Afet Ağı. Tüm hakları saklıdır.</p>
+        </div>
+      </div>
+    </div>
+  </div>
+  <!-- ============== end Footer section ========== -->
+
+  <!--  JQuery file     -->
+  <script src="js/jquery-3.6.1.min.js"></script>
+  
+  <!-- Leaflet JS for real map -->
+  <script src="https://unpkg.com/leaflet@1.9.4/dist/leaflet.js" integrity="sha256-20nQCchB9co0qIjJZRGuk2/Z9VM+kNiyxNV1lvTlZBo=" crossorigin=""></script>
+
+  <!-- bootstrap min js -->
+  <script src="js/bootstrap.min.js"></script>
+
+  <!--  toasts file     -->
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/toastr.js/latest/js/toastr.min.js"></script>
+
+  <!--  owl carousel    -->
+  <script src="js/owl.carousel.min.js"></script>
+
+  <!-- aos file    -->
+  <script src="js/aos.js"></script>
+
+  <!-- gsap file    -->
+  <script src="js/gsap.min.js"></script>
+
+  <!--  counter     -->
+  <script src="js/jquery.counterup.min.js"></script>
+  <script src="js/jquery.waypoints.js"></script>
+
+  <!-- particles js file  -->
+  <script src="js/particles.min.js"></script>
+
+  <!-- jquery isotope file -->
+  <script src="js/isotope.min.js"></script>
+
+  <!-- jquery fancybox file -->
+  <script src="js/jquery.fancybox.min.js"></script>
+
+  <!--  Tilt.js file     -->
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/vanilla-tilt/1.7.0/vanilla-tilt.min.js"></script>
+
+  <!--  api mock (for survey endpoints)  -->
+  <script src="js/api-mock.js"></script>
+
+  <!--  surveys js file  -->
+  <script src="js/surveys.js"></script>
+  <script src="js/disaster-survey-modern.js"></script>
+
+  <!--  city stats js files  -->
+  <script src="js/api-stats.js"></script>
+  <script src="js/counter.js"></script>
+  <script src="js/city-stats.js"></script>
+
+  <!--  user progress and sticky cta bar  -->
+  <script src="js/user-progress.js"></script>
+  <script src="js/sticky-cta-bar.js"></script>
+
+  <!--  mobile menu  -->
+  <script src="js/mobile-menu.js"></script>
+
+  <!--  main js file  -->
+  <script src="js/main.js"></script>
+
+  <!--  how it works interactive js file  -->
+  <script src="js/how-it-works.js"></script>
+
+  <!--  language dropdown js file  -->
+  <script src="js/language-dropdown.js"></script>
+  
+  <!-- How It Works Step-Based Form Management -->
+  <script src="js/how-it-works-steps.js"></script>
+  
+  <!-- Mobile accordion for How It Works section (deprecated, kept for compatibility) -->
+  <script src="js/how-it-works-mobile.js"></script>
+  
+  <!-- Profile Test Wizard -->
+  <script src="js/profile-test-wizard.js"></script>
+  
+  <!-- Disaster Survey Wizard -->
+  <script src="js/disaster-survey-wizard.js"></script>
+
+  <!-- Initialize City Stats -->
+  <script>
+    // Ensure page starts at top on initial load
+    if (window.history.scrollRestoration) {
+      window.history.scrollRestoration = 'manual';
+    }
+    
+    // Force scroll to top on page load
+    window.addEventListener('load', function() {
+      window.scrollTo(0, 0);
+      // Also set it after a short delay to override any other scroll behavior
+      setTimeout(function() {
+        window.scrollTo(0, 0);
+        document.documentElement.scrollTop = 0;
+        document.body.scrollTop = 0;
+      }, 0);
+    });
+    
+    // Prevent hash-based scrolling on initial load
+    if (window.location.hash) {
+      // Remove hash from URL without scrolling
+      const hash = window.location.hash;
+      history.replaceState(null, null, ' ');
+      window.addEventListener('load', function() {
+        window.scrollTo(0, 0);
+        // Restore hash after scroll is prevented
+        if (hash) {
+          history.replaceState(null, null, hash);
+        }
+      });
+    }
+    
+    document.addEventListener('DOMContentLoaded', function() {
+      // Ensure we're at the top immediately
+      window.scrollTo(0, 0);
+      document.documentElement.scrollTop = 0;
+      document.body.scrollTop = 0;
+      
+      // Also set after a microtask to override any delayed scroll
+      setTimeout(function() {
+        window.scrollTo(0, 0);
+        document.documentElement.scrollTop = 0;
+        document.body.scrollTop = 0;
+      }, 0);
+      // Parallax effect for global network pattern
+      const networkPattern = document.getElementById('global-network-pattern');
+      if (networkPattern && window.innerWidth > 768) {
+        let lastScrollY = window.scrollY;
+        
+        function updateParallax() {
+          const scrollY = window.scrollY;
+          const deltaY = scrollY - lastScrollY;
+          
+          if (networkPattern) {
+            const currentTransform = networkPattern.style.transform || 'translateY(0px)';
+            const currentY = parseFloat(currentTransform.match(/-?\d+\.?\d*/)?.[0] || 0);
+            const newY = currentY + (deltaY * 0.1);
+            
+            networkPattern.style.transform = `translateY(${newY}px)`;
+          }
+          
+          lastScrollY = scrollY;
+          requestAnimationFrame(updateParallax);
+        }
+        
+        window.addEventListener('scroll', () => {
+          requestAnimationFrame(updateParallax);
+        }, { passive: true });
+      }
+      
+      // Count-up animation for numbers
+      function animateCountUp(element, target, duration = 2000) {
+        const start = 0;
+        const increment = target / (duration / 16);
+        let current = start;
+        
+        const timer = setInterval(() => {
+          current += increment;
+          if (current >= target) {
+            current = target;
+            clearInterval(timer);
+          }
+          element.textContent = Math.floor(current).toLocaleString('tr-TR');
+        }, 16);
+      }
+      
+      // Animate "last 24h joined"
+      const countUpElement = document.getElementById('count-up-joined');
+      if (countUpElement) {
+        animateCountUp(countUpElement, 1847, 2000);
+      }
+      
+      // Animate total users
+      const totalUsersEl = document.getElementById('network-total-users');
+      if (totalUsersEl) {
+        animateCountUp(totalUsersEl, 124583, 2500);
+      }
+      
+      // System Status Updates (live data simulation)
+      function updateSystemStatus() {
+        const updateTimeText = document.getElementById('update-time-text');
+        if (updateTimeText) {
+          const minutes = Math.floor(Math.random() * 3) + 1;
+          updateTimeText.textContent = minutes + ' dk önce';
+        }
+      }
+      
+      // Network Status Updates (mock data)
+      function updateNetworkStatus() {
+        const activeUsersEl = document.getElementById('network-active-users');
+        const volunteersEl = document.getElementById('network-volunteers');
+        const updateTimeEl = document.getElementById('network-update-time');
+        
+        if (activeUsersEl) {
+          const baseUsers = 12847;
+          const variation = Math.floor(Math.random() * 50) - 25;
+          activeUsersEl.textContent = (baseUsers + variation).toLocaleString('tr-TR');
+        }
+        
+        if (volunteersEl) {
+          const baseVolunteers = 3421;
+          const variation = Math.floor(Math.random() * 20) - 10;
+          volunteersEl.textContent = (baseVolunteers + variation).toLocaleString('tr-TR');
+        }
+        
+        if (updateTimeEl) {
+          const minutes = Math.floor(Math.random() * 5) + 1;
+          updateTimeEl.textContent = minutes + ' dk önce';
+        }
+      }
+      
+      // Update system status every 60 seconds
+      updateSystemStatus();
+      setInterval(updateSystemStatus, 60000);
+      
+      // Update network status every 30 seconds
+      updateNetworkStatus();
+      setInterval(updateNetworkStatus, 30000);
+      
+      // Get city from localStorage (from registration) or default to İstanbul
+      const step2Data = localStorage.getItem('registration_step2');
+      let city = 'İstanbul';
+      
+      if (step2Data) {
+        try {
+          const data = JSON.parse(step2Data);
+          if (data.city) {
+            city = data.city;
+          }
+        } catch (e) {
+          console.error('Error parsing registration data:', e);
+        }
+      }
+
+      // Initialize city stats card
+      if (document.getElementById('city-stats-container')) {
+        window.cityStatsCard = new CityStatsCard('city-stats-container', city);
+      }
+      
+      // Initialize Real Turkey Map with Leaflet
+      if (document.getElementById('turkey-disaster-map')) {
+        // Turkey bounds to restrict panning
+        const turkeyBounds = [
+          [35.5, 25.5],  // Southwest corner
+          [42.5, 45.0]   // Northeast corner
+        ];
+
+        // Initialize map centered on Turkey with restricted bounds
+        const map = L.map('turkey-disaster-map', {
+          center: [39.0, 35.0],
+          zoom: 6,
+          minZoom: 5,
+          maxZoom: 9,
+          zoomControl: true,
+          attributionControl: false,
+          scrollWheelZoom: false,  // Disable default scroll zoom
+          doubleClickZoom: false,
+          boxZoom: false,
+          dragging: true,
+          touchZoom: true,
+          maxBounds: turkeyBounds,
+          maxBoundsViscosity: 1.0  // Prevent panning outside bounds
+        });
+        
+        // Custom CTRL + Scroll zoom handler
+        let isCtrlPressed = false;
+        const mapContainer = map.getContainer();
+        
+        // Track CTRL key state
+        document.addEventListener('keydown', function(e) {
+          if (e.ctrlKey || e.metaKey) {
+            isCtrlPressed = true;
+          }
+        });
+        
+        document.addEventListener('keyup', function(e) {
+          if (!e.ctrlKey && !e.metaKey) {
+            isCtrlPressed = false;
+          }
+        });
+        
+        // Handle scroll wheel zoom only when CTRL is pressed
+        mapContainer.addEventListener('wheel', function(e) {
+          if (isCtrlPressed || e.ctrlKey || e.metaKey) {
+            e.preventDefault();
+            e.stopPropagation();
+            
+            const delta = e.deltaY;
+            const currentZoom = map.getZoom();
+            
+            // Smooth zoom with delta sensitivity
+            const zoomDelta = delta > 0 ? -0.5 : 0.5;
+            const newZoom = Math.max(
+              map.getMinZoom(),
+              Math.min(map.getMaxZoom(), currentZoom + zoomDelta)
+            );
+            
+            map.setZoom(newZoom, { animate: true });
+          }
+        }, { passive: false });
+
+        // Add OpenStreetMap tile layer (light, professional style)
+        L.tileLayer('https://{s}.tile.openstreetmap.org/{z}/{x}/{y}.png', {
+          maxZoom: 9,
+          minZoom: 5,
+          attribution: '&copy; <a href="https://www.openstreetmap.org/copyright">OpenStreetMap</a> contributors'
+        }).addTo(map);
+
+        // Risk level colors (matching legend exactly - clearer colors)
+        const riskColors = {
+          low: '#1B5ED6',      // Blue (clearly visible)
+          medium: '#FFB300',   // Amber/Yellow (clearly visible)
+          high: '#E53935'      // Red (clearly visible, not neon)
+        };
+
+        // Border color for region separation
+        const borderColor = '#6B7280'; // Subtle gray border
+        
+        // Store fault line layer group for toggle (initially hidden)
+        const faultLineLayer = L.layerGroup();
+
+        // Regional data with more accurate Turkey coordinates
+        const regionData = [
+          {
+            name: 'Marmara Bölgesi',
+            risk: 'medium',
+            coordinates: [[41.2, 27.0], [41.5, 29.8], [40.1, 30.2], [40.0, 28.5], [40.8, 27.2], [41.2, 27.0]],
+            stats: 'Nüfus: 25M • Hazırlık: %68'
+          },
+          {
+            name: 'Ege Bölgesi',
+            risk: 'high',
+            coordinates: [[39.5, 26.0], [39.8, 28.8], [38.2, 29.5], [37.8, 27.5], [38.5, 26.2], [39.5, 26.0]],
+            stats: 'Nüfus: 10M • Hazırlık: %52'
+          },
+          {
+            name: 'Akdeniz Bölgesi',
+            risk: 'high',
+            coordinates: [[37.2, 30.0], [37.8, 32.8], [36.0, 33.5], [35.5, 31.2], [36.5, 30.2], [37.2, 30.0]],
+            stats: 'Nüfus: 10M • Hazırlık: %55'
+          },
+          {
+            name: 'İç Anadolu',
+            risk: 'low',
+            coordinates: [[40.2, 32.0], [40.8, 34.8], [38.8, 35.2], [38.5, 33.0], [39.5, 32.2], [40.2, 32.0]],
+            stats: 'Nüfus: 12M • Hazırlık: %75'
+          },
+          {
+            name: 'Karadeniz Bölgesi',
+            risk: 'medium',
+            coordinates: [[41.8, 35.0], [42.2, 37.8], [40.2, 38.2], [40.0, 36.0], [41.0, 35.2], [41.8, 35.0]],
+            stats: 'Nüfus: 8M • Hazırlık: %65'
+          },
+          {
+            name: 'Doğu Anadolu',
+            risk: 'high',
+            coordinates: [[40.5, 40.0], [41.0, 42.8], [38.8, 43.2], [38.5, 41.0], [39.5, 40.2], [40.5, 40.0]],
+            stats: 'Nüfus: 6M • Hazırlık: %48'
+          },
+          {
+            name: 'Güneydoğu Anadolu',
+            risk: 'high',
+            coordinates: [[37.8, 38.0], [38.5, 40.8], [36.2, 41.2], [36.0, 39.0], [37.0, 38.2], [37.8, 38.0]],
+            stats: 'Nüfus: 8M • Hazırlık: %50'
+          }
+        ];
+
+        // Add regional polygons with choropleth coloring (with fade-in animation)
+        const regionLayer = L.layerGroup();
+        let regionIndex = 0;
+        
+        regionData.forEach(region => {
+          const polygon = L.polygon(region.coordinates, {
+            color: borderColor,
+            weight: 2,
+            fillColor: riskColors[region.risk],
+            fillOpacity: 0.6,  // More visible semi-transparent fill
+            opacity: 1,
+            smoothFactor: 1
+          });
+          
+          // Add fade-in animation
+          polygon.setStyle({ opacity: 0, fillOpacity: 0 });
+          regionLayer.addLayer(polygon);
+          
+          setTimeout(() => {
+            polygon.setStyle({ 
+              opacity: 1,
+              fillOpacity: 0.6
+            });
+          }, regionIndex * 100);
+
+          // Add hover effects with smooth transitions
+          polygon.on('mouseover', function(e) {
+            this.setStyle({
+              fillOpacity: 0.8,
+              weight: 3,
+              opacity: 1
+            });
+            
+            const riskLabel = region.risk === 'low' ? 'Düşük Risk' : 
+                            region.risk === 'medium' ? 'Orta Risk' : 'Yüksek Risk';
+            
+            const popup = L.popup({
+              className: 'risk-popup',
+              closeButton: true,
+              autoPan: false,
+              offset: [0, -10]
+            })
+              .setLatLng(e.latlng)
+              .setContent(`
+                <div class="map-tooltip-content">
+                  <div class="tooltip-region-name">${region.name}</div>
+                  <div class="tooltip-risk-level risk-${region.risk}">${riskLabel}</div>
+                  <div class="tooltip-stats">${region.stats}</div>
+                </div>
+              `)
+              .openOn(map);
+          });
+
+          polygon.on('mouseout', function() {
+            this.setStyle({
+              fillOpacity: 0.6,
+              weight: 2,
+              opacity: 1
+            });
+            map.closePopup();
+          });
+          
+          regionIndex++;
+        });
+        
+        regionLayer.addTo(map);
+
+        // Add fault lines as toggleable layer (approximate representation of major Turkish fault lines)
+        const faultLines = [
+          {
+            name: 'Kuzey Anadolu Fay Hattı',
+            coordinates: [[41.0, 27.5], [40.8, 30.0], [40.5, 32.5], [40.2, 35.0], [40.0, 37.5], [39.8, 40.0]]
+          },
+          {
+            name: 'Doğu Anadolu Fay Hattı',
+            coordinates: [[37.5, 37.5], [38.2, 39.5], [39.0, 41.5], [39.8, 43.0]]
+          }
+        ];
+
+        faultLines.forEach((fault, index) => {
+          const polyline = L.polyline(fault.coordinates, {
+            color: '#6C5F5B',
+            weight: 3,
+            opacity: 0.9,
+            dashArray: '12, 6',
+            className: 'fault-line-layer'
+          });
+          
+          faultLineLayer.addLayer(polyline);
+        });
+        
+        // Add network nodes for major cities
+        const cityNodes = [
+          { name: 'İstanbul', coords: [41.0082, 28.9784], size: 8 },
+          { name: 'Ankara', coords: [39.9334, 32.8597], size: 7 },
+          { name: 'İzmir', coords: [38.4237, 27.1428], size: 6 },
+          { name: 'Bursa', coords: [40.1826, 29.0665], size: 5 },
+          { name: 'Antalya', coords: [36.8841, 30.7056], size: 5 },
+          { name: 'Adana', coords: [37.0000, 35.3213], size: 5 }
+        ];
+        
+        const networkNodesLayer = L.layerGroup();
+        
+        cityNodes.forEach((city, index) => {
+          const node = L.circleMarker(city.coords, {
+            radius: city.size,
+            fillColor: '#1B5ED6',
+            color: '#FFFFFF',
+            weight: 2,
+            fillOpacity: 0.8,
+            className: 'network-city-node'
+          }).addTo(map);
+          
+          // Add fade-in
+          node.setStyle({ opacity: 0 });
+          setTimeout(() => {
+            node.setStyle({ opacity: 1 });
+          }, 800 + (index * 100));
+          
+          networkNodesLayer.addLayer(node);
+          
+          // Add subtle connection lines between some major cities
+          if (index > 0 && index <= 3) {
+            const connection = L.polyline([cityNodes[0].coords, city.coords], {
+              color: 'rgba(27, 94, 214, 0.15)',
+              weight: 1,
+              opacity: 0.3,
+              dashArray: '3, 3',
+              className: 'network-connection-line'
+            }).addTo(map);
+            
+            connection.setStyle({ opacity: 0 });
+            setTimeout(() => {
+              connection.setStyle({ opacity: 0.3 });
+            }, 1000 + (index * 150));
+          }
+        });
+        
+        networkNodesLayer.addTo(map);
+
+        // Fault line toggle functionality
+        const faultToggle = document.getElementById('fault-line-toggle');
+        if (faultToggle) {
+          // Initially hide fault lines (toggle is unchecked by default)
+          if (!faultToggle.checked) {
+            // Fault line layer is not added to map initially
+          } else {
+            map.addLayer(faultLineLayer);
+          }
+          
+          faultToggle.addEventListener('change', function(e) {
+            if (e.target.checked) {
+              map.addLayer(faultLineLayer);
+            } else {
+              map.removeLayer(faultLineLayer);
+            }
+          });
+        }
+        
+        // Ensure map stays within Turkey bounds
+        map.on('drag', function() {
+          map.panInsideBounds(turkeyBounds, { animate: false });
+        });
+        
+        // Legend close button functionality
+        const legendCloseBtn = document.getElementById('legend-close-btn');
+        const legendBox = document.getElementById('map-legend-gis');
+        const legendToggleBtn = document.getElementById('legend-toggle-btn');
+        
+        if (legendCloseBtn && legendBox && legendToggleBtn) {
+          // Close legend
+          legendCloseBtn.addEventListener('click', function() {
+            legendBox.classList.add('hidden');
+            legendToggleBtn.style.display = 'flex';
+            
+            // Increase map region visibility when legend is closed
+            regionLayer.eachLayer(function(layer) {
+              if (layer instanceof L.Polygon) {
+                layer.setStyle({
+                  fillOpacity: 0.75  // More visible when legend is closed
+                });
+              }
+            });
+          });
+          
+          // Open legend
+          legendToggleBtn.addEventListener('click', function() {
+            legendBox.classList.remove('hidden');
+            legendToggleBtn.style.display = 'none';
+            
+            // Restore normal map region visibility when legend is open
+            regionLayer.eachLayer(function(layer) {
+              if (layer instanceof L.Polygon) {
+                layer.setStyle({
+                  fillOpacity: 0.6  // Normal visibility when legend is open
+                });
+              }
+            });
+          });
+        }
+      }
+    });
+  </script>
+
+  <!-- ============== Disaster Survey Wizard Modal ========== -->
+  <div class="disaster-survey-modal" id="disaster-survey-modal" style="display: none;">
+    <div class="disaster-survey-modal-overlay"></div>
+    <div class="disaster-survey-modal-content">
+      <!-- Modal Header -->
+      <div class="disaster-survey-header">
+        <button type="button" class="disaster-survey-close" id="disaster-survey-close" aria-label="Kapat">
+          <i class="bi bi-x-lg"></i>
+        </button>
+        <div class="disaster-survey-progress">
+          <div class="disaster-survey-progress-bar">
+            <div class="disaster-survey-progress-fill" id="disaster-survey-progress-fill"></div>
+          </div>
+          <div class="disaster-survey-progress-text" id="disaster-survey-progress-text">Soru 1 / 5</div>
+        </div>
+      </div>
+
+      <!-- Modal Body - Question Container -->
+      <div class="disaster-survey-body" id="disaster-survey-body">
+        <!-- Questions will be rendered here -->
+      </div>
+
+      <!-- Modal Footer - Navigation -->
+      <div class="disaster-survey-footer" id="disaster-survey-footer">
+        <button type="button" class="btn btn-outline-secondary" id="disaster-survey-back" style="display: none;">
+          <i class="bi bi-arrow-left me-2"></i>Geri
+        </button>
+        <button type="button" class="btn btn-primary-premium-cta" id="disaster-survey-next" disabled>
+          İleri
+          <i class="bi bi-arrow-right ms-2"></i>
+        </button>
+      </div>
+    </div>
+  </div>
+  <!-- ============== End Disaster Survey Wizard Modal ========== -->
+
+  <!-- ============== Profile Test Wizard Modal ========== -->
+  <div class="profile-test-modal" id="profile-test-modal" style="display: none;">
+    <div class="profile-test-modal-overlay"></div>
+    <div class="profile-test-modal-content">
+      <!-- Modal Header -->
+      <div class="profile-test-header">
+        <button type="button" class="profile-test-close" id="profile-test-close" aria-label="Kapat">
+          <i class="bi bi-x-lg"></i>
+        </button>
+        <div class="profile-test-progress">
+          <div class="profile-test-progress-bar">
+            <div class="profile-test-progress-fill" id="profile-test-progress-fill"></div>
+          </div>
+          <div class="profile-test-progress-text" id="profile-test-progress-text">Soru 1 / 5</div>
+        </div>
+      </div>
+
+      <!-- Modal Body - Question Container -->
+      <div class="profile-test-body" id="profile-test-body">
+        <!-- Questions will be rendered here -->
+      </div>
+
+      <!-- Modal Footer - Navigation -->
+      <div class="profile-test-footer" id="profile-test-footer">
+        <button type="button" class="btn btn-outline-secondary" id="profile-test-back" style="display: none;">
+          <i class="bi bi-arrow-left me-2"></i>Geri
+        </button>
+        <button type="button" class="btn btn-primary-premium-cta" id="profile-test-next" disabled>
+          Devam Et
+          <i class="bi bi-arrow-right ms-2"></i>
+        </button>
+      </div>
+    </div>
+  </div>
+  <!-- ============== End Profile Test Wizard Modal ========== -->
+
+  <!-- Katkı Verenler Modal JavaScript -->
+  <script>
+    document.addEventListener('DOMContentLoaded', function() {
+      const katkiVerenlerBtn = document.getElementById('katki-verenler-btn');
+      const katkiVerenlerModal = document.getElementById('katki-verenler-modal');
+      const katkiVerenlerModalClose = document.getElementById('katki-verenler-modal-close');
+      const katkiVerenlerGrid = document.getElementById('katki-verenler-grid');
+
+      // Hocalar verisi (örnek - gerçek verilerle değiştirilebilir)
+      const hocalar = [
+        {
+          name: 'Prof. Dr. Örnek Hoca 1',
+          university: 'İstanbul Üniversitesi',
+          photo: 'https://via.placeholder.com/150?text=Hoca1'
+        },
+        {
+          name: 'Prof. Dr. Örnek Hoca 2',
+          university: 'Ankara Üniversitesi',
+          photo: 'https://via.placeholder.com/150?text=Hoca2'
+        },
+        {
+          name: 'Doç. Dr. Örnek Hoca 3',
+          university: 'Boğaziçi Üniversitesi',
+          photo: 'https://via.placeholder.com/150?text=Hoca3'
+        },
+        {
+          name: 'Prof. Dr. Örnek Hoca 4',
+          university: 'ODTÜ',
+          photo: 'https://via.placeholder.com/150?text=Hoca4'
+        }
+      ];
+
+      // Hocaları grid'e ekle
+      function renderHocalar() {
+        if (!katkiVerenlerGrid) return;
+        
+        katkiVerenlerGrid.innerHTML = '';
+        hocalar.forEach(hoca => {
+          const item = document.createElement('div');
+          item.className = 'katki-verenler-item';
+          item.innerHTML = `
+            <img src="${hoca.photo}" alt="${hoca.name}" class="katki-verenler-photo" onerror="this.src='https://via.placeholder.com/150?text=Hoca'">
+            <div class="katki-verenler-name">${hoca.name}</div>
+            <div class="katki-verenler-university">${hoca.university}</div>
+          `;
+          katkiVerenlerGrid.appendChild(item);
+        });
+      }
+
+      // Modal'ı aç
+      if (katkiVerenlerBtn) {
+        katkiVerenlerBtn.addEventListener('click', function(e) {
+          e.preventDefault();
+          if (katkiVerenlerModal) {
+            renderHocalar();
+            katkiVerenlerModal.style.display = 'flex';
+            document.body.style.overflow = 'hidden';
+          }
+        });
+      }
+
+      // Modal'ı kapat
+      if (katkiVerenlerModalClose) {
+        katkiVerenlerModalClose.addEventListener('click', function() {
+          if (katkiVerenlerModal) {
+            katkiVerenlerModal.style.display = 'none';
+            document.body.style.overflow = '';
+          }
+        });
+      }
+
+      // Overlay'e tıklanınca kapat
+      if (katkiVerenlerModal) {
+        katkiVerenlerModal.addEventListener('click', function(e) {
+          if (e.target === katkiVerenlerModal) {
+            katkiVerenlerModal.style.display = 'none';
+            document.body.style.overflow = '';
+          }
+        });
+      }
+
+      // ESC tuşu ile kapat
+      document.addEventListener('keydown', function(e) {
+        if (e.key === 'Escape' && katkiVerenlerModal && katkiVerenlerModal.style.display === 'flex') {
+          katkiVerenlerModal.style.display = 'none';
+          document.body.style.overflow = '';
+        }
+      });
+    });
+  </script>
+
+  <!-- ZATU Popup JavaScript -->
+  <script>
+    document.addEventListener('DOMContentLoaded', function() {
+      const zatuLink = document.getElementById('zatu-link');
+      const zatuPopup = document.getElementById('zatu-popup');
+      const zatuPopupClose = document.getElementById('zatu-popup-close');
+
+      // Open popup when ZATU link is clicked
+      if (zatuLink) {
+        zatuLink.addEventListener('click', function(e) {
+          e.preventDefault();
+          if (zatuPopup) {
+            zatuPopup.style.display = 'flex';
+            document.body.style.overflow = 'hidden'; // Prevent background scrolling
+          }
+        });
+      }
+
+      // Close popup when close button is clicked
+      if (zatuPopupClose) {
+        zatuPopupClose.addEventListener('click', function() {
+          if (zatuPopup) {
+            zatuPopup.style.display = 'none';
+            document.body.style.overflow = ''; // Restore scrolling
+          }
+        });
+      }
+
+      // Close popup when clicking outside (on overlay)
+      if (zatuPopup) {
+        zatuPopup.addEventListener('click', function(e) {
+          if (e.target === zatuPopup) {
+            zatuPopup.style.display = 'none';
+            document.body.style.overflow = ''; // Restore scrolling
+          }
+        });
+      }
+
+      // Close popup with Escape key
+      document.addEventListener('keydown', function(e) {
+        if (e.key === 'Escape' && zatuPopup && zatuPopup.style.display === 'flex') {
+          zatuPopup.style.display = 'none';
+          document.body.style.overflow = ''; // Restore scrolling
+        }
+      });
+    });
+  </script>
+
+</body>
+</html>
+

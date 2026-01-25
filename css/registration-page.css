@@ -1,0 +1,373 @@
+/* ================= Registration Page Styles ===================== */
+
+.registration-page-body {
+  /* Inherits from test-page.css */
+}
+
+/* ================= Form Input Styles ===================== */
+
+.registration-content-container {
+  margin-bottom: 2.5rem;
+  animation: fadeIn 0.6s ease-out 0.2s both;
+}
+
+.registration-form-group {
+  margin-bottom: 1.5rem;
+}
+
+.registration-label {
+  display: block;
+  font-size: 1rem;
+  font-weight: 600;
+  color: var(--test-text-primary);
+  margin-bottom: 0.75rem;
+}
+
+.registration-label .required {
+  color: #DC2626;
+  margin-left: 0.25rem;
+}
+
+.registration-input-wrapper {
+  position: relative;
+}
+
+.registration-input,
+.registration-select {
+  width: 100%;
+  padding: 1rem 1.25rem;
+  font-size: 1.0625rem;
+  font-family: inherit;
+  color: var(--test-text-primary);
+  background: var(--test-card-bg);
+  border: 2px solid var(--test-border);
+  border-radius: 12px;
+  transition: all 0.3s ease;
+  box-shadow: var(--test-shadow);
+}
+
+.registration-input:focus,
+.registration-select:focus {
+  outline: none;
+  border-color: var(--test-accent);
+  box-shadow: 0 0 0 3px rgba(31, 122, 91, 0.1);
+}
+
+.registration-input:valid:not(:placeholder-shown),
+.registration-select:valid {
+  border-color: var(--test-accent);
+}
+
+.registration-input::placeholder {
+  color: var(--test-text-secondary);
+  opacity: 0.6;
+}
+
+.registration-input-check {
+  position: absolute;
+  right: 1rem;
+  top: 50%;
+  transform: translateY(-50%);
+  color: var(--test-accent);
+  font-size: 1.25rem;
+  opacity: 0;
+  transition: opacity 0.3s ease;
+}
+
+.registration-input:valid:not(:placeholder-shown) + .registration-input-check {
+  opacity: 1;
+}
+
+.registration-error {
+  margin-top: 0.5rem;
+  font-size: 0.875rem;
+  color: #DC2626;
+  display: none;
+}
+
+.registration-error.show {
+  display: block;
+  animation: shake 0.3s ease;
+}
+
+@keyframes shake {
+  0%, 100% { transform: translateX(0); }
+  25% { transform: translateX(-5px); }
+  75% { transform: translateX(5px); }
+}
+
+.registration-help-text {
+  margin-top: 0.5rem;
+  font-size: 0.875rem;
+  color: var(--test-text-secondary);
+}
+
+/* ================= Selection Card Styles ===================== */
+
+.registration-options-grid {
+  display: grid;
+  gap: 1rem;
+  margin-bottom: 1.5rem;
+}
+
+.registration-option-card {
+  background: var(--test-card-bg);
+  border: 2px solid var(--test-border);
+  border-radius: 16px;
+  padding: 1.25rem 1.5rem;
+  cursor: pointer;
+  transition: all 0.3s cubic-bezier(0.4, 0, 0.2, 1);
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  gap: 1rem;
+  position: relative;
+  overflow: hidden;
+  box-shadow: var(--test-shadow);
+  animation: slideIn 0.4s ease-out both;
+}
+
+.registration-option-card::before {
+  content: '';
+  position: absolute;
+  top: 0;
+  left: 0;
+  right: 0;
+  bottom: 0;
+  background: var(--test-accent-light);
+  opacity: 0;
+  transition: opacity 0.3s ease;
+}
+
+.registration-option-card:hover {
+  transform: translateY(-2px);
+  box-shadow: var(--test-shadow-hover);
+  border-color: var(--test-accent);
+}
+
+.registration-option-card:hover::before {
+  opacity: 0.3;
+}
+
+.registration-option-card.selected {
+  border-color: var(--test-accent);
+  background: var(--test-accent-light);
+  box-shadow: var(--test-shadow-selected);
+  transform: translateY(-2px);
+}
+
+.registration-option-card.selected::before {
+  opacity: 1;
+}
+
+.registration-option-text {
+  flex: 1;
+  font-size: 1.0625rem;
+  font-weight: 500;
+  color: var(--test-text-primary);
+  line-height: 1.5;
+  position: relative;
+  z-index: 1;
+  text-align: left;
+}
+
+.registration-option-card.selected .registration-option-text {
+  color: var(--test-accent);
+  font-weight: 600;
+}
+
+.registration-option-icon {
+  width: 40px;
+  height: 40px;
+  border-radius: 10px;
+  background: var(--test-bg);
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  color: var(--test-text-secondary);
+  flex-shrink: 0;
+  position: relative;
+  z-index: 1;
+  transition: all 0.3s ease;
+}
+
+.registration-option-card:hover .registration-option-icon {
+  background: var(--test-accent-light);
+  color: var(--test-accent);
+  transform: scale(1.1);
+}
+
+.registration-option-card.selected .registration-option-icon {
+  background: var(--test-accent);
+  color: #FFFFFF;
+  transform: scale(1.1);
+}
+
+.registration-option-icon i {
+  font-size: 1.25rem;
+}
+
+/* ================= Checkbox Styles ===================== */
+
+.registration-checkbox-wrapper {
+  display: flex;
+  align-items: flex-start;
+  gap: 0.75rem;
+  padding: 1rem;
+  background: var(--test-card-bg);
+  border: 2px solid var(--test-border);
+  border-radius: 12px;
+  cursor: pointer;
+  transition: all 0.3s ease;
+  box-shadow: var(--test-shadow);
+}
+
+.registration-checkbox-wrapper:hover {
+  border-color: var(--test-accent);
+  box-shadow: var(--test-shadow-hover);
+}
+
+.registration-checkbox-wrapper.checked {
+  border-color: var(--test-accent);
+  background: var(--test-accent-light);
+}
+
+.registration-checkbox {
+  width: 20px;
+  height: 20px;
+  margin-top: 0.125rem;
+  cursor: pointer;
+  accent-color: var(--test-accent);
+  flex-shrink: 0;
+}
+
+.registration-checkbox-label {
+  flex: 1;
+  font-size: 0.9375rem;
+  color: var(--test-text-primary);
+  line-height: 1.5;
+  cursor: pointer;
+}
+
+.registration-checkbox-label .required {
+  color: #DC2626;
+}
+
+/* ================= Success State ===================== */
+
+.registration-success-container {
+  text-align: center;
+  padding: 2rem 0;
+  animation: fadeInUp 0.5s ease-out;
+}
+
+.registration-success-icon {
+  width: 80px;
+  height: 80px;
+  border-radius: 50%;
+  background: var(--test-accent-light);
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  margin: 0 auto 1.5rem;
+  color: var(--test-accent);
+  font-size: 2.5rem;
+  animation: scaleIn 0.5s ease-out;
+}
+
+@keyframes scaleIn {
+  from {
+    transform: scale(0);
+    opacity: 0;
+  }
+  to {
+    transform: scale(1);
+    opacity: 1;
+  }
+}
+
+.registration-success-title {
+  font-size: 1.75rem;
+  font-weight: 700;
+  color: var(--test-text-primary);
+  margin-bottom: 0.75rem;
+}
+
+.registration-success-text {
+  font-size: 1.0625rem;
+  color: var(--test-text-secondary);
+  line-height: 1.6;
+  max-width: 600px;
+  margin: 0 auto;
+}
+
+/* ================= Step Transitions ===================== */
+
+.test-question-container.fade-out {
+  animation: fadeOut 0.3s ease-out forwards;
+}
+
+.registration-content-container.fade-out {
+  animation: fadeOut 0.3s ease-out forwards;
+}
+
+/* ================= Responsive Styles ===================== */
+
+@media (max-width: 768px) {
+  .registration-input,
+  .registration-select {
+    padding: 0.875rem 1rem;
+    font-size: 1rem;
+  }
+  
+  .registration-option-card {
+    padding: 1rem 1.25rem;
+  }
+  
+  .registration-option-text {
+    font-size: 1rem;
+  }
+}
+
+@media (max-width: 480px) {
+  .registration-input,
+  .registration-select {
+    padding: 0.75rem 0.875rem;
+  }
+  
+  .registration-option-card {
+    padding: 0.875rem 1rem;
+  }
+  
+  .registration-success-icon {
+    width: 64px;
+    height: 64px;
+    font-size: 2rem;
+  }
+  
+  .registration-success-title {
+    font-size: 1.5rem;
+  }
+}
+
+/* ================= Accessibility ===================== */
+
+.registration-input:focus-visible,
+.registration-select:focus-visible,
+.registration-option-card:focus-visible,
+.registration-checkbox:focus-visible {
+  outline: 3px solid var(--test-accent);
+  outline-offset: 2px;
+}
+
+@media (prefers-reduced-motion: reduce) {
+  *,
+  *::before,
+  *::after {
+    animation-duration: 0.01ms !important;
+    animation-iteration-count: 1 !important;
+    transition-duration: 0.01ms !important;
+  }
+}
+
+

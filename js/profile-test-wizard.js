@@ -1,4 +1,4 @@
-// ================= Profile Test Wizard Component =====================
+
 
 (function() {
   'use strict';
@@ -76,7 +76,7 @@
     }
 
     init() {
-      // Load saved progress
+      
       const savedData = localStorage.getItem('profile_test_data');
       if (savedData) {
         try {
@@ -90,7 +90,7 @@
         }
       }
 
-      // Setup button handlers
+      
       const startBtn = document.getElementById('start-profile-test-btn');
       if (startBtn) {
         startBtn.addEventListener('click', () => this.open());
@@ -111,13 +111,13 @@
         backBtn.addEventListener('click', () => this.prevQuestion());
       }
 
-      // Close on overlay click
+      
       const overlay = document.querySelector('.profile-test-modal-overlay');
       if (overlay) {
         overlay.addEventListener('click', () => this.close());
       }
 
-      // Close on ESC key
+      
       document.addEventListener('keydown', (e) => {
         if (e.key === 'Escape' && this.isOpen()) {
           this.close();
@@ -129,8 +129,8 @@
       this.modal = document.getElementById('profile-test-modal');
       if (!this.modal) return;
 
-      // Check if user is logged in (for now, just proceed)
-      // In future: check localStorage or session for user auth
+      
+      
       
       this.modal.style.display = 'flex';
       document.body.style.overflow = 'hidden';
@@ -162,7 +162,7 @@
       const question = this.questions[this.currentQuestion];
       if (!question) return;
 
-      // Render question
+      
       body.innerHTML = `
         <div class="profile-test-question">
           <h3 class="profile-test-question-title">${this.escapeHtml(question.title)}</h3>
@@ -190,7 +190,7 @@
         </div>
       `;
 
-      // Setup option click handlers
+      
       const options = body.querySelectorAll('.profile-test-option input[type="radio"]');
       options.forEach(option => {
         option.addEventListener('change', () => {
@@ -198,7 +198,7 @@
         });
       });
 
-      // Update footer buttons
+      
       const backBtn = document.getElementById('profile-test-back');
       const nextBtn = document.getElementById('profile-test-next');
       
@@ -222,7 +222,7 @@
       this.answers[field] = value;
       this.saveProgress();
       
-      // Update UI
+      
       const options = document.querySelectorAll('.profile-test-option');
       options.forEach(opt => {
         const input = opt.querySelector('input[type="radio"]');
@@ -235,7 +235,7 @@
         }
       });
 
-      // Enable next button
+      
       const nextBtn = document.getElementById('profile-test-next');
       if (nextBtn) {
         nextBtn.disabled = false;
@@ -245,7 +245,7 @@
     nextQuestion() {
       const question = this.questions[this.currentQuestion];
       if (!question || !this.answers[question.field]) {
-        return; // Can't proceed without answer
+        return; 
       }
 
       if (this.currentQuestion < this.totalQuestions - 1) {
@@ -253,7 +253,7 @@
         this.render();
         this.updateProgress();
         
-        // Scroll to top of modal body
+        
         const body = document.getElementById('profile-test-body');
         if (body) {
           body.scrollTop = 0;
@@ -269,7 +269,7 @@
         this.render();
         this.updateProgress();
         
-        // Scroll to top of modal body
+        
         const body = document.getElementById('profile-test-body');
         if (body) {
           body.scrollTop = 0;
@@ -319,15 +319,15 @@
 
       footer.style.display = 'none';
 
-      // Setup completion button handlers
+      
       const goProfileBtn = document.getElementById('profile-test-go-profile');
       const goHomeBtn = document.getElementById('profile-test-go-home');
       
       if (goProfileBtn) {
         goProfileBtn.addEventListener('click', () => {
-          // Navigate to profile (or close modal for now)
+          
           this.close();
-          // In future: window.location.href = '/profile';
+          
         });
       }
       
@@ -340,38 +340,38 @@
     }
 
     completeTest() {
-      // Save completion
+      
       localStorage.setItem('profile_completed', 'true');
       localStorage.setItem('profile_test_data', JSON.stringify(this.answers));
       
-      // Update user progress
+      
       if (window.userProgress) {
         window.userProgress.setProfileCompleted(true);
       }
 
-      // Submit to backend (mock for now)
+      
       this.submitToBackend();
 
-      // Show completion screen
+      
       this.renderCompletion();
       this.updateProgress();
     }
 
     async submitToBackend() {
-      // Mock submission - in production, this would be a real API call
+      
       try {
-        // Simulate API call
+        
         await new Promise(resolve => setTimeout(resolve, 500));
         
         console.log('Profile test submitted:', this.answers);
         
-        // In production:
-        // const response = await fetch('/api/profile/test', {
-        //   method: 'POST',
-        //   headers: { 'Content-Type': 'application/json' },
-        //   body: JSON.stringify(this.answers)
-        // });
-        // const data = await response.json();
+        
+        
+        
+        
+        
+        
+        
       } catch (error) {
         console.error('Error submitting profile test:', error);
       }
@@ -393,7 +393,7 @@
     }
   }
 
-  // Initialize on DOM ready
+  
   if (document.readyState === 'loading') {
     document.addEventListener('DOMContentLoaded', () => {
       window.profileTestWizard = new ProfileTestWizard();

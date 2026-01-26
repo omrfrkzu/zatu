@@ -1,4 +1,4 @@
-// ================= Test Page Controller =====================
+
 
 (function() {
   'use strict';
@@ -10,7 +10,7 @@
       this.questions = this.generateQuestions();
       this.totalQuestions = this.questions.length;
       
-      // DOM elements
+      
       this.elements = {
         questionTitle: document.getElementById('question-title'),
         answersContainer: document.getElementById('answers-container'),
@@ -28,7 +28,7 @@
 
     generateQuestions() {
       return [
-        // Genel Hazırlık (1-5)
+        
         {
           id: 'preparedness',
           title: 'Afet hazırlığında kendini nasıl değerlendiriyorsun?',
@@ -80,7 +80,7 @@
           ]
         },
         
-        // Aile ve İletişim (6-10)
+        
         {
           id: 'familyPlan',
           title: 'Ailenle afet durumunda ne yapacağınızı konuştunuz mu?',
@@ -132,7 +132,7 @@
           ]
         },
         
-        // Barınma ve Güvenlik (11-15)
+        
         {
           id: 'homeSafety',
           title: 'Evinde deprem güvenliği önlemleri aldın mı?',
@@ -184,7 +184,7 @@
           ]
         },
         
-        // Su ve Gıda (16-20)
+        
         {
           id: 'waterStorage',
           title: 'Yeterli su stokun var mı? (Kişi başı günde 4 litre, 3 gün)',
@@ -236,7 +236,7 @@
           ]
         },
         
-        // İlk Yardım ve Sağlık (21-25)
+        
         {
           id: 'firstAidKit',
           title: 'İlk yardım çantan hazır mı?',
@@ -288,7 +288,7 @@
           ]
         },
         
-        // Finansal Hazırlık (26-30)
+        
         {
           id: 'emergencyCash',
           title: 'Acil durum için nakit paran hazır mı?',
@@ -340,7 +340,7 @@
           ]
         },
         
-        // Toplumsal Bağlantı (31-36)
+        
         {
           id: 'neighborhoodNetwork',
           title: 'Mahallende afet hazırlık grubu var mı?',
@@ -405,28 +405,28 @@
     }
 
     init() {
-      // Load saved progress
+      
       this.loadProgress();
       
-      // Set total steps
+      
       this.elements.totalSteps.textContent = this.totalQuestions;
       
-      // Setup event listeners
+      
       this.setupEventListeners();
       
-      // Render first question
+      
       this.renderQuestion();
       
-      // Update progress
+      
       this.updateProgress();
     }
 
     setupEventListeners() {
-      // Navigation buttons
+      
       this.elements.btnBack.addEventListener('click', () => this.prevQuestion());
       this.elements.btnNext.addEventListener('click', () => this.nextQuestion());
       
-      // Keyboard navigation
+      
       document.addEventListener('keydown', (e) => {
         if (e.key === 'ArrowLeft' && !this.elements.btnBack.disabled) {
           this.prevQuestion();
@@ -435,7 +435,7 @@
         }
       });
       
-      // Save progress on unload
+      
       window.addEventListener('beforeunload', () => this.saveProgress());
     }
 
@@ -447,10 +447,10 @@
         return;
       }
       
-      // Update question title
+      
       this.elements.questionTitle.textContent = question.title;
       
-      // Clear and render answers
+      
       this.elements.answersContainer.innerHTML = '';
       
       question.options.forEach((option, index) => {
@@ -458,10 +458,10 @@
         this.elements.answersContainer.appendChild(card);
       });
       
-      // Update navigation buttons
+      
       this.updateNavigationButtons();
       
-      // Restore selected answer if exists
+      
       if (this.answers[question.id] !== undefined) {
         const selectedIndex = this.answers[question.id];
         const cards = this.elements.answersContainer.querySelectorAll('.test-answer-card');
@@ -479,12 +479,12 @@
       card.setAttribute('tabindex', '0');
       card.setAttribute('aria-label', `Seçenek ${index + 1}: ${text}`);
       
-      // Answer text
+      
       const textDiv = document.createElement('div');
       textDiv.className = 'test-answer-text';
       textDiv.textContent = text;
       
-      // Icon
+      
       const iconDiv = document.createElement('div');
       iconDiv.className = 'test-answer-icon';
       const icon = document.createElement('i');
@@ -494,7 +494,7 @@
       card.appendChild(textDiv);
       card.appendChild(iconDiv);
       
-      // Click handler
+      
       card.addEventListener('click', () => this.selectAnswer(index));
       card.addEventListener('keydown', (e) => {
         if (e.key === 'Enter' || e.key === ' ') {
@@ -503,7 +503,7 @@
         }
       });
       
-      // Animation delay
+      
       card.style.animationDelay = `${index * 0.05}s`;
       
       return card;
@@ -513,25 +513,25 @@
       const question = this.questions[this.currentQuestion];
       const cards = this.elements.answersContainer.querySelectorAll('.test-answer-card');
       
-      // Remove previous selection
+      
       cards.forEach((card, i) => {
         card.classList.remove('selected');
         const icon = card.querySelector('.test-answer-icon i');
         icon.className = 'bi bi-circle';
       });
       
-      // Add selection
+      
       cards[index].classList.add('selected');
       
-      // Update icon
+      
       const icon = cards[index].querySelector('.test-answer-icon i');
       icon.className = 'bi bi-check-circle-fill';
       
-      // Save answer
+      
       this.answers[question.id] = index;
       this.saveProgress();
       
-      // Enable next button
+      
       this.elements.btnNext.disabled = false;
     }
 
@@ -548,7 +548,7 @@
     nextQuestion() {
       const question = this.questions[this.currentQuestion];
       
-      // Check if answer is selected
+      
       if (this.answers[question.id] === undefined) {
         return;
       }
@@ -565,16 +565,16 @@
     }
 
     showTransition(callback) {
-      // Add fade-out class
+      
       this.elements.questionContainer.classList.add('fade-out');
       this.elements.answersContainer.classList.add('fade-out');
       this.elements.loadingOverlay.classList.add('active');
       
-      // Execute callback after animation
+      
       setTimeout(() => {
         callback();
         
-        // Remove fade-out class
+        
         this.elements.questionContainer.classList.remove('fade-out');
         this.elements.answersContainer.classList.remove('fade-out');
         this.elements.loadingOverlay.classList.remove('active');
@@ -588,14 +588,14 @@
     }
 
     updateNavigationButtons() {
-      // Back button
+      
       this.elements.btnBack.disabled = this.currentQuestion === 0;
       
-      // Next button
+      
       const question = this.questions[this.currentQuestion];
       this.elements.btnNext.disabled = this.answers[question.id] === undefined;
       
-      // Update next button text
+      
       if (this.currentQuestion === this.totalQuestions - 1) {
         this.elements.btnNext.innerHTML = '<span>Testi Tamamla</span> <i class="bi bi-check-circle"></i>';
       } else {
@@ -619,7 +619,7 @@
           const data = JSON.parse(saved);
           this.answers = data.answers || {};
           
-          // Resume from last question if incomplete
+          
           if (data.currentQuestion !== undefined && data.currentQuestion < this.totalQuestions) {
             showConfirmModal({
               title: 'Kaydedilmiş ilerlemeniz var',
@@ -632,7 +632,7 @@
                 this.renderQuestion();
                 this.updateProgress();
               } else {
-                // Clear saved progress
+                
                 localStorage.removeItem('test_page_progress');
                 this.answers = {};
                 this.currentQuestion = 0;
@@ -640,7 +640,7 @@
                 this.updateProgress();
               }
             });
-            return; // Exit early, modal will handle continuation
+            return; 
           }
         } catch (e) {
           console.error('Error loading progress:', e);
@@ -649,21 +649,21 @@
     }
 
     completeTest() {
-      // Calculate score or prepare results
+      
       const answeredCount = Object.keys(this.answers).length;
       
-      // Clear saved progress
+      
       localStorage.removeItem('test_page_progress');
       
-      // Redirect to results page or show completion message
+      
       alert(`Test tamamlandı! ${answeredCount} soru cevaplandı. Sonuçlar sayfası yakında eklenecek.`);
       
-      // For now, redirect to homepage
+      
       window.location.href = 'index.html';
     }
   }
 
-  // Initialize when DOM is ready
+  
   if (document.readyState === 'loading') {
     document.addEventListener('DOMContentLoaded', () => {
       new TestPageController();

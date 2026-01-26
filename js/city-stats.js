@@ -1,4 +1,4 @@
-// ================= City Stats Card Component =====================
+
 class CityStatsCard {
   constructor(containerId, city = 'İstanbul') {
     this.container = document.getElementById(containerId);
@@ -30,7 +30,7 @@ class CityStatsCard {
     this.renderLoading();
 
     try {
-      // Use fetch API with /api/stats endpoint
+      
       const url = `/api/stats?city=${encodeURIComponent(this.city)}`;
       const response = await fetch(url, { 
         cache: 'no-store',
@@ -73,7 +73,7 @@ class CityStatsCard {
   }
 
   renderError() {
-    // Get reference to current instance
+    
     const self = this;
     this.container.innerHTML = `
       <div class="city-stats-card-modern error">
@@ -87,7 +87,7 @@ class CityStatsCard {
       </div>
     `;
     
-    // Fix onclick handler
+    
     const retryBtn = this.container.querySelector('button');
     if (retryBtn) {
       retryBtn.onclick = () => this.load();
@@ -192,16 +192,16 @@ class CityStatsCard {
 
     this.container.innerHTML = html;
     
-    // Initialize counters
+    
     this.initCounters();
   }
 
-  // Helper to format numbers with thousand separators
+  
   formatNumber(num) {
     return num.toString().replace(/\B(?=(\d{3})+(?!\d))/g, '.');
   }
 
-  // Helper to escape HTML
+  
   escapeHtml(text) {
     const div = document.createElement('div');
     div.textContent = text;
@@ -215,12 +215,12 @@ class CityStatsCard {
       const value = parseInt(el.getAttribute('data-value'));
       const counterId = `counter-${index}`;
       
-      // Destroy existing counter if any
+      
       if (this.counters[counterId]) {
         this.counters[counterId].destroy();
       }
       
-      // Create new counter
+      
       const counter = new Counter(el, value, 800);
       counter.start();
       this.counters[counterId] = counter;
@@ -228,12 +228,12 @@ class CityStatsCard {
   }
 
   startPolling() {
-    // Clear existing interval
+    
     if (this.pollingInterval) {
       clearInterval(this.pollingInterval);
     }
 
-    // Poll every 60 seconds (60000 ms)
+    
     this.pollingInterval = setInterval(() => {
       this.load();
     }, 60000);
@@ -249,32 +249,32 @@ class CityStatsCard {
   updateCity(newCity) {
     if (newCity && newCity !== this.city) {
       this.city = newCity;
-      // Stop current polling
+      
       this.stopPolling();
-      // Load new data
+      
       this.load();
-      // Restart polling with new city
+      
       this.startPolling();
     }
   }
 
   destroy() {
-    // Stop polling
+    
     this.stopPolling();
     
-    // Destroy all counters
+    
     Object.values(this.counters).forEach(counter => {
       if (counter && counter.destroy) {
         counter.destroy();
       }
     });
     
-    // Clear references
+    
     this.counters = {};
     this.data = null;
   }
 }
 
-// Global instance (will be initialized after DOM loads)
+
 window.cityStatsCard = null;
 

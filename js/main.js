@@ -95,7 +95,7 @@ document.addEventListener("DOMContentLoaded", function () {
         }
     }
 
-    // Add input event listeners for real-time validation
+    
     form?.querySelectorAll('input, textarea').forEach(function (input) {
         input.addEventListener('input', function () {
             validateForm();
@@ -103,7 +103,7 @@ document.addEventListener("DOMContentLoaded", function () {
     });
 });
 
-// ---------------- preloader -------------------- //
+
 
 gsap.config({ trialWarn: false });
 gsap.set('svg', {
@@ -145,7 +145,7 @@ window.addEventListener("load", function () {
 })
 
 
-//   ------------- numbers counter -----------------//
+
 
 $(document).ready(function () {
     $(".counter").counterUp({
@@ -154,7 +154,7 @@ $(document).ready(function () {
     });
 });
 
-// ---------------------- aos (animation on scroll) --------------------//
+
 
 window.addEventListener('load', () => {
     AOS.init({
@@ -165,18 +165,18 @@ window.addEventListener('load', () => {
     })
 });
 
-//---------------------- jquery fancybox plugin -------------------------// 
+
 
 $(document).ready(function () {
     $("a.gallery-item").fancybox({
-        // Options for the Fancybox plugin
+        
         loop: true
     });
 });
 
-// ----------------------- clients carousel -------------------//
 
-// Check if jQuery and Owl Carousel are available
+
+
 if (typeof $ !== 'undefined' && $.fn.owlCarousel) {
     $('.owl-carousel.client').owlCarousel({
         loop: true,
@@ -201,7 +201,7 @@ if (typeof $ !== 'undefined' && $.fn.owlCarousel) {
     console.log("Owl Carousel is not loaded on this page.");
 }
 
-// ------------- sticky navbar on scroll ---------------- //
+
 
 $(window).scroll(function () {
     if ($(window).scrollTop()) {
@@ -212,18 +212,18 @@ $(window).scroll(function () {
     }
 })
 
-// ------------- switch between dark and light mode ---------------- //
 
-// Function to toggle between light and dark mode
+
+
 function toggleDarkMode() {
     const body = document.body;
     const mobileIcon = document.getElementById('mode-icon');
     const desktopIcon = document.getElementById('mode-icon-desktop');
 
-    // Toggle the dark mode class
+    
     body.classList.toggle('dark-mode');
 
-    // Toggle the icons (both mobile and desktop)
+    
     const isDarkMode = body.classList.contains('dark-mode');
     
     if (mobileIcon) {
@@ -246,21 +246,21 @@ function toggleDarkMode() {
         }
     }
 
-    // Save the user's preference to localStorage
+    
     localStorage.setItem('dark-mode', isDarkMode);
 }
 
-// Check if user's preference is stored in localStorage
+
 const isDarkModeSaved = localStorage.getItem('dark-mode');
 
-// Apply the saved preference (if available)
+
 if (isDarkModeSaved === 'true') {
     document.body.classList.add('dark-mode');
 } else {
     document.body.classList.remove('dark-mode');
 }
 
-// Update the icons based on the saved preference
+
 const mobileIcon = document.getElementById('mode-icon');
 const desktopIcon = document.getElementById('mode-icon-desktop');
 
@@ -284,20 +284,20 @@ if (desktopIcon) {
     }
 }
 
-// Add event listener to the mode toggle button (works for both desktop and mobile)
+
 const modeToggle = document.getElementById('mode-toggle');
 if (modeToggle) {
     modeToggle.addEventListener('click', toggleDarkMode);
 }
 
-// Legacy: Desktop mode toggle (no longer used - keeping for backwards compatibility)
-// const modeToggleDesktop = document.getElementById('mode-toggle-desktop');
-// if (modeToggleDesktop) {
-//     modeToggleDesktop.addEventListener('click', toggleDarkMode);
-// }
 
 
-// ---------------- testimonial slider ---------------------//
+
+
+
+
+
+
 
 $('.owl-carousel.testimonial').owlCarousel({
     loop: true,
@@ -320,17 +320,17 @@ $('.owl-carousel.testimonial').owlCarousel({
 })
 
 
-// ================== portfolio filter ====================== //
+
 
 $(document).ready(function () {
 
-    // initialize Isotope
+    
     var $grid = $('.row.portfolio-row').isotope({
         itemSelector: '.col-lg-4',
         layoutMode: 'fitRows'
     });
 
-    // filter items on button click
+    
     $('.filters').on('click', 'a', function () {
         var filterValue = $(this).attr('data-filter');
         $grid.isotope({ filter: filterValue });
@@ -343,12 +343,12 @@ function rotateIcon(iconId) {
     icon.classList.toggle('rotated');
 }
 
-// ---------------- back to top button -------------------- //
+
 
 let calcScrollValue = () => {
     let scrollProgress = document.getElementById("progress");
     if (!scrollProgress) {
-        // If the progress element doesn't exist, exit the function
+        
         return;
     }
 
@@ -366,7 +366,7 @@ let calcScrollValue = () => {
     scrollProgress.style.background = `conic-gradient(#1FA84F ${scrollValue}%, #d7d7d7 ${scrollValue}%)`;
 };
 
-// Only add the click event listener if the element exists
+
 let scrollProgress = document.getElementById("progress");
 if (scrollProgress) {
     scrollProgress.addEventListener("click", () => {
@@ -374,13 +374,13 @@ if (scrollProgress) {
     });
 }
 
-// Only add scroll and load event listeners if the progress element exists
+
 if (document.getElementById("progress")) {
     window.addEventListener("scroll", calcScrollValue);
     window.addEventListener("load", calcScrollValue);
 }
 
-// ---------------- particles  -------------------- //
+
 document.addEventListener("DOMContentLoaded", function () {
     const particlesContainer = document.getElementById("particles-js");
     if (particlesContainer) {
@@ -490,9 +490,9 @@ document.addEventListener("DOMContentLoaded", function () {
     }
 });
 
-// ---------------- tilt.js init -------------------- //
 
-// Check if VanillaTilt is defined before using it
+
+
 if (typeof VanillaTilt !== 'undefined') {
     VanillaTilt.init(document.querySelectorAll("[data-tilt]"), {
         max: 20,
@@ -502,7 +502,7 @@ if (typeof VanillaTilt !== 'undefined') {
     });
 }
 
-// ---------------- Navbar scroll shrink effect -------------------- //
+
 window.addEventListener('scroll', () => {
     const header = document.getElementById('site-header');
     if (!header) return;

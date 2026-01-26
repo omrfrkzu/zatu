@@ -1,4 +1,4 @@
-// ================= Disaster Survey Wizard Component =====================
+
 
 (function() {
   'use strict';
@@ -51,10 +51,10 @@
     }
 
     init() {
-      // Check if user skipped this section
+      
       this.checkSkipState();
 
-      // Load saved progress
+      
       const savedData = localStorage.getItem('disaster_survey_data');
       if (savedData) {
         try {
@@ -68,7 +68,7 @@
         }
       }
 
-      // Setup button handlers
+      
       const startBtn = document.getElementById('disaster-start-btn');
       if (startBtn) {
         startBtn.addEventListener('click', () => this.open());
@@ -94,13 +94,13 @@
         backBtn.addEventListener('click', () => this.prevQuestion());
       }
 
-      // Close on overlay click
+      
       const overlay = document.querySelector('.disaster-survey-modal-overlay');
       if (overlay) {
         overlay.addEventListener('click', () => this.close());
       }
 
-      // Close on ESC key
+      
       document.addEventListener('keydown', (e) => {
         if (e.key === 'Escape' && this.isOpen()) {
           this.close();
@@ -140,27 +140,27 @@
     }
 
     skip() {
-      // Save skip state
+      
       localStorage.setItem('skipAfetGorusleri', '1');
 
-      // Hide the section
+      
       const section = document.getElementById('disaster-survey-section');
       if (section) {
-        // Smooth collapse animation
+        
         section.style.transition = 'opacity 0.3s ease, transform 0.3s ease, max-height 0.3s ease';
         section.style.opacity = '0';
         section.style.transform = 'translateY(-20px)';
         
         setTimeout(() => {
           section.style.display = 'none';
-          // Scroll to next section smoothly
+          
           this.scrollToNextSection();
         }, 300);
       }
     }
 
     scrollToNextSection() {
-      // Find the next section after disaster-survey-section
+      
       const currentSection = document.getElementById('disaster-survey-section');
       if (!currentSection) return;
 
@@ -168,7 +168,7 @@
       if (nextSection) {
         nextSection.scrollIntoView({ behavior: 'smooth', block: 'start' });
       } else {
-        // If no next section, scroll to footer
+        
         const footer = document.querySelector('footer');
         if (footer) {
           footer.scrollIntoView({ behavior: 'smooth', block: 'start' });
@@ -189,7 +189,7 @@
       const question = this.questions[this.currentQuestion];
       if (!question) return;
 
-      // Render question
+      
       body.innerHTML = `
         <div class="disaster-survey-question">
           <h3 class="disaster-survey-question-title">${this.escapeHtml(question.title)}</h3>
@@ -217,7 +217,7 @@
         </div>
       `;
 
-      // Setup option click handlers
+      
       const options = body.querySelectorAll('.disaster-survey-option input[type="radio"]');
       options.forEach(option => {
         option.addEventListener('change', () => {
@@ -225,7 +225,7 @@
         });
       });
 
-      // Update footer buttons
+      
       const backBtn = document.getElementById('disaster-survey-back');
       const nextBtn = document.getElementById('disaster-survey-next');
       
@@ -249,7 +249,7 @@
       this.answers[field] = value;
       this.saveProgress();
       
-      // Update UI
+      
       const options = document.querySelectorAll('.disaster-survey-option');
       options.forEach(opt => {
         const input = opt.querySelector('input[type="radio"]');
@@ -262,7 +262,7 @@
         }
       });
 
-      // Enable next button
+      
       const nextBtn = document.getElementById('disaster-survey-next');
       if (nextBtn) {
         nextBtn.disabled = false;
@@ -272,7 +272,7 @@
     nextQuestion() {
       const question = this.questions[this.currentQuestion];
       if (!question || !this.answers[question.field]) {
-        return; // Can't proceed without answer
+        return; 
       }
 
       if (this.currentQuestion < this.totalQuestions - 1) {
@@ -280,7 +280,7 @@
         this.render();
         this.updateProgress();
         
-        // Scroll to top of modal body
+        
         const body = document.getElementById('disaster-survey-body');
         if (body) {
           body.scrollTop = 0;
@@ -296,7 +296,7 @@
         this.render();
         this.updateProgress();
         
-        // Scroll to top of modal body
+        
         const body = document.getElementById('disaster-survey-body');
         if (body) {
           body.scrollTop = 0;
@@ -343,7 +343,7 @@
 
       footer.style.display = 'none';
 
-      // Setup completion button handler
+      
       const goHomeBtn = document.getElementById('disaster-survey-go-home');
       if (goHomeBtn) {
         goHomeBtn.addEventListener('click', () => {
@@ -354,38 +354,38 @@
     }
 
     completeSurvey() {
-      // Save completion
+      
       localStorage.setItem('disaster_completed', 'true');
       localStorage.setItem('disaster_survey_data', JSON.stringify(this.answers));
       
-      // Update user progress
+      
       if (window.userProgress) {
         window.userProgress.setDisasterCompleted(true);
       }
 
-      // Submit to backend (mock for now)
+      
       this.submitToBackend();
 
-      // Show completion screen
+      
       this.renderCompletion();
       this.updateProgress();
     }
 
     async submitToBackend() {
-      // Mock submission - in production, this would be a real API call
+      
       try {
-        // Simulate API call
+        
         await new Promise(resolve => setTimeout(resolve, 500));
         
         console.log('Disaster survey submitted:', this.answers);
         
-        // In production:
-        // const response = await fetch('/api/survey/disaster', {
-        //   method: 'POST',
-        //   headers: { 'Content-Type': 'application/json' },
-        //   body: JSON.stringify(this.answers)
-        // });
-        // const data = await response.json();
+        
+        
+        
+        
+        
+        
+        
       } catch (error) {
         console.error('Error submitting disaster survey:', error);
       }
@@ -407,7 +407,7 @@
     }
   }
 
-  // Initialize on DOM ready
+  
   if (document.readyState === 'loading') {
     document.addEventListener('DOMContentLoaded', () => {
       window.disasterSurveyWizard = new DisasterSurveyWizard();

@@ -1,17 +1,17 @@
-// ================= Navbar Component =====================
-// This component dynamically loads the navbar HTML into all pages
-// Ensures consistent navbar design across all pages (updated for desktop dark mode)
+
+
+
 
 (function() {
   'use strict';
 
-  // Get current page context (root or /en/)
+  
   function getPageContext() {
     const path = window.location.pathname;
     const isEnglish = path.includes('/en/') || path === '/en' || path.endsWith('/en');
     const isRoot = !isEnglish;
     
-    // Determine base path for assets
+    
     let basePath = '';
     if (isEnglish) {
       basePath = '../';
@@ -24,11 +24,11 @@
     };
   }
 
-  // Get navbar HTML based on language
+  
   function getNavbarHTML(context) {
     const { isEnglish, basePath } = context;
     
-    // Language-specific texts
+    
     const texts = isEnglish ? {
       menu: 'Menu',
       close: 'Close',
@@ -79,13 +79,13 @@
       homeHref: '#top'
     };
 
-    // Determine if we're on index page or other page
+    
     const isIndexPage = window.location.pathname.endsWith('index.html') || 
                        window.location.pathname.endsWith('/') ||
                        window.location.pathname.endsWith('/en/') ||
                        window.location.pathname.endsWith('/en/index.html');
     
-    // Adjust hrefs for non-index pages
+    
     if (!isIndexPage) {
       const indexPath = isEnglish ? 'index.html' : 'index.html';
       texts.whyWeExistHref = indexPath + texts.whyWeExistHref;
@@ -95,9 +95,9 @@
       texts.homeHref = indexPath;
     }
 
-    // Current language flag
+    
     const currentFlag = isEnglish ? `
-      <svg width="18" height="18" viewBox="0 0 18 18" fill="none" xmlns="http://www.w3.org/2000/svg" class="flag-icon">
+      <svg width="18" height="18" viewBox="0 0 18 18" fill="none" xmlns="http:
         <rect width="18" height="18" fill="#012169"/>
         <path d="M0 0L18 18M18 0L0 18" stroke="#FFFFFF" stroke-width="2"/>
         <path d="M0 0L18 18M18 0L0 18" stroke="#C8102E" stroke-width="1.2"/>
@@ -105,7 +105,7 @@
         <path d="M9 0V18M0 9H18" stroke="#C8102E" stroke-width="1.5"/>
       </svg>
     ` : `
-      <svg width="18" height="18" viewBox="0 0 18 18" fill="none" xmlns="http://www.w3.org/2000/svg" class="flag-icon">
+      <svg width="18" height="18" viewBox="0 0 18 18" fill="none" xmlns="http:
         <rect width="18" height="18" fill="#E30A17"/>
         <circle cx="7" cy="9" r="4" fill="#FFFFFF"/>
         <circle cx="8.5" cy="9" r="3.5" fill="#E30A17"/>
@@ -114,13 +114,13 @@
     `;
 
     const currentFlagMobile = isEnglish ? `
-      <svg width="18" height="18" viewBox="0 0 20 20" fill="none" xmlns="http://www.w3.org/2000/svg">
+      <svg width="18" height="18" viewBox="0 0 20 20" fill="none" xmlns="http:
         <rect width="20" height="20" rx="2" fill="#012169"/>
         <path d="M0 0l20 20M20 0L0 20" stroke="white" stroke-width="2"/>
         <path d="M0 0l20 20M20 0L0 20" stroke="#C8102E" stroke-width="1.2"/>
       </svg>
     ` : `
-      <svg width="18" height="18" viewBox="0 0 20 20" fill="none" xmlns="http://www.w3.org/2000/svg">
+      <svg width="18" height="18" viewBox="0 0 20 20" fill="none" xmlns="http:
         <rect width="20" height="20" rx="2" fill="#E30A17"/>
         <circle cx="7.5" cy="10" r="4.5" fill="#FFFFFF"/>
         <circle cx="9" cy="10" r="4" fill="#E30A17"/>
@@ -188,7 +188,7 @@
               data-lang="tr"
               aria-label="Türkçe">
               <span class="language-flag">
-                <svg width="18" height="18" viewBox="0 0 18 18" fill="none" xmlns="http://www.w3.org/2000/svg" class="flag-icon">
+                <svg width="18" height="18" viewBox="0 0 18 18" fill="none" xmlns="http:
                   <rect width="18" height="18" fill="#E30A17"/>
                   <circle cx="7" cy="9" r="4" fill="#FFFFFF"/>
                   <circle cx="8.5" cy="9" r="3.5" fill="#E30A17"/>
@@ -205,7 +205,7 @@
               data-lang="en"
               aria-label="English">
               <span class="language-flag">
-                <svg width="18" height="18" viewBox="0 0 18 18" fill="none" xmlns="http://www.w3.org/2000/svg" class="flag-icon">
+                <svg width="18" height="18" viewBox="0 0 18 18" fill="none" xmlns="http:
                   <rect width="18" height="18" fill="#012169"/>
                   <path d="M0 0L18 18M18 0L0 18" stroke="#FFFFFF" stroke-width="2"/>
                   <path d="M0 0L18 18M18 0L0 18" stroke="#C8102E" stroke-width="1.2"/>
@@ -325,7 +325,7 @@
           <div class="mobile-language-menu-items">
             <button class="mobile-language-menu-item" data-locale="tr" role="menuitem" type="button">
               <span class="language-flag">
-                <svg width="28" height="28" viewBox="0 0 20 20" fill="none" xmlns="http://www.w3.org/2000/svg">
+                <svg width="28" height="28" viewBox="0 0 20 20" fill="none" xmlns="http:
                   <rect width="20" height="20" rx="2" fill="#E30A17"/>
                   <circle cx="7.5" cy="10" r="4.5" fill="#FFFFFF"/>
                   <circle cx="9" cy="10" r="4" fill="#E30A17"/>
@@ -337,7 +337,7 @@
             </button>
             <button class="mobile-language-menu-item" data-locale="en" role="menuitem" type="button">
               <span class="language-flag">
-                <svg width="28" height="28" viewBox="0 0 20 20" fill="none" xmlns="http://www.w3.org/2000/svg">
+                <svg width="28" height="28" viewBox="0 0 20 20" fill="none" xmlns="http:
                   <rect width="20" height="20" rx="2" fill="#012169"/>
                   <path d="M0 0l20 20M20 0L0 20" stroke="white" stroke-width="2"/>
                   <path d="M0 0l20 20M20 0L0 20" stroke="#C8102E" stroke-width="1.2"/>
@@ -361,42 +361,42 @@
     `;
   }
 
-  // Load navbar into page
+  
   function loadNavbar() {
     const context = getPageContext();
     const navbarHTML = getNavbarHTML(context);
     
-    // Find existing header or create container
+    
     const existingHeader = document.getElementById('site-header');
     const existingMobileMenu = document.getElementById('mobile-menu-wrapper');
     
     if (existingHeader && existingMobileMenu) {
-      // Replace existing navbar
+      
       const headerContainer = existingHeader.parentElement;
       const mobileMenuContainer = existingMobileMenu.parentElement;
       
-      // Create temporary container
+      
       const tempDiv = document.createElement('div');
       tempDiv.innerHTML = navbarHTML;
       
-      // Replace header
+      
       const newHeader = tempDiv.querySelector('#site-header');
       if (newHeader) {
         existingHeader.replaceWith(newHeader);
       }
       
-      // Replace mobile menu
+      
       const newMobileMenu = tempDiv.querySelector('#mobile-menu-wrapper');
       if (newMobileMenu) {
         existingMobileMenu.replaceWith(newMobileMenu);
       }
     } else {
-      // Insert navbar at the beginning of body
+      
       const body = document.body;
       const tempDiv = document.createElement('div');
       tempDiv.innerHTML = navbarHTML;
       
-      // Insert header after body tag or before first element
+      
       const firstChild = body.firstElementChild;
       if (firstChild) {
         body.insertBefore(tempDiv.querySelector('#site-header'), firstChild);
@@ -407,7 +407,7 @@
     }
   }
 
-  // Initialize navbar when DOM is ready
+  
   if (document.readyState === 'loading') {
     document.addEventListener('DOMContentLoaded', loadNavbar);
   } else {

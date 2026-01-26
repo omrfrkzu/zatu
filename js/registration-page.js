@@ -1,4 +1,4 @@
-// ================= Registration Page Controller =====================
+
 
 (function() {
   'use strict';
@@ -10,7 +10,7 @@
       this.steps = this.generateSteps();
       this.totalSteps = this.steps.length;
       
-      // DOM elements
+      
       this.elements = {
         stepTitle: document.getElementById('step-title'),
         contentContainer: document.getElementById('content-container'),
@@ -52,28 +52,28 @@
     }
 
     init() {
-      // Set total steps
+      
       this.elements.totalSteps.textContent = this.totalSteps;
       
-      // Setup event listeners
+      
       this.setupEventListeners();
       
-      // Render first step
+      
       this.renderStep();
       
-      // Update progress
+      
       this.updateProgress();
       
-      // Load saved progress
+      
       this.loadProgress();
     }
 
     setupEventListeners() {
-      // Navigation buttons
+      
       this.elements.btnBack.addEventListener('click', () => this.prevStep());
       this.elements.btnNext.addEventListener('click', () => this.nextStep());
       
-      // Keyboard navigation
+      
       document.addEventListener('keydown', (e) => {
         if (e.key === 'ArrowLeft' && !this.elements.btnBack.disabled) {
           this.prevStep();
@@ -82,7 +82,7 @@
         }
       });
       
-      // Save progress on unload
+      
       window.addEventListener('beforeunload', () => this.saveProgress());
     }
 
@@ -93,20 +93,20 @@
         return;
       }
       
-      // Update step title
+      
       this.elements.stepTitle.textContent = step.title;
       
-      // Clear and render content
+      
       this.elements.contentContainer.innerHTML = '';
       const content = step.content();
       if (content) {
         this.elements.contentContainer.appendChild(content);
       }
       
-      // Setup step-specific handlers
+      
       this.setupStepHandlers();
       
-      // Update navigation buttons
+      
       this.updateNavigationButtons();
     }
 
@@ -114,7 +114,7 @@
       const container = document.createElement('div');
       container.className = 'registration-form-container';
       
-      // Name input
+      
       const nameGroup = this.createInputGroup({
         id: 'fullName',
         label: 'Ad Soyad',
@@ -125,7 +125,7 @@
       });
       container.appendChild(nameGroup);
       
-      // Phone input
+      
       const phoneGroup = this.createInputGroup({
         id: 'phone',
         label: 'Telefon Numarası',
@@ -138,7 +138,7 @@
       });
       container.appendChild(phoneGroup);
       
-      // Birth date input
+      
       const birthDateGroup = this.createInputGroup({
         id: 'birthDate',
         label: 'Doğum Tarihi',
@@ -148,7 +148,7 @@
       });
       container.appendChild(birthDateGroup);
       
-      // Data consent checkbox
+      
       const consentGroup = this.createCheckboxGroup({
         id: 'dataConsent',
         label: 'Verilerimin işlenmesini kabul ediyorum.',
@@ -164,7 +164,7 @@
       const container = document.createElement('div');
       container.className = 'registration-form-container';
       
-      // City select
+      
       const cityGroup = this.createSelectGroup({
         id: 'city',
         label: 'İl',
@@ -186,7 +186,7 @@
       });
       container.appendChild(cityGroup);
       
-      // District input
+      
       const districtGroup = this.createInputGroup({
         id: 'district',
         label: 'İlçe',
@@ -198,7 +198,7 @@
       });
       container.appendChild(districtGroup);
       
-      // Neighborhood input
+      
       const neighborhoodGroup = this.createInputGroup({
         id: 'neighborhood',
         label: 'Mahalle',
@@ -210,7 +210,7 @@
       });
       container.appendChild(neighborhoodGroup);
       
-      // Enable district when city is selected
+      
       const citySelect = container.querySelector('#city');
       if (citySelect) {
         citySelect.addEventListener('change', (e) => {
@@ -229,7 +229,7 @@
         });
       }
       
-      // Enable neighborhood when district is filled
+      
       const districtInput = container.querySelector('#district');
       if (districtInput) {
         districtInput.addEventListener('input', (e) => {
@@ -250,7 +250,7 @@
       const container = document.createElement('div');
       container.className = 'registration-form-container';
       
-      // Building age select
+      
       const buildingAgeGroup = this.createSelectGroup({
         id: 'buildingAge',
         label: 'Bina Yaşı',
@@ -267,7 +267,7 @@
       });
       container.appendChild(buildingAgeGroup);
       
-      // Floor input
+      
       const floorGroup = this.createInputGroup({
         id: 'floor',
         label: 'Kat Bilgisi',
@@ -303,7 +303,7 @@
       container.appendChild(title);
       container.appendChild(text);
       
-      // Hide navigation buttons on success
+      
       this.elements.btnBack.style.display = 'none';
       this.elements.btnNext.style.display = 'none';
       
@@ -362,7 +362,7 @@
       }
       group.appendChild(error);
       
-      // Validation
+      
       input.addEventListener('blur', () => this.validateField(input));
       input.addEventListener('input', () => {
         this.formData[id] = input.value;
@@ -414,7 +414,7 @@
       group.appendChild(wrapper);
       group.appendChild(error);
       
-      // Validation
+      
       select.addEventListener('change', () => {
         this.formData[id] = select.value;
         this.saveProgress();
@@ -456,7 +456,7 @@
       group.appendChild(wrapper);
       group.appendChild(error);
       
-      // Toggle checked class
+      
       checkbox.addEventListener('change', () => {
         if (checkbox.checked) {
           wrapper.classList.add('checked');
@@ -534,7 +534,7 @@
         return;
       }
       
-      // Save current step data
+      
       this.saveStepData();
       
       if (this.currentStep < this.totalSteps - 1) {
@@ -581,14 +581,14 @@
     }
 
     updateNavigationButtons() {
-      // Back button
+      
       this.elements.btnBack.disabled = this.currentStep === 0;
       
-      // Next button
+      
       const isValid = this.validateCurrentStep();
       this.elements.btnNext.disabled = !isValid;
       
-      // Update next button text
+      
       if (this.currentStep === this.totalSteps - 1) {
         this.elements.btnNext.innerHTML = '<span>Tamamla</span> <i class="bi bi-check-circle"></i>';
       } else {
@@ -597,7 +597,7 @@
     }
 
     setupStepHandlers() {
-      // Auto-validate on input
+      
       const container = this.elements.contentContainer;
       const inputs = container.querySelectorAll('input, select');
       inputs.forEach(input => {
@@ -647,7 +647,7 @@
                 this.updateProgress();
               }
             });
-            return; // Exit early, modal will handle continuation
+            return; 
           }
         } catch (e) {
           console.error('Error loading progress:', e);
@@ -656,27 +656,27 @@
     }
 
     completeRegistration() {
-      // Save final data
+      
       this.saveStepData();
       
-      // Clear saved progress
+      
       localStorage.removeItem('registration_page_progress');
       
-      // Show success step
+      
       this.renderStep();
       this.updateProgress();
       
-      // Optional: Submit to backend
-      // this.submitToBackend();
+      
+      
     }
 
     submitToBackend() {
-      // TODO: Implement backend submission
+      
       console.log('Submitting registration data:', this.formData);
     }
   }
 
-  // Initialize when DOM is ready
+  
   if (document.readyState === 'loading') {
     document.addEventListener('DOMContentLoaded', () => {
       new RegistrationPageController();

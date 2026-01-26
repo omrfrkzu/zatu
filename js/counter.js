@@ -1,4 +1,4 @@
-// ================= Animated Counter Component =====================
+
 class Counter {
   constructor(element, value, duration = 800) {
     this.element = element;
@@ -21,7 +21,7 @@ class Counter {
     const elapsed = (timestamp || performance.now()) - this.startTime;
     const progress = Math.min(elapsed / this.duration, 1);
     
-    // Easing function (ease-out cubic)
+    
     const easeOut = 1 - Math.pow(1 - progress, 3);
     this.currentValue = Math.round(this.value * easeOut);
     
@@ -30,7 +30,7 @@ class Counter {
     if (progress < 1) {
       this.animationId = requestAnimationFrame((t) => this.animate(t));
     } else {
-      // Ensure final value is exact
+      
       this.currentValue = this.value;
       this.element.textContent = this.formatNumber(this.value);
       this.animationId = null;
@@ -38,7 +38,7 @@ class Counter {
   }
 
   start() {
-    // Cancel any existing animation
+    
     if (this.animationId) {
       cancelAnimationFrame(this.animationId);
     }

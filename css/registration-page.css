@@ -1,10 +1,10 @@
-/* ================= Registration Page Styles ===================== */
+
 
 .registration-page-body {
-  /* Inherits from test-page.css */
+  
 }
 
-/* ================= Form Input Styles ===================== */
+
 
 .registration-content-container {
   margin-bottom: 2.5rem;
@@ -102,7 +102,7 @@
   color: var(--test-text-secondary);
 }
 
-/* ================= Selection Card Styles ===================== */
+
 
 .registration-options-grid {
   display: grid;
@@ -207,7 +207,7 @@
   font-size: 1.25rem;
 }
 
-/* ================= Checkbox Styles ===================== */
+
 
 .registration-checkbox-wrapper {
   display: flex;
@@ -253,7 +253,7 @@
   color: #DC2626;
 }
 
-/* ================= Success State ===================== */
+
 
 .registration-success-container {
   text-align: center;
@@ -301,7 +301,7 @@
   margin: 0 auto;
 }
 
-/* ================= Step Transitions ===================== */
+
 
 .test-question-container.fade-out {
   animation: fadeOut 0.3s ease-out forwards;
@@ -311,7 +311,7 @@
   animation: fadeOut 0.3s ease-out forwards;
 }
 
-/* ================= Responsive Styles ===================== */
+
 
 @media (max-width: 768px) {
   .registration-input,
@@ -350,7 +350,7 @@
   }
 }
 
-/* ================= Accessibility ===================== */
+
 
 .registration-input:focus-visible,
 .registration-select:focus-visible,

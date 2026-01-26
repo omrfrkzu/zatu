@@ -1,4 +1,4 @@
-/* ================= Custom Modal Styles ===================== */
+
 
 .modal-backdrop {
   position: fixed;
@@ -154,7 +154,7 @@
   outline-offset: 2px;
 }
 
-/* Mobile optimizations */
+
 @media (max-width: 767px) {
   .modal-backdrop {
     padding: 16px;
@@ -192,7 +192,7 @@
   }
 }
 
-/* Dark mode support */
+
 body.dark-mode .modal-backdrop {
   background: rgba(0, 0, 0, 0.7);
 }

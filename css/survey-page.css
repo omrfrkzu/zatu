@@ -1,11 +1,11 @@
-/* ================= Survey Page Styles ===================== */
+
 
 .survey-page-body {
-  /* Inherits from test-page.css */
-  /* All styles are shared with test page */
+  
+  
 }
 
-/* Additional survey-specific styles if needed */
+
 .survey-question-description {
   font-size: 1.125rem;
   color: var(--test-text-secondary);
@@ -16,7 +16,7 @@
   margin-right: auto;
 }
 
-/* Success/Thank you message styles */
+
 .survey-success-container {
   text-align: center;
   padding: 2rem 0;

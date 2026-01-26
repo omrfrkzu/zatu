@@ -1,4 +1,4 @@
-// ================= User Progress State Management =====================
+
 class UserProgress {
   constructor() {
     this.state = {
@@ -17,7 +17,7 @@ class UserProgress {
         this.state = { ...this.state, ...JSON.parse(stored) };
       }
       
-      // Also check individual flags
+      
       if (localStorage.getItem('registration_step2')) {
         this.state.registered = true;
       }
@@ -80,6 +80,6 @@ class UserProgress {
   }
 }
 
-// Export singleton instance
+
 window.userProgress = new UserProgress();
 

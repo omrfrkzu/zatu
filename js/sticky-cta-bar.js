@@ -1,4 +1,4 @@
-// ================= Sticky CTA Bar Component =====================
+
 class StickyCtaBar {
   constructor() {
     this.bar = null;
@@ -8,38 +8,38 @@ class StickyCtaBar {
   }
 
   init() {
-    // Create bar element
+    
     this.createBar();
     
-    // Listen to progress changes
+    
     if (window.userProgress) {
       window.userProgress.subscribe((state) => {
         this.update(state);
       });
     }
 
-    // Initial update
+    
     if (window.userProgress) {
       this.update(window.userProgress.getState());
     }
 
-    // Check hash changes
+    
     window.addEventListener('hashchange', () => {
       this.checkVisibility();
     });
 
-    // Check on page load
+    
     this.checkVisibility();
   }
 
   createBar() {
-    // Remove existing bar if any
+    
     const existing = document.getElementById('sticky-cta-bar');
     if (existing) {
       existing.remove();
     }
 
-    // Create bar
+    
     this.bar = document.createElement('nav');
     this.bar.id = 'sticky-cta-bar';
     this.bar.setAttribute('role', 'navigation');
@@ -50,25 +50,25 @@ class StickyCtaBar {
   }
 
   shouldHide() {
-    // Check if current page should hide bar
+    
     const currentPage = window.location.pathname.split('/').pop();
     if (this.hideOnPages.includes(currentPage)) {
       return true;
     }
 
-    // Check hash
+    
     const hash = window.location.hash.replace('#', '');
     if (this.hideOnIds.includes(hash)) {
       return true;
     }
 
-    // Check if we're in registration/survey sections (with some tolerance)
+    
     const sections = document.querySelectorAll('section[id]');
     for (const section of sections) {
       const id = section.getAttribute('id');
       if (this.hideOnIds.includes(id)) {
         const rect = section.getBoundingClientRect();
-        // Hide if section is visible (within viewport)
+        
         if (rect.top < window.innerHeight && rect.bottom > -100) {
           return true;
         }
@@ -131,7 +131,7 @@ class StickyCtaBar {
       return;
     }
 
-    // Build HTML
+    
     let html = '<div class="sticky-cta-bar-content">';
     
     ctas.forEach((cta, index) => {
@@ -155,22 +155,22 @@ class StickyCtaBar {
     html += '</div>';
     this.bar.innerHTML = html;
 
-    // Check visibility
+    
     this.checkVisibility();
   }
 
   handleClick(href) {
     if (href.startsWith('#')) {
-      // Scroll to section
+      
       const targetId = href.replace('#', '');
       const target = document.getElementById(targetId);
       if (target) {
         target.scrollIntoView({ behavior: 'smooth', block: 'start' });
-        // Update URL hash
+        
         window.location.hash = href;
       }
     } else {
-      // Navigate to page
+      
       window.location.href = href;
     }
   }
@@ -183,11 +183,11 @@ class StickyCtaBar {
   }
 }
 
-// Initialize on DOM ready
+
 document.addEventListener('DOMContentLoaded', function() {
   window.stickyCtaBar = new StickyCtaBar();
   
-  // Also check visibility on scroll
+  
   let scrollTimeout;
   window.addEventListener('scroll', function() {
     clearTimeout(scrollTimeout);

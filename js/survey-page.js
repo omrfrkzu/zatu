@@ -1,4 +1,4 @@
-// ================= Survey Page Controller =====================
+
 
 (function() {
   'use strict';
@@ -10,10 +10,10 @@
       this.questions = this.generateQuestions();
       this.totalQuestions = this.questions.length;
       
-      // DOM elements
+      
       this.elements = {
         questionTitle: document.getElementById('question-title'),
-        questionDescription: null, // Will be created dynamically
+        questionDescription: null, 
         answersContainer: document.getElementById('answers-container'),
         questionContainer: document.getElementById('question-container'),
         btnBack: document.getElementById('btn-back'),
@@ -87,28 +87,28 @@
     }
 
     init() {
-      // Set total steps
+      
       this.elements.totalSteps.textContent = this.totalQuestions;
       
-      // Setup event listeners
+      
       this.setupEventListeners();
       
-      // Load saved progress
+      
       this.loadProgress();
       
-      // Render first question
+      
       this.renderQuestion();
       
-      // Update progress
+      
       this.updateProgress();
     }
 
     setupEventListeners() {
-      // Navigation buttons
+      
       this.elements.btnBack.addEventListener('click', () => this.prevQuestion());
       this.elements.btnNext.addEventListener('click', () => this.nextQuestion());
       
-      // Keyboard navigation
+      
       document.addEventListener('keydown', (e) => {
         if (e.key === 'ArrowLeft' && !this.elements.btnBack.disabled) {
           this.prevQuestion();
@@ -117,7 +117,7 @@
         }
       });
       
-      // Save progress on unload
+      
       window.addEventListener('beforeunload', () => this.saveProgress());
     }
 
@@ -133,13 +133,13 @@
         return;
       }
       
-      // Update question title
+      
       this.elements.questionTitle.textContent = question.title;
       
-      // Add description if exists
+      
       const wrapper = this.elements.questionContainer.querySelector('.test-question-wrapper');
       if (question.description) {
-        // Remove existing description if any
+        
         const existingDesc = wrapper.querySelector('.survey-question-description');
         if (existingDesc) {
           existingDesc.remove();
@@ -151,14 +151,14 @@
         wrapper.appendChild(desc);
         this.elements.questionDescription = desc;
       } else {
-        // Remove description if question doesn't have one
+        
         const existingDesc = wrapper.querySelector('.survey-question-description');
         if (existingDesc) {
           existingDesc.remove();
         }
       }
       
-      // Clear and render answers
+      
       this.elements.answersContainer.innerHTML = '';
       
       question.options.forEach((option, index) => {
@@ -166,10 +166,10 @@
         this.elements.answersContainer.appendChild(card);
       });
       
-      // Update navigation buttons
+      
       this.updateNavigationButtons();
       
-      // Restore selected answer if exists
+      
       if (this.answers[question.id] !== undefined) {
         const selectedIndex = this.answers[question.id];
         const cards = this.elements.answersContainer.querySelectorAll('.test-answer-card');
@@ -187,12 +187,12 @@
       card.setAttribute('tabindex', '0');
       card.setAttribute('aria-label', `Seçenek ${index + 1}: ${text}`);
       
-      // Answer text
+      
       const textDiv = document.createElement('div');
       textDiv.className = 'test-answer-text';
       textDiv.textContent = text;
       
-      // Icon
+      
       const iconDiv = document.createElement('div');
       iconDiv.className = 'test-answer-icon';
       const icon = document.createElement('i');
@@ -202,7 +202,7 @@
       card.appendChild(textDiv);
       card.appendChild(iconDiv);
       
-      // Click handler
+      
       card.addEventListener('click', () => this.selectAnswer(index));
       card.addEventListener('keydown', (e) => {
         if (e.key === 'Enter' || e.key === ' ') {
@@ -211,7 +211,7 @@
         }
       });
       
-      // Animation delay
+      
       card.style.animationDelay = `${index * 0.05}s`;
       
       return card;
@@ -221,25 +221,25 @@
       const question = this.questions[this.currentQuestion];
       const cards = this.elements.answersContainer.querySelectorAll('.test-answer-card');
       
-      // Remove previous selection
+      
       cards.forEach((card, i) => {
         card.classList.remove('selected');
         const icon = card.querySelector('.test-answer-icon i');
         icon.className = 'bi bi-circle';
       });
       
-      // Add selection
+      
       cards[index].classList.add('selected');
       
-      // Update icon
+      
       const icon = cards[index].querySelector('.test-answer-icon i');
       icon.className = 'bi bi-check-circle-fill';
       
-      // Save answer
+      
       this.answers[question.id] = index;
       this.saveProgress();
       
-      // Enable next button
+      
       this.elements.btnNext.disabled = false;
     }
 
@@ -256,7 +256,7 @@
     nextQuestion() {
       const question = this.questions[this.currentQuestion];
       
-      // Check if answer is selected
+      
       if (this.answers[question.id] === undefined) {
         return;
       }
@@ -273,16 +273,16 @@
     }
 
     showTransition(callback) {
-      // Add fade-out class
+      
       this.elements.questionContainer.classList.add('fade-out');
       this.elements.answersContainer.classList.add('fade-out');
       this.elements.loadingOverlay.classList.add('active');
       
-      // Execute callback after animation
+      
       setTimeout(() => {
         callback();
         
-        // Remove fade-out class
+        
         this.elements.questionContainer.classList.remove('fade-out');
         this.elements.answersContainer.classList.remove('fade-out');
         this.elements.loadingOverlay.classList.remove('active');
@@ -296,14 +296,14 @@
     }
 
     updateNavigationButtons() {
-      // Back button
+      
       this.elements.btnBack.disabled = this.currentQuestion === 0;
       
-      // Next button
+      
       const question = this.questions[this.currentQuestion];
       this.elements.btnNext.disabled = this.answers[question.id] === undefined;
       
-      // Update next button text
+      
       if (this.currentQuestion === this.totalQuestions - 1) {
         this.elements.btnNext.innerHTML = '<span>Tamamla</span> <i class="bi bi-check-circle"></i>';
       } else {
@@ -312,20 +312,20 @@
     }
 
     renderCompletion() {
-      // Update title
+      
       this.elements.questionTitle.textContent = 'Teşekkürler!';
       
-      // Remove description if exists
+      
       const wrapper = this.elements.questionContainer.querySelector('.test-question-wrapper');
       const existingDesc = wrapper.querySelector('.survey-question-description');
       if (existingDesc) {
         existingDesc.remove();
       }
       
-      // Clear answers container
+      
       this.elements.answersContainer.innerHTML = '';
       
-      // Create success message
+      
       const successContainer = document.createElement('div');
       successContainer.className = 'survey-success-container';
       
@@ -356,11 +356,11 @@
       
       this.elements.answersContainer.appendChild(successContainer);
       
-      // Hide navigation buttons
+      
       this.elements.btnBack.style.display = 'none';
       this.elements.btnNext.style.display = 'none';
       
-      // Update progress to 100%
+      
       this.updateProgress();
     }
 
@@ -380,7 +380,7 @@
           const data = JSON.parse(saved);
           this.answers = data.answers || {};
           
-          // Resume from last question if incomplete
+          
           if (data.currentQuestion !== undefined && data.currentQuestion < this.totalQuestions) {
             showConfirmModal({
               title: 'Kaydedilmiş ilerlemeniz var',
@@ -393,7 +393,7 @@
                 this.renderQuestion();
                 this.updateProgress();
               } else {
-                // Clear saved progress
+                
                 localStorage.removeItem('survey_page_progress');
                 this.answers = {};
                 this.currentQuestion = 0;
@@ -401,7 +401,7 @@
                 this.updateProgress();
               }
             });
-            return; // Exit early, modal will handle continuation
+            return; 
           }
         } catch (e) {
           console.error('Error loading progress:', e);
@@ -410,28 +410,28 @@
     }
 
     completeSurvey() {
-      // Save final answers
+      
       this.saveProgress();
       
-      // Submit to backend (optional)
+      
       this.submitToBackend();
       
-      // Show completion screen
+      
       this.renderCompletion();
     }
 
     submitToBackend() {
-      // TODO: Implement backend submission
+      
       console.log('Submitting survey data:', this.answers);
       
-      // Clear saved progress after successful submission
+      
       setTimeout(() => {
         localStorage.removeItem('survey_page_progress');
       }, 1000);
     }
   }
 
-  // Initialize when DOM is ready
+  
   if (document.readyState === 'loading') {
     document.addEventListener('DOMContentLoaded', () => {
       new SurveyPageController();

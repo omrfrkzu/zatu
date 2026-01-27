@@ -363,7 +363,7 @@ let calcScrollValue = () => {
         scrollProgress.style.display = "none";
     }
 
-    scrollProgress.style.background = `conic-gradient(#1FA84F ${scrollValue}%, #d7d7d7 ${scrollValue}%)`;
+    scrollProgress.style.background = `conic-gradient(#1B5ED6 ${scrollValue}%, #d7d7d7 ${scrollValue}%)`;
 };
 
 

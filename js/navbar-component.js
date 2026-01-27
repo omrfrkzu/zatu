@@ -177,7 +177,7 @@
             <span class="language-flag" id="language-flag">
               ${currentFlag}
             </span>
-            <span class="language-code" id="language-code">${currentLanguageCode}</span>
+            <span class="language-name-trigger" id="language-name-trigger">${currentLanguageName}</span>
             <i class="bi bi-chevron-down language-chevron"></i>
           </button>
           <div id="language-dropdown-menu" class="language-dropdown-menu" role="menu" aria-hidden="true">
